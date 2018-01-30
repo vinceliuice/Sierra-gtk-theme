@@ -278,8 +278,9 @@ $animation_1: needs_attention 0.3s cubic-bezier(0, 0, 0.2, 1);
     color: $selected_fg_color;
     background-color: $header_button_active_bg;
     background-image: none;
-    text-shadow: if($variant=='light', $text_shadow, none);
     border-color: $borders_color;
+    text-shadow: if($variant=='light', $text_shadow, none);
+    -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
     box-shadow: none;
   }
 
@@ -290,10 +291,11 @@ $animation_1: needs_attention 0.3s cubic-bezier(0, 0, 0.2, 1);
     color: $selected_fg_color;
     background-color: $header_button_checked_bg;
     background-image: if($variant=='light', linear-gradient( 0deg, #656565 0%, #707070 100%), none);
-    text-shadow: if($variant=='light', $text_shadow, none);
     border-color: $borders_color;
     border-top-color: if($variant=='light', lighten($borders_color, 0%), $borders_color);
     border-bottom-color: if($variant=='light', lighten($borders_color, 0%), $borders_color);
+    text-shadow: if($variant=='light', $text_shadow, none);
+    -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
     box-shadow: none;
   }
 
