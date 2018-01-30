@@ -1,0 +1,197 @@
+#!/bin/bash
+  # Copying files
+
+ROOT_UID=0
+DEST_DIR=
+
+# Destination directory
+if [ "$UID" -eq "$ROOT_UID" ]; then
+  DEST_DIR="/usr/share/themes"
+else
+  DEST_DIR="$HOME/.themes"
+fi
+
+repodir=$(cd $(dirname $0) && pwd)
+srcdir=${repodir}/src
+
+  rm -rf $DEST_DIR/Sierra*
+
+# Copying files
+  for color in '-light' '-dark'; do
+	echo -e "   Installing Sierra${color} ..."
+
+	themedir=$DEST_DIR/Sierra${color}
+	install -d ${themedir}
+
+	# Install index.theme
+	echo "[Desktop Entry]" >> ${themedir}/index.theme
+	echo "Type=X-GNOME-Metatheme" >> ${themedir}/index.theme
+	echo "Name=Sierra${color}" >> ${themedir}/index.theme
+	echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >> ${themedir}/index.theme
+	echo "Encoding=UTF-8" >> ${themedir}/index.theme
+	echo "" >> ${themedir}/index.theme
+	echo "[X-GNOME-Metatheme]" >> ${themedir}/index.theme
+	echo "GtkTheme=Sierra${color}" >> ${themedir}/index.theme
+	echo "MetacityTheme=Sierra${color}" >> ${themedir}/index.theme
+	echo "IconTheme=Adwaita" >> ${themedir}/index.theme
+	echo "CursorTheme=Adwaita" >> ${themedir}/index.theme
+	echo "ButtonLayout=close,minimize,maximize:menu" >> ${themedir}/index.theme
+
+	# Install GNOME Shell Theme
+	install -d ${themedir}/gnome-shell
+	cd ${srcdir}/gnome-shell
+
+	cp -ur \
+		gnome-shell${color}.css \
+		${themedir}/gnome-shell/gnome-shell.css
+
+	cp -ur \
+		extensions \
+		pad-osd.css \
+		message-indicator-symbolic.svg \
+		${themedir}/gnome-shell
+
+		install -d ${themedir}/gnome-shell/assets
+		cd ${srcdir}/gnome-shell/assets
+
+		cp -ur \
+			dash \
+			dash-placeholder.svg \
+			noise-texture.svg \
+			startup.png \
+			process-working.svg \
+			window-close.svg \
+			window-close-active.svg \
+			toggle-on.svg \
+			more-results.svg \
+			checkbox.svg \
+			${themedir}/gnome-shell/assets
+
+		cp -ur \
+			activities${color}.svg \
+			${themedir}/gnome-shell/assets/activities.svg
+
+		cp -ur \
+			no-events${color}.svg \
+			${themedir}/gnome-shell/assets/no-events.svg
+
+		cp -ur \
+			no-notifications${color}.svg \
+			${themedir}/gnome-shell/assets/no-notifications.svg 
+
+		cp -ur \
+			calendar-arrow-left${color}.svg \
+			${themedir}/gnome-shell/assets/calendar-arrow-left.svg
+
+		cp -ur \
+			calendar-arrow-right${color}.svg \
+			${themedir}/gnome-shell/assets/calendar-arrow-right.svg
+
+		cp -ur \
+			checkbox-off${color}.svg \
+			${themedir}/gnome-shell/assets/checkbox-off.svg
+
+		cp -ur \
+			close${color}.svg \
+			${themedir}/gnome-shell/assets/close.svg
+
+		cp -ur \
+			toggle-off${color}.svg \
+			${themedir}/gnome-shell/assets/toggle-off.svg
+
+		cd ${themedir}/gnome-shell
+		ln -s assets/no-events.svg no-events.svg
+		ln -s assets/process-working.svg process-working.svg
+		ln -s assets/no-notifications.svg no-notifications.svg
+
+		cd ${srcdir}/gnome-shell
+		glib-compile-resources \
+			--sourcedir=${themedir}/gnome-shell \
+			--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
+			gnome-shell-theme.gresource.xml
+
+	# Install GTK+ 2 Theme
+	install -d ${themedir}/gtk-2.0
+	cd ${srcdir}/gtk-2.0
+
+	cp -ur \
+		gtkrc${color} \
+		${themedir}/gtk-2.0/gtkrc
+
+	cp -ur \
+		assets${color} \
+		${themedir}/gtk-2.0/assets
+
+	cp -ur \
+		apps.rc \
+		main.rc \
+		panel.rc \
+		xfce-notify.rc \
+		${themedir}/gtk-2.0
+
+	cp -ur \
+		menubar-toolbar${color}.rc \
+		${themedir}/gtk-2.0/menubar-toolbar.rc 
+
+	# Install GTK+ 3 Theme
+	install -d ${themedir}/gtk-3.0
+	cd ${srcdir}/gtk-3.0
+	cp -ur \
+		assets \
+		${themedir}/gtk-3.0
+
+	cp -ur \
+		title-assets \
+		${themedir}/gtk-3.0
+
+	cp -ur \
+		thumbnail${color}.png \
+		${themedir}/gtk-3.0/thumbnail.png
+
+	cp -ur \
+		gtk${color}.css \
+		${themedir}/gtk-3.0/gtk.css
+
+	cp -ur \
+		gtk-dark.css \
+		${themedir}/gtk-3.0/gtk-dark.css
+
+	# Install Metacity Theme
+	install -d ${themedir}/metacity-1
+	cd ${srcdir}/metacity-1
+
+	cp -ur \
+		metacity-theme${color}.xml \
+		${themedir}/metacity-1/metacity-theme.xml
+
+	cp -ur \
+		*.png \
+		*.svg \
+		${themedir}/metacity-1
+
+	cd ${themedir}/metacity-1
+	ln -s metacity-theme.xml metacity-theme-1.xml
+	ln -s metacity-theme.xml metacity-theme-2.xml
+	ln -s metacity-theme.xml metacity-theme-3.xml
+
+	# Install Unity Theme
+	install -d ${themedir}/unity
+	cd ${srcdir}
+	cp -ur \
+		unity \
+		${themedir}
+
+	# Install xfwm4 Theme
+	install -d ${themedir}/xfwm4
+	cd ${srcdir}/xfwm4
+
+	cp -ur \
+		assets${color}/*.png \
+		${themedir}/xfwm4
+
+	cp -ur \
+		themerc${color} \
+		${themedir}/xfwm4/themerc
+
+  done
+
