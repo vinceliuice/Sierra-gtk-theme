@@ -310,7 +310,7 @@ treeview entry {
   $tag_margin: 8px;
 
   margin: $tag_margin; // instead of min-height: $tag_height;
-  border-radius: 50px;
+  border-radius: 3px;
   box-shadow: none;
   background-color: $selected_bg_color;
   color: $selected_fg_color;
@@ -926,14 +926,14 @@ combobox {
                        url("assets/combobox-arrow@2.png"));
     min-height: 16px;
     min-width: 16px;
-    padding: 0 1px;
+    padding: 0;
     margin: -1px -9px -1px -1px;
     border-radius: 0 $bt_radius $bt_radius 0;
     color: $selected_fg_color;
-    border: 1px solid if($variant=='light', #358ffc, #686868);
+    border: 1px solid if($variant=='light', $selected_bg_color, #686868);
     background-color: transparent;
-    background-image: if($variant=='light', linear-gradient( 0deg, #067dff 0%, #6bb3fa 100%),
-                                            linear-gradient( 0deg, #686868 0%, #686868 100%));
+    background-image: if($variant=='light', linear-gradient( 180deg, #4c97fe 0%, #0564e3 100%),
+                                            linear-gradient( 180deg, #686868 0%, #686868 100%));
   }
 
   &:drop(active) button.combo { @extend button:drop(active); }
@@ -3386,13 +3386,25 @@ colorchooser .popover.osd { border-radius: $bt_radius; }
 button.circular,
 button.circular-button {
   padding: 0;
-  min-width: 16px;
-  min-height: 24px;
-  padding: 2px 6px;
+  margin: 0;
+  min-width: 28px;
+  min-height: 28px;
   border-radius: 50%;
   -gtk-outline-radius: 50%;
 
+  &:active, &:checked {
+    border-width: 1px;
+    border-color: if($variant=='light', rgba(black, 0.1), rgba(white, 0.35));
+    border-style: solid;
+    background-image: none;
+    color: $selected_fg_color;
+    background-color: if($variant=='light', rgba(black, 0.6), rgba(white, 0.35));
+    text-shadow: if($variant=='light', $text_shadow, none);
+    -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
+  }
+
   label { padding: 0; }
+
 }
 
 .keycap {

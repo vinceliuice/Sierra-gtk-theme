@@ -240,7 +240,7 @@ treeview entry.flat, treeview entry {
 
 .entry-tag {
   margin: 8px;
-  border-radius: 50px;
+  border-radius: 3px;
   box-shadow: none;
   background-color: #0062FF;
   color: #ffffff;
@@ -296,7 +296,9 @@ button {
       border-color: transparent;
       background-image: none;
       color: #ffffff;
-      background-color: rgba(255, 255, 255, 0.25); }
+      background-color: rgba(255, 255, 255, 0.25);
+      text-shadow: none;
+      -gtk-icon-shadow: none; }
     button.flat:disabled, button.sidebar-button:disabled {
       border-color: transparent;
       background-color: transparent;
@@ -840,13 +842,13 @@ combobox arrow {
   -gtk-icon-source: -gtk-scaled(url("assets/combobox-arrow.png"), url("assets/combobox-arrow@2.png"));
   min-height: 16px;
   min-width: 16px;
-  padding: 0 1px;
+  padding: 0;
   margin: -1px -9px -1px -1px;
   border-radius: 0 5px 5px 0;
   color: #ffffff;
   border: 1px solid #686868;
   background-color: transparent;
-  background-image: linear-gradient(0deg, #686868 0%, #686868 100%); }
+  background-image: linear-gradient(180deg, #686868 0%, #686868 100%); }
 .linked:not(.vertical) > combobox > box > button.combo arrow {
   border-radius: 0; }
 .linked:not(.vertical) > combobox:last-child > box > button.combo arrow {
@@ -2826,7 +2828,9 @@ row.activatable:selected.has-open-popup, row.activatable:selected:hover {
       border-color: transparent;
       background-image: none;
       color: #ffffff;
-      background-color: rgba(255, 255, 255, 0.25); }
+      background-color: rgba(255, 255, 255, 0.25);
+      text-shadow: none;
+      -gtk-icon-shadow: none; }
     .app-notification button:disabled {
       background-color: transparent; }
       .app-notification button:disabled label, .app-notification button:disabled {
@@ -2887,6 +2891,8 @@ messagedialog.csd .dialog-action-area button:not(.suggested-action):not(.destruc
   background-image: none;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.25);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
   border-color: rgba(255, 255, 255, 0.12);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05); }
 messagedialog.csd .dialog-action-area button {
@@ -3172,11 +3178,22 @@ popover.background.touch-selection {
 button.circular, button.nautilus-circular-button.image-button,
 button.circular-button {
   padding: 0;
-  min-width: 16px;
-  min-height: 24px;
-  padding: 2px 6px;
+  margin: 0;
+  min-width: 28px;
+  min-height: 28px;
   border-radius: 50%;
   -gtk-outline-radius: 50%; }
+  button.circular:active, button.nautilus-circular-button.image-button:active, button.circular:checked, button.nautilus-circular-button.image-button:checked,
+  button.circular-button:active,
+  button.circular-button:checked {
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.35);
+    border-style: solid;
+    background-image: none;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.35);
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
   button.circular label, button.nautilus-circular-button.image-button label,
   button.circular-button label {
     padding: 0; }
@@ -4033,6 +4050,35 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
 .panel .menu .spinner,
 .menu .spinner {
   opacity: 1; }
+
+window.background:not(.csd) > widget > separator {
+  color: rgba(255, 255, 255, 0.12); }
+window.background:not(.csd) > widget > scrollbar {
+  background-clip: border-box; }
+window.background:not(.csd) > widget > scrollbar,
+window.background:not(.csd) > widget > frame > border {
+  border-color: rgba(255, 255, 255, 0.12); }
+window.background:not(.csd) > widget > entry,
+window.background:not(.csd) > widget > button > button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02); }
+window.background:not(.csd) > widget > entry {
+  border-radius: 5px;
+  background-image: image(#242424);
+  border: 1px solid rgba(255, 255, 255, 0.12); }
+  window.background:not(.csd) > widget > entry:focus {
+    border-color: #66a1ff;
+    box-shadow: inset 0 0 0 2px #66a1ff; }
+window.background:not(.csd) > widget > spinbutton {
+  background-image: image(#484848);
+  border: 1px solid rgba(255, 255, 255, 0.12); }
+  window.background:not(.csd) > widget > spinbutton:active {
+    background-image: image(rgba(119, 119, 119, 0.95)); }
+window.background:not(.csd) > widget > button > button:active {
+  background-image: image(rgba(119, 119, 119, 0.95));
+  border: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); }
 
 /****************
  * Libre-Office *
