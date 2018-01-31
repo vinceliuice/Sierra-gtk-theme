@@ -3332,6 +3332,18 @@ headerbar button.titlebutton,
   headerbar button.titlebutton.minimize:active,
   .titlebar button.titlebutton.minimize:active {
     background-image: -gtk-scaled(url("title-assets/titlebutton-minimize-active.svg"), url("title-assets/titlebutton-minimize-active@2.svg")); }
+  headerbar button.titlebutton.restore,
+  .titlebar button.titlebutton.restore {
+    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-dark.svg"), url("title-assets/titlebutton-maximize-dark@2.svg")); }
+  headerbar button.titlebutton.restore:backdrop,
+  .titlebar button.titlebutton.restore:backdrop {
+    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-backdrop-dark.svg"), url("title-assets/titlebutton-maximize-backdrop-dark@2.svg")); }
+  headerbar button.titlebutton.restore:hover,
+  .titlebar button.titlebutton.restore:hover {
+    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-hover-dark.svg"), url("title-assets/titlebutton-maximize-hover-dark@2.svg")); }
+  headerbar button.titlebutton.restore:active,
+  .titlebar button.titlebutton.restore:active {
+    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-active-dark.svg"), url("title-assets/titlebutton-maximize-active-dark@2.svg")); }
 
 .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
 .view text:selected,

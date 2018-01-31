@@ -3535,6 +3535,14 @@ headerbar,
                                                      url('title-assets/titlebutton-#{$k}#{$m}@2.svg')); }
       }
     }
+
+    // Load png assets for Chrome window restore button
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+
+        &.restore#{$l} { background-image: -gtk-scaled(url('title-assets/titlebutton-maximize#{$m}#{$darker_asset_suffix}.svg'),
+                                                     url('title-assets/titlebutton-maximize#{$m}#{$darker_asset_suffix}@2.svg')); }
+      }
+
   }
 }
 
