@@ -1123,7 +1123,9 @@ headerbar button,
   border: none; }
   headerbar button:backdrop,
   .nemo-window .primary-toolbar button:backdrop {
-    opacity: 0.7; }
+    opacity: 0.7;
+    box-shadow: none;
+    background-image: none; }
   headerbar button:hover,
   .nemo-window .primary-toolbar button:hover {
     color: rgba(225, 219, 219, 0.8);
@@ -1247,7 +1249,9 @@ headerbar .linked:not(.vertical).path-bar > button,
   headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop,
   headerbar .linked:not(.vertical).path-bar > button:backdrop,
   .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:backdrop {
-    opacity: 0.85; }
+    opacity: 0.7;
+    box-shadow: none;
+    background-image: none; }
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button,
 headerbar .linked:not(.vertical).path-bar > button + button,
 .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button + button {
@@ -3223,19 +3227,19 @@ decoration {
   transition: box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
   border-radius: 5px 5px 0 0;
   border-width: 0;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 15px 15px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 8px 15px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
   margin: 4px; }
   decoration:backdrop {
-    box-shadow: 0 5px 5px 0 transparent, 0 15px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
+    box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
   .fullscreen decoration, .tiled decoration {
     border-radius: 0;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3); }
   .popup decoration {
     border-radius: 5px; }
   .ssd decoration {
-    margin: -3px;
+    margin: -5px;
     border-radius: 5px 5px 0 0;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
     .ssd decoration.maximized {
       border-radius: 0; }
   .csd.popup decoration {
