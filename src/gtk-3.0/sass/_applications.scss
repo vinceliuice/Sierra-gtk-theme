@@ -1076,7 +1076,7 @@ panel-toplevel.background {
 
 .panel .menu .spinner,
 .menu .spinner {
-    opacity: 1
+    opacity: 1;
 } // Fixes sound indicator buttons
 
 //
@@ -1129,6 +1129,9 @@ window.background:not(.csd) {
       }
     }
   }
+
+  > menu > separator { color: $borders_color; }
+  > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
 }
 
 // /*******************

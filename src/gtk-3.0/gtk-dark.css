@@ -720,14 +720,16 @@ modelbutton.flat, button:link, button:visited, button:link:hover, button:link:ac
 
 menuitem.button.flat,
 modelbutton.flat {
-  min-height: 24px;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  min-height: 26px;
   padding-left: 8px;
   padding-right: 8px;
   outline-offset: -3px;
   border-radius: 5px; }
   menuitem.button.flat:hover,
   modelbutton.flat:hover {
-    background-color: #444444; }
+    background-color: #444444;
+    transition-duration: 50ms; }
   menuitem.button.flat:active, menuitem.button.flat:active arrow, menuitem.button.flat:selected, menuitem.button.flat:selected arrow,
   modelbutton.flat:active,
   modelbutton.flat:active arrow,
@@ -4110,6 +4112,10 @@ window.background:not(.csd) > widget > button > button:active {
   background-image: image(rgba(119, 119, 119, 0.95));
   border: none;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); }
+window.background:not(.csd) > menu > separator {
+  color: rgba(255, 255, 255, 0.12); }
+window.background:not(.csd) > menu > menuitem > label:disabled {
+  color: rgba(222, 222, 222, 0.45); }
 
 #MozillaGtkWidget.background {
   background-color: #333333; }
