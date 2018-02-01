@@ -3527,22 +3527,24 @@ headerbar,
       &:backdrop { opacity: 1; }
     }
 
-    // Load png assets for each button
-    @each $k in ('close', 'maximize', 'minimize') {
+    // Load png assets for each button, Fix the Chrome window restore button bug
+    @each $k in ('close', 'maximize', 'minimize', 'restore') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
 
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('title-assets/titlebutton-#{$k}#{$m}.svg'),
-                                                     url('title-assets/titlebutton-#{$k}#{$m}@2.svg')); }
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}.png'),
+                                                        url('assets/titlebutton-#{$k}#{$m}@2.png')); }
       }
     }
+  }
 
-    // Load png assets for Chrome window restore button
+  .fullscreen &,
+  .maximized & {
+    button.titlebutton {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-
-        &.restore#{$l} { background-image: -gtk-scaled(url('title-assets/titlebutton-maximize#{$m}#{$darker_asset_suffix}.svg'),
-                                                     url('title-assets/titlebutton-maximize#{$m}#{$darker_asset_suffix}@2.svg')); }
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}.png'),
+                                                      url('assets/titlebutton-restore#{$m}@2.png')); }
       }
-
+    }
   }
 }
 

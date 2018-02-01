@@ -141,10 +141,6 @@ srcdir=${repodir}/src
 		${themedir}/gtk-3.0
 
 	cp -ur \
-		title-assets \
-		${themedir}/gtk-3.0
-
-	cp -ur \
 		thumbnail${color}.png \
 		${themedir}/gtk-3.0/thumbnail.png
 

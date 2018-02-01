@@ -3298,52 +3298,68 @@ headerbar button.titlebutton,
       opacity: 1; }
   headerbar button.titlebutton.close,
   .titlebar button.titlebutton.close {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-close.svg"), url("title-assets/titlebutton-close@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-close.png"), url("assets/titlebutton-close@2.png")); }
   headerbar button.titlebutton.close:backdrop,
   .titlebar button.titlebutton.close:backdrop {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-close-backdrop.svg"), url("title-assets/titlebutton-close-backdrop@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop.png"), url("assets/titlebutton-close-backdrop@2.png")); }
   headerbar button.titlebutton.close:hover,
   .titlebar button.titlebutton.close:hover {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-close-hover.svg"), url("title-assets/titlebutton-close-hover@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-close-hover.png"), url("assets/titlebutton-close-hover@2.png")); }
   headerbar button.titlebutton.close:active,
   .titlebar button.titlebutton.close:active {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-close-active.svg"), url("title-assets/titlebutton-close-active@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-close-active.png"), url("assets/titlebutton-close-active@2.png")); }
   headerbar button.titlebutton.maximize,
   .titlebar button.titlebutton.maximize {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize.svg"), url("title-assets/titlebutton-maximize@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize.png"), url("assets/titlebutton-maximize@2.png")); }
   headerbar button.titlebutton.maximize:backdrop,
   .titlebar button.titlebutton.maximize:backdrop {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-backdrop.svg"), url("title-assets/titlebutton-maximize-backdrop@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop.png"), url("assets/titlebutton-maximize-backdrop@2.png")); }
   headerbar button.titlebutton.maximize:hover,
   .titlebar button.titlebutton.maximize:hover {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-hover.svg"), url("title-assets/titlebutton-maximize-hover@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover.png"), url("assets/titlebutton-maximize-hover@2.png")); }
   headerbar button.titlebutton.maximize:active,
   .titlebar button.titlebutton.maximize:active {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-active.svg"), url("title-assets/titlebutton-maximize-active@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-maximize-active.png"), url("assets/titlebutton-maximize-active@2.png")); }
   headerbar button.titlebutton.minimize,
   .titlebar button.titlebutton.minimize {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-minimize.svg"), url("title-assets/titlebutton-minimize@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-minimize.png"), url("assets/titlebutton-minimize@2.png")); }
   headerbar button.titlebutton.minimize:backdrop,
   .titlebar button.titlebutton.minimize:backdrop {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-minimize-backdrop.svg"), url("title-assets/titlebutton-minimize-backdrop@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop.png"), url("assets/titlebutton-minimize-backdrop@2.png")); }
   headerbar button.titlebutton.minimize:hover,
   .titlebar button.titlebutton.minimize:hover {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-minimize-hover.svg"), url("title-assets/titlebutton-minimize-hover@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover.png"), url("assets/titlebutton-minimize-hover@2.png")); }
   headerbar button.titlebutton.minimize:active,
   .titlebar button.titlebutton.minimize:active {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-minimize-active.svg"), url("title-assets/titlebutton-minimize-active@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-minimize-active.png"), url("assets/titlebutton-minimize-active@2.png")); }
   headerbar button.titlebutton.restore,
   .titlebar button.titlebutton.restore {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-dark.svg"), url("title-assets/titlebutton-maximize-dark@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-restore.png"), url("assets/titlebutton-restore@2.png")); }
   headerbar button.titlebutton.restore:backdrop,
   .titlebar button.titlebutton.restore:backdrop {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-backdrop-dark.svg"), url("title-assets/titlebutton-maximize-backdrop-dark@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop.png"), url("assets/titlebutton-restore-backdrop@2.png")); }
   headerbar button.titlebutton.restore:hover,
   .titlebar button.titlebutton.restore:hover {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-hover-dark.svg"), url("title-assets/titlebutton-maximize-hover-dark@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-restore-hover.png"), url("assets/titlebutton-restore-hover@2.png")); }
   headerbar button.titlebutton.restore:active,
   .titlebar button.titlebutton.restore:active {
-    background-image: -gtk-scaled(url("title-assets/titlebutton-maximize-active-dark.svg"), url("title-assets/titlebutton-maximize-active-dark@2.svg")); }
+    background-image: -gtk-scaled(url("assets/titlebutton-restore-active.png"), url("assets/titlebutton-restore-active@2.png")); }
+.fullscreen headerbar button.titlebutton.maximize, .maximized headerbar button.titlebutton.maximize, .fullscreen
+.titlebar button.titlebutton.maximize, .maximized
+.titlebar button.titlebutton.maximize {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore.png"), url("assets/titlebutton-restore@2.png")); }
+.fullscreen headerbar button.titlebutton.maximize:backdrop, .maximized headerbar button.titlebutton.maximize:backdrop, .fullscreen
+.titlebar button.titlebutton.maximize:backdrop, .maximized
+.titlebar button.titlebutton.maximize:backdrop {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop.png"), url("assets/titlebutton-restore-backdrop@2.png")); }
+.fullscreen headerbar button.titlebutton.maximize:hover, .maximized headerbar button.titlebutton.maximize:hover, .fullscreen
+.titlebar button.titlebutton.maximize:hover, .maximized
+.titlebar button.titlebutton.maximize:hover {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover.png"), url("assets/titlebutton-restore-hover@2.png")); }
+.fullscreen headerbar button.titlebutton.maximize:active, .maximized headerbar button.titlebutton.maximize:active, .fullscreen
+.titlebar button.titlebutton.maximize:active, .maximized
+.titlebar button.titlebutton.maximize:active {
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-active.png"), url("assets/titlebutton-restore-active@2.png")); }
 
 .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
 .view text:selected,
@@ -3353,7 +3369,8 @@ textview text:selected,
 iconview text:selected:focus,
 textview text:selected:focus, .view text selection:focus, iconview text selection:focus, .view text selection, iconview text selection,
 textview text selection:focus,
-textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected {
+textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
+#MozillaGtkWidget.background > widget > scrolledwindow > textview text selection {
   background-color: #0062FF; }
   row:selected label, label:selected, .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
   .view text:selected,
@@ -3363,7 +3380,8 @@ textview text selection, flowbox flowboxchild:selected, entry selection:focus, e
   iconview text:selected:focus,
   textview text:selected:focus, .view text selection:focus, iconview text selection:focus, .view text selection, iconview text selection,
   textview text selection:focus,
-  textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected {
+  textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
+  #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection {
     color: #ffffff; }
     row:selected label:disabled, label:disabled:selected, .view:disabled:selected, iconview:disabled:selected, iconview:disabled:selected:focus,
     .view text:disabled:selected,
@@ -3371,7 +3389,8 @@ textview text selection, flowbox flowboxchild:selected, entry selection:focus, e
     textview text:disabled:selected,
     iconview text:disabled:selected:focus,
     textview text:disabled:selected:focus, iconview text selection:disabled:focus, .view text selection:disabled, iconview text selection:disabled,
-    textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected {
+    textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
+    #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled {
       color: #80b1ff; }
 
 /*********
@@ -4091,6 +4110,47 @@ window.background:not(.csd) > widget > button > button:active {
   background-image: image(rgba(119, 119, 119, 0.95));
   border: none;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12); }
+
+#MozillaGtkWidget.background {
+  background-color: #333333; }
+  #MozillaGtkWidget.background .background,
+  #MozillaGtkWidget.background frame,
+  #MozillaGtkWidget.background separator,
+  #MozillaGtkWidget.background scrolledwindow {
+    background-color: #333333; }
+  #MozillaGtkWidget.background scrollbar {
+    background-color: #666666; }
+    #MozillaGtkWidget.background scrollbar slider {
+      background-color: gray; }
+      #MozillaGtkWidget.background scrollbar slider:hover {
+        background-color: #9a9a9a; }
+      #MozillaGtkWidget.background scrollbar slider:hover:active {
+        background-color: #b3b3b3; }
+      #MozillaGtkWidget.background scrollbar slider:disabled {
+        background-color: transparent; }
+  #MozillaGtkWidget.background *:not(menuitem):hover, #MozillaGtkWidget.background *:not(menuitem):hover button,
+  #MozillaGtkWidget.background *:focus,
+  #MozillaGtkWidget.background *:focus button,
+  #MozillaGtkWidget.background *:active,
+  #MozillaGtkWidget.background *:active button,
+  #MozillaGtkWidget.background *:checked,
+  #MozillaGtkWidget.background *:checked button {
+    color: #dedede; }
+  #MozillaGtkWidget.background > window.background > menu {
+    background-color: #242424; }
+    #MozillaGtkWidget.background > window.background > menu > separator {
+      padding: 0;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.12); }
+  #MozillaGtkWidget.background > widget border {
+    border-color: rgba(255, 255, 255, 0.12); }
+  #MozillaGtkWidget.background > widget separator {
+    background-color: rgba(255, 255, 255, 0.12); }
+  #MozillaGtkWidget.background > widget > scrolledwindow > textview {
+    background-color: #666666; }
+    #MozillaGtkWidget.background > widget > scrolledwindow > textview text {
+      background-color: transparent;
+      color: #fdfdfd; }
 
 /****************
  * Libre-Office *
