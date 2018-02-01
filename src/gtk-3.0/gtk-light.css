@@ -77,8 +77,6 @@ popover.background label.separator {
 label selection {
   color: #ffffff;
   background-color: #0e6bff; }
-label:disabled {
-  color: rgba(36, 36, 36, 0.55); }
 
 .dim-label, label.separator, popover label.separator,
 popover.background label.separator, headerbar .subtitle,
@@ -1337,10 +1335,11 @@ headerbar button.suggested-action, .nemo-window .primary-toolbar button.suggeste
     background-image: none;
     box-shadow: none; }
   headerbar button.suggested-action.flat:disabled, .nemo-window .primary-toolbar button.suggested-action.flat:disabled, headerbar button.suggested-action.sidebar-button:disabled, .nemo-window .primary-toolbar button.suggested-action.sidebar-button:disabled, headerbar button.suggested-action:disabled, .nemo-window .primary-toolbar button.suggested-action:disabled {
-    background-color: white;
+    border-color: rgba(0, 0, 0, 0.11);
+    background-color: rgba(255, 255, 255, 0.55);
     box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01); }
     headerbar button.suggested-action.flat:disabled label, .nemo-window .primary-toolbar button.suggested-action.flat:disabled label, headerbar button.suggested-action.sidebar-button:disabled label, .nemo-window .primary-toolbar button.suggested-action.sidebar-button:disabled label, headerbar button.suggested-action.flat:disabled, .nemo-window .primary-toolbar button.suggested-action.flat:disabled, headerbar button.suggested-action.sidebar-button:disabled, .nemo-window .primary-toolbar button.suggested-action.sidebar-button:disabled, headerbar button.suggested-action:disabled label, .nemo-window .primary-toolbar button.suggested-action:disabled label, headerbar button.suggested-action:disabled, .nemo-window .primary-toolbar button.suggested-action:disabled {
-      color: rgba(40, 32, 32, 0.35); }
+      color: rgba(36, 36, 36, 0.55); }
 headerbar button.suggested-action:backdrop, .nemo-window .primary-toolbar button.suggested-action:backdrop,
 headerbar button.suggested-action:backdrop,
 .nemo-window .primary-toolbar button.suggested-action:backdrop {
@@ -1371,10 +1370,11 @@ headerbar button.destructive-action, .nemo-window .primary-toolbar button.destru
     background-image: none;
     box-shadow: none; }
   headerbar button.destructive-action.flat:disabled, .nemo-window .primary-toolbar button.destructive-action.flat:disabled, headerbar button.destructive-action.sidebar-button:disabled, .nemo-window .primary-toolbar button.destructive-action.sidebar-button:disabled, headerbar button.destructive-action:disabled, .nemo-window .primary-toolbar button.destructive-action:disabled {
-    background-color: white;
+    border-color: rgba(0, 0, 0, 0.11);
+    background-color: rgba(255, 255, 255, 0.55);
     box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01); }
     headerbar button.destructive-action.flat:disabled label, .nemo-window .primary-toolbar button.destructive-action.flat:disabled label, headerbar button.destructive-action.sidebar-button:disabled label, .nemo-window .primary-toolbar button.destructive-action.sidebar-button:disabled label, headerbar button.destructive-action.flat:disabled, .nemo-window .primary-toolbar button.destructive-action.flat:disabled, headerbar button.destructive-action.sidebar-button:disabled, .nemo-window .primary-toolbar button.destructive-action.sidebar-button:disabled, headerbar button.destructive-action:disabled label, .nemo-window .primary-toolbar button.destructive-action:disabled label, headerbar button.destructive-action:disabled, .nemo-window .primary-toolbar button.destructive-action:disabled {
-      color: rgba(40, 32, 32, 0.35); }
+      color: rgba(36, 36, 36, 0.55); }
 headerbar button.destructive-action:backdrop, .nemo-window .primary-toolbar button.destructive-action:backdrop,
 headerbar button.destructive-action:backdrop,
 .nemo-window .primary-toolbar button.destructive-action:backdrop {
@@ -1625,9 +1625,6 @@ menubar,
     .menubar > menuitem:disabled {
       color: rgba(40, 32, 32, 0.2);
       border-color: transparent; }
-    menubar > menuitem label:disabled,
-    .menubar > menuitem label:disabled {
-      color: rgba(40, 32, 32, 0.2); }
 
 menu,
 .menu {
@@ -2231,6 +2228,10 @@ infobar radio:checked:disabled {
 checkbutton.text-button, radiobutton.text-button {
   padding: 2px 0;
   outline-offset: 0; }
+  checkbutton.text-button:hover, radiobutton.text-button:hover {
+    color: black; }
+  checkbutton.text-button:disabled, radiobutton.text-button:disabled {
+    color: rgba(36, 36, 36, 0.55); }
 checkbutton label:not(:only-child):first-child, radiobutton label:not(:only-child):first-child {
   margin-left: 4px; }
 checkbutton label:not(:only-child):last-child, radiobutton label:not(:only-child):last-child {
