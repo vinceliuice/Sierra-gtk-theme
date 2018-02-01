@@ -127,7 +127,7 @@ entry {
   padding: 2px 8px;
   caret-color: currentColor;
   border-radius: 5px;
-  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   color: #dedede;
   border-color: rgba(255, 255, 255, 0.12);
   background-color: #242424; }
@@ -315,7 +315,7 @@ button {
     background-image: linear-gradient(180deg, #4c97fe 0%, #0564e3 100%);
     box-shadow: none;
     background-clip: padding-box;
-    transition-duration: 50ms; }
+    transition-duration: 200ms; }
     button:active:not(:disabled) label:disabled, button:checked:not(:disabled) label:disabled {
       color: inherit;
       opacity: 0.6; }
@@ -720,7 +720,6 @@ modelbutton.flat, button:link, button:visited, button:link:hover, button:link:ac
 
 menuitem.button.flat,
 modelbutton.flat {
-  transition: none;
   min-height: 24px;
   padding-left: 8px;
   padding-right: 8px;
@@ -2790,7 +2789,7 @@ list {
     padding: 2px; }
 
 row:not(:hover) {
-  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 row.activatable.has-open-popup, row.activatable:hover {
   background-color: rgba(255, 255, 255, 0.03); }
 row.activatable:active {

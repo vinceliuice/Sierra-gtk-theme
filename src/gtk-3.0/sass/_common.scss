@@ -2,8 +2,6 @@
   @return unquote("alpha(#{$c},#{$a})");
 }
 
-$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-$backdrop_transition: 200ms ease-out;
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
 $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
 $bt_radius: 5px;
@@ -196,7 +194,7 @@ entry {
 
   caret-color: currentColor;
   border-radius: $bt_radius;
-  transition: all 200ms $ease-out-quad;
+  transition: $transition_2;
 
   &.search { border-radius: 100px; }
 
@@ -367,7 +365,6 @@ $_dot_color: $selected_bg_color;
   }
 }
 
-  $button_transition: all 200ms $ease-out-quad;
 button {
   min-height: 24px;
   min-width: 16px;
@@ -409,7 +406,7 @@ button {
     @include button(active);
 
     background-clip: if($variant=='light', border-box, padding-box);
-    transition-duration: 50ms;
+    transition-duration: 200ms;
 
     &:not(:disabled) label:disabled { color: inherit; opacity: 0.6; }
   }
@@ -788,7 +785,7 @@ toolbar.inline-toolbar toolbutton {
 // menu buttons
 menuitem.button.flat,
 modelbutton.flat {
-  transition: none;
+//  transition: none;
   min-height: 24px;
   padding-left: 8px;
   padding-right: 8px;
@@ -2792,7 +2789,7 @@ list {
 }
 
 row {
-  &:not(:hover) { transition: all 150ms $ease-out-quad; }
+  &:not(:hover) { transition: all 200ms $ease-out-quad; }
 
   &:selected {
     @extend %selected_items;

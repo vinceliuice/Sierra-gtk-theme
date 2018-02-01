@@ -127,7 +127,7 @@ entry {
   padding: 2px 8px;
   caret-color: currentColor;
   border-radius: 5px;
-  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   color: #363636;
   border-color: rgba(0, 0, 0, 0.11);
   background-color: #ffffff;
@@ -153,7 +153,7 @@ entry {
     color: #363636;
     border-color: #74aaff;
     background-color: #ffffff;
-    box-shadow: inset 0 0 0 2px #74aaff; }
+    box-shadow: 0px 1px 1px 0px transparent, 0px 1px 2px 0px transparent, inset 0 0 0 2px #74aaff; }
   entry:disabled {
     color: rgba(36, 36, 36, 0.55);
     border-color: rgba(0, 0, 0, 0.11);
@@ -317,7 +317,7 @@ button {
     background-image: linear-gradient(180deg, #4c97fe 0%, #0564e3 100%);
     box-shadow: none;
     background-clip: border-box;
-    transition-duration: 50ms; }
+    transition-duration: 200ms; }
     button:active:not(:disabled) label:disabled, button:checked:not(:disabled) label:disabled {
       color: inherit;
       opacity: 0.6; }
@@ -723,7 +723,6 @@ modelbutton.flat, button:link, button:visited, button:link:hover, button:link:ac
 
 menuitem.button.flat,
 modelbutton.flat {
-  transition: none;
   min-height: 24px;
   padding-left: 8px;
   padding-right: 8px;
@@ -1076,9 +1075,9 @@ headerbar entry, .nemo-window .primary-toolbar entry {
   headerbar entry:backdrop, .nemo-window .primary-toolbar entry:backdrop {
     opacity: 0.85; }
   headerbar entry:focus, .nemo-window .primary-toolbar entry:focus {
+    box-shadow: 0 0 0 2px #74aaff;
     border-color: #74aaff;
     background-image: none;
-    box-shadow: 0 0 0 2px #74aaff;
     background-clip: border-box; }
     headerbar entry:focus image, .nemo-window .primary-toolbar entry:focus image {
       color: #0e6bff; }
@@ -1419,9 +1418,9 @@ headerbar combobox > .linked > button.combo, .nemo-window .primary-toolbar combo
   headerbar combobox > .linked > button.combo image, .nemo-window .primary-toolbar combobox > .linked > button.combo image, headerbar combobox > .linked > button.combo image:hover, .nemo-window .primary-toolbar combobox > .linked > button.combo image:hover {
     color: inherit; }
   headerbar combobox > .linked > button.combo:hover, .nemo-window .primary-toolbar combobox > .linked > button.combo:hover {
+    box-shadow: 0 0 0 2px #74aaff;
     border-color: #74aaff;
     background-image: none;
-    box-shadow: 0 0 0 2px #74aaff;
     box-shadow: none; }
   headerbar combobox > .linked > button.combo:disabled, .nemo-window .primary-toolbar combobox > .linked > button.combo:disabled {
     color: rgba(40, 32, 32, 0.35);
@@ -2788,7 +2787,7 @@ list {
     padding: 2px; }
 
 row:not(:hover) {
-  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 row.activatable.has-open-popup, row.activatable:hover {
   background-color: rgba(0, 0, 0, 0.05); }
 row.activatable:active {
@@ -3505,7 +3504,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   color: #363636;
   border-color: #74aaff;
   background-color: #ffffff;
-  box-shadow: inset 0 0 0 2px #74aaff; }
+  box-shadow: 0px 1px 1px 0px transparent, 0px 1px 2px 0px transparent, inset 0 0 0 2px #74aaff; }
 .nemo-window .primary-toolbar {
   border: none;
   color: rgba(40, 32, 32, 0.8);
@@ -4013,9 +4012,9 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
   .marlin-pathbar.pathbar image, .marlin-pathbar.pathbar image:hover {
     color: inherit; }
   .marlin-pathbar.pathbar:focus {
+    box-shadow: 0 0 0 2px #74aaff;
     border-color: #74aaff;
-    background-image: none;
-    box-shadow: 0 0 0 2px #74aaff; }
+    background-image: none; }
   .marlin-pathbar.pathbar:disabled {
     color: rgba(40, 32, 32, 0.35);
     background-color: rgba(255, 255, 255, 0.75); }
