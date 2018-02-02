@@ -939,9 +939,11 @@ panel-toplevel.background {
 
     button {
         border: none;
-        border-radius: 0;
+        border-radius: 100px;
         min-height: 0;
-
+        min-width: 0;
+        padding: 0;
+        margin: 0;
         @extend %selected-button;
     }
 }

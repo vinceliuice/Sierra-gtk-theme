@@ -555,7 +555,7 @@ $slider_color: if($variant == 'light', white, white);
 /* Popovers/Menus */
 
 .popup-menu {
-  min-width: 100px;
+  min-width: 160px;
   background-color: transparent;
 
   .popup-menu-arrow { } //defined globally in the TOP BAR
@@ -565,14 +565,14 @@ $slider_color: if($variant == 'light', white, white);
     border-radius: 0 0 3px 3px;
   }
 
-  .popup-menu-content { padding: 4px 0; margin: 0 2px; }
+  .popup-menu-content { padding: 6px 0; margin: 0 2px; }
   .popup-menu-item {
-    spacing: 6px;
+    spacing: 8px;
     transition-duration: $shorter_duration;
     border-radius: 3px;
 
-    &:ltr { padding: 0.4em 20px 0.4em 0; }
-    &:rtl { padding: 0.4em 0 0.4em 20px; }
+    &:ltr { padding: 0.4em 24px 0.4em 0; }
+    &:rtl { padding: 0.4em 0 0.4em 24px; }
     &:checked {
       background-color: $primary_color;
       color: $inverse_fg_color;
@@ -610,7 +610,7 @@ $slider_color: if($variant == 'light', white, white);
   }
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
-    -boxpointer-gap: 0;
+    -boxpointer-gap: 4px;
     margin-bottom: 1.75em;
   }
 }
@@ -630,7 +630,7 @@ $slider_color: if($variant == 'light', white, white);
     -arrow-base: 0;
     -arrow-rise: 0;
     -arrow-box-shadow: none; //dreaming. bug #689995
-    margin: 4px;
+    margin: 6px;
     background-color: rgba($base_color, 0.9);
     border-radius: $bt_radius - 3px;
     box-shadow: $shadow_2;
@@ -1290,11 +1290,15 @@ $slider_color: if($variant == 'light', white, white);
   .aggregate-menu {
     min-width: 280px;
     .popup-menu-icon { padding: 0 4px; }
-    .popup-sub-menu .popup-menu-item :first-child {
+    .popup-sub-menu .popup-menu-item {
       &:ltr { /* 8px spacing + 2*4px padding */
-              padding-left: 16px; margin-left: em(16px); }
+          padding-left: 32px;
+          padding-right: 56px;
+        }
       &:rtl { /* 8px spacing + 2*4px padding */
-              padding-right: 16px; margin-right: em(16px); }
+          padding-left: 56px;
+          padding-right: 32px;
+        }
     }
   }
 

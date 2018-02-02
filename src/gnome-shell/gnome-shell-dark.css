@@ -524,23 +524,23 @@ StScrollBar {
 
 /* Popovers/Menus */
 .popup-menu {
-  min-width: 100px;
+  min-width: 160px;
   background-color: transparent; }
   .popup-menu .popup-sub-menu {
     background-color: rgba(100, 100, 100, 0.45);
     box-shadow: 0 0 transparent;
     border-radius: 0 0 3px 3px; }
   .popup-menu .popup-menu-content {
-    padding: 4px 0;
+    padding: 6px 0;
     margin: 0 2px; }
   .popup-menu .popup-menu-item {
-    spacing: 6px;
+    spacing: 8px;
     transition-duration: 100ms;
     border-radius: 3px; }
     .popup-menu .popup-menu-item:ltr {
-      padding: 0.4em 20px 0.4em 0; }
+      padding: 0.4em 24px 0.4em 0; }
     .popup-menu .popup-menu-item:rtl {
-      padding: 0.4em 0 0.4em 20px; }
+      padding: 0.4em 0 0.4em 24px; }
     .popup-menu .popup-menu-item:checked {
       background-color: #0062FF;
       color: rgba(255, 255, 255, 0.85);
@@ -572,7 +572,7 @@ StScrollBar {
     .popup-menu .popup-inactive-menu-item:insensitive {
       color: rgba(255, 255, 255, 0.5); }
   .popup-menu.panel-menu {
-    -boxpointer-gap: 0;
+    -boxpointer-gap: 4px;
     margin-bottom: 1.75em; }
 
 .popup-menu-ornament {
@@ -589,7 +589,7 @@ StScrollBar {
   -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
-  margin: 4px;
+  margin: 6px;
   background-color: rgba(36, 36, 36, 0.9);
   border-radius: 5px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345); }
@@ -1159,14 +1159,14 @@ StScrollBar {
   min-width: 280px; }
   .aggregate-menu .popup-menu-icon {
     padding: 0 4px; }
-  .aggregate-menu .popup-sub-menu .popup-menu-item :first-child:ltr {
+  .aggregate-menu .popup-sub-menu .popup-menu-item:ltr {
     /* 8px spacing + 2*4px padding */
-    padding-left: 16px;
-    margin-left: 1.23077em; }
-  .aggregate-menu .popup-sub-menu .popup-menu-item :first-child:rtl {
+    padding-left: 32px;
+    padding-right: 56px; }
+  .aggregate-menu .popup-sub-menu .popup-menu-item:rtl {
     /* 8px spacing + 2*4px padding */
-    padding-right: 16px;
-    margin-right: 1.23077em; }
+    padding-left: 56px;
+    padding-right: 32px; }
 
 .system-menu-action {
   color: rgba(255, 255, 255, 0.7);
