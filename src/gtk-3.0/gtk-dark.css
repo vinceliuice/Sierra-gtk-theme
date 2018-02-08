@@ -1114,7 +1114,7 @@ headerbar entry, .nemo-window .primary-toolbar entry {
       color: #FC4138; }
 headerbar button,
 .nemo-window .primary-toolbar button {
-  min-width: 28px;
+  min-width: 22px;
   color: rgba(225, 219, 219, 0.8);
   outline-offset: -3px;
   background-color: rgba(119, 119, 119, 0.55);
@@ -4009,7 +4009,23 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
     min-height: 0;
     min-width: 0;
     padding: 0;
-    margin: 0; }
+    margin-right: 6px;
+    -gtk-icon-shadow: none; }
+
+/*********
+ * Geary *
+ *********/
+.geary-titlebar-left separator {
+  opacity: 0; }
+.geary-titlebar-left > button {
+  min-width: 22px; }
+
+.geary-titlebar-right {
+  box-shadow: none; }
+  .geary-titlebar-right separator {
+    opacity: 0; }
+  .geary-titlebar-right > button {
+    min-width: 22px; }
 
 .marlin-pathbar.pathbar {
   border-radius: 3px;
@@ -4164,6 +4180,39 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
     #MozillaGtkWidget.background > widget > scrolledwindow > textview text {
       background-color: transparent;
       color: #fdfdfd; }
+
+/***************
+ * Chrome(ium) *
+ ***************/
+window.background.chromium headerbar.titlebar button.toggle {
+  border: none;
+  background-color: transparent;
+  background-image: none; }
+  window.background.chromium headerbar.titlebar button.toggle:hover {
+    color: #c5c5c5;
+    background-color: rgba(255, 255, 255, 0.15); }
+  window.background.chromium headerbar.titlebar button.toggle:checked, window.background.chromium headerbar.titlebar button.toggle:active {
+    border-color: transparent;
+    background-image: none;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.25);
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
+window.background.chromium headerbar.titlebar button.titlebutton {
+  min-width: 22px;
+  min-height: 22px;
+  margin: 0;
+  padding: 0;
+  color: transparent; }
+window.background.chromium button {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.12); }
+window.background.chromium entry.chromium, window.background.chromium entry.chromium:focus {
+  border-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.12); }
+window.background.chromium > textview.view {
+  background-color: #242424; }
 
 /****************
  * Libre-Office *

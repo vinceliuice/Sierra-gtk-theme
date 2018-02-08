@@ -943,9 +943,33 @@ panel-toplevel.background {
         min-height: 0;
         min-width: 0;
         padding: 0;
-        margin: 0;
+        margin-right: 6px;
+        -gtk-icon-shadow: none;
         @extend %selected-button;
     }
+}
+
+ /*********
+  * Geary *
+  *********/
+
+.geary-titlebar-left {
+  // remove unexpected "hardcoded" vertical separator
+  separator { opacity: 0; }
+
+  > button { // button
+    min-width: 22px;
+  }
+}
+
+.geary-titlebar-right {
+  // stop double-shadows on right paned header-bar
+  separator { opacity: 0; }
+  box-shadow: none;
+
+  > button { // button
+    min-width: 22px;
+  }
 }
 
 // Elementary Apps
@@ -1201,6 +1225,55 @@ window.background:not(.csd) {
       }
     }
   }
+}
+
+ /***************
+  * Chrome(ium) *
+  ***************/
+
+window.background.chromium {
+  // checked-tab & toolbar & button widgets
+//  background-color: $bg_color;
+//  color: $text_color;
+
+  headerbar.titlebar {
+    button.toggle { // account-button (> 64.0.3282?)
+      border: none;
+      background-color: transparent;
+      background-image: none;
+
+      &:hover { @include button(flat-hover); }
+      &:checked, &:active { @include button(flat-active); }
+    }
+
+    // from nav_button_provider_gtk3.cc (> 62.0.3202?)
+    button.titlebutton { // title-buttons
+      // define global titlebutton class sizing
+      min-width: 22px; // > 16px causes image blurring
+      min-height: 22px;
+      margin: 0; // unset margins
+      padding: 0;
+      color: transparent; // hide stock icons
+    }
+  }
+
+  // FIXME: not for actual button widgets but for toolbar's separators
+  // crazy: src/+/master/chrome/browser/ui/libgtkui/gtk_ui.cc#891
+  button { // for active-tab borders
+    border-width: 1px;
+    border-style: solid;
+    border-color: $borders_color;
+  }
+
+  entry.chromium {
+    &, &:focus { // overrides standard borders
+      border-image: none;
+      border: 1px solid $borders_color;
+    }
+  }
+
+  // internal region of toolbar's entry widget
+  > textview.view { background-color: $base_color; }
 }
 
 /****************
