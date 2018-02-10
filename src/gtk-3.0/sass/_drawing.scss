@@ -274,9 +274,10 @@ $animation_1: needs_attention 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
   // hovered header-bar button
   //
-    color: $header_fg;
+    color: darken($header_fg, 2%);
     background-color: $header_button_hover_bg;
-    box-shadow: $shadow_3;
+    background-image: if($variant=='light', linear-gradient( 0deg, #f8f8f8 0%, #ffffff 100%), none);
+    box-shadow: none;
   }
 
   @else if $t==header-active {

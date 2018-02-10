@@ -366,7 +366,7 @@ $_dot_color: $selected_bg_color;
 }
 
 button {
-  min-height: 24px;
+  min-height: if($variant =='light', 24px, 26px);
   min-width: 16px;
   transition: $button_transition;
   border: 1px solid;
@@ -1237,7 +1237,7 @@ headerbar {
 
   // Headerbar Entries
   entry {
-    min-height: 24px;
+    min-height: if($variant =='light', 24px, 26px);
     @include entry(header-normal);
 
     &:backdrop { opacity: 0.85; }
@@ -1684,7 +1684,7 @@ treeview.view {
     button {
       $_column_header_color: mix($fg_color,$base_color,80%);
 
-      min-height: 24px;
+      min-height: if($variant =='light', 24px, 26px);
       min-width: 38px;
       padding: 0 6px;
       font-weight: bold;

@@ -268,7 +268,7 @@ treeview entry.flat, treeview entry {
   to {
     background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#0062FF), to(transparent)); } }
 button {
-  min-height: 24px;
+  min-height: 26px;
   min-width: 16px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid;
@@ -1065,7 +1065,7 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     opacity: 0.6; }
 
 headerbar entry, .nemo-window .primary-toolbar entry {
-  min-height: 24px;
+  min-height: 26px;
   border: none;
   color: rgba(225, 219, 219, 0.8);
   background-color: rgba(119, 119, 119, 0.55);
@@ -1128,9 +1128,10 @@ headerbar button,
     background-image: none; }
   headerbar button:hover,
   .nemo-window .primary-toolbar button:hover {
-    color: rgba(225, 219, 219, 0.8);
+    color: rgba(221, 213, 213, 0.8);
     background-color: rgba(119, 119, 119, 0.85);
-    box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+    background-image: none;
+    box-shadow: none;
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   headerbar button:checked,
   .nemo-window .primary-toolbar button:checked {
@@ -1215,9 +1216,10 @@ headerbar .linked:not(.vertical).path-bar > button,
   headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
   headerbar .linked:not(.vertical).path-bar > button:hover,
   .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:hover {
-    color: rgba(225, 219, 219, 0.8);
+    color: rgba(221, 213, 213, 0.8);
     background-color: rgba(119, 119, 119, 0.85);
-    box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01); }
+    background-image: none;
+    box-shadow: none; }
   headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active,
   headerbar .linked:not(.vertical).path-bar > button:active,
   .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:active {
@@ -1388,9 +1390,10 @@ headerbar spinbutton:not(.vertical):focus, .nemo-window .primary-toolbar spinbut
   color: rgba(225, 219, 219, 0.8);
   caret-color: rgba(225, 219, 219, 0.8); }
 headerbar spinbutton:not(.vertical) button, .nemo-window .primary-toolbar spinbutton:not(.vertical) button, headerbar spinbutton:not(.vertical) button:disabled, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:disabled {
-  color: rgba(225, 219, 219, 0.8);
+  color: rgba(221, 213, 213, 0.8);
   background-color: rgba(119, 119, 119, 0.85);
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01); }
+  background-image: none;
+  box-shadow: none; }
 headerbar spinbutton:not(.vertical) button:hover, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:hover {
   background-color: rgba(157, 157, 157, 0.55); }
 headerbar spinbutton:not(.vertical) button:active, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:active, headerbar spinbutton:not(.vertical) button:checked, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:checked {
@@ -1566,7 +1569,7 @@ treeview.view {
       border-radius: 5px;
       border-width: 0; }
   treeview.view header button {
-    min-height: 24px;
+    min-height: 26px;
     min-width: 38px;
     padding: 0 6px;
     font-weight: bold;
@@ -3270,9 +3273,10 @@ headerbar button.titlebutton,
   background-color: rgba(55, 55, 55, 0); }
   headerbar button.titlebutton:hover,
   .titlebar button.titlebutton:hover {
-    color: rgba(225, 219, 219, 0.8);
+    color: rgba(221, 213, 213, 0.8);
     background-color: rgba(119, 119, 119, 0.85);
-    box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01); }
+    background-image: none;
+    box-shadow: none; }
   headerbar button.titlebutton:active, headerbar button.titlebutton:checked,
   .titlebar button.titlebutton:active,
   .titlebar button.titlebutton:checked {
@@ -3474,9 +3478,10 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 @keyframes needs_attention_keyframes {
   0% {
-    color: rgba(225, 219, 219, 0.8);
+    color: rgba(221, 213, 213, 0.8);
     background-color: rgba(119, 119, 119, 0.85);
-    box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01); }
+    background-image: none;
+    box-shadow: none; }
   100% {
     color: #ffffff;
     background-color: rgba(119, 119, 119, 0.95);
@@ -4176,10 +4181,10 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
   #MozillaGtkWidget.background > widget separator {
     background-color: rgba(255, 255, 255, 0.12); }
   #MozillaGtkWidget.background > widget > scrolledwindow > textview {
-    background-color: #666666; }
+    background-color: #404040; }
     #MozillaGtkWidget.background > widget > scrolledwindow > textview text {
       background-color: transparent;
-      color: #fdfdfd; }
+      color: #aaaaaa; }
 
 /***************
  * Chrome(ium) *

@@ -1214,11 +1214,11 @@ window.background:not(.csd) {
     // FIXME: this affected to popover widget as well,
     // so we can not set $lighter_bg_color to search-bar...
     > scrolledwindow > textview {
-      background-color: if($variant == 'light', $base_color, lighten($bg_color, 20%));
+      background-color: if($variant == 'light', $base_color, lighten($bg_color, 5%));
 
       text {
         background-color: transparent;
-        color: if($variant =='light', #242424, #fdfdfd);
+        color: if($variant =='light', #242424, #aaaaaa);
         &:selected,
         &:selected:focus,
         selection { @extend %selected_items; }
