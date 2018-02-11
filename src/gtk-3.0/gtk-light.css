@@ -24,7 +24,6 @@
   background-color: rgba(245, 245, 245, 0.999); }
 
 .popup.background {
-  border-radius: 8px;
   background-color: transparent; }
 
 .csd.background {
@@ -866,7 +865,8 @@ combobox arrow {
 toolbar, .inline-toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
-  background-color: #f5f5f5; }
+  background-color: #f5f5f5;
+  border-radius: 8px; }
   toolbar separator, .inline-toolbar separator {
     background: none; }
   toolbar.horizontal separator, .horizontal.inline-toolbar separator {
@@ -1649,16 +1649,16 @@ popover.background.touch-selection,
 .csd popover.background.touch-selection,
 .menu {
   margin: 0;
-  padding: 6px 0;
+  padding: 10px 0;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.95);
-  border: 1px solid #e6e6e6; }
+  border: 1px solid rgba(0, 0, 0, 0.11); }
   .csd menu, .csd
   .context-menu, .csd popover.touch-selection, .csd popover.background.touch-selection, .csd
   .menu {
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.95);
-    border: 1px solid #e6e6e6; }
+    border: 1px solid rgba(0, 0, 0, 0.11); }
   menu separator, .csd menu separator,
   .context-menu separator,
   popover.touch-selection separator,
@@ -1671,7 +1671,7 @@ popover.background.touch-selection,
     margin: 4px 0;
     min-height: 2px;
     border: none;
-    background-color: #e6e6e6; }
+    background-color: rgba(0, 0, 0, 0.05); }
   menu .separator:not(label), .csd menu .separator:not(label),
   .context-menu .separator:not(label),
   popover.touch-selection .separator:not(label),
@@ -2856,10 +2856,15 @@ separator {
 
 list {
   background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.11); }
+  border-color: rgba(0, 0, 0, 0.11);
+  border-radius: 8px; }
   list row {
     padding: 2px; }
+    list row:not(:hover):not(:selected) {
+      border-radius: 8px; }
 
+row:not(:hover):not(:selected) {
+  border-radius: 8px; }
 row:not(:hover) {
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 row.activatable.has-open-popup, row.activatable:hover {
@@ -2948,8 +2953,8 @@ messagedialog .dialog-action-area button {
   padding: 8px;
   min-height: 0; }
 messagedialog.csd.background {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   border: none; }
 messagedialog.csd .dialog-action-area button {
   border-bottom-style: none;
@@ -2971,13 +2976,13 @@ messagedialog.csd .dialog-action-area button {
   border-radius: 0;
   border-right-style: none; }
 messagedialog.csd .dialog-action-area button:last-child {
-  border-radius: 0 0 5px 0;
+  border-radius: 0 0 8px 0;
   border-right-style: none; }
 messagedialog.csd .dialog-action-area button:first-child {
-  border-radius: 0 0 0 5px;
+  border-radius: 0 0 0 8px;
   border-left-style: none; }
 messagedialog.csd .dialog-action-area button:only-child {
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 8px 8px;
   border-left-style: none;
   border-right-style: none; }
 
@@ -3518,10 +3523,16 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   .nautilus-list-dim-label:selected:focus {
     color: #cfe1ff; }
 
-.nautilus-window searchbar {
-  border-top: 1px solid rgba(0, 0, 0, 0.11); }
-.nautilus-window .searchbar-container {
-  margin-top: -1px; }
+.nautilus-window {
+  border-radius: 0 0 8px 8px; }
+  .nautilus-window searchbar {
+    border-top: 1px solid rgba(0, 0, 0, 0.11); }
+  .nautilus-window .searchbar-container {
+    margin-top: -1px; }
+
+.nautilus-window notebook,
+.nautilus-window notebook > stack {
+  border-radius: 0 0 8px 0; }
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child) searchbar {
@@ -3663,8 +3674,9 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   color: #242424; }
 
 .gedit-side-panel-paned statusbar {
-  border-top: 1px solid rgba(0, 0, 0, 0.11);
-  background-color: #f5f5f5; }
+  border-top: none;
+  background-color: #f5f5f5;
+  border-radius: 0 0 8px 8px; }
 
 .gedit-search-slider {
   background-color: #fafafa;
@@ -4068,7 +4080,7 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
   padding: 1px;
   background-color: #0e6bff;
   color: #ffffff;
-  border-radius: 2px 2px 0 0; }
+  border-radius: 3px 0 6px 0; }
   .nautilus-window .floating-bar.bottom.left {
     border-top-left-radius: 0; }
   .nautilus-window .floating-bar.bottom.right {
@@ -4747,10 +4759,15 @@ filechooser.csd.background, filechooser placessidebar list,
 .nautilus-window.csd.background,
 .nautilus-window placessidebar list {
   background-color: transparent; }
+filechooser.csd.background, filechooser placessidebar,
+.nautilus-window.csd.background,
+.nautilus-window placessidebar {
+  background-color: rgba(246, 246, 246, 0.94);
+  border-radius: 0 0 8px 8px; }
 filechooser placessidebar.sidebar,
 .nautilus-window placessidebar.sidebar {
   border-right: 1px solid rgba(0, 0, 0, 0.11);
-  background-color: rgba(246, 246, 246, 0.94); }
+  background-color: transparent; }
   filechooser placessidebar.sidebar row.sidebar-row,
   .nautilus-window placessidebar.sidebar row.sidebar-row {
     color: #363636; }

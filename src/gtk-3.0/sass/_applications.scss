@@ -64,12 +64,18 @@ terminal-window,
 
 .nautilus-window {
     // Workaround for https://bugzilla.gnome.org/show_bug.cgi?id=724096
+    border-radius: 0 0 $wm_radius $wm_radius;
     searchbar {
         border-top: 1px solid $borders_color;
     }
     .searchbar-container {
         margin-top: -1px;
     }
+}
+
+.nautilus-window notebook,
+.nautilus-window notebook > stack {
+    border-radius: 0 0 $wm_radius 0;
 }
 
 .nautilus-window notebook,
@@ -311,8 +317,9 @@ $disk_space_free: darken($bg_color, 3%);
 }
 
 .gedit-side-panel-paned statusbar {
-    border-top: 1px solid $borders_color;
+    border-top: none;
     background-color: $bg_color;
+    border-radius: 0 0 $wm_radius $wm_radius;
 }
 
 .gedit-search-slider {
@@ -928,7 +935,7 @@ panel-toplevel.background {
     padding: 1px;
     background-color: $selected_bg_color;
     color: $selected_fg_color;
-    border-radius: 2px 2px 0 0;
+    border-radius: 3px 0 $wm_radius - 2px 0;
 
     &.bottom.left {
         border-top-left-radius: 0;

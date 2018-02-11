@@ -19,10 +19,11 @@ filechooser,
 .nautilus-window {
 
   &.csd.background, placessidebar list { background-color: transparent; }
+  &.csd.background, placessidebar { background-color: $dark_sidebar_bg; border-radius: 0 0 $wm_radius $wm_radius; }
 
   placessidebar.sidebar {
     border-right: if($variant=='light', 1px solid $borders_color, none);
-    background-color: $dark_sidebar_bg;
+    background-color: transparent;
 
     row.sidebar-row {
       color: $dark_sidebar_fg;

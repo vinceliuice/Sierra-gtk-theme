@@ -42,7 +42,6 @@ $wm_radius: 8px;
 }
 
 .popup.background {
-  border-radius: $wm_radius;
   background-color: transparent;
 }
 
@@ -975,6 +974,7 @@ toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
   background-color: $bg_color;
+  border-radius: $wm_radius;
 
   separator { background: none; }
   &.horizontal separator { margin: 0 6px; }
@@ -1743,6 +1743,10 @@ treeview.view {
 //
 // Menus
 //
+
+$_menu_bg: if($variant=='light', $base_color, $bg_color);
+$_menu_bd: if($variant=='light', rgba(black, 0.05), rgba(white, 0.08));
+
 menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
@@ -1779,18 +1783,16 @@ menubar,
 menu,
 .context-menu,
 .menu {
-  $_menu_bg: if($variant=='light', $base_color, $bg_color);
-  $_menu_bd: if($variant=='light', darken($_menu_bg, 10%), lighten($_menu_bg, 5%));
   margin: 0;
-  padding: 6px 0;
+  padding: 10px 0;
   border-radius: $wm_radius;
   background-color: rgba($_menu_bg, 0.95);
-  border: 1px solid $_menu_bd;
+  border: 1px solid $borders_color;
 
   .csd & {
       border-radius: $wm_radius;
       background-color: rgba($_menu_bg, 0.95);
-      border: 1px solid $_menu_bd;
+      border: 1px solid $borders_color;
     }
 
   separator,
@@ -2801,11 +2803,13 @@ separator {
 list {
   background-color: $base_color;
   border-color: $borders_color;
+  border-radius: $wm_radius;
 
-  row { padding: 2px; }
+  row { padding: 2px; &:not(:hover):not(:selected) { border-radius: $wm_radius; } }
 }
 
 row {
+  &:not(:hover):not(:selected) { border-radius: $wm_radius; }
   &:not(:hover) { transition: all 200ms $ease-out-quad; }
 
   &:selected {
@@ -2927,8 +2931,8 @@ messagedialog { // Message Dialog styling
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
-      border-bottom-left-radius: $bt_radius;
-      border-bottom-right-radius: $bt_radius;
+      border-bottom-left-radius: $wm_radius;
+      border-bottom-right-radius: $wm_radius;
       border: none;
     }
     .dialog-action-area button {
@@ -2960,15 +2964,15 @@ messagedialog { // Message Dialog styling
       border-right-style: none;
     }
     %last_button {
-      border-radius: 0 0 $bt_radius 0;
+      border-radius: 0 0 $wm_radius 0;
       border-right-style: none;
     }
     %first_button {
-      border-radius: 0 0 0 $bt_radius;
+      border-radius: 0 0 0 $wm_radius;
       border-left-style: none;
     }
     %single_button {
-      border-radius: 0 0 $bt_radius $bt_radius;
+      border-radius: 0 0 $wm_radius $wm_radius;
       border-left-style: none;
       border-right-style: none;
     }
