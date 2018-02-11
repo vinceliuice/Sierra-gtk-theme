@@ -5,6 +5,7 @@
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
 $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
 $bt_radius: 5px;
+$wm_radius: 8px;
 
 * {
   background-clip: padding-box;
@@ -33,10 +34,19 @@ $bt_radius: 5px;
 //
 // Base States
 //
+
 .background {
+//  border-radius: 0 0 $wm_radius $wm_radius;
   color: $fg_color;
   background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color); // without this headerbar transparency doesn't seem to work
 }
+
+.popup.background {
+  border-radius: $wm_radius;
+  background-color: transparent;
+}
+
+.csd.background { border-radius: 0 0 $wm_radius $wm_radius; }
 
 *:disabled { -gtk-icon-effect: dim; }
 
@@ -1044,7 +1054,7 @@ actionbar {
 // Headerbars
 //
 
-$_header_radius: if($darker=='false' and $variant=='light', $bt_radius + 1px, $bt_radius + 1px);
+$_header_radius: if($darker=='false' and $variant=='light', $wm_radius, $wm_radius);
 
 $_header_image: if($darker=='false' and $variant=='light',
                 linear-gradient(0deg, $header_bottom 0%,
@@ -1767,18 +1777,19 @@ menubar,
 }
 
 menu,
+.context-menu,
 .menu {
   $_menu_bg: if($variant=='light', $base_color, $bg_color);
-  $_menu_bd: if($variant=='light', rgba(black, 0.05), rgba(white, 0.05));
+  $_menu_bd: if($variant=='light', darken($_menu_bg, 10%), lighten($_menu_bg, 5%));
   margin: 0;
   padding: 6px 0;
-  border-radius: $bt_radius - 3px;
-  background-color: opacify($_menu_bg, 1);
+  border-radius: $wm_radius;
+  background-color: rgba($_menu_bg, 0.95);
   border: 1px solid $_menu_bd;
 
   .csd & {
-      border-radius: $bt_radius - 3px;
-      background-color: opacify($_menu_bg, 1);
+      border-radius: $wm_radius;
+      background-color: rgba($_menu_bg, 0.95);
       border: 1px solid $_menu_bd;
     }
 
@@ -3443,7 +3454,7 @@ $_wm_border: if($variant=='light', transparentize(black, 0.9), transparentize(bl
 
 decoration {
   transition: $shadow_transition;
-  border-radius: if($darker=='false' and $variant=='light', $bt_radius $bt_radius 0 0, $bt_radius $bt_radius 0 0);
+  border-radius: $wm_radius;
   border-width: 0;
   box-shadow: 0 5px 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
               0 8px 15px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
@@ -3459,6 +3470,7 @@ decoration {
                 0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
                 0 0 0 1px $borders_color;
   }
+
   .fullscreen &,
   .tiled & {
     border-radius: 0;
@@ -3466,25 +3478,25 @@ decoration {
   }
   .popup & {
 //   box-shadow: none;
-    border-radius: $bt_radius;
+    border-radius: $wm_radius;
   }
   // server-side decorations as used by mutter
   .ssd & {
     margin: -5px;
-    border-radius: $bt_radius $bt_radius 0 0;
+    border-radius: $wm_radius;
     box-shadow: 0 0 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)), 0 0 0 1px $borders_color;
     &.maximized { border-radius: 0; }
   }
   .csd.popup & {
-    border-radius: $bt_radius;
+    border-radius: $wm_radius;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.06);
   }
   tooltip.csd & {
-    border-radius: $bt_radius;
+    border-radius: $wm_radius;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
   }
   messagedialog.csd & {
-    border-radius: $bt_radius;
+    border-radius: $wm_radius;
   }
   .solid-csd & {
     border: none;

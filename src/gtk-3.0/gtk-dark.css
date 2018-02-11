@@ -23,6 +23,13 @@
   color: #dedede;
   background-color: rgba(51, 51, 51, 0.999); }
 
+.popup.background {
+  border-radius: 8px;
+  background-color: transparent; }
+
+.csd.background {
+  border-radius: 0 0 8px 8px; }
+
 *:disabled {
   -gtk-icon-effect: dim; }
 
@@ -1030,17 +1037,17 @@ headerbar,
     border: none; }
 
 .titlebar {
-  border-radius: 6px 6px 0 0; }
+  border-radius: 8px 8px 0 0; }
 
 headerbar entry, headerbar button, headerbar separator {
   margin-top: 6px;
   margin-bottom: 6px; }
 separator:first-child + headerbar, separator:first-child + headerbar:backdrop, headerbar:first-child, headerbar:first-child:backdrop {
-  border-top-left-radius: 6px; }
+  border-top-left-radius: 8px; }
   .maximized separator:first-child + headerbar, .tiled separator:first-child + headerbar, .maximized separator:first-child + headerbar:backdrop, .tiled separator:first-child + headerbar:backdrop, .maximized headerbar:first-child, .tiled headerbar:first-child, .maximized headerbar:first-child:backdrop, .tiled headerbar:first-child:backdrop {
     border-radius: 0; }
 headerbar:last-child, headerbar:last-child:backdrop {
-  border-top-right-radius: 6px; }
+  border-top-right-radius: 8px; }
   .maximized headerbar:last-child, .tiled headerbar:last-child, .maximized headerbar:last-child:backdrop, .tiled headerbar:last-child:backdrop {
     border-radius: 0; }
 
@@ -1637,29 +1644,50 @@ menubar,
       border-color: transparent; }
 
 menu,
+.context-menu,
+popover.touch-selection,
+.csd popover.touch-selection,
+popover.background.touch-selection,
+.csd popover.background.touch-selection,
 .menu {
   margin: 0;
   padding: 6px 0;
-  border-radius: 2px;
-  background-color: #333333;
-  border: 1px solid rgba(255, 255, 255, 0.05); }
+  border-radius: 8px;
+  background-color: rgba(51, 51, 51, 0.95);
+  border: 1px solid #404040; }
   .csd menu, .csd
+  .context-menu, .csd popover.touch-selection, .csd popover.background.touch-selection, .csd
   .menu {
-    border-radius: 2px;
-    background-color: #333333;
-    border: 1px solid rgba(255, 255, 255, 0.05); }
+    border-radius: 8px;
+    background-color: rgba(51, 51, 51, 0.95);
+    border: 1px solid #404040; }
   menu separator, .csd menu separator,
+  .context-menu separator,
+  popover.touch-selection separator,
+  .csd popover.touch-selection separator,
+  popover.background.touch-selection separator,
+  .csd popover.background.touch-selection separator, .csd
+  .context-menu separator, .csd popover.touch-selection separator, .csd popover.background.touch-selection separator,
   .menu separator, .csd
   .menu separator {
     margin: 4px 0;
     min-height: 2px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.05); }
+    background-color: #404040; }
   menu .separator:not(label), .csd menu .separator:not(label),
+  .context-menu .separator:not(label),
+  popover.touch-selection .separator:not(label),
+  .csd popover.background.touch-selection .separator:not(label), .csd
+  .context-menu .separator:not(label), .csd popover.touch-selection .separator:not(label),
   .menu .separator:not(label), .csd
   .menu .separator:not(label) {
     color: #333333; }
   menu menuitem,
+  .context-menu menuitem,
+  popover.touch-selection menuitem,
+  .csd popover.touch-selection menuitem,
+  popover.background.touch-selection menuitem,
+  .csd popover.background.touch-selection menuitem,
   .menu menuitem {
     min-height: 12px;
     min-width: 40px;
@@ -1668,6 +1696,9 @@ menu,
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent; }
     menu menuitem:hover,
+    .context-menu menuitem:hover,
+    popover.touch-selection menuitem:hover,
+    .csd popover.background.touch-selection menuitem:hover,
     .menu menuitem:hover {
       color: #ffffff;
       background-color: #0062FF;
@@ -1675,17 +1706,31 @@ menu,
       border-top: 1px solid transparent;
       border-bottom: 1px solid #004ecc; }
     menu menuitem:disabled,
+    .context-menu menuitem:disabled,
+    popover.touch-selection menuitem:disabled,
+    .csd popover.background.touch-selection menuitem:disabled,
     .menu menuitem:disabled {
       color: rgba(222, 222, 222, 0.45); }
     menu menuitem arrow,
+    .context-menu menuitem arrow,
+    popover.touch-selection menuitem arrow,
+    .csd popover.touch-selection menuitem arrow,
+    popover.background.touch-selection menuitem arrow,
+    .csd popover.background.touch-selection menuitem arrow,
     .menu menuitem arrow {
       min-height: 16px;
       min-width: 16px; }
       menu menuitem arrow:dir(ltr),
+      .context-menu menuitem arrow:dir(ltr),
+      popover.touch-selection menuitem arrow:dir(ltr),
+      .csd popover.background.touch-selection menuitem arrow:dir(ltr),
       .menu menuitem arrow:dir(ltr) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
         margin-left: 10px; }
       menu menuitem arrow:dir(rtl),
+      .context-menu menuitem arrow:dir(rtl),
+      popover.touch-selection menuitem arrow:dir(rtl),
+      .csd popover.background.touch-selection menuitem arrow:dir(rtl),
       .menu menuitem arrow:dir(rtl) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
         margin-right: 10px; }
@@ -1701,6 +1746,11 @@ menu,
         margin-left: 6px;
         margin-right: 2px; }
   menu > arrow,
+  .context-menu > arrow,
+  popover.touch-selection > arrow,
+  .csd popover.touch-selection > arrow,
+  popover.background.touch-selection > arrow,
+  .csd popover.background.touch-selection > arrow,
   .menu > arrow {
     min-width: 16px;
     min-height: 16px;
@@ -1711,19 +1761,31 @@ menu,
     background-image: none;
     color: #dedede; }
     menu > arrow.top,
+    .context-menu > arrow.top,
+    popover.touch-selection > arrow.top,
+    .csd popover.touch-selection > arrow.top,
     .menu > arrow.top {
       margin-top: -18px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
     menu > arrow.bottom,
+    .context-menu > arrow.bottom,
+    popover.touch-selection > arrow.bottom,
+    .csd popover.touch-selection > arrow.bottom,
     .menu > arrow.bottom {
       margin-bottom: -18px;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
     menu > arrow:hover,
+    .context-menu > arrow:hover,
+    popover.touch-selection > arrow:hover,
+    .csd popover.touch-selection > arrow:hover,
     .menu > arrow:hover {
       background-color: #373737; }
     menu > arrow:disabled,
+    .context-menu > arrow:disabled,
+    popover.touch-selection > arrow:disabled,
+    .csd popover.touch-selection > arrow:disabled,
     .menu > arrow:disabled {
       color: transparent;
       background-color: transparent;
@@ -3231,7 +3293,7 @@ stackswitcher button.circular, stackswitcher button.nautilus-circular-button.ima
 
 decoration {
   transition: box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
-  border-radius: 5px 5px 0 0;
+  border-radius: 8px;
   border-width: 0;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 8px 15px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
   margin: 4px; }
@@ -3241,21 +3303,21 @@ decoration {
     border-radius: 0;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3); }
   .popup decoration {
-    border-radius: 5px; }
+    border-radius: 8px; }
   .ssd decoration {
     margin: -5px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 8px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
     .ssd decoration.maximized {
       border-radius: 0; }
   .csd.popup decoration {
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.06); }
   tooltip.csd decoration {
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15); }
   messagedialog.csd decoration {
-    border-radius: 5px; }
+    border-radius: 8px; }
   .solid-csd decoration {
     border: none;
     border-radius: 0;
@@ -3648,7 +3710,7 @@ workbench.csd > stack.titlebar:not(headerbar) {
   border: none;
   box-shadow: none; }
   workbench.csd > stack.titlebar:not(headerbar) headerbar, workbench.csd > stack.titlebar:not(headerbar) headerbar:first-child, workbench.csd > stack.titlebar:not(headerbar) headerbar:last-child {
-    border-radius: 6px 6px 0 0; }
+    border-radius: 8px 8px 0 0; }
 
 editortweak .linked > entry.search:focus + .gb-linked-scroller {
   border-top-color: #0062FF; }
