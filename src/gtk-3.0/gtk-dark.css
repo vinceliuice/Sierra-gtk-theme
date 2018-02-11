@@ -1765,7 +1765,7 @@ popover.background.touch-selection,
     popover.touch-selection > arrow.top,
     .csd popover.touch-selection > arrow.top,
     .menu > arrow.top {
-      margin-top: -18px;
+      margin: -28px 1px 0 1px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
     menu > arrow.bottom,
@@ -1773,7 +1773,7 @@ popover.background.touch-selection,
     popover.touch-selection > arrow.bottom,
     .csd popover.touch-selection > arrow.bottom,
     .menu > arrow.bottom {
-      margin-bottom: -18px;
+      margin: 0 1px -28px 1px;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
     menu > arrow:hover,

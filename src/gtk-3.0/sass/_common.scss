@@ -1864,12 +1864,12 @@ menu,
     color: $fg_color;
 
     &.top {
-      margin-top: -18px;
+      margin: -28px 1px 0 1px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
     &.bottom {
-      margin-bottom: -18px;
+      margin: 0 1px -28px 1px;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
