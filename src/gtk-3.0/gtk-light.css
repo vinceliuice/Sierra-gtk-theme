@@ -1963,19 +1963,22 @@ switch:not(:indeterminate) slider:disabled:not(:indeterminate) {
 row
 switch:not(:indeterminate) {
   min-width: 40px;
-  min-height: 22px;
+  min-height: 24px;
   margin: 0;
-  background-size: 40px 22px;
+  background-size: 40px 24px;
+  transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-image: -gtk-scaled(url("assets/switch.png"), url("assets/switch@2.png")); }
   row
   switch:not(:indeterminate) slider:not(:indeterminate) {
     margin: 0;
-    background-size: 52px 24px; }
+    background-size: 40px 24px; }
   row
   switch:not(:indeterminate):hover {
+    transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     background-image: -gtk-scaled(url("assets/switch-hover.png"), url("assets/switch-hover@2.png")); }
   row
   switch:not(:indeterminate):checked {
+    transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     background-image: -gtk-scaled(url("assets/switch-active.png"), url("assets/switch-active@2.png")); }
     row
     switch:not(:indeterminate):checked:hover {
