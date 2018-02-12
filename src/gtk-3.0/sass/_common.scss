@@ -46,6 +46,7 @@ $wm_radius: 8px;
 }
 
 .csd.background { border-radius: 0 0 $wm_radius $wm_radius; }
+.csd.background.maximized { border-radius: 0; }
 
 *:disabled { -gtk-icon-effect: dim; }
 
@@ -2807,12 +2808,11 @@ list {
   border-color: $borders_color;
   border-radius: $wm_radius;
 
-  row { padding: 2px; &:not(:hover):not(:selected) { border-radius: $wm_radius; } }
+  row { padding: 2px; }
 }
 
 row {
-  &:not(:hover):not(:selected) { border-radius: $wm_radius; }
-  &:not(:hover) { transition: all 200ms $ease-out-quad; }
+  &:not(:hover) { transition: all 300ms $ease-out-quad; }
 
   &:selected {
     @extend %selected_items;
@@ -3015,7 +3015,7 @@ filechooserbutton:drop(active) {
     border-right-style: none;
   }
 
-  list { background-color: transparent; }
+  list { background-color: transparent; border-radius: 0 0 0 $wm_radius; }
 
   paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
 }

@@ -29,6 +29,9 @@
 .csd.background {
   border-radius: 0 0 8px 8px; }
 
+.csd.background.maximized {
+  border-radius: 0; }
+
 *:disabled {
   -gtk-icon-effect: dim; }
 
@@ -2795,13 +2798,9 @@ list {
   border-radius: 8px; }
   list row {
     padding: 2px; }
-    list row:not(:hover):not(:selected) {
-      border-radius: 8px; }
 
-row:not(:hover):not(:selected) {
-  border-radius: 8px; }
 row:not(:hover) {
-  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 row.activatable.has-open-popup, row.activatable:hover {
   background-color: rgba(255, 255, 255, 0.03); }
 row.activatable:active {
@@ -2938,7 +2937,8 @@ filechooserbutton:drop(active) {
     border-left: 1px solid rgba(255, 255, 255, 0.12);
     border-right-style: none; }
   .sidebar list {
-    background-color: transparent; }
+    background-color: transparent;
+    border-radius: 0 0 0 8px; }
   paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar {
     border-style: none; }
 
@@ -3457,16 +3457,18 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   .nautilus-list-dim-label:selected:focus {
     color: #cce0ff; }
 
-.nautilus-window {
-  border-radius: 0 0 8px 8px; }
-  .nautilus-window searchbar {
-    border-top: 1px solid rgba(255, 255, 255, 0.12); }
-  .nautilus-window .searchbar-container {
-    margin-top: -1px; }
+.nautilus-window searchbar {
+  border-top: 1px solid rgba(255, 255, 255, 0.12); }
+.nautilus-window .searchbar-container {
+  margin-top: -1px; }
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
   border-radius: 0 0 8px 0; }
+
+.nautilus-window.maximized notebook,
+.nautilus-window.maximized notebook > stack {
+  border-radius: 0 0 0 0; }
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child) searchbar {
@@ -4791,6 +4793,9 @@ filechooser placessidebar.sidebar,
   filechooser placessidebar.sidebar separator,
   .nautilus-window placessidebar.sidebar separator {
     background-color: transparent; }
+filechooser.maximized placessidebar,
+.nautilus-window.maximized placessidebar {
+  border-radius: 0; }
 filechooser.maximized placessidebar.sidebar,
 .nautilus-window.maximized placessidebar.sidebar {
   background-color: #3b3b3b; }

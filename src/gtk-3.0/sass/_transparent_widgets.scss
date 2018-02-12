@@ -74,6 +74,7 @@ filechooser,
     scrollbar { @extend %dark_sidebar_scrollbar }
   }
 
+  &.maximized placessidebar { border-radius: 0; }
   &.maximized placessidebar.sidebar { background-color: opacify($dark_sidebar_bg, 1); }
 }
 

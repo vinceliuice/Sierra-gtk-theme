@@ -64,7 +64,6 @@ terminal-window,
 
 .nautilus-window {
     // Workaround for https://bugzilla.gnome.org/show_bug.cgi?id=724096
-    border-radius: 0 0 $wm_radius $wm_radius;
     searchbar {
         border-top: 1px solid $borders_color;
     }
@@ -76,6 +75,11 @@ terminal-window,
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
     border-radius: 0 0 $wm_radius 0;
+}
+
+.nautilus-window.maximized notebook,
+.nautilus-window.maximized notebook > stack {
+    border-radius: 0 0 0 0;
 }
 
 .nautilus-window notebook,
