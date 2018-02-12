@@ -844,14 +844,13 @@ spinbutton.vertical > entry:drop(active) + button {
 
 combobox button.combo {
   min-width: 0;
-  padding-left: 8px;
-  padding-right: 8px; }
+  margin: 0;
+  padding: 0 12px; }
 combobox arrow {
   -gtk-icon-source: -gtk-scaled(url("assets/combobox-arrow.png"), url("assets/combobox-arrow@2.png"));
-  min-height: 16px;
-  min-width: 16px;
+  min-width: 20px;
   padding: 0;
-  margin: -1px -9px -1px -1px;
+  margin: -1px -13px -1px -1px;
   border-radius: 0 5px 5px 0;
   color: #ffffff;
   border: 1px solid #0e6bff;
@@ -1261,68 +1260,10 @@ headerbar .linked:not(.vertical).path-bar > button,
     opacity: 0.7;
     box-shadow: none;
     background-image: none; }
-headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button,
-headerbar .linked:not(.vertical).path-bar > button + button,
-.nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button + button {
-  border-left-style: solid; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: rgba(40, 32, 32, 0); }
-headerbar .linked:not(.vertical):not(.path-bar) > entry.error + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.error + entry,
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.error,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry.error {
-  border-left-color: #FC4138; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry,
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning {
-  border-left-color: #F27835; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry.error + entry.warning, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.error + entry.warning,
-headerbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.error {
-  border-left-color: #f75d37; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:not(:last-child), .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:not(:last-child),
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:last-child,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry:focus:last-child {
-  border-left-color: #74aaff; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + entry,
-headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + button,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + button,
-headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + combobox > box > button.combo,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + combobox > box > button.combo {
-  border-left-color: #74aaff; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):not(:last-child), .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):not(:last-child),
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):last-child,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry:drop(active):last-child {
-  border-left-color: #F08437; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + entry,
-headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + button,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + button,
-headerbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + combobox > box > button.combo,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry:drop(active):not(:only-child) + combobox > box > button.combo {
-  border-left-color: #F08437; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:not(:last-child), .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:not(:last-child),
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:last-child,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry.warning:focus:last-child {
-  border-left-color: #F27835; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + entry,
-headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + button,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + button,
-headerbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + combobox > box > button.combo,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.warning:focus:not(:only-child) + combobox > box > button.combo {
-  border-left-color: #F27835; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:not(:last-child), .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:not(:last-child),
-headerbar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:last-child,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry + entry.error:focus:last-child {
-  border-left-color: #FC4138; }
-headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + entry,
-headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + button,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + button,
-headerbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + combobox > box > button.combo,
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.error:focus:not(:only-child) + combobox > box > button.combo {
-  border-left-color: #FC4138; }
 headerbar .linked:not(.vertical):not(.path-bar) > button:active + entry, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:active + entry,
 headerbar .linked:not(.vertical):not(.path-bar) > button:checked + entry,
 .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:checked + entry {
-  border-left-color: #74aaff; }
+  border-left-color: rgba(0, 0, 0, 0.11); }
 headerbar button.suggested-action, .nemo-window .primary-toolbar button.suggested-action {
   background-clip: border-box;
   color: white;

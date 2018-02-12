@@ -926,17 +926,17 @@ spinbutton {
 combobox {
   button.combo {
     min-width: 0;       // otherwise the arrow placement is unsymmetric
-    padding-left: 8px;
-    padding-right: 8px;
+    margin: 0;
+    padding: 0 12px;
   }
   arrow {
     -gtk-icon-source: -gtk-scaled(
                        url("assets/combobox-arrow.png"),
                        url("assets/combobox-arrow@2.png"));
-    min-height: 16px;
-    min-width: 16px;
+//    min-height: 0;
+    min-width: 20px;
     padding: 0;
-    margin: -1px -9px -1px -1px;
+    margin: -1px -13px -1px -1px;
     border-radius: 0 $bt_radius $bt_radius 0;
     color: $selected_fg_color;
     border: 1px solid if($variant=='light', $selected_bg_color, #686868);
@@ -1411,16 +1411,18 @@ headerbar {
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
     }
 
-    @include pathbar_linking_rules($sep_color: $button_border);
+//    @include pathbar_linking_rules($sep_color: $button_border);
   }
 
   // use linking rules for entries only
   .linked:not(.vertical):not(.path-bar) {
-    @include linking_rules( $a:0.5,
-                            $var:if($variant=='light' and $darker=='false', 'light', 'dark'),
-                            $button_rules:'false',
-                            $e_border:$header_entry_border,
-                            $b_border:$header_button_border );
+//    @include linking_rules( $a:0.5,
+//                            $var:if($variant=='light' and $darker=='false', 'light', 'dark'),
+//                            $button_rules:'false',
+//                            $e_border:$header_entry_border,
+//                            $b_border:$header_button_border );
+    > button:active + entry,
+    > button:checked + entry { border-left-color: $borders_color; }
   }
 
   // Headerbar Suggested and Destructive Action buttons
