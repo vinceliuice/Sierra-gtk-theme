@@ -4198,10 +4198,7 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
     border-radius: 0;
     border-color: transparent; }
     #MozillaGtkWidget.background > window.background > menu > separator {
-      padding-top: 1px;
-      margin-top: 1px;
-      min-height: 2px;
-      background-color: rgba(0, 0, 0, 0.08); }
+      background-color: rgba(0, 0, 0, 0.11); }
   #MozillaGtkWidget.background > widget border {
     border-color: rgba(0, 0, 0, 0.11); }
   #MozillaGtkWidget.background > widget separator {

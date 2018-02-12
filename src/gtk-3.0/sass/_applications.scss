@@ -1226,12 +1226,7 @@ window.background:not(.csd) {
     border-color: transparent;
 
     // revert to standard separators
-    > separator {
-      padding-top: 1px;
-      margin-top: 1px;
-      min-height: 2px;
-      background-color: rgba($borders_color, 0.08);
-    }
+    > separator { background-color: $borders_color; }
   }
 
   > widget {
