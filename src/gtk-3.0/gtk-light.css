@@ -1672,14 +1672,6 @@ popover.background.touch-selection,
     min-height: 2px;
     border: none;
     background-color: rgba(0, 0, 0, 0.05); }
-  menu .separator:not(label), .csd menu .separator:not(label),
-  .context-menu .separator:not(label),
-  popover.touch-selection .separator:not(label),
-  .csd popover.background.touch-selection .separator:not(label), .csd
-  .context-menu .separator:not(label), .csd popover.touch-selection .separator:not(label),
-  .menu .separator:not(label), .csd
-  .menu .separator:not(label) {
-    color: #ffffff; }
   menu menuitem,
   .context-menu menuitem,
   popover.touch-selection menuitem,
@@ -4188,7 +4180,10 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
   opacity: 1; }
 
 window.background:not(.csd) > widget > separator {
-  color: rgba(0, 0, 0, 0.11); }
+  padding-top: 1px;
+  margin-top: 1px;
+  min-height: 2px;
+  background-color: rgba(0, 0, 0, 0.07); }
 window.background:not(.csd) > widget > scrollbar {
   background-clip: border-box; }
 window.background:not(.csd) > widget > scrollbar,
@@ -4199,11 +4194,13 @@ window.background:not(.csd) > widget > button > button {
   border: 1px solid rgba(0, 0, 0, 0.11);
   border-radius: 5px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02); }
-window.background:not(.csd) > widget > entry {
+window.background:not(.csd) > widget > entry,
+window.background:not(.csd) > widget .entry {
   border-radius: 5px;
   background-image: image(#ffffff);
   border: 1px solid rgba(0, 0, 0, 0.11); }
-  window.background:not(.csd) > widget > entry:focus {
+  window.background:not(.csd) > widget > entry:focus,
+  window.background:not(.csd) > widget .entry:focus {
     border-color: #74aaff;
     box-shadow: inset 0 0 0 2px #74aaff; }
 window.background:not(.csd) > widget > spinbutton {
@@ -4211,12 +4208,22 @@ window.background:not(.csd) > widget > spinbutton {
   border: 1px solid rgba(0, 0, 0, 0.11); }
   window.background:not(.csd) > widget > spinbutton:active {
     background-image: image(#afafaf); }
+  window.background:not(.csd) > widget > spinbutton .entry {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
 window.background:not(.csd) > widget > button > button:active {
   background-image: image(#afafaf);
   border: none;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.11); }
-window.background:not(.csd) > menu > separator {
-  color: rgba(0, 0, 0, 0.11); }
+window.background:not(.csd) > menu,
+window.background:not(.csd) .menu {
+  background-color: #ffffff;
+  border-radius: 0;
+  border: none; }
+  window.background:not(.csd) > menu .separator:not(label), .csd window.background:not(.csd) > menu .separator:not(label),
+  window.background:not(.csd) .menu .separator:not(label), .csd
+  window.background:not(.csd) .menu .separator:not(label) {
+    color: rgba(0, 0, 0, 0.11); }
 window.background:not(.csd) > menu > menuitem > label:disabled {
   color: rgba(36, 36, 36, 0.55); }
 
@@ -4246,11 +4253,14 @@ window.background:not(.csd) > menu > menuitem > label:disabled {
   #MozillaGtkWidget.background *:checked button {
     color: #242424; }
   #MozillaGtkWidget.background > window.background > menu {
-    background-color: #ffffff; }
+    background-color: #ffffff;
+    border-radius: 0;
+    border-color: transparent; }
     #MozillaGtkWidget.background > window.background > menu > separator {
-      padding: 0;
-      border: none;
-      background-color: rgba(0, 0, 0, 0.11); }
+      padding-top: 1px;
+      margin-top: 1px;
+      min-height: 2px;
+      background-color: rgba(0, 0, 0, 0.08); }
   #MozillaGtkWidget.background > widget border {
     border-color: rgba(0, 0, 0, 0.11); }
   #MozillaGtkWidget.background > widget separator {

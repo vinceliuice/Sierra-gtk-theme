@@ -1119,7 +1119,12 @@ panel-toplevel.background {
 window.background:not(.csd) {
   > widget {
     // for the bookmark toolbar's separators
-    > separator { color: $borders_color; }
+    > separator {
+      padding-top: 1px;
+      margin-top: 1px;
+      min-height: 2px;
+      background-color: rgba($borders_color, 0.07);
+    }
 
     // avoid black border
     > scrollbar { background-clip: border-box; }
@@ -1135,7 +1140,8 @@ window.background:not(.csd) {
       box-shadow: inset 0 0 0 1px rgba($borders_color, 0.02);
     }
 
-    > entry {
+    > entry,
+    .entry { // Set for linked entrys
 //      min-height: 26px;
       border-radius: $bt_radius;
       background-image: image($base_color);
@@ -1148,6 +1154,9 @@ window.background:not(.csd) {
       background-image: image($button_bg);
       border: 1px solid $borders_color;
       &:active { background-image: image($header_button_active_bg); }
+
+      // Fixed thunderbird linked entry spinbutton border-radius.
+      .entry { border-top-right-radius: 0;  border-bottom-right-radius: 0; }
     }
 
     > button > button {
@@ -1163,7 +1172,16 @@ window.background:not(.csd) {
     }
   }
 
-  > menu > separator { color: $borders_color; }
+  > menu,
+  .menu { // context-menus
+    background-color: $base_color;
+    border-radius: 0;
+    border: none;
+
+    .separator:not(label),
+    .csd & .separator:not(label) { color: $borders_color; }
+  }
+
   > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
 }
 
@@ -1204,12 +1222,15 @@ window.background:not(.csd) {
 
   > window.background > menu { // context-menus
     background-color: $base_color;
+    border-radius: 0;
+    border-color: transparent;
 
     // revert to standard separators
     > separator {
-      padding: 0;
-      border: none;
-      background-color: $borders_color;
+      padding-top: 1px;
+      margin-top: 1px;
+      min-height: 2px;
+      background-color: rgba($borders_color, 0.08);
     }
   }
 

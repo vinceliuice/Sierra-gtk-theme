@@ -1803,10 +1803,10 @@ menu,
     background-color: $_menu_bd;
   }
 
-  // Firefox workaround
-  .separator:not(label),
-  .csd & .separator:not(label) { color: $_menu_bg; }
-  // Firefox workaround end
+//  // Firefox workaround
+//  .separator:not(label),
+//  .csd & .separator:not(label) { color: $_menu_bd; }
+//  // Firefox workaround end
 
   menuitem {
     min-height: 12px;
