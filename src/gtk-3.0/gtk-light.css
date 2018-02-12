@@ -56,7 +56,14 @@
 iconview text,
 textview text {
   color: #363636;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .view:hover, iconview:hover,
+  .view text:hover,
+  iconview text:hover,
+  textview text:hover {
+    transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: rgba(0, 0, 0, 0.02); }
   .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
   .view text:selected,
   iconview text:selected,
@@ -64,6 +71,7 @@ textview text {
   .view text:selected:focus,
   iconview text:selected:focus,
   textview text:selected:focus {
+    transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 5px; }
 
 textview border {
@@ -880,7 +888,7 @@ toolbar, .inline-toolbar {
   toolbar.osd, .osd.inline-toolbar {
     padding: 7px;
     border: 1px solid rgba(0, 0, 0, 0.11);
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: rgba(222, 222, 222, 0.85); }
     toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
       border-radius: 0; }
@@ -934,7 +942,8 @@ searchbar {
 actionbar {
   padding: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.11);
-  background-color: #ededed; }
+  background-color: #ededed;
+  border-radius: 0 0 8px 8px; }
 
 headerbar,
 .titlebar:not(headerbar) {
@@ -1731,7 +1740,7 @@ popover.background {
   border-radius: 5px;
   background-clip: border-box;
   background-color: #ffffff;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07); }
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15); }
   .csd popover, popover, .csd
   popover.background,
   popover.background {

@@ -75,9 +75,13 @@ $wm_radius: 8px;
 %view {
   color: $text_color;
   background-color: $base_color;
+  transition: all 200ms $ease-out-quad;
+
+  &:hover { transition: all 350ms $ease-out-quad; background-color: if($variant=='light', rgba(black, 0.02), rgba(white, 0.02)); }
 
   &:selected {
     &, &:focus {
+      transition: all 350ms $ease-out-quad;
       @extend %selected_items;
       border-radius: $bt_radius;
     }
@@ -986,7 +990,7 @@ toolbar {
   &.osd {
     padding: 7px;
     border: 1px solid $borders_color;
-    border-radius: $bt_radius;
+    border-radius: $wm_radius;
     background-color: transparentize($osd_bg_color, 0.1);
 
     &.left,
@@ -1049,6 +1053,7 @@ actionbar {
   padding: 6px;
   border-top: 1px solid $borders_color;
   background-color: darken($bg_color, 3%);
+  border-radius: 0 0 $wm_radius $wm_radius;
 }
 
 //
@@ -1896,7 +1901,7 @@ popover.background {
   background-clip: border-box;
   background-color: $_popover_bg;
 
-  box-shadow: 0 2px 6px 0 if($variant=='light', transparentize(black, 0.93), transparentize(black, 0.85));
+  box-shadow: 0 3px 6px 0 if($variant=='light', transparentize(black, 0.85), transparentize(black, 0.85));
 
   .csd &, & {
       border-radius: $bt_radius;
