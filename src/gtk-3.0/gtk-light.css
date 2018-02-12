@@ -1648,6 +1648,13 @@ popover.background.touch-selection,
       text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
       border-top: 1px solid transparent;
       border-bottom: 1px solid #0054da; }
+      menu menuitem:hover arrow,
+      .context-menu menuitem:hover arrow,
+      popover.touch-selection menuitem:hover arrow,
+      .csd popover.background.touch-selection menuitem:hover arrow,
+      .menu menuitem:hover arrow {
+        color: #ffffff;
+        -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05); }
     menu menuitem:disabled,
     .context-menu menuitem:disabled,
     popover.touch-selection menuitem:disabled,
@@ -1662,21 +1669,25 @@ popover.background.touch-selection,
     .csd popover.background.touch-selection menuitem arrow,
     .menu menuitem arrow {
       min-height: 16px;
-      min-width: 16px; }
+      min-width: 16px;
+      background-color: transparent;
+      background-image: none;
+      border: none;
+      color: #242424; }
       menu menuitem arrow:dir(ltr),
       .context-menu menuitem arrow:dir(ltr),
       popover.touch-selection menuitem arrow:dir(ltr),
       .csd popover.background.touch-selection menuitem arrow:dir(ltr),
       .menu menuitem arrow:dir(ltr) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-        margin-left: 10px; }
+        margin-right: 0; }
       menu menuitem arrow:dir(rtl),
       .context-menu menuitem arrow:dir(rtl),
       popover.touch-selection menuitem arrow:dir(rtl),
       .csd popover.background.touch-selection menuitem arrow:dir(rtl),
       .menu menuitem arrow:dir(rtl) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-        margin-right: 10px; }
+        margin-left: 0; }
     menuitem accelerator {
       color: alpha(currentColor,0.55); }
     menuitem check, menuitem radio {
@@ -1708,7 +1719,7 @@ popover.background.touch-selection,
     popover.touch-selection > arrow.top,
     .csd popover.touch-selection > arrow.top,
     .menu > arrow.top {
-      margin: -28px 1px 0 1px;
+      margin: -8px 1px 0 1px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.11);
       -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
     menu > arrow.bottom,

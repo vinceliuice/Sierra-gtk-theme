@@ -963,7 +963,7 @@ combobox {
   }
 
   .linked:not(.vertical) > &:first-child > box > button.combo { @extend %linked:first-child; }
-  .linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked:last-child; arrow { border-radius: 0 $bt_radius $bt_radius 0; }}
+  .linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked:last-child; arrow { border-radius: 0 $bt_radius $bt_radius 0; } }
   .linked:not(.vertical) > &:only-child > box > button.combo { @extend %linked:only-child; }
 
   .linked.vertical > & > box > button.combo { @extend %linked_vertical_middle; }
@@ -1829,6 +1829,7 @@ menu,
       text-shadow: $text_shadow;
       border-top: 1px solid transparent;
       border-bottom: 1px solid darken($selected_bg_color, 10%);
+      arrow { color: $selected_fg_color; -gtk-icon-shadow: if($variant=='light', $text_shadow, none); }
     }
     &:disabled {
       color: $insensitive_fg_color;
@@ -1838,14 +1839,18 @@ menu,
     arrow {
       min-height: 16px;
       min-width: 16px;
+      background-color: transparent;
+      background-image: none;
+      border: none;
+      color: $fg_color;
 
       &:dir(ltr) {
         -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
-        margin-left: 10px;
+        margin-right: 0;
       }
       &:dir(rtl) {
-        -gtk-icon-source:-gtk-icontheme('pan-end-symbolic-rtl');
-        margin-right: 10px;
+        -gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
+        margin-left: 0;
       }
     }
     @at-root menuitem {
@@ -1872,7 +1877,7 @@ menu,
     color: $fg_color;
 
     &.top {
-      margin: -28px 1px 0 1px;
+      margin: -8px 1px 0 1px;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
