@@ -38,15 +38,17 @@ $wm_radius: 8px;
 .background {
 //  border-radius: 0 0 $wm_radius $wm_radius;
   color: $fg_color;
-  background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color); // without this headerbar transparency doesn't seem to work
+  background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color);
+  // without this headerbar transparency doesn't seem to work
 }
 
 .popup.background {
-  background-color: transparent;
+  background-color: transparent; // without this menus transparency doesn't work
 }
 
-.csd.background { border-radius: 0 0 $wm_radius $wm_radius; }
-.csd.background.maximized { border-radius: 0; }
+// Set csd windows botttom border radius
+window.background.csd { border-radius: 0 0 $wm_radius $wm_radius; }
+window.background.maximized { border-radius: 0; }
 
 *:disabled { -gtk-icon-effect: dim; }
 
@@ -990,7 +992,7 @@ toolbar {
   &.osd {
     padding: 7px;
     border: 1px solid $borders_color;
-    border-radius: $wm_radius;
+//    border-radius: $wm_radius;
     background-color: transparentize($osd_bg_color, 0.1);
 
     &.left,
@@ -3507,7 +3509,8 @@ decoration {
   .fullscreen &,
   .tiled & {
     border-radius: 0;
-    box-shadow: 0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
+    box-shadow: 0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
+                0 0 0 1px $borders_color;
   }
   .popup & {
 //   box-shadow: none;
@@ -3516,7 +3519,7 @@ decoration {
   // server-side decorations as used by mutter
   .ssd & {
     margin: -5px;
-    border-radius: $wm_radius;
+    border-radius: $wm_radius $wm_radius 0 0;
     box-shadow: 0 0 5px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)), 0 0 0 1px $borders_color;
     &.maximized { border-radius: 0; }
   }

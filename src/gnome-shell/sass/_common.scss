@@ -145,7 +145,7 @@ StScrollBar {
 
 /* Slider */
 
-$slider_color: if($variant == 'light', white, white);
+$slider_color: if($variant == 'light', $accent_color, white);
 
 .slider {
   height: 20px;

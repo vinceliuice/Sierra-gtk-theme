@@ -179,7 +179,7 @@ StScrollBar {
 /* Slider */
 .slider {
   height: 20px;
-  color: white;
+  color: #0e6bff;
   -slider-height: 2px;
   -slider-background-color: rgba(0, 0, 0, 0.2);
   -slider-border-color: transparent;

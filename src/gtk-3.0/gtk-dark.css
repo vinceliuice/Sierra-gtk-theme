@@ -26,10 +26,10 @@
 .popup.background {
   background-color: transparent; }
 
-.csd.background {
+window.background.csd {
   border-radius: 0 0 8px 8px; }
 
-.csd.background.maximized {
+window.background.maximized {
   border-radius: 0; }
 
 *:disabled {
@@ -885,7 +885,6 @@ toolbar, .inline-toolbar {
   toolbar.osd, .osd.inline-toolbar {
     padding: 7px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
     background-color: rgba(36, 36, 36, 0.85); }
     toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
       border-radius: 0; }
@@ -3265,12 +3264,12 @@ decoration {
     box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
   .fullscreen decoration, .tiled decoration {
     border-radius: 0;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
   .popup decoration {
     border-radius: 8px; }
   .ssd decoration {
     margin: -5px;
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12); }
     .ssd decoration.maximized {
       border-radius: 0; }
