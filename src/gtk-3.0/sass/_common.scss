@@ -202,7 +202,7 @@ spinner {
 // Text Entries
 //
 entry {
-  min-height: 22px;
+  min-height: if($variant =='light', 20px, 22px);
   border: 1px solid;
   padding: 2px 8px;
 
@@ -1253,7 +1253,7 @@ headerbar {
 
   // Headerbar Entries
   entry {
-    min-height: if($variant =='light', 24px, 26px);
+    min-height: if($variant =='light', 20px, 22px);
     @include entry(header-normal);
 
     &:backdrop { opacity: 0.85; }
@@ -1377,19 +1377,40 @@ headerbar {
 
   // Reset buttons
   .linked:not(.vertical):not(.path-bar) > button {
-    &, &:hover, &:active, &:checked, &:disabled { 
+    &, &:hover, &:active, &:checked, &:disabled {
       border-radius: $bt_radius;
       @if $variant == 'light' { border: 1px solid $borders_color; }
-//      label { padding-left: 3px; padding-right: 6px; }
-//      image { padding-left: 6px; padding-right: 3px; }
     }
   }
 
+  // Reset entrys
   .linked:not(.vertical):not(.path-bar) > entry {
-    &, &:hover, &:active, &:checked, &:disabled {
+    &, &:disabled {
       border-radius: $bt_radius;
       margin-right: 4px;
       margin-left: 3px;
+      @if $variant == 'light' { border: 1px solid $borders_color; }
+    }
+
+    &:focus { @if $variant == 'light' { border: 1px solid $entry_highlight; } }
+  }
+
+  // use linking rules for entries only
+  .linked:not(.vertical):not(.path-bar) {
+//    @include linking_rules( $a:0.5,
+//                            $var:if($variant=='light' and $darker=='false', 'light', 'dark'),
+//                            $button_rules:'false',
+//                            $e_border:$header_entry_border,
+//                            $b_border:$header_button_border );
+
+    // Reset headerbar linked rules
+    > button:active + entry,
+    > button:checked + entry { border-left-color: $borders_color; }
+
+    > entry:focus:not(:only-child) {
+        + entry,
+        + button,
+        + combobox > box > button.combo { border-left-color: $borders_color; }
     }
   }
 
@@ -1418,17 +1439,6 @@ headerbar {
     }
 
 //    @include pathbar_linking_rules($sep_color: $button_border);
-  }
-
-  // use linking rules for entries only
-  .linked:not(.vertical):not(.path-bar) {
-//    @include linking_rules( $a:0.5,
-//                            $var:if($variant=='light' and $darker=='false', 'light', 'dark'),
-//                            $button_rules:'false',
-//                            $e_border:$header_entry_border,
-//                            $b_border:$header_button_border );
-    > button:active + entry,
-    > button:checked + entry { border-left-color: $borders_color; }
   }
 
   // Headerbar Suggested and Destructive Action buttons
@@ -1929,6 +1939,13 @@ popover.background {
 
     &.osd { @extend %osd; }
   }
+
+//  &.menu button:not(only-child),
+//  button.model:not(only-child) {
+//    min-height: 24px;
+//    padding: 0;
+//    margin: 0;
+//  }
 }
 
 //touch selection handlebars for the Popover.osd above
