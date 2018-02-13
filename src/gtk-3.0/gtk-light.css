@@ -22,15 +22,13 @@
 .background {
   color: #242424;
   background-color: rgba(245, 245, 245, 0.999); }
+  .background.csd, window .background.csd {
+    border-radius: 0 0 8px 8px; }
+  .background.maximized {
+    border-radius: 0; }
 
 .popup.background {
   background-color: transparent; }
-
-window.background.csd {
-  border-radius: 0 0 8px 8px; }
-
-window.background.maximized {
-  border-radius: 0; }
 
 *:disabled {
   -gtk-icon-effect: dim; }
@@ -121,7 +119,7 @@ popover.background.osd, .csd
 popover.background.magnifier, .osd .scale-popup, .osd {
   color: #363636;
   border: none;
-  background-color: rgba(222, 222, 222, 0.95);
+  background-color: rgba(245, 245, 245, 0.95);
   background-clip: padding-box;
   box-shadow: none; }
 
@@ -383,8 +381,8 @@ button {
     box-shadow: none; }
   button.osd {
     color: #363636;
-    background-color: rgba(222, 222, 222, 0.95);
-    border-color: rgba(202, 202, 202, 0.95); }
+    background-color: rgba(245, 245, 245, 0.95);
+    border-color: rgba(225, 225, 225, 0.95); }
     button.osd.image-button {
       padding: 0;
       min-height: 42px;
@@ -396,7 +394,7 @@ button {
       border-color: rgba(0, 0, 0, 0.11);
       background-color: #0e6bff; }
     button.osd:disabled {
-      color: #acacac;
+      color: #bcbcbc;
       border-color: rgba(0, 0, 0, 0.11);
       background-color: rgba(255, 255, 255, 0.2); }
   .osd button {
@@ -413,7 +411,7 @@ button {
       border-color: rgba(0, 0, 0, 0.11);
       background-color: #0e6bff; }
     .osd button:disabled {
-      color: #acacac;
+      color: #bcbcbc;
       border-color: rgba(0, 0, 0, 0.11);
       background-color: rgba(255, 255, 255, 0.2); }
     .osd button.flat, .osd button.sidebar-button {
@@ -427,7 +425,7 @@ button {
         border-color: rgba(0, 0, 0, 0.11);
         background-color: rgba(255, 255, 255, 0.45); }
       .osd button.flat:disabled, .osd button.sidebar-button:disabled {
-        color: #acacac;
+        color: #bcbcbc;
         border-color: rgba(0, 0, 0, 0.11);
         background-color: rgba(255, 255, 255, 0.2);
         background-image: none; }
@@ -888,7 +886,7 @@ toolbar, .inline-toolbar {
   toolbar.osd, .osd.inline-toolbar {
     padding: 7px;
     border: 1px solid rgba(0, 0, 0, 0.11);
-    background-color: rgba(222, 222, 222, 0.85); }
+    background-color: rgba(245, 245, 245, 0.85); }
     toolbar.osd.left, .osd.left.inline-toolbar, toolbar.osd.right, .osd.right.inline-toolbar, toolbar.osd.top, .osd.top.inline-toolbar, toolbar.osd.bottom, .osd.bottom.inline-toolbar {
       border-radius: 0; }
     toolbar.osd.top, .osd.top.inline-toolbar {
@@ -2315,7 +2313,7 @@ scale {
     scale trough:disabled {
       background-color: rgba(232, 232, 232, 0.55); }
     .osd scale trough {
-      background-color: rgba(240, 240, 240, 0.95); }
+      background-color: rgba(255, 255, 255, 0.95); }
       .osd scale trough highlight {
         background-color: #0e6bff; }
     menuitem:hover scale trough, row:selected scale trough, infobar scale trough {
@@ -3114,10 +3112,11 @@ row:selected button:disabled, infobar.info button:disabled, infobar.question but
 tooltip {
   border-radius: 5px;
   box-shadow: none; }
-  tooltip.background {
-    background-color: rgba(248, 248, 248, 0.95);
-    background-clip: padding-box; }
-    tooltip.background label {
+  tooltip.background, tooltip.background.csd {
+    background-color: rgba(255, 255, 255, 0.95);
+    background-clip: padding-box;
+    border-radius: 5px; }
+    tooltip.background label, tooltip.background.csd label {
       padding: 4px; }
   tooltip decoration {
     background-color: transparent; }
@@ -3901,8 +3900,8 @@ dialog.csd > headerbar.titlebar > switch {
 #gf-candidate-popup,
 #gf-candidate-popup.solid {
   color: #484848;
-  background-color: rgba(222, 222, 222, 0.95);
-  border: 1px solid rgba(202, 202, 202, 0.95);
+  background-color: rgba(245, 245, 245, 0.95);
+  border: 1px solid rgba(225, 225, 225, 0.95);
   border-radius: 2px; }
 #gf-bubble levelbar block.low, #gf-bubble levelbar block.high, #gf-bubble levelbar block.full,
 #gf-osd-window levelbar block.low,
@@ -3920,7 +3919,7 @@ dialog.csd > headerbar.titlebar > switch {
 #gf-osd-window levelbar block.empty,
 #gf-input-source-popup levelbar block.empty,
 #gf-candidate-popup levelbar block.empty {
-  background-color: rgba(209, 209, 209, 0.95); }
+  background-color: rgba(232, 232, 232, 0.95); }
 #gf-bubble levelbar trough,
 #gf-osd-window levelbar trough,
 #gf-input-source-popup levelbar trough,
@@ -3944,14 +3943,14 @@ gf-candidate-box:hover, gf-candidate-box:selected {
 
 MsdOsdWindow.background.osd {
   border-radius: 2px;
-  border: 1px solid rgba(202, 202, 202, 0.95); }
+  border: 1px solid rgba(225, 225, 225, 0.95); }
   MsdOsdWindow.background.osd .progressbar {
     background-color: #0e6bff;
     border: none;
     border-color: red;
     border-radius: 5px; }
   MsdOsdWindow.background.osd .trough {
-    background-color: rgba(209, 209, 209, 0.95);
+    background-color: rgba(232, 232, 232, 0.95);
     border: none;
     border-radius: 5px; }
 
@@ -4647,7 +4646,7 @@ GtkListBox .h4 {
   padding-top: 20px;
   padding-bottom: 0px;
   border-style: none;
-  background-color: rgba(222, 222, 222, 0.95);
+  background-color: rgba(245, 245, 245, 0.95);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border: solid rgba(0, 0, 0, 0.1);
@@ -4667,7 +4666,7 @@ GtkListBox .h4 {
     border-color: rgba(0, 0, 0, 0.11);
     background-color: #0e6bff; }
   #buttonbox_frame button:disabled {
-    color: #acacac;
+    color: #bcbcbc;
     border-color: rgba(0, 0, 0, 0.11);
     background-color: rgba(255, 255, 255, 0.2); }
 
@@ -4910,7 +4909,7 @@ filechooser actionbar button {
     border-color: rgba(0, 0, 0, 0.11);
     background-color: #0e6bff; }
   filechooser actionbar button:disabled {
-    color: #acacac;
+    color: #bcbcbc;
     border-color: rgba(0, 0, 0, 0.11);
     background-color: rgba(255, 255, 255, 0.2); }
 

@@ -22,15 +22,13 @@
 .background {
   color: #dedede;
   background-color: rgba(51, 51, 51, 0.999); }
+  .background.csd, window .background.csd {
+    border-radius: 0 0 8px 8px; }
+  .background.maximized {
+    border-radius: 0; }
 
 .popup.background {
   background-color: transparent; }
-
-window.background.csd {
-  border-radius: 0 0 8px 8px; }
-
-window.background.maximized {
-  border-radius: 0; }
 
 *:disabled {
   -gtk-icon-effect: dim; }
@@ -3113,10 +3111,11 @@ row:selected button:disabled, infobar.info button:disabled, infobar.question but
 tooltip {
   border-radius: 5px;
   box-shadow: none; }
-  tooltip.background {
+  tooltip.background, tooltip.background.csd {
     background-color: rgba(62, 62, 62, 0.95);
-    background-clip: padding-box; }
-    tooltip.background label {
+    background-clip: padding-box;
+    border-radius: 5px; }
+    tooltip.background label, tooltip.background.csd label {
       padding: 4px; }
   tooltip decoration {
     background-color: transparent; }

@@ -40,15 +40,14 @@ $wm_radius: 8px;
   color: $fg_color;
   background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color);
   // without this headerbar transparency doesn't seem to work
+  &.csd,
+  window &.csd { border-radius: 0 0 $wm_radius $wm_radius; } // Set csd windows botttom border radius
+  &.maximized { border-radius: 0; }
 }
 
 .popup.background {
   background-color: transparent; // without this menus transparency doesn't work
 }
-
-// Set csd windows botttom border radius
-window.background.csd { border-radius: 0 0 $wm_radius $wm_radius; }
-window.background.maximized { border-radius: 0; }
 
 *:disabled { -gtk-icon-effect: dim; }
 
@@ -3286,12 +3285,15 @@ infobar {
 //
 tooltip {
   &.background {
+    &, &.csd {
     // background-color needs to be set this way otherwise it gets drawn twice
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     background-color: lighten($osd_bg_color, 10%);
     background-clip: padding-box;
+    border-radius: $bt_radius;
 
     label { padding: 4px; }
+    }
   }
 
   border-radius: $bt_radius;
