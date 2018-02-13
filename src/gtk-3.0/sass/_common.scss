@@ -38,11 +38,12 @@ $wm_radius: 8px;
 .background {
 //  border-radius: 0 0 $wm_radius $wm_radius;
   color: $fg_color;
-  background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color);
   // without this headerbar transparency doesn't seem to work
+  background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color);
+
   &.csd,
   window &.csd { border-radius: 0 0 $wm_radius $wm_radius; } // Set csd windows botttom border radius
-  &.maximized { border-radius: 0; }
+  &.maximized { border-radius: 0; } // No radius when windows maximized
 }
 
 .popup.background {
