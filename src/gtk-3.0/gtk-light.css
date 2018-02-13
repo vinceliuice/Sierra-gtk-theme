@@ -2313,7 +2313,7 @@ scale {
     scale trough:disabled {
       background-color: rgba(232, 232, 232, 0.55); }
     .osd scale trough {
-      background-color: rgba(255, 255, 255, 0.95); }
+      background-color: rgba(225, 225, 225, 0.95); }
       .osd scale trough highlight {
         background-color: #0e6bff; }
     menuitem:hover scale trough, row:selected scale trough, infobar scale trough {

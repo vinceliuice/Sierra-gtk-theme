@@ -2425,7 +2425,7 @@ scale {
 
     //OSD troughs
     .osd & {
-      background-color: lighten($osd_bg_color, 7%);
+      background-color: darken($osd_bg_color, 8%);
 
       highlight {
         background-color: $selected_bg_color;
