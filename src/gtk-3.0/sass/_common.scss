@@ -42,7 +42,8 @@ $wm_radius: 8px;
   background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color);
 
   &.csd,
-  window &.csd { border-radius: 0 0 $wm_radius $wm_radius; } // Set csd windows botttom border radius
+  &.ssd, &.osd,
+  &.solid-csd { border-radius: 0 0 $wm_radius $wm_radius; } // Set csd windows botttom border radius
   &.maximized { border-radius: 0; } // No radius when windows maximized
 }
 
@@ -939,14 +940,14 @@ combobox {
     -gtk-icon-source: -gtk-scaled(
                        url("assets/combobox-arrow.png"),
                        url("assets/combobox-arrow@2.png"));
-//    min-height: 0;
+    min-height: 16px;
     min-width: 20px;
     padding: 0;
     margin: -1px -13px -1px -1px;
     border-radius: 0 $bt_radius $bt_radius 0;
     color: $selected_fg_color;
     border: 1px solid if($variant=='light', $selected_bg_color, #686868);
-    background-color: transparent;
+    background-color: $selected_bg_color;
     background-image: if($variant=='light', linear-gradient( 180deg, #4c97fe 0%, #0564e3 100%),
                                             linear-gradient( 180deg, #686868 0%, #686868 100%));
   }
@@ -2424,7 +2425,7 @@ scale {
 
   // Trough
   trough {
-    $_scale_trough_bg: darken($bg_color, 5%);
+    $_scale_trough_bg: rgba(black, 0.2);
 
     outline-offset: 2px;
     -gtk-outline-radius: 4.5px;
@@ -2432,11 +2433,11 @@ scale {
     border-radius: $bt_radius;
     background-color: $_scale_trough_bg;
 
-    &:disabled { background-color: transparentize($_scale_trough_bg, 0.45); }
+    &:disabled { background-color: rgba($_scale_trough_bg, 0.12); }
 
     //OSD troughs
     .osd & {
-      background-color: darken($osd_bg_color, 8%);
+      background-color: $_scale_trough_bg;
 
       highlight {
         background-color: $selected_bg_color;
@@ -2846,7 +2847,7 @@ separator {
 list {
   background-color: $base_color;
   border-color: $borders_color;
-  border-radius: $wm_radius;
+//  border-radius: $wm_radius;
 
   row { padding: 2px; }
 }
@@ -3047,6 +3048,7 @@ filechooserbutton:drop(active) {
   &.left:dir(rtl) {
     border-right: 1px solid $borders_color;
     border-left-style: none;
+    border-radius: 0 0 0 $wm_radius;
   }
 
   @at-root %sidebar_right,
@@ -3054,9 +3056,10 @@ filechooserbutton:drop(active) {
   &.right {
     border-left: 1px solid $borders_color;
     border-right-style: none;
+    border-radius: 0 0 $wm_radius 0;
   }
 
-  list { background-color: transparent; border-radius: 0 0 0 $wm_radius; }
+  list { background-color: transparent; border-radius: $wm_radius; }
 
   paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
 }

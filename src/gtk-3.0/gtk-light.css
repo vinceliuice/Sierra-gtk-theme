@@ -22,7 +22,7 @@
 .background {
   color: #242424;
   background-color: rgba(245, 245, 245, 0.999); }
-  .background.csd, window .background.csd {
+  .background.csd, .background.ssd, .background.osd, .background.solid-csd {
     border-radius: 0 0 8px 8px; }
   .background.maximized {
     border-radius: 0; }
@@ -857,13 +857,14 @@ combobox button.combo {
   padding: 0 12px; }
 combobox arrow {
   -gtk-icon-source: -gtk-scaled(url("assets/combobox-arrow.png"), url("assets/combobox-arrow@2.png"));
+  min-height: 16px;
   min-width: 20px;
   padding: 0;
   margin: -1px -13px -1px -1px;
   border-radius: 0 5px 5px 0;
   color: #ffffff;
   border: 1px solid #0e6bff;
-  background-color: transparent;
+  background-color: #0e6bff;
   background-image: linear-gradient(180deg, #4c97fe 0%, #0564e3 100%); }
 .linked:not(.vertical) > combobox > box > button.combo arrow {
   border-radius: 0; }
@@ -2308,11 +2309,11 @@ scale {
     outline-offset: 2px;
     -gtk-outline-radius: 4.5px;
     border-radius: 5px;
-    background-color: #e8e8e8; }
+    background-color: rgba(0, 0, 0, 0.2); }
     scale trough:disabled {
-      background-color: rgba(232, 232, 232, 0.55); }
+      background-color: rgba(0, 0, 0, 0.12); }
     .osd scale trough {
-      background-color: rgba(225, 225, 225, 0.95); }
+      background-color: rgba(0, 0, 0, 0.2); }
       .osd scale trough highlight {
         background-color: #0e6bff; }
     menuitem:hover scale trough, row:selected scale trough, infobar scale trough {
@@ -2817,8 +2818,7 @@ separator {
 
 list {
   background-color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.11);
-  border-radius: 8px; }
+  border-color: rgba(0, 0, 0, 0.11); }
   list row {
     padding: 2px; }
 
@@ -2956,13 +2956,15 @@ filechooserbutton:drop(active) {
   background-color: #f5f5f5; }
   stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
     border-right: 1px solid rgba(0, 0, 0, 0.11);
-    border-left-style: none; }
+    border-left-style: none;
+    border-radius: 0 0 0 8px; }
   stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:dir(rtl), .sidebar.right {
     border-left: 1px solid rgba(0, 0, 0, 0.11);
-    border-right-style: none; }
+    border-right-style: none;
+    border-radius: 0 0 8px 0; }
   .sidebar list {
     background-color: transparent;
-    border-radius: 0 0 0 8px; }
+    border-radius: 8px; }
   paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar {
     border-style: none; }
 
@@ -3662,6 +3664,13 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   .gedit-map-frame border:dir(rtl) {
     border-right-width: 1px; }
 
+.gedit-side-panel-paned.horizontal > box.vertical > stack > grid.horizontal > box.horizontal {
+  margin: 4px 0; }
+.gedit-side-panel-paned.horizontal > box.vertical > stack > grid.horizontal > scrolledwindow {
+  margin: 0 6px 6px 6px;
+  border-radius: 0;
+  box-shadow: 0px 1px 2px 0px rgba(16, 16, 16, 0.15), 0px 2px 3px 0px rgba(16, 16, 16, 0.1); }
+
 .pluma-window statusbar frame > border {
   border: none; }
 
@@ -3789,6 +3798,8 @@ configurationview entry.flat {
 configurationview list {
   border-width: 0; }
 
+window.background > box.vertical box.horizontal list.categories {
+  border-radius: 0 0 0 8px; }
 window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable {
   color: #242424;
   transition-duration: 0.1s; }
@@ -3881,9 +3892,20 @@ button.documents-favorite:active:hover {
 .tweak-category:not(:selected):not(:hover) {
   background-image: linear-gradient(to bottom, #ffffff, #ffffff); }
 
+.tweak-categories {
+  border-radius: 0 0 0 8px; }
+
 .tweak-titlebar-right > switch,
 dialog.csd > headerbar.titlebar > switch {
   margin: 8px 0; }
+
+box.horizontal.titlebar > headerbar > stack > box.vertical > .title {
+  margin: 0; }
+box.horizontal.titlebar > headerbar > stack > box.vertical > .subtitle {
+  margin: -3px 0; }
+
+dialog.background.csd > headerbar.titlebar > label:not(.title):not(.subtitle) {
+  font-weight: 700; }
 
 .tr-workarea undershoot,
 .tr-workarea overshoot {

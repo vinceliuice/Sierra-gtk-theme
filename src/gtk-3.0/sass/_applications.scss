@@ -358,6 +358,21 @@ $disk_space_free: darken($bg_color, 3%);
     }
 }
 
+.gedit-side-panel-paned.horizontal {
+
+  // 'file-browser' pane
+  > box.vertical > stack > grid.horizontal {
+    > box.horizontal {  // header-part
+      margin: 4px 0;
+    }
+    > scrolledwindow { // raised widget
+      margin: 0 6px 6px 6px;
+      border-radius: 0;
+      box-shadow: $shadow_5;
+    }
+  }
+}
+
 //
 // Pluma
 //
@@ -566,13 +581,18 @@ configurationview {
 //
 // Epiphany
 //
+
 //EphyWindow .floating-bar { // Epiphany overrides the floating-bar style, so reset it
 //  color: $fg_color;
 //}
+
 //
 //  * Gnome-Logs *
 //
+
 window.background > box.vertical box.horizontal {
+
+  list.categories { border-radius: 0 0 0 $wm_radius; } // side-pane
 
     > box.vertical > scrolledwindow > viewport.frame > list {
 
@@ -649,6 +669,7 @@ window.background > box.vertical box.horizontal {
 //
 // Gnome Documents
 //
+
 .documents-scrolledwin.frame {
     border-width: 0;
 }
@@ -706,6 +727,7 @@ button.documents-favorite:active:hover {
 //
 // Gnome Photos
 //
+
 .photos-entry-tag {
     @extend .documents-entry-tag;
 }
@@ -727,16 +749,45 @@ button.documents-favorite:active:hover {
 //
 // Gnome Tweak Tool
 //
+
 .tweak-categories,
 .tweak-category:not(:selected):not(:hover) {
     background-image: _solid($base_color);
 }
 
+// sidebar on gnome tweak
+.tweak-categories { border-radius: 0 0 0 $wm_radius; }
+
 .tweak-titlebar-right,
-dialog.csd > headerbar.titlebar {
-    > switch {
-        margin: 8px 0;
+dialog.csd > headerbar.titlebar { > switch { margin: 8px 0; } }
+
+// /************************
+//  * Gnome-Control-Center *
+//  ************************/
+
+// users section
+
+stack > box.vertical > widget > overlay grid.horizontal > stack {
+  > button.toggle { }
+}
+
+// > 3.25.90
+scrolledwindow.view > viewport.frame > stack > list { // left-pane
+  > row.activatable { }
+}
+
+box.horizontal.titlebar > headerbar > stack > box.vertical {
+  > .title { margin: 0; }
+  > .subtitle { margin: -3px 0; }
+}
+
+dialog.background.csd {
+  > headerbar.titlebar {
+
+    > label:not(.title):not(.subtitle) {
+      font-weight: 700;
     }
+  }
 }
 
 //
