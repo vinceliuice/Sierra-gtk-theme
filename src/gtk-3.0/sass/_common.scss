@@ -990,9 +990,9 @@ toolbar {
   .osd & { background-color: transparent; }
 
   &.osd {
-    padding: 7px;
+    padding: 8px;
     border: 1px solid $borders_color;
-//    border-radius: $wm_radius;
+    border-radius: $bt_radius;
     background-color: transparentize($osd_bg_color, 0.1);
 
     &.left,
@@ -1916,7 +1916,7 @@ popover.background {
   padding: 2px;
   border-radius: $bt_radius;
   background-clip: border-box;
-  background-color: $_popover_bg;
+  background-color: rgba($_popover_bg, 0.95);
 
   box-shadow: 0 3px 6px 0 if($variant=='light', transparentize(black, 0.85), transparentize(black, 0.85));
 
@@ -2199,6 +2199,7 @@ scrollbar {
     background-repeat: no-repeat;
     background-position: right center;
     box-shadow: none;
+    animation: none;
     font-size: 0;
     outline-color: transparent;
 
@@ -2270,7 +2271,7 @@ switch {
   &:disabled { color: gtkalpha(currentColor, 0.4); }
 
   &:checked {
-    animation: animation_1;
+    animation: $switch_animation;
     background-color: $success_color;
 
     &:disabled {
@@ -2302,8 +2303,6 @@ switch {
   &:checked:disabled slider { animation: none; }
 
   row & { @extend %switch_pixmap; }
-
-  row:selected & { @extend %switch_pixmap; }
 }
 
 //
@@ -3048,7 +3047,6 @@ filechooserbutton:drop(active) {
   &.left:dir(rtl) {
     border-right: 1px solid $borders_color;
     border-left-style: none;
-    border-radius: 0 0 0 $wm_radius;
   }
 
   @at-root %sidebar_right,
@@ -3056,10 +3054,9 @@ filechooserbutton:drop(active) {
   &.right {
     border-left: 1px solid $borders_color;
     border-right-style: none;
-    border-radius: 0 0 $wm_radius 0;
   }
 
-  list { background-color: transparent; border-radius: $wm_radius; }
+  list { background-color: transparent; }
 
   paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
 }

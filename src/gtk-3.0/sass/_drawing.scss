@@ -18,7 +18,21 @@ $button_transition: all 200ms $ease-out-quad;
 $backdrop_transition: 200ms ease-out;
 
 // Animations
-$animation_1: needs_attention 0.3s cubic-bezier(0, 0, 0.2, 1);
+$switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
+
+@keyframes switch_ripple_effect {
+  from {
+    background-image: radial-gradient(circle farthest-corner at center,
+                                      $success_color 0%,
+                                      transparent 0%);
+  }
+
+  to {
+    background-image: radial-gradient(circle farthest-corner at center,
+                                      $success_color 100%,
+                                      transparent 0%);
+  }
+}
 
 @keyframes header_ripple_effect {
   from {
@@ -232,6 +246,18 @@ $animation_1: needs_attention 0.3s cubic-bezier(0, 0, 0.2, 1);
     background-image: none;
     color: $selected_fg_color;
     background-color: if($variant=='light', rgba(black, 0.5), rgba(white, 0.25));
+    text-shadow: if($variant=='light', $text_shadow, none);
+    -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
+  }
+
+  @else if $t==flat-checked {
+  //
+  // pushed button
+  //
+    border-color: transparent;
+    background-image: none;
+    color: $selected_fg_color;
+    background-color: if($variant=='light', rgba(black, 0.65), rgba(white, 0.35));
     text-shadow: if($variant=='light', $text_shadow, none);
     -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
   }
