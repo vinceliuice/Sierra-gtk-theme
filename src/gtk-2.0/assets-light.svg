@@ -1166,11 +1166,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9999999"
-     inkscape:cx="164.04172"
-     inkscape:cy="270.24425"
+     inkscape:zoom="11.313708"
+     inkscape:cx="271.86338"
+     inkscape:cy="135.95267"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      showgrid="false"
      showborder="false"
      inkscape:window-width="1366"
@@ -5225,7 +5225,7 @@
          cy="263.5"
          cx="262.5"
          id="path5834-5"
-         style="opacity:0.55;fill:#ececec;fill-opacity:1;stroke:#e9e9e9;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;fill:#ececec;fill-opacity:1;stroke:#e9e9e9;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <g
        id="trough-horizontal"
@@ -6398,5 +6398,10 @@
          x="456"
          y="-141.63782" />
     </g>
+    <path
+       inkscape:connector-curvature="0"
+       style="display:inline;opacity:1;fill:#d7d7d7;fill-opacity:1;stroke:none;stroke-width:1.00199997;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 436,-31.63782 h 1 v 1 h -1 z"
+       id="border" />
   </g>
 </svg>

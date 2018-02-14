@@ -870,8 +870,7 @@ combobox arrow {
 toolbar, .inline-toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
-  background-color: #333333;
-  border-radius: 8px; }
+  background-color: #333333; }
   toolbar separator, .inline-toolbar separator {
     background: none; }
   toolbar.horizontal separator, .horizontal.inline-toolbar separator {
@@ -2885,9 +2884,10 @@ calendar {
   color: #dedede;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 5px;
-  padding: 2px; }
+  padding: 2px 6px;
+  margin: 0; }
   calendar:selected {
-    border-radius: 2.5px; }
+    border-radius: 50px; }
   calendar.header {
     color: #dedede;
     border: none; }

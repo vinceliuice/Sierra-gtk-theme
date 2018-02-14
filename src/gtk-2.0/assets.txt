@@ -18,6 +18,7 @@ arrow-up-small-insens
 arrow-up-small-prelight
 menu-arrow
 menu-arrow-prelight
+border
 button
 button-hover
 button-active

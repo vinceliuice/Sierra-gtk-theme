@@ -94,8 +94,7 @@ $wm_radius: 8px;
 textview {
   text {
     @extend %view;
-
-    selection { &:focus, & { @extend %selected_items; }}
+    selection { &:focus, & { @extend %selected_items; } }
   }
 }
 
@@ -981,7 +980,7 @@ toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
   background-color: $bg_color;
-  border-radius: $wm_radius;
+//  border-radius: $wm_radius;
 
   separator { background: none; }
   &.horizontal separator { margin: 0 6px; }
@@ -2933,11 +2932,12 @@ calendar {
   color: $fg_color;
   border: 1px solid $borders_color;
   border-radius: $bt_radius;
-  padding: 2px;
+  padding: 2px 6px;
+  margin: 0;
 
   &:selected {
     @extend %selected_items;
-    border-radius: $bt_radius / 2;
+    border-radius: 50px;
   }
 
   &.header {

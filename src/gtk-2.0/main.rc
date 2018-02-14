@@ -98,6 +98,8 @@ style "default" {
   base[ACTIVE] = shade (0.9, @selected_bg_color)
 
   # For succinctness, all reasonable pixmap options remain here
+  # This needs to go before pixmap because we need to override some stuff
+  engine "adwaita" {}
 
   engine "pixmap" {
 
@@ -447,15 +449,15 @@ style "default" {
 
     image {
       function = VLINE
-      file = "assets/line-v.png"
-      border = { 0, 0, 0, 0 }
+      file = "assets/border.png"
+      border = { 1, 0, 0, 0 }
       stretch = TRUE
     }
 
     image {
       function = HLINE
-      file = "assets/line-h.png"
-      border = { 0, 0, 0, 0 }
+      file = "assets/border.png"
+      border = { 0, 0, 1, 0 }
       stretch = TRUE
     }
 
@@ -687,28 +689,12 @@ style "menu" {
   bg[NORMAL] = @menu_bg
   bg[INSENSITIVE] = @menu_bg
   bg[PRELIGHT] = @menu_bg
-
-  engine "pixmap" { # For menus that use horizontal lines rather than gtkseparator
-
-    image {
-      function = HLINE
-      file = "assets/null.png"
-      border = { 0, 0, 0, 0 }
-      stretch = TRUE
-    }
-  }
-}
-
-style "menu_framed_box" {
-
-  engine "adwaita" {
-  }
 }
 
 style "menu_item"
 {
-  xthickness = 2
-  ythickness = 5
+  xthickness = 0
+  ythickness = 4
 
   # HACK: Gtk doesn't actually read this value
   # while rendering the menu items, but Libreoffice
@@ -923,6 +909,36 @@ style "menu_item"
       overlay_border = { 0, 0, 0, 0 }
       overlay_stretch = FALSE
       arrow_direction = RIGHT
+    }
+
+    image {
+      function = BOX
+      state    = PRELIGHT
+      detail   = "menu_scroll_arrow_up"
+      file     = "assets/border.png"
+      border   = {0, 0, 1, 0}
+    }
+
+    image {
+      function = BOX
+      detail   = "menu_scroll_arrow_up"
+      file     = "assets/border.png"
+      border   = {0, 0, 1, 0}
+    }
+
+    image {
+      function = BOX
+      state    = PRELIGHT
+      detail   = "menu_scroll_arrow_down"
+      file     = "assets/border.png"
+      border   = {1, 0, 0, 0}
+    }
+
+    image {
+      function = BOX
+      detail   = "menu_scroll_arrow_down"
+      file     = "assets/border.png"
+      border   = {1, 0, 0, 0}
     }
   }
 }
@@ -1949,14 +1965,14 @@ style "progressbar" {
 }
 
 style "separator_menu_item" {
+  xthickness = 0
+  ythickness = 2
 
   engine "pixmap" {
-
     image {
       function = BOX
-      file = "assets/null.png"
-      border = { 0, 0, 1, 0 }
-      stretch = TRUE
+      file     = "assets/border.png"
+      border   = {0, 0, 1, 0}
     }
   }
 }
@@ -2128,16 +2144,33 @@ style "toolbar" {
       orientation = VERTICAL
     }
 
+    #########
+    # Lines #
+    #########
+
     image {
       function = VLINE
-      recolorable = TRUE
-      file = "assets/null.png"
+      file     = "assets/border.png"
+      border   = {1, 0, 0, 0}
     }
 
     image {
       function = HLINE
-      recolorable = TRUE
-      file = "assets/null.png"
+      file     = "assets/border.png"
+      border   = {0, 0, 1, 0}
+    }
+  }
+}
+
+style "toolbar_separator" {
+  GtkWidget::wide-separators  = 1
+  GtkWidget::separator-width  = 1
+  GtkWidget::separator-height = 1
+
+  engine "pixmap" {
+    image {
+      function = BOX
+      file     = "assets/border.png"
     }
   }
 }
@@ -2284,7 +2317,6 @@ class "GtkToolbar"                                                  style "toolb
 class "*HandleBox"                                                  style "toolbar"
 
 widget_class "*<GtkMenu>*"                                          style "menu"
-widget_class "*<GtkMenu>*"                                          style "menu_framed_box"
 widget_class "*<GtkMenuItem>*"                                      style "menu_item"
 widget_class "*<GtkCheckButton>*"                                   style "checkbutton"
 widget_class "*<GtkComboBox>"                                       style "combobox"
