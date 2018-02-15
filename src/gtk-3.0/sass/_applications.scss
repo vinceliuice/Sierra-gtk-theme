@@ -1084,6 +1084,9 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
     > list.background > row.activatable.bookmarks-row {
       background-color: rgba($base_color, 0.35);
       color: rgba($fg_color, 0.85);
+      border-bottom: 1px dashed rgba($borders_color, 0.05);
+      padding: 6px;
+
       &:hover,
       &:active,
       &:checked { color: $fg_color; background-color: rgba($fg_color, 0.05); }
@@ -1092,7 +1095,7 @@ popover.background:not(.emoji-picker) > box.vertical > stack > box.vertical {
         min-width: 16px;
         min-height: 16px;
         padding: 4px; // Same as of image.sidebar-icon
-        margin: 0 4px;
+//        margin: 0 4px;
         border-radius: 100px;
         -gtk-outline-radius: 100px;
       }

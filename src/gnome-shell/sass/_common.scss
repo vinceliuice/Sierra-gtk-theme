@@ -632,7 +632,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     -arrow-box-shadow: none; //dreaming. bug #689995
     margin: 2px 6px 6px;
     background-color: rgba($base_color, 0.95);
-    border-radius: $bt_radius;
+    border-radius: $material_radius;
     box-shadow: $shadow_2;
   }
 
