@@ -65,7 +65,7 @@ textview text {
   .view text:hover,
   iconview text:hover,
   textview text:hover {
-    background-color: rgba(255, 255, 255, 0.005); }
+    background-color: #2c2c2c; }
   .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
   .view text:selected,
   iconview text:selected,
@@ -4427,7 +4427,7 @@ window.background:not(.csd) > widget > button > button {
     padding: 4px 6px; }
 window.background:not(.csd) > menu,
 window.background:not(.csd) .menu {
-  background-color: #242424;
+  background-color: #404040;
   border-radius: 0;
   border: none; }
   window.background:not(.csd) > menu .separator:not(label), .csd window.background:not(.csd) > menu .separator:not(label),
@@ -4450,7 +4450,7 @@ window.background:not(.csd) > menu > menuitem > check {
   #MozillaGtkWidget.background scrolledwindow {
     background-color: #333333; }
   #MozillaGtkWidget.background scrollbar {
-    background-color: #666666; }
+    background-color: transparent; }
     #MozillaGtkWidget.background scrollbar slider {
       background-color: gray; }
       #MozillaGtkWidget.background scrollbar slider:hover {
@@ -4468,7 +4468,7 @@ window.background:not(.csd) > menu > menuitem > check {
   #MozillaGtkWidget.background *:checked button {
     color: #dedede; }
   #MozillaGtkWidget.background > window.background > menu {
-    background-color: #242424;
+    background-color: #404040;
     border-radius: 0;
     border-color: rgba(255, 255, 255, 0.12); }
     #MozillaGtkWidget.background > window.background > menu > separator {
@@ -4545,6 +4545,21 @@ window.background:not(.solid-csd) > notebook:not(.frame) {
   window.background:not(.solid-csd) > notebook:not(.frame) > stack {
     border: none;
     box-shadow: none; }
+
+window > box.vertical > box.horizontal > toolbar, window > box.vertical > box.horizontal > .inline-toolbar {
+  background-color: transparent;
+  box-shadow: none; }
+  window > box.vertical > box.horizontal > toolbar toolitem > box label, window > box.vertical > box.horizontal > .inline-toolbar toolitem > box label,
+  window > box.vertical > box.horizontal > toolbar toolitem > box entry,
+  window > box.vertical > box.horizontal > .inline-toolbar toolitem > box entry {
+    min-height: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 90%; }
+  window > box.vertical > box.horizontal > toolbar toolitem > box > label, window > box.vertical > box.horizontal > .inline-toolbar toolitem > box > label {
+    color: #dedede; }
+window > box.vertical > box.horizontal > widget {
+  background-color: transparent; }
 
 UnityDecoration {
   -UnityDecoration-extents: 28px 1 1 1;

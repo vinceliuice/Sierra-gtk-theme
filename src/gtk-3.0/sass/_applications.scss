@@ -1485,7 +1485,7 @@ window.background:not(.csd) {
 
   > menu,
   .menu { // context-menus
-    background-color: $base_color;
+    background-color: if($variant == 'light', $base_color, lighten($bg_color, 5%));
     border-radius: 0;
     border: none;
 
@@ -1517,7 +1517,7 @@ window.background:not(.csd) {
   scrolledwindow { background-color: $bg_color; }
 
   scrollbar {
-    background-color: if($variant == 'light', $base_color, lighten($bg_color, 20%));
+    background-color: transparent;
     slider {
       background-color: mix($fg_color, $bg_color, 45%);
       &:hover { background-color: mix($fg_color, $bg_color, 60%); }
@@ -1534,7 +1534,7 @@ window.background:not(.csd) {
   }
 
   > window.background > menu { // context-menus
-    background-color: $base_color;
+    background-color: if($variant == 'light', $base_color, lighten($bg_color, 5%));
     border-radius: 0;
     border-color: $borders_color;
 
@@ -1656,6 +1656,31 @@ window.background:not(.solid-csd) {
             box-shadow: none;
         }
     }
+}
+
+// /************
+//  * Synaptic *
+//  ************/
+
+window > box.vertical > box.horizontal {
+  > toolbar {
+    background-color: transparent;
+    box-shadow: none;
+
+    toolitem > box {
+      label,
+      entry {
+        min-height: 20px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: 90%;
+      }
+
+      > label { color: $fg_color; }
+    }
+  }
+
+  > widget { background-color: transparent; }
 }
 
 //

@@ -79,7 +79,7 @@ $wm_radius: 6px;
   background-color: $base_color;
   transition: all 200ms $ease-out-quad;
 
-  &:hover { background-color: if($variant=='light', rgba(black, 0.005), rgba(white, 0.005)); }
+  &:hover { background-color: if($variant=='light', darken($base_color, 3%), lighten($base_color, 3%)); }
 
   &:selected {
     &, &:focus {

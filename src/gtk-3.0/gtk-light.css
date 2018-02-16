@@ -65,7 +65,7 @@ textview text {
   .view text:hover,
   iconview text:hover,
   textview text:hover {
-    background-color: rgba(0, 0, 0, 0.005); }
+    background-color: #f7f7f7; }
   .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
   .view text:selected,
   iconview text:selected,
@@ -4452,7 +4452,7 @@ window.background:not(.csd) > menu > menuitem > check {
   #MozillaGtkWidget.background scrolledwindow {
     background-color: #f5f5f5; }
   #MozillaGtkWidget.background scrollbar {
-    background-color: #ffffff; }
+    background-color: transparent; }
     #MozillaGtkWidget.background scrollbar slider {
       background-color: #979797; }
       #MozillaGtkWidget.background scrollbar slider:hover {
@@ -4547,6 +4547,21 @@ window.background:not(.solid-csd) > notebook:not(.frame) {
   window.background:not(.solid-csd) > notebook:not(.frame) > stack {
     border: none;
     box-shadow: none; }
+
+window > box.vertical > box.horizontal > toolbar, window > box.vertical > box.horizontal > .inline-toolbar {
+  background-color: transparent;
+  box-shadow: none; }
+  window > box.vertical > box.horizontal > toolbar toolitem > box label, window > box.vertical > box.horizontal > .inline-toolbar toolitem > box label,
+  window > box.vertical > box.horizontal > toolbar toolitem > box entry,
+  window > box.vertical > box.horizontal > .inline-toolbar toolitem > box entry {
+    min-height: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 90%; }
+  window > box.vertical > box.horizontal > toolbar toolitem > box > label, window > box.vertical > box.horizontal > .inline-toolbar toolitem > box > label {
+    color: #242424; }
+window > box.vertical > box.horizontal > widget {
+  background-color: transparent; }
 
 UnityDecoration {
   -UnityDecoration-extents: 28px 1 1 1;
