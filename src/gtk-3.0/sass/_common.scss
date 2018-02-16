@@ -42,9 +42,8 @@ $wm_radius: 6px;
   background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color);
 
   &.csd,
-  &.ssd, &.osd,
-  &.solid-csd { border-radius: 0 0 $wm_radius $wm_radius; } // Set csd windows botttom border radius
-  &.maximized { border-radius: 0; } // No radius when windows maximized
+  &.ssd, &.osd { border-radius: 0 0 $wm_radius $wm_radius; } // Set csd windows botttom border radius
+  &.maximized, &.solid-csd { border-radius: 0; } // No radius when windows maximized
 }
 
 .popup.background {
@@ -80,7 +79,7 @@ $wm_radius: 6px;
   background-color: $base_color;
   transition: all 200ms $ease-out-quad;
 
-  &:hover { transition: all 350ms $ease-out-quad; background-color: if($variant=='light', rgba(black, 0.02), rgba(white, 0.02)); }
+  &:hover { background-color: if($variant=='light', rgba(black, 0.005), rgba(white, 0.005)); }
 
   &:selected {
     &, &:focus {
@@ -3574,7 +3573,7 @@ decoration {
     border-radius: $wm_radius;
   }
   .solid-csd & {
-    border: none;
+    border: 1px solid $bar_border;
     border-radius: 0;
     margin: 0;
     background-color: $header_bg;

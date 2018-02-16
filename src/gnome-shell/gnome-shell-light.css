@@ -1381,7 +1381,7 @@ StScrollBar {
 #dash {
   font-size: 1em;
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.13);
   padding: 3px 0;
   border: none;
   border-left: 0px;
@@ -1509,7 +1509,7 @@ StScrollBar {
   text-align: center; }
 
 .app-well-app.app-folder > .overview-icon {
-  background-color: rgba(255, 255, 255, 0.1); }
+  background-color: rgba(255, 255, 255, 0.13); }
 
 .show-apps .show-apps-icon {
   color: transparent; }
@@ -1523,7 +1523,7 @@ StScrollBar {
 
 .app-folder-popup {
   -arrow-border-radius: 8px;
-  -arrow-background-color: rgba(255, 255, 255, 0.1);
+  -arrow-background-color: rgba(255, 255, 255, 0.13);
   -arrow-base: 0;
   -arrow-rise: 12px; }
 
@@ -1581,7 +1581,7 @@ StScrollBar {
 
 .workspace-thumbnails {
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.13);
   border: none; }
 
 .search-statustext, .no-frequent-applications-label {
@@ -2237,7 +2237,7 @@ StScrollBar {
   background-color: rgba(0, 0, 0, 0.6); }
 
 #dashtodockContainer:overview #dash {
-  background-color: rgba(255, 255, 255, 0.1); }
+  background-color: rgba(255, 255, 255, 0.13); }
 
 #dashtodockContainer.extended:overview #dash {
   background-color: transparent; }
