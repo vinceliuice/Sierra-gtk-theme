@@ -1487,7 +1487,7 @@ window.background:not(.csd) {
   .menu { // context-menus
     background-color: if($variant == 'light', $base_color, lighten($bg_color, 5%));
     border-radius: 0;
-    border: none;
+//    border: 1px solid $borders_color;
 
     .separator:not(label),
     .csd & .separator:not(label) { color: $borders_color; }

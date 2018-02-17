@@ -1048,6 +1048,15 @@ searchbar {
   border-color: $bar_border;
   border-width: 0 0 1px;
   padding: 3px;
+
+  // Close button on searchbar
+  button.flat {
+    min-height: 16px;
+    min-width: 16px;
+    margin: 4px 6px;
+    padding: 0 2px;
+    border-radius: 100px;
+  }
 }
 
 actionbar {
@@ -1196,9 +1205,14 @@ headerbar,
 headerbar {
   @extend %header_widgets;
 
-  entry, button, separator {
+  button, separator {
     margin-top: 6px;
     margin-bottom: 6px;
+  }
+
+  entry {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   // Fixes split headerbars
@@ -1254,10 +1268,10 @@ headerbar {
 
   // Headerbar Entries
   entry {
-    min-height: if($variant =='light', 20px, 22px);
+//    min-height: if($variant == 'light', 20px, 22px);
     @include entry(header-normal);
 
-    &:backdrop { opacity: 0.85; }
+    &:backdrop { opacity: 0.85; box-shadow: none; background-image: none; }
 
     &:focus {
       @include entry(header-focus);
@@ -1805,12 +1819,12 @@ menu,
   margin: 0;
   padding: 10px 0;
   border-radius: $wm_radius;
-  background-color: rgba($_menu_bg, 0.95);
-  border: 1px solid $borders_color;
+  background-color: if($transparency == 'true', rgba($_menu_bg, 0.95), $_menu_bg);
+//  border: 1px solid $borders_color;
 
   .csd & {
       border-radius: $wm_radius;
-      background-color: rgba($_menu_bg, 0.95);
+      background-color: if($transparency == 'true', rgba($_menu_bg, 0.95), $_menu_bg);
       border: 1px solid $borders_color;
     }
 
@@ -1909,13 +1923,22 @@ menu,
 //
 // Popovers
 //
-popover,
+
+$_popover_bg: if($variant=='light', $base_color, $bg_color);
+
 popover.background {
-  $_popover_bg: if($variant=='light', $base_color, $bg_color);
+  padding: 2px;
+  border-radius: $bt_radius;
+  background-color: if($transparency == 'true', rgba($_popover_bg, 0.95), $_popover_bg);
+
+  .csd &, & { border-radius: $bt_radius; }
+}
+
+popover {
   padding: 2px;
   border-radius: $bt_radius;
   background-clip: border-box;
-  background-color: rgba($_popover_bg, 0.95);
+  background-color: if($transparency == 'true', rgba($_popover_bg, 0.95), $_popover_bg);
 
   box-shadow: 0 3px 6px 0 if($variant=='light', transparentize(black, 0.85), transparentize(black, 0.85));
 

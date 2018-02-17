@@ -90,15 +90,13 @@ flowbox flowboxchild {
   flowbox flowboxchild:selected {
     outline-offset: -2px; }
 
-label.separator, popover label.separator,
-popover.background label.separator {
+label.separator, popover label.separator {
   color: #dedede; }
 label selection {
   color: #ffffff;
   background-color: #0062FF; }
 
-.dim-label, label.separator, popover label.separator,
-popover.background label.separator, headerbar .subtitle,
+.dim-label, label.separator, popover label.separator, headerbar .subtitle,
 .titlebar:not(headerbar) .subtitle {
   opacity: 0.55; }
 
@@ -116,11 +114,7 @@ assistant .sidebar label.highlight {
 textview {
   background-color: #242424; }
 
-popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
-popover.background.osd,
-popover.background.magnifier, .csd
-popover.background.osd, .csd
-popover.background.magnifier, .osd .scale-popup, .osd {
+popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier, .osd .scale-popup, .osd {
   color: #dedede;
   border: none;
   background-color: rgba(36, 36, 36, 0.95);
@@ -937,6 +931,12 @@ searchbar {
   border-color: #4B4B4B;
   border-width: 0 0 1px;
   padding: 3px; }
+  searchbar button.flat, searchbar button.sidebar-button {
+    min-height: 16px;
+    min-width: 16px;
+    margin: 4px 6px;
+    padding: 0 2px;
+    border-radius: 100px; }
 
 actionbar {
   padding: 6px;
@@ -1052,9 +1052,12 @@ headerbar,
 .titlebar {
   border-radius: 6px 6px 0 0; }
 
-headerbar entry, headerbar button, headerbar separator {
+headerbar button, headerbar separator {
   margin-top: 6px;
   margin-bottom: 6px; }
+headerbar entry {
+  margin-top: 5px;
+  margin-bottom: 5px; }
 separator:first-child + headerbar, separator:first-child + headerbar:backdrop, headerbar:first-child, headerbar:first-child:backdrop {
   border-top-left-radius: 6px; }
   .maximized separator:first-child + headerbar, .tiled separator:first-child + headerbar, .maximized separator:first-child + headerbar:backdrop, .tiled separator:first-child + headerbar:backdrop, .maximized headerbar:first-child, .tiled headerbar:first-child, .maximized headerbar:first-child:backdrop, .tiled headerbar:first-child:backdrop {
@@ -1085,7 +1088,6 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     opacity: 0.6; }
 
 headerbar entry, .nemo-window .primary-toolbar entry {
-  min-height: 22px;
   border: none;
   color: rgba(225, 219, 219, 0.8);
   background-color: rgba(119, 119, 119, 0.55);
@@ -1093,7 +1095,9 @@ headerbar entry, .nemo-window .primary-toolbar entry {
   headerbar entry image, .nemo-window .primary-toolbar entry image, headerbar entry image:hover, .nemo-window .primary-toolbar entry image:hover {
     color: inherit; }
   headerbar entry:backdrop, .nemo-window .primary-toolbar entry:backdrop {
-    opacity: 0.85; }
+    opacity: 0.85;
+    box-shadow: none;
+    background-image: none; }
   headerbar entry:focus, .nemo-window .primary-toolbar entry:focus {
     border: none;
     box-shadow: 0 0 0 2px #66a1ff, inset 0 0 0 1px #66a1ff;
@@ -1608,16 +1612,13 @@ menu,
 .context-menu,
 popover.touch-selection,
 .csd popover.touch-selection,
-popover.background.touch-selection,
-.csd popover.background.touch-selection,
 .menu {
   margin: 0;
   padding: 10px 0;
   border-radius: 6px;
-  background-color: rgba(51, 51, 51, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12); }
+  background-color: rgba(51, 51, 51, 0.95); }
   .csd menu, .csd
-  .context-menu, .csd popover.touch-selection, .csd popover.background.touch-selection, .csd
+  .context-menu, .csd popover.touch-selection, .csd
   .menu {
     border-radius: 6px;
     background-color: rgba(51, 51, 51, 0.95);
@@ -1625,10 +1626,8 @@ popover.background.touch-selection,
   menu separator, .csd menu separator,
   .context-menu separator,
   popover.touch-selection separator,
-  .csd popover.touch-selection separator,
-  popover.background.touch-selection separator,
-  .csd popover.background.touch-selection separator, .csd
-  .context-menu separator, .csd popover.touch-selection separator, .csd popover.background.touch-selection separator,
+  .csd popover.touch-selection separator, .csd
+  .context-menu separator, .csd popover.touch-selection separator,
   .menu separator, .csd
   .menu separator {
     margin: 4px 0;
@@ -1639,8 +1638,6 @@ popover.background.touch-selection,
   .context-menu menuitem,
   popover.touch-selection menuitem,
   .csd popover.touch-selection menuitem,
-  popover.background.touch-selection menuitem,
-  .csd popover.background.touch-selection menuitem,
   .menu menuitem {
     min-height: 12px;
     min-width: 40px;
@@ -1651,7 +1648,6 @@ popover.background.touch-selection,
     menu menuitem:hover,
     .context-menu menuitem:hover,
     popover.touch-selection menuitem:hover,
-    .csd popover.background.touch-selection menuitem:hover,
     .menu menuitem:hover {
       color: #ffffff;
       background-color: #0062FF;
@@ -1661,22 +1657,18 @@ popover.background.touch-selection,
       menu menuitem:hover arrow,
       .context-menu menuitem:hover arrow,
       popover.touch-selection menuitem:hover arrow,
-      .csd popover.background.touch-selection menuitem:hover arrow,
       .menu menuitem:hover arrow {
         color: #ffffff;
         -gtk-icon-shadow: none; }
     menu menuitem:disabled,
     .context-menu menuitem:disabled,
     popover.touch-selection menuitem:disabled,
-    .csd popover.background.touch-selection menuitem:disabled,
     .menu menuitem:disabled {
       color: rgba(222, 222, 222, 0.45); }
     menu menuitem arrow,
     .context-menu menuitem arrow,
     popover.touch-selection menuitem arrow,
     .csd popover.touch-selection menuitem arrow,
-    popover.background.touch-selection menuitem arrow,
-    .csd popover.background.touch-selection menuitem arrow,
     .menu menuitem arrow {
       min-height: 16px;
       min-width: 16px;
@@ -1687,14 +1679,12 @@ popover.background.touch-selection,
       menu menuitem arrow:dir(ltr),
       .context-menu menuitem arrow:dir(ltr),
       popover.touch-selection menuitem arrow:dir(ltr),
-      .csd popover.background.touch-selection menuitem arrow:dir(ltr),
       .menu menuitem arrow:dir(ltr) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
         margin-right: 0; }
       menu menuitem arrow:dir(rtl),
       .context-menu menuitem arrow:dir(rtl),
       popover.touch-selection menuitem arrow:dir(rtl),
-      .csd popover.background.touch-selection menuitem arrow:dir(rtl),
       .menu menuitem arrow:dir(rtl) {
         -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
         margin-left: 0; }
@@ -1713,8 +1703,6 @@ popover.background.touch-selection,
   .context-menu > arrow,
   popover.touch-selection > arrow,
   .csd popover.touch-selection > arrow,
-  popover.background.touch-selection > arrow,
-  .csd popover.background.touch-selection > arrow,
   .menu > arrow {
     min-width: 16px;
     min-height: 16px;
@@ -1755,31 +1743,29 @@ popover.background.touch-selection,
       background-color: transparent;
       border-color: transparent; }
 
-popover,
 popover.background {
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgba(51, 51, 51, 0.95); }
+  .csd popover.background, popover.background {
+    border-radius: 5px; }
+
+popover {
   padding: 2px;
   border-radius: 5px;
   background-clip: border-box;
   background-color: rgba(51, 51, 51, 0.95);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15); }
-  .csd popover, popover, .csd
-  popover.background,
-  popover.background {
+  .csd popover, popover {
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.12); }
-  popover separator,
-  popover.background separator {
+  popover separator {
     background-color: #333333; }
   popover > list,
   popover > .view,
   popover > iconview,
   popover > toolbar,
-  popover > .inline-toolbar,
-  popover.background > list,
-  popover.background > .view,
-  popover.background > iconview,
-  popover.background > toolbar,
-  popover.background > .inline-toolbar {
+  popover > .inline-toolbar {
     border-style: none;
     background-color: transparent; }
 
@@ -3206,9 +3192,7 @@ colorchooser .popover.osd {
   background-color: #5c5c5c;
   box-shadow: none; }
 
-.context-menu, popover.touch-selection, .csd popover.touch-selection,
-popover.background.touch-selection, .csd
-popover.background.touch-selection {
+.context-menu, popover.touch-selection, .csd popover.touch-selection {
   font: initial; }
 
 .monospace {
@@ -3472,8 +3456,7 @@ terminal-window notebook > header.top button,
     color: #ffffff;
     text-shadow: none; }
 
-.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator,
-popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle,
+.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle,
 .titlebar:not(headerbar) .nautilus-canvas-item.subtitle,
 .nautilus-list-dim-label {
   color: #898989; }
@@ -4428,8 +4411,7 @@ window.background:not(.csd) > widget > button > button {
 window.background:not(.csd) > menu,
 window.background:not(.csd) .menu {
   background-color: #404040;
-  border-radius: 0;
-  border: none; }
+  border-radius: 0; }
   window.background:not(.csd) > menu .separator:not(label), .csd window.background:not(.csd) > menu .separator:not(label),
   window.background:not(.csd) .menu .separator:not(label), .csd
   window.background:not(.csd) .menu .separator:not(label) {

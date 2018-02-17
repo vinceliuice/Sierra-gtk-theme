@@ -17,22 +17,23 @@ srcdir=${repodir}/src
   rm -rf $DEST_DIR/Sierra*
 
 # Copying files
+for trans in '' '-solid' ; do
   for color in '-light' '-dark'; do
-	echo -e "   Installing Sierra${color} ..."
+	echo -e "   Installing Sierra${color}${trans} ..."
 
-	themedir=$DEST_DIR/Sierra${color}
+	themedir=$DEST_DIR/Sierra${color}${trans}
 	install -d ${themedir}
 
 	# Install index.theme
 	echo "[Desktop Entry]" >> ${themedir}/index.theme
 	echo "Type=X-GNOME-Metatheme" >> ${themedir}/index.theme
-	echo "Name=Sierra${color}" >> ${themedir}/index.theme
+	echo "Name=Sierra${color}${trans}" >> ${themedir}/index.theme
 	echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >> ${themedir}/index.theme
 	echo "Encoding=UTF-8" >> ${themedir}/index.theme
 	echo "" >> ${themedir}/index.theme
 	echo "[X-GNOME-Metatheme]" >> ${themedir}/index.theme
-	echo "GtkTheme=Sierra${color}" >> ${themedir}/index.theme
-	echo "MetacityTheme=Sierra${color}" >> ${themedir}/index.theme
+	echo "GtkTheme=Sierra${color}${trans}" >> ${themedir}/index.theme
+	echo "MetacityTheme=Sierra${color}${trans}" >> ${themedir}/index.theme
 	echo "IconTheme=Adwaita" >> ${themedir}/index.theme
 	echo "CursorTheme=Adwaita" >> ${themedir}/index.theme
 	echo "ButtonLayout=close,minimize,maximize:menu" >> ${themedir}/index.theme
@@ -42,7 +43,7 @@ srcdir=${repodir}/src
 	cd ${srcdir}/gnome-shell
 
 	cp -ur \
-		gnome-shell${color}.css \
+		gnome-shell${color}${trans}.css \
 		${themedir}/gnome-shell/gnome-shell.css
 
 	cp -ur \
@@ -145,11 +146,11 @@ srcdir=${repodir}/src
 		${themedir}/gtk-3.0/thumbnail.png
 
 	cp -ur \
-		gtk${color}.css \
+		gtk${color}${trans}.css \
 		${themedir}/gtk-3.0/gtk.css
 
 	cp -ur \
-		gtk-dark.css \
+		gtk-dark${trans}.css \
 		${themedir}/gtk-3.0/gtk-dark.css
 
 	# Install Metacity Theme
@@ -190,4 +191,5 @@ srcdir=${repodir}/src
 		${themedir}/xfwm4/themerc
 
   done
+done
 

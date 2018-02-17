@@ -591,7 +591,7 @@ StScrollBar {
   -arrow-rise: 0;
   -arrow-box-shadow: none;
   margin: 2px 6px 6px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345); }
 
@@ -742,7 +742,7 @@ StScrollBar {
 
 /* TOP BAR */
 #panel {
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: #ffffff;
   /* transition from solid to transparent */
   transition-duration: 250ms;
   font-weight: bold;
@@ -754,7 +754,7 @@ StScrollBar {
     spacing: 0; }
   #panel .panel-corner {
     -panel-corner-radius: 0;
-    -panel-corner-background-color: rgba(255, 255, 255, 0.65);
+    -panel-corner-background-color: #ffffff;
     -panel-corner-border-width: 2px;
     -panel-corner-border-color: transparent; }
     #panel .panel-corner:active, #panel .panel-corner:overview, #panel .panel-corner:focus {
@@ -811,14 +811,14 @@ StScrollBar {
   #panel .screencast-indicator {
     color: #FF6D00; }
   #panel.solid {
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: #ffffff;
     /* transition from transparent to solid */
     transition-duration: 250ms;
     background-gradient-direction: none; }
     #panel.solid:overview {
       background-color: transparent; }
     #panel.solid .panel-corner {
-      -panel-corner-background-color: rgba(255, 255, 255, 0.65); }
+      -panel-corner-background-color: #ffffff; }
     #panel.solid .panel-button {
       color: #242424;
       text-shadow: none; }
