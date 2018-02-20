@@ -3042,10 +3042,10 @@ messagedialog { // Message Dialog styling
        }
 
       &:active, &:checked {
-          @include button(flat-active);
-          border-color: $borders_color;
-          text-shadow: $text_shadow;
-        }
+        @include button(flat-active);
+        border-color: $borders_color;
+        text-shadow: $text_shadow;
+      }
     }
 
     %middle_button {

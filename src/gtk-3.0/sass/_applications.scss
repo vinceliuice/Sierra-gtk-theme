@@ -149,6 +149,35 @@ $disk_space_free: darken($bg_color, 3%);
     }
 }
 
+// Floating Bar
+.nautilus-window .floating-bar {
+    padding: 1px;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+    border-radius: 3px 0 $wm_radius - 2px 0;
+
+    &.bottom.left {
+        border-top-left-radius: 0;
+    }
+    &.bottom.right {
+        border-top-right-radius: 0;
+    }
+
+    button {
+        border: none;
+        border-radius: 100px;
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        margin-right: 6px;
+        -gtk-icon-shadow: none;
+        @extend %selected-button;
+    }
+}
+
+// Reset maximized nautilus-window floating-bar border-radius
+.nautilus-window.maximized .floating-bar { border-radius: 3px 0 0 0; }
+
 //
 // Nemo
 //
@@ -1233,34 +1262,6 @@ panel-toplevel.background {
         image {
             color: inherit;
         }
-    }
-}
-
-//
-// Floating Bar
-//
-.nautilus-window .floating-bar {
-    padding: 1px;
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-    border-radius: 3px 0 $wm_radius - 2px 0;
-
-    &.bottom.left {
-        border-top-left-radius: 0;
-    }
-    &.bottom.right {
-        border-top-right-radius: 0;
-    }
-
-    button {
-        border: none;
-        border-radius: 100px;
-        min-height: 0;
-        min-width: 0;
-        padding: 0;
-        margin-right: 6px;
-        -gtk-icon-shadow: none;
-        @extend %selected-button;
     }
 }
 
