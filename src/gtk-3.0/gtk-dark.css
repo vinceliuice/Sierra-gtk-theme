@@ -756,7 +756,9 @@ modelbutton.flat {
     border-bottom-color: rgba(255, 255, 255, 0.12);
     text-shadow: none;
     -gtk-icon-shadow: none;
-    box-shadow: none; }
+    box-shadow: none;
+    transition: none;
+    animation: none; }
   menuitem.button.flat:checked,
   modelbutton.flat:checked {
     color: #dedede; }
@@ -991,7 +993,8 @@ headerbar,
     background-color: #0062FF;
     border-color: #005aeb;
     box-shadow: none;
-    background-image: none; }
+    background-image: none;
+    text-shadow: none; }
     headerbar.selection-mode:backdrop,
     .selection-mode.titlebar:backdrop:not(headerbar) {
       background-color: #0062FF;
@@ -1745,19 +1748,19 @@ popover.touch-selection,
 
 popover.background {
   padding: 2px;
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: rgba(51, 51, 51, 0.95); }
   .csd popover.background, popover.background {
-    border-radius: 5px; }
+    border-radius: 6px; }
 
 popover {
   padding: 2px;
-  border-radius: 5px;
+  border-radius: 6px;
   background-clip: border-box;
   background-color: rgba(51, 51, 51, 0.95);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15); }
   .csd popover, popover {
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.12); }
   popover separator {
     background-color: #333333; }
@@ -3420,6 +3423,30 @@ textview text selection, flowbox flowboxchild:selected, entry selection:focus, e
 /*********
  * Emoji *
  *********/
+popover.emoji-picker {
+  padding: 0;
+  border-radius: 6px; }
+  popover.emoji-picker entry {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+    border-width: 0 0 1px 0;
+    padding: 4px 12px; }
+  popover.emoji-picker scrolledwindow {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+
+button.emoji-section {
+  margin-top: -1px;
+  padding: 2px 14px;
+  border-radius: 0;
+  outline-offset: -4px;
+  box-shadow: none; }
+  button.emoji-section:first-child {
+    border-radius: 0 0 0 6px; }
+  button.emoji-section:last-child {
+    border-radius: 0 0 6px 0; }
+
 .emoji {
   min-width: 3em;
   min-height: 3em;
@@ -5449,7 +5476,9 @@ popover.background.places-menu {
   .budgie-panel menubar,
   .budgie-panel .menubar {
     box-shadow: none;
-    color: rgba(225, 219, 219, 0.8); }
+    color: rgba(225, 219, 219, 0.8);
+    background-image: none;
+    background-color: transparent; }
     .budgie-panel menubar > menuitem,
     .budgie-panel .menubar > menuitem {
       border: none;
@@ -5628,7 +5657,9 @@ calendar.raven-calendar {
     padding: 8px; }
 
 .budgie-notification-window, .budgie-osd-window, .budgie-switcher-window {
-  background-color: transparent; }
+  background-color: transparent;
+  background-image: none;
+  border-radius: 6px; }
 
 .budgie-notification .notification-title, .budgie-switcher .notification-title {
   font-size: 120%; }
@@ -5641,7 +5672,7 @@ calendar.raven-calendar {
   padding: 8px;
   border-radius: 6px;
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3);
-  background-color: #333333; }
+  background-color: rgba(51, 51, 51, 0.95); }
   .drop-shadow .linked > button {
     border-radius: 5px; }
 

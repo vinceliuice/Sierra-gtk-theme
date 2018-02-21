@@ -321,6 +321,8 @@ popover.background.places-menu {
   .menubar {
     box-shadow: none;
     color: $header_fg;
+    background-image: none;
+    background-color: transparent;
 
     > menuitem {
       border: none;
@@ -561,7 +563,11 @@ calendar.raven-calendar {
 }
 
 // Notifications
-.budgie-notification-window { background-color: transparent; }
+.budgie-notification-window {
+    background-color: transparent;
+    background-image: none;
+    border-radius: $wm_radius;
+}
 
 .budgie-notification {
   .notification-title { font-size: 120%; }
@@ -592,11 +598,11 @@ calendar.raven-calendar {
 .drop-shadow {
   margin: 5px 9px;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: $wm_radius;
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent,
               0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
 
-  background-color: $bg_color;
+  background-color: rgba($bg_color, 0.95);
 
   button { @extend %budgiebutton.flat; }
 

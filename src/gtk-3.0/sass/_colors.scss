@@ -53,8 +53,7 @@ $header_bg_backdrop: if($variant == 'light', #F6F6F6, #404040);
 $header_border: if($variant=='light', #afafaf, #484848);
 $bar_border: if($variant=='light', #E1E1E1, #4B4B4B);
 
-$header_fg: if($variant == 'light', saturate(transparentize($fg_color, 0.2), 10%), saturate(transparentize($fg_color, 0.2), 10%));
-$header_fg: if($darker == 'true', #FFFFFF, $header_fg);
+$header_fg: if($darker == 'true', #FFFFFF, saturate(transparentize($fg_color, 0.2), 10%));
 
 $dark_sidebar_bg: white;
 @if $transparency=='true' and $variant=='light' { $dark_sidebar_bg: transparentize(#f6f6f6, 0.06); }
