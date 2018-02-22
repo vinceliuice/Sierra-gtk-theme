@@ -142,6 +142,10 @@
   }
 
   .workspace-add-button {
+    background-color: transparent;
+    background-image: none;
+    @extend %budgiebutton.flat;
+
     &:hover { box-shadow: none; }
 
     &:active { background-image: none; }
@@ -564,14 +568,16 @@ calendar.raven-calendar {
 
 // Notifications
 .budgie-notification-window {
-    background-color: transparent;
-    background-image: none;
-    border-radius: $wm_radius;
+  background-color: transparent;
+  background-image: none;
+  border-radius: $wm_radius;
 }
 
 .budgie-notification {
-  .notification-title { font-size: 120%; }
+  background-color: transparent;
+  background-image: none;
 
+  .notification-title { font-size: 120%; }
   .notification-body { @extend .dim-label; }
 }
 
@@ -582,6 +588,8 @@ calendar.raven-calendar {
 
 // Internal part of the OSD
 .budgie-osd {
+  background-color: transparent;
+  background-image: none;
   .budgie-osd-text { font-size: 120%; }
 }
 
@@ -590,9 +598,41 @@ calendar.raven-calendar {
   @extend .budgie-notification-window;
 }
 
+window.budgie-switcher-window {
+  border-radius: $wm_radius;
+  background-color: transparent;
+  background-image: none;
+
+  // draw actual backgrounds and shadows
+  .drop-shadow {
+    @extend .drop-shadow;
+
+    label.budgie-switcher-title { // bottom label for app titles
+    }
+  }
+
+  flowboxchild { // icon-tiles
+    margin: 2px;
+    border-radius: $wm_radius;
+    -gtk-outline-radius: $wm_radius;
+//    background-color: transparent;
+    background-image: none;
+
+//    &:hover,
+//    &:active { }
+//    &:selected { // use the same values with Gnome-Shell
+//      &:disabled {
+//        &, label { }
+//      }
+//    }
+  }
+}
+
 // Internal part of the Switcher
 .budgie-switcher {
   @extend .budgie-notification;
+//  background-color: transparent;
+//  background-image: none;
 }
 
 .drop-shadow {
@@ -602,7 +642,8 @@ calendar.raven-calendar {
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent,
               0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
 
-  background-color: rgba($bg_color, 0.95);
+  background-color: rgba($base_color, 0.95);
+  background-image: none;
 
   button { @extend %budgiebutton.flat; }
 
