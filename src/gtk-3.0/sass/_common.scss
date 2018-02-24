@@ -1826,13 +1826,15 @@ menu,
   padding: 8px 0;
   border-radius: $wm_radius;
   background-color: if($transparency == 'true', rgba($_menu_bg, 0.95), $_menu_bg);
+  transition: none;
 //  border: 1px solid $borders_color;
 
   .csd & {
-      border-radius: $wm_radius;
-      background-color: if($transparency == 'true', rgba($_menu_bg, 0.95), $_menu_bg);
-      border: 1px solid $borders_color;
-    }
+    transition: none;
+    border-radius: $wm_radius;
+    background-color: if($transparency == 'true', rgba($_menu_bg, 0.95), $_menu_bg);
+    border: 1px solid $borders_color;
+  }
 
   separator,
   .csd & separator {
@@ -1852,18 +1854,23 @@ menu,
     min-width: 40px;
     padding: 2px 6px;
     text-shadow: none;
-    border-top: 1px solid transparent;
+//    border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
-//    transition: background-color 0.05s cubic-bezier(0, 0, 0.2, 1);
+    transition: none;
 
     &:hover {
       transition: none;
       color: $selected_fg_color;
       background-color: $selected_bg_color;
       text-shadow: $text_shadow;
-      border-top: 1px solid transparent;
+//      border-top: 1px solid transparent;
       border-bottom: 1px solid darken($selected_bg_color, 10%);
-      arrow { color: $selected_fg_color; -gtk-icon-shadow: if($variant=='light', $text_shadow, none); }
+
+      arrow {
+        transition: none;
+        color: $selected_fg_color;
+        -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
+      }
     }
 
     &:disabled {
@@ -1872,6 +1879,7 @@ menu,
 
     //submenu indicators
     arrow {
+      transition: none;
       min-height: 16px;
       min-width: 16px;
       background-color: transparent;
@@ -1901,10 +1909,10 @@ menu,
   }
   // overflow buttons
   > arrow {
-//    @include button(undecorated);
+    transition: none;
     min-width: 16px;
     min-height: 16px;
-//    padding: 0;
+    padding: 2px;
     background-color: $_menu_bg;
     border-radius: 0;
     border: 1px solid transparent;
@@ -1923,7 +1931,7 @@ menu,
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
-    &:hover { background-color: mix($fg_color, $base_color, 10%); }
+    &:hover { transition: none; background-color: mix($fg_color, $base_color, 10%); }
     &:disabled {
       color: transparent;
       background-color: transparent;

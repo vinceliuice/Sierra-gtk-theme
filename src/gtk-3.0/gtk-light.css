@@ -2307,10 +2307,12 @@ menu,
   padding: 8px 0;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.95);
+  transition: none;
 }
 
 .csd menu, .csd
 .menu {
+  transition: none;
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.11);
@@ -2333,8 +2335,8 @@ menu menuitem,
   min-width: 40px;
   padding: 2px 6px;
   text-shadow: none;
-  border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+  transition: none;
 }
 
 menu menuitem:hover,
@@ -2343,12 +2345,12 @@ menu menuitem:hover,
   color: #ffffff;
   background-color: #0e6bff;
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
-  border-top: 1px solid transparent;
   border-bottom: 1px solid #0054da;
 }
 
 menu menuitem:hover arrow,
 .menu menuitem:hover arrow {
+  transition: none;
   color: #ffffff;
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
@@ -2360,6 +2362,7 @@ menu menuitem:disabled,
 
 menu menuitem arrow,
 .menu menuitem arrow {
+  transition: none;
   min-height: 16px;
   min-width: 16px;
   background-color: transparent;
@@ -2401,8 +2404,10 @@ menuitem check:dir(rtl), menuitem radio:dir(rtl) {
 
 menu > arrow,
 .menu > arrow {
+  transition: none;
   min-width: 16px;
   min-height: 16px;
+  padding: 2px;
   background-color: #ffffff;
   border-radius: 0;
   border: 1px solid transparent;
@@ -2428,6 +2433,7 @@ menu > arrow.bottom,
 
 menu > arrow:hover,
 .menu > arrow:hover {
+  transition: none;
   background-color: #e9e9e9;
 }
 
