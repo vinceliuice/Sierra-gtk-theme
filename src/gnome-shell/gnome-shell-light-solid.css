@@ -130,17 +130,17 @@ stage {
 }
 
 .modal-dialog-linked-button:first-child {
-  border-radius: 0px 0px 0px 2px;
+  border-radius: 0px 0px 0px 8px;
 }
 
 .modal-dialog-linked-button:last-child {
   border-right-width: 0px;
-  border-radius: 0px 0px 2px 0px;
+  border-radius: 0px 0px 8px 0px;
 }
 
 .modal-dialog-linked-button:first-child:last-child {
   border-right-width: 0px;
-  border-radius: 0px 0px 2px 2px;
+  border-radius: 0px 0px 8px 8px;
 }
 
 /* Entries */
@@ -713,29 +713,47 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: transparent;
 }
 
+.popup-menu .popup-menu-arrow {
+  width: 16px;
+  height: 16px;
+}
+
 .popup-menu .popup-sub-menu {
   background-color: rgba(191, 191, 191, 0.35);
-  box-shadow: 0 0 transparent;
   border-radius: 0 0 5px 5px;
+  border: none;
+  box-shadow: none;
+}
+
+.popup-menu .popup-sub-menu .popup-menu-item:ltr {
+  /* 8px spacing + 2*4px padding */
+  padding-left: 6px;
+  padding-right: 24px;
+}
+
+.popup-menu .popup-sub-menu .popup-menu-item:rtl {
+  /* 8px spacing + 2*4px padding */
+  padding-left: 24px;
+  padding-right: 6px;
 }
 
 .popup-menu .popup-menu-content {
   padding: 6px 0;
-  margin: 0 2px;
+  margin: 0 4px;
 }
 
 .popup-menu .popup-menu-item {
-  spacing: 4px;
+  spacing: 0;
   transition-duration: 100ms;
   border-radius: 5px;
 }
 
 .popup-menu .popup-menu-item:ltr {
-  padding: 0.4em 24px 0.4em 0;
+  padding: 0.4em 16px 0.4em 0;
 }
 
 .popup-menu .popup-menu-item:rtl {
-  padding: 0.4em 0 0.4em 24px;
+  padding: 0.4em 0 0.4em 16px;
 }
 
 .popup-menu .popup-menu-item:checked {
@@ -745,6 +763,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: normal;
   border-radius: 5px 5px 0 0;
   text-shadow: 0 1px rgba(0, 0, 0, 0.45);
+}
+
+.popup-menu .popup-menu-item:checked .popup-menu-icon,
+.popup-menu .popup-menu-item:checked .app-menu-icon > StIcon,
+.popup-menu .popup-menu-item:checked .popup-menu-arrow {
+  icon-shadow: 0 1px rgba(0, 0, 0, 0.45);
 }
 
 .popup-menu .popup-menu-item:checked.selected {
@@ -817,11 +841,62 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-separator-menu-item {
   height: 1px;
-  margin: 0 38px;
+  margin: 0 0;
   background-color: rgba(0, 0, 0, 0.12);
   border-color: transparent;
   border-bottom-width: 0;
   border-bottom-style: solid;
+}
+
+.system-switch-user-submenu-icon.user-icon {
+  icon-size: 20px;
+  padding: 0 2px;
+}
+
+.system-switch-user-submenu-icon.default-icon {
+  icon-size: 16px;
+  padding: 0 4px;
+}
+
+#appMenu {
+  spinner-image: url("process-working.svg");
+  spacing: 4px;
+}
+
+#appMenu .label-shadow {
+  color: transparent;
+}
+
+.aggregate-menu {
+  min-width: 240px;
+}
+
+.aggregate-menu .popup-menu-icon {
+  padding: 0 4px;
+}
+
+.system-menu-action {
+  color: rgba(0, 0, 0, 0.54);
+  border-radius: 100px;
+  /* wish we could do 50% */
+  padding: 12px;
+  border: none;
+}
+
+.system-menu-action:hover, .system-menu-action:focus {
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.87);
+  border: none;
+  padding: 12px;
+}
+
+.system-menu-action:active {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.system-menu-action > StIcon {
+  icon-size: 16px;
 }
 
 .background-menu {
@@ -1037,8 +1112,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button {
-  -natural-hpadding: 10px;
-  -minimum-hpadding: 6px;
+  -natural-hpadding: 4px;
+  -minimum-hpadding: 4px;
   font-weight: bold;
   color: #242424;
   text-shadow: none;
@@ -1046,13 +1121,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button StLabel {
-  padding: 0 6px;
+  padding: 0 2px;
 }
 
 #panel .panel-button .app-menu-icon {
   -st-icon-style: symbolic;
-  margin-left: 6px;
+  margin-left: 4px;
   margin-right: 0;
+}
+
+#panel .panel-button .popup-menu-arrow {
+  width: 0;
+  height: 0;
 }
 
 #panel .panel-button .system-status-icon,
@@ -1067,25 +1147,28 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
 }
 
-#panel .panel-button:hover .system-status-icon,
-#panel .panel-button:hover .app-menu-icon > StIcon,
-#panel .panel-button:hover .popup-menu-arrow {
-  icon-shadow: none;
-}
-
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
   background-color: #0e6bff;
   color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.45);
   box-shadow: none;
 }
 
-#panel .panel-button:active > .system-status-icon, #panel .panel-button:overview > .system-status-icon, #panel .panel-button:focus > .system-status-icon, #panel .panel-button:checked > .system-status-icon {
-  icon-shadow: none;
+#panel .panel-button:active .system-status-icon,
+#panel .panel-button:active .app-menu-icon > StIcon,
+#panel .panel-button:active .popup-menu-arrow, #panel .panel-button:overview .system-status-icon,
+#panel .panel-button:overview .app-menu-icon > StIcon,
+#panel .panel-button:overview .popup-menu-arrow, #panel .panel-button:focus .system-status-icon,
+#panel .panel-button:focus .app-menu-icon > StIcon,
+#panel .panel-button:focus .popup-menu-arrow, #panel .panel-button:checked .system-status-icon,
+#panel .panel-button:checked .app-menu-icon > StIcon,
+#panel .panel-button:checked .popup-menu-arrow {
+  icon-shadow: 0 1px rgba(0, 0, 0, 0.45);
 }
 
 #panel .panel-button .system-status-icon {
   icon-size: 1.23077em;
-  padding: 0 4px;
+  padding: 0 3px;
 }
 
 .unlock-screen #panel .panel-button,
@@ -1122,6 +1205,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   /* transition from transparent to solid */
   transition-duration: 250ms;
   background-gradient-direction: none;
+  text-shadow: none;
 }
 
 #panel.solid:overview {
@@ -1139,12 +1223,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel.solid .panel-button:active, #panel.solid .panel-button:overview, #panel.solid .panel-button:focus, #panel.solid .panel-button:checked {
   color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px rgba(0, 0, 0, 0.45);
 }
 
 #panel.solid .system-status-icon,
 #panel.solid .app-menu-icon > StIcon,
 #panel.solid .popup-menu-arrow {
   icon-shadow: none;
+}
+
+#panel.solid .system-status-icon:active, #panel.solid .system-status-icon:overview, #panel.solid .system-status-icon:focus, #panel.solid .system-status-icon:checked,
+#panel.solid .app-menu-icon > StIcon:active,
+#panel.solid .app-menu-icon > StIcon:overview,
+#panel.solid .app-menu-icon > StIcon:focus,
+#panel.solid .app-menu-icon > StIcon:checked,
+#panel.solid .popup-menu-arrow:active,
+#panel.solid .popup-menu-arrow:overview,
+#panel.solid .popup-menu-arrow:focus,
+#panel.solid .popup-menu-arrow:checked {
+  icon-shadow: 0 1px rgba(0, 0, 0, 0.45);
 }
 
 #panel #panelActivities.panel-button > * {
@@ -1557,69 +1654,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.38);
-}
-
-.system-switch-user-submenu-icon.user-icon {
-  icon-size: 20px;
-  padding: 0 2px;
-}
-
-.system-switch-user-submenu-icon.default-icon {
-  icon-size: 16px;
-  padding: 0 4px;
-}
-
-#appMenu {
-  spinner-image: url("process-working.svg");
-  spacing: 4px;
-}
-
-#appMenu .label-shadow {
-  color: transparent;
-}
-
-.aggregate-menu {
-  min-width: 280px;
-}
-
-.aggregate-menu .popup-menu-icon {
-  padding: 0 4px;
-}
-
-.aggregate-menu .popup-sub-menu .popup-menu-item:ltr {
-  /* 8px spacing + 2*4px padding */
-  padding-left: 32px;
-  padding-right: 56px;
-}
-
-.aggregate-menu .popup-sub-menu .popup-menu-item:rtl {
-  /* 8px spacing + 2*4px padding */
-  padding-left: 56px;
-  padding-right: 32px;
-}
-
-.system-menu-action {
-  color: rgba(0, 0, 0, 0.54);
-  border-radius: 100px;
-  /* wish we could do 50% */
-  padding: 12px;
-  border: none;
-}
-
-.system-menu-action:hover, .system-menu-action:focus {
-  background-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.87);
-  border: none;
-  padding: 12px;
-}
-
-.system-menu-action:active {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.system-menu-action > StIcon {
-  icon-size: 16px;
 }
 
 .ripple-box {

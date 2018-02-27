@@ -66,15 +66,15 @@ stage {
   &:focus { @include button(flat-focus); }
 
   &:first-child {
-    border-radius: 0px 0px 0px 2px;
+    border-radius: 0px 0px 0px $bt_radius;
   }
   &:last-child {
     border-right-width: 0px;
-    border-radius: 0px 0px 2px 0px;
+    border-radius: 0px 0px $bt_radius 0px;
   }
   &:first-child:last-child {
     border-right-width: 0px;
-    border-radius: 0px 0px 2px 2px;
+    border-radius: 0px 0px $bt_radius $bt_radius;
   }
 }
 
@@ -558,21 +558,34 @@ $slider_color: if($variant == 'light', $accent_color, white);
   min-width: 12em;
   background-color: transparent;
 
-  .popup-menu-arrow { } //defined globally in the TOP BAR
+  .popup-menu-arrow { width: 16px; height: 16px; } //defined globally in the TOP BAR
   .popup-sub-menu {
     background-color: rgba($alt_base_color, 0.35);
-    box-shadow: $shadow_0;
     border-radius: 0 0 $material_radius $material_radius;
+    border: none;
+    box-shadow: none;
   }
 
-  .popup-menu-content { padding: 6px 0; margin: 0 2px; }
+  .popup-sub-menu .popup-menu-item {
+    &:ltr { /* 8px spacing + 2*4px padding */
+          padding-left: 6px;
+          padding-right: 24px;
+    }
+    &:rtl { /* 8px spacing + 2*4px padding */
+          padding-left: 24px;
+          padding-right: 6px;
+    }
+  }
+
+  .popup-menu-content { padding: 6px 0; margin: 0 4px; }
   .popup-menu-item {
-    spacing: 4px;
+    spacing: 0;
     transition-duration: $shorter_duration;
     border-radius: $material_radius;
 
-    &:ltr { padding: 0.4em 24px 0.4em 0; }
-    &:rtl { padding: 0.4em 0 0.4em 24px; }
+    &:ltr { padding: 0.4em 16px 0.4em 0; }
+    &:rtl { padding: 0.4em 0 0.4em 16px; }
+
     &:checked {
       background-color: $primary_color;
       color: $inverse_fg_color;
@@ -580,6 +593,12 @@ $slider_color: if($variant == 'light', $accent_color, white);
       font-weight: normal;
       border-radius: $material_radius $material_radius 0 0;
       text-shadow: 0 1px rgba(black, 0.45);
+
+      .popup-menu-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        icon-shadow: 0 1px rgba(black, 0.45);
+      }
 
       &.selected {
         background-color: mix($inverse_fg_color, $primary_color, percentage($lower_opacity / 2));
@@ -640,11 +659,53 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
   .popup-separator-menu-item {
     height: 1px; //not really the whole box
-    margin: 0 38px;
+    margin: 0 0;
     background-color: $border_color;
     border-color: transparent;
     border-bottom-width: 0;
     border-bottom-style: solid;
+  }
+
+  // a little unstructured mess:
+
+  .system-switch-user-submenu-icon.user-icon {
+    icon-size: 20px;
+    padding: 0 2px;
+  }
+  .system-switch-user-submenu-icon.default-icon {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+
+  #appMenu {
+    spinner-image: url("process-working.svg");
+    spacing: 4px;
+
+    .label-shadow { color: transparent; }
+  }
+
+  // system status popover menu
+  .aggregate-menu {
+    min-width: 240px;
+
+    .popup-menu-icon { padding: 0 4px; }
+  }
+
+  .system-menu-action {
+    color: $secondary_fg_color;
+    border-radius: 100px; /* wish we could do 50% */
+    padding: ($large_size - 20px) / 2;
+    border: none;
+
+    &:hover, &:focus {
+      background-color: $divider_color;
+      color: $fg_color;
+      border: none;
+      padding: ($large_size - 20px) / 2;
+    }
+    &:active { background-color: $track_color; color: $fg_color; }
+
+    & > StIcon { icon-size: 16px; }
   }
 
 // Background menu
@@ -850,21 +911,23 @@ $slider_color: if($variant == 'light', $accent_color, white);
   }
 
   .panel-button {
-    -natural-hpadding: 10px;
-    -minimum-hpadding: 6px;
+    -natural-hpadding: 4px;
+    -minimum-hpadding: 4px;
     font-weight: bold;
     color: $panel_fg_color;
     text-shadow: none;
     transition-duration: $longer_duration;
 
-    StLabel { padding: 0 6px; }
+    StLabel { padding: 0 2px; }
 
     .app-menu-icon {
       -st-icon-style: symbolic;
-      margin-left: 6px;
+      margin-left: 4px;
       margin-right: 0;
       //dimensions of the icon are hardcoded
     }
+
+    .popup-menu-arrow { width: 0; height: 0; } // Remove arrow on panel button
 
     .system-status-icon,
     .app-menu-icon > StIcon,
@@ -876,12 +939,6 @@ $slider_color: if($variant == 'light', $accent_color, white);
       color: $panel_fg_color;
       background-color: $inverse_divider_color;
       text-shadow: none;
-
-      .system-status-icon,
-      .app-menu-icon > StIcon,
-      .popup-menu-arrow {
-        icon-shadow: none;
-      }
     }
 
     &:active, &:overview, &:focus, &:checked {
@@ -889,12 +946,17 @@ $slider_color: if($variant == 'light', $accent_color, white);
       // a box-shadow
       background-color: $primary_color;
       color: $inverse_fg_color;
+      text-shadow: 0 1px rgba(black, 0.45);
       box-shadow: none;
 
-      & > .system-status-icon { icon-shadow: none; }
+      .system-status-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        icon-shadow: 0 1px rgba(black, 0.45);
+      }
     }
 
-    .system-status-icon { icon-size: em(16px); padding: 0 4px; }
+    .system-status-icon { icon-size: em(16px); padding: 0 3px; }
     .unlock-screen &,
     .login-screen &,
     .lock-screen & {
@@ -920,7 +982,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     /* transition from transparent to solid */
     transition-duration: 250ms;
     background-gradient-direction: none; // for Ubuntu session
-//    text-shadow: none; // for Ubuntu session
+    text-shadow: none; // for Ubuntu session
 
     &:overview { background-color: transparent; } // for Ubuntu session
 
@@ -934,6 +996,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
       &:active, &:overview, &:focus, &:checked {
         color: $inverse_fg_color;
+        text-shadow: 0 1px rgba(black, 0.45);
       }
     }
 
@@ -941,6 +1004,10 @@ $slider_color: if($variant == 'light', $accent_color, white);
     .app-menu-icon > StIcon,
     .popup-menu-arrow {
       icon-shadow: none;
+
+      &:active, &:overview, &:focus, &:checked {
+        icon-shadow: 0 1px rgba(black, 0.45);
+      }
     }
   }
 }
@@ -1270,56 +1337,6 @@ $slider_color: if($variant == 'light', $accent_color, white);
             }
           }
 
-
-  // a little unstructured mess:
-
-  .system-switch-user-submenu-icon.user-icon {
-    icon-size: 20px;
-    padding: 0 2px;
-  }
-  .system-switch-user-submenu-icon.default-icon {
-    icon-size: 16px;
-    padding: 0 4px;
-  }
-
-  #appMenu {
-    spinner-image: url("process-working.svg");
-    spacing: 4px;
-
-    .label-shadow { color: transparent; }
-  }
-
-  .aggregate-menu {
-    min-width: 280px;
-    .popup-menu-icon { padding: 0 4px; }
-    .popup-sub-menu .popup-menu-item {
-      &:ltr { /* 8px spacing + 2*4px padding */
-          padding-left: 32px;
-          padding-right: 56px;
-        }
-      &:rtl { /* 8px spacing + 2*4px padding */
-          padding-left: 56px;
-          padding-right: 32px;
-        }
-    }
-  }
-
-  .system-menu-action {
-    color: $secondary_fg_color;
-    border-radius: 100px; /* wish we could do 50% */
-    padding: ($large_size - 20px) / 2;
-    border: none;
-
-    &:hover, &:focus {
-      background-color: $divider_color;
-      color: $fg_color;
-      border: none;
-      padding: ($large_size - 20px) / 2;
-    }
-    &:active { background-color: $track_color; color: $fg_color; }
-
-    & > StIcon { icon-size: 16px; }
-  }
 
 //Activities Ripples
 .ripple-box {

@@ -125,7 +125,8 @@ flowbox flowboxchild:selected {
   outline-offset: -2px;
 }
 
-label.separator, popover label.separator {
+label.separator, popover label.separator,
+popover.background label.separator {
   color: #242424;
 }
 
@@ -134,7 +135,8 @@ label selection {
   background-color: #0e6bff;
 }
 
-.dim-label, label.separator, popover label.separator, headerbar .subtitle, .titlebar:not(headerbar) .subtitle, .budgie-notification .notification-body, .budgie-switcher .notification-body {
+.dim-label, label.separator, popover label.separator,
+popover.background label.separator, headerbar .subtitle, .titlebar:not(headerbar) .subtitle, .budgie-notification .notification-body, .budgie-switcher .notification-body {
   opacity: 0.55;
 }
 
@@ -160,7 +162,9 @@ textview {
   background-color: #ffffff;
 }
 
-popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier, .osd .scale-popup, .osd {
+popover.osd, popover.magnifier, .csd popover.osd, .csd popover.magnifier,
+popover.background.osd,
+popover.background.magnifier, .csd popover.background.osd, .csd popover.background.magnifier, .osd .scale-popup, .osd {
   color: #363636;
   border: none;
   background-color: rgba(245, 245, 245, 0.95);
@@ -2303,7 +2307,6 @@ menubar > menuitem:disabled,
 
 menu,
 .menu {
-  margin: 4px;
   padding: 8px 0;
   border-radius: 6px;
   background-color: #ffffff;
@@ -2444,38 +2447,45 @@ menu > arrow:disabled,
   border-color: transparent;
 }
 
+popover,
 popover.background {
-  padding: 2px;
-  border-radius: 6px;
-  background-color: #ffffff;
-}
-
-.csd popover.background, popover.background {
-  border-radius: 6px;
-}
-
-popover {
-  padding: 2px;
+  padding: 0;
   border-radius: 6px;
   background-clip: border-box;
   background-color: #ffffff;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
-.csd popover, popover {
+.csd popover, popover, .csd
+popover.background,
+popover.background {
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.11);
 }
 
-popover separator {
-  background-color: #ffffff;
+popover separator,
+popover separator,
+.csd popover separator,
+popover.background separator,
+popover.background separator,
+.csd
+popover.background separator {
+  margin: 4px -9px;
+  min-height: 2px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 popover > list,
 popover > .view,
 popover > iconview,
 popover > toolbar,
-popover > .inline-toolbar {
+popover > .inline-toolbar,
+popover.background > list,
+popover.background > .view,
+popover.background > iconview,
+popover.background > toolbar,
+popover.background > .inline-toolbar {
   border-style: none;
   background-color: transparent;
 }
@@ -4525,7 +4535,8 @@ colorchooser .popover.osd {
   box-shadow: none;
 }
 
-.context-menu, popover.touch-selection, .csd popover.touch-selection {
+.context-menu, popover.touch-selection, .csd popover.touch-selection,
+popover.background.touch-selection, .csd popover.background.touch-selection {
   font: initial;
 }
 
@@ -4920,7 +4931,8 @@ terminal-window notebook > header.top button,
   text-shadow: none;
 }
 
-.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle, .titlebar:not(headerbar) .nautilus-canvas-item.subtitle, .budgie-notification .nautilus-canvas-item.notification-body, .budgie-switcher .nautilus-canvas-item.notification-body,
+.nautilus-canvas-item.dim-label, label.nautilus-canvas-item.separator,
+popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-canvas-item.subtitle, .titlebar:not(headerbar) .nautilus-canvas-item.subtitle, .budgie-notification .nautilus-canvas-item.notification-body, .budgie-switcher .nautilus-canvas-item.notification-body,
 .nautilus-list-dim-label {
   color: #8d8d8d;
 }

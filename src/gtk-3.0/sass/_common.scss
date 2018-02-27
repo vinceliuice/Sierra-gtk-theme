@@ -1785,6 +1785,7 @@ treeview.view {
 
 $_menu_bg: if($variant=='light', $base_color, $bg_color);
 $_menu_bd: if($variant=='light', rgba(black, 0.05), rgba(white, 0.08));
+@if $transparency == 'true' { $_menu_bg: if($variant=='light', rgba($base_color, 0.95), rgba($bg_color, 0.98)); }
 
 menubar,
 .menubar {
@@ -1822,17 +1823,17 @@ menubar,
 //.context-menu,
 menu,
 .menu {
-  margin: 4px;
+//  margin: 4px;
   padding: 8px 0;
   border-radius: $wm_radius;
-  background-color: if($transparency == 'true', rgba($_menu_bg, 0.95), $_menu_bg);
+  background-color: $_menu_bg;
   transition: none;
 //  border: 1px solid $borders_color;
 
   .csd & {
     transition: none;
     border-radius: $wm_radius;
-    background-color: if($transparency == 'true', rgba($_menu_bg, 0.95), $_menu_bg);
+    background-color: $_menu_bg;
     border: 1px solid $borders_color;
   }
 
@@ -1945,20 +1946,14 @@ menu,
 //
 
 $_popover_bg: if($variant=='light', $base_color, $bg_color);
+@if $transparency == 'true' { $_popover_bg: if($variant=='light', rgba($base_color, 0.95), rgba($bg_color, 0.98)); }
 
+popover,
 popover.background {
-  padding: 2px;
-  border-radius: $wm_radius;
-  background-color: if($transparency == 'true', rgba($_popover_bg, 0.95), $_popover_bg);
-
-  .csd &, & { border-radius: $wm_radius; }
-}
-
-popover {
-  padding: 2px;
+  padding: 0;
   border-radius: $wm_radius;
   background-clip: border-box;
-  background-color: if($transparency == 'true', rgba($_popover_bg, 0.95), $_popover_bg);
+  background-color: $_popover_bg;
 
   box-shadow: 0 3px 6px 0 if($variant=='light', transparentize(black, 0.85), transparentize(black, 0.85));
 
@@ -1967,7 +1962,15 @@ popover {
       border: 1px solid if($variant=='light', darken($borders_color, 5%), lighten($borders_color, 5%));
     }
 
-  & separator { background-color: $_popover_bg; }
+  separator,
+  & separator,
+  .csd & separator {
+    margin: 4px -9px;
+    min-height: 2px;
+    border: none;
+    background-color: $_menu_bd;
+  }
+
   label.separator { @extend label.separator; } // Noice
 
   > list,
@@ -1983,13 +1986,6 @@ popover {
 
     &.osd { @extend %osd; }
   }
-
-//  &.menu button:not(only-child),
-//  button.model:not(only-child) {
-//    min-height: 24px;
-//    padding: 0;
-//    margin: 0;
-//  }
 }
 
 //touch selection handlebars for the Popover.osd above
