@@ -693,8 +693,8 @@ style "menu" {
 
 style "menu_item"
 {
-  xthickness = 0
-  ythickness = 4
+  xthickness = 4
+  ythickness = 1
 
   # HACK: Gtk doesn't actually read this value
   # while rendering the menu items, but Libreoffice
@@ -1971,8 +1971,8 @@ style "separator_menu_item" {
   engine "pixmap" {
     image {
       function = BOX
-      file     = "assets/border.png"
-      border   = {0, 0, 1, 0}
+      file     = "assets/menu-separator.png"
+      border   = {0, 0, 2, 0}
     }
   }
 }
@@ -2309,15 +2309,15 @@ class "GtkSpinButton"                                               style "spinb
 class "GtkNotebook"                                                 style "notebook"
 class "GtkRange"                                                    style "range"
 class "GtkProgressBar"                                              style "progressbar"
-class "GtkSeparatorMenuItem"                                        style "separator_menu_item"
 class "GtkScrolledWindow"                                           style "scrolled_window"
 class "GtkFrame"                                                    style "frame"
 class "GtkTreeView"                                                 style "treeview"
 class "GtkToolbar"                                                  style "toolbar"
 class "*HandleBox"                                                  style "toolbar"
+class "GtkMenu"                                                     style "menu"
 
-widget_class "*<GtkMenu>*"                                          style "menu"
 widget_class "*<GtkMenuItem>*"                                      style "menu_item"
+widget_class "*<GtkSeparatorMenuItem>*"                             style "separator_menu_item"
 widget_class "*<GtkCheckButton>*"                                   style "checkbutton"
 widget_class "*<GtkComboBox>"                                       style "combobox"
 widget_class "*<GtkComboBox>*<GtkButton>"                           style "combobox_button"

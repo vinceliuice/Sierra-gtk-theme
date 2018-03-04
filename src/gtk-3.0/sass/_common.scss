@@ -379,6 +379,14 @@ $_dot_color: $selected_bg_color;
   }
 }
 
+button:not(.flat):not(.osd) {
+  outline-color: $entry_highlight;
+  outline-style: solid;
+  outline-offset: -1px;
+  outline-width: 3px;
+  -gtk-outline-radius: $bt_radius + 1px;
+}
+
 button {
   min-height: if($variant =='light', 24px, 26px);
   min-width: 16px;
@@ -398,8 +406,10 @@ button {
     // it won't fade out when the pointer leave the button allocation area. To make the transition more evident
     // in this case the duration is increased.
     transition: none;
+    border: none;
 
     &:hover {
+      @include button(flat-hover);
       transition: $button_transition;
       transition-duration: 350ms;
 
@@ -619,27 +629,39 @@ button {
   .linked.vertical > &:hover,
   .linked.vertical > &:active,
   .linked.vertical > &:checked { @extend %linked_vertical; }
+
+//  reset some buttons outline style
+  &.image-button,
+  .linked.vertical > &,
+  .linked:not(.vertical) > & {
+      outline-color: gtkalpha(currentColor, 0.3);
+      outline-style: dashed;
+      outline-offset: -3px;
+      outline-width: 1px;
+      -gtk-outline-radius: $bt_radius;
+  }
 }
 
 // all the following is for the +|- buttons on inline toolbars, that way
 // should really be deprecated...
 .inline-toolbar toolbutton > button { // redefining the button look is
                                           // needed since those are flat...
-  @include button(normal);
-  &:hover { @include button(hover); }
+  min-height: 20px;
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
   &:active,
-  &:checked{ @include button(active); }
-  &:disabled { @include button(insensitive); }
+  &:checked{ @include button(flat-active); }
+  &:disabled { @include button(flat-insensitive); }
   &:disabled:active,
-  &:disabled:checked { @include button(insensitive-active); }
+  &:disabled:checked { @include button(flat-insensitive-active); }
 }
 
 // More inline toolbar buttons
 toolbar.inline-toolbar toolbutton {
-  & > button.flat { @extend %linked_middle; }
-  &:first-child > button.flat { @extend %linked:first-child; }
-  &:last-child > button.flat { @extend %linked:last-child; }
-  &:only-child > button.flat { @extend %linked:only-child; }
+  & > button.flat { @extend %linked; }
+//  &:first-child > button.flat { @extend %linked:first-child; }
+//  &:last-child > button.flat { @extend %linked:last-child; }
+//  &:only-child > button.flat { @extend %linked:only-child; }
 }
 
 // Some crazy linking stuff
@@ -949,7 +971,7 @@ combobox {
     margin: -1px -13px -1px -1px;
     border-radius: 0 $bt_radius $bt_radius 0;
     color: $selected_fg_color;
-    border: 1px solid if($variant=='light', $selected_bg_color, #686868);
+    border: 1px solid if($variant=='light', $selection_mode_bg, #686868);
     background-color: $selected_bg_color;
     background-image: if($variant=='light', linear-gradient( 180deg, #4c97fe 0%, #0564e3 100%),
                                             linear-gradient( 180deg, #686868 0%, #686868 100%));
@@ -983,7 +1005,8 @@ combobox {
 toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
-  background-color: $bg_color;
+  background-color: $header_bg;
+  border-bottom: 1px solid $borders_color;
 //  border-radius: $wm_radius;
 
   separator { background: none; }
@@ -1184,8 +1207,8 @@ headerbar,
 
     button.titlebutton {
       border: none;
-      min-height: 20px;
-      min-width: 20px;
+      min-height: 18px;
+      min-width: 18px;
       margin: 0;
       padding: 0;
     }
@@ -1397,6 +1420,7 @@ headerbar {
   // Reset buttons
   .linked:not(.vertical):not(.path-bar) > button {
     &, &:hover, &:active, &:checked, &:disabled {
+      min-width: 20px;
       border-radius: $bt_radius;
       @if $variant == 'light' { border: 1px solid $borders_color; }
     }
@@ -1805,12 +1829,12 @@ menubar,
   > menuitem {
     transition: all 0.2s cubic-bezier(0.0, 0.0, 0.2, 1);
     padding: 4px 8px;
-    border: 1px solid transparent;
     border-radius: 0;
 
     &:hover { //Seems like it :hover even with keyboard focus
-      @include button(active);
-      border: 1px solid $selected_bg_color;
+//      @include button(active);
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
       text-shadow: $text_shadow;
     }
     &:disabled {
@@ -1824,7 +1848,7 @@ menubar,
 menu,
 .menu {
 //  margin: 4px;
-  padding: 8px 0;
+  padding: 6px 0;
   border-radius: $wm_radius;
   background-color: $_menu_bg;
   transition: none;
@@ -1834,15 +1858,15 @@ menu,
     transition: none;
     border-radius: $wm_radius;
     background-color: $_menu_bg;
-    border: 1px solid $borders_color;
+//    border: 1px solid $borders_color;
   }
 
   separator,
   .csd & separator {
-    margin: 4px 0;
-    min-height: 2px;
-    border: none;
-    background-color: $_menu_bd;
+    margin: 2px 0;
+    min-height: 0;
+    border-bottom: 2px solid $_menu_bd;
+    background-color: transparent;
   }
 
 //  // Firefox workaround
@@ -1916,7 +1940,7 @@ menu,
     padding: 2px;
     background-color: $_menu_bg;
     border-radius: 0;
-    border: 1px solid transparent;
+    border: none;
     background-image: none;
     color: $fg_color;
 
@@ -1927,7 +1951,7 @@ menu,
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
     &.bottom {
-      margin: 0 0 -24px 0;
+      margin: 0 0 -18px 0;
       border-radius: 0 0 $wm_radius $wm_radius;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
@@ -2433,6 +2457,22 @@ checkbutton, radiobutton {
   }
 }
 
+check {
+  outline-color: gtkalpha(currentColor, 0.3);
+  outline-style: solid;
+  outline-offset: 0;
+  outline-width: 3px;
+  -gtk-outline-radius: 2px;
+}
+
+radio {
+  outline-color: gtkalpha(currentColor, 0.3);
+  outline-style: solid;
+  outline-offset: 0;
+  outline-width: 3px;
+  -gtk-outline-radius: 50px;
+}
+
 check,
 radio {
   min-width: 16px;
@@ -2489,7 +2529,7 @@ scale {
     $_scale_trough_bg: rgba(black, 0.2);
 
     outline-offset: 2px;
-    -gtk-outline-radius: 4.5px;
+    -gtk-outline-radius: 6px;
 
     border-radius: $bt_radius;
     background-color: $_scale_trough_bg;
@@ -2543,7 +2583,7 @@ scale {
   }
 
   slider {
-    $_slider_border: if($variant=='light', transparentize(darken($button_border, 0%), 0.5), transparentize($button_border, 0.5));
+    $_slider_border: if($variant=='light', transparentize(darken($button_border, 0%), 0), transparentize($button_border, 0));
 
     background-color: $selected_fg_color;
     border: 1px solid $_slider_border;
@@ -3032,7 +3072,7 @@ messagedialog { // Message Dialog styling
     border-bottom: 1px solid $header_border;
   }
 
-  .dialog-action-area button { padding: 8px; min-height: 0; }
+  .dialog-action-area button { padding: 5px 8px 6px 8px; min-height: 0; }
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
@@ -3602,7 +3642,7 @@ decoration {
   }
   .csd.popup & {
     border-radius: $wm_radius;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.06), 0 0 0 1px $borders_color;
   }
   tooltip.csd & {
     border-radius: $wm_radius;
@@ -3642,8 +3682,8 @@ headerbar,
       @include button(header-active);
     }
     &.close, &.maximize, &.minimize, &.restore {
-      min-width: 20px;
-      min-height: 20px;
+      min-width: 18px;
+      min-height: 18px;
       color: transparent;
       background-color: transparent;
       background-position: center;
@@ -3708,13 +3748,14 @@ popover.emoji-picker {
 
 // mimic tab style
 button.emoji-section {
-  margin-top: -1px;
-  padding: 2px 14px;
-  border-radius: 0;
-  outline-offset: -4px;
+  margin: 2px 1px;
+  padding: 1px 12px;
+  border-radius: $wm_radius;
+  border: none;
+  outline-offset: -2px;
   box-shadow: none;
-  &:first-child { border-radius: 0 0 0 $wm_radius; }
-  &:last-child { border-radius: 0 0 $wm_radius 0; }
+//  &:first-child { border-radius: 0 0 0 $wm_radius; }
+//  &:last-child { border-radius: 0 0 $wm_radius 0; }
 }
 
 .emoji {

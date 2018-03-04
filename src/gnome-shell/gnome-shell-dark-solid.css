@@ -725,35 +725,23 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu .popup-sub-menu .popup-menu-item:ltr {
-  /* 8px spacing + 2*4px padding */
-  padding-left: 6px;
-  padding-right: 24px;
-}
-
-.popup-menu .popup-sub-menu .popup-menu-item:rtl {
-  /* 8px spacing + 2*4px padding */
-  padding-left: 24px;
-  padding-right: 6px;
-}
-
 .popup-menu .popup-menu-content {
   padding: 6px 0;
   margin: 0 4px;
 }
 
 .popup-menu .popup-menu-item {
-  spacing: 0;
+  spacing: 8px;
   transition-duration: 100ms;
   border-radius: 5px;
 }
 
 .popup-menu .popup-menu-item:ltr {
-  padding: 0.4em 16px 0.4em 0;
+  padding: 0.4em 24px 0.4em 0;
 }
 
 .popup-menu .popup-menu-item:rtl {
-  padding: 0.4em 0 0.4em 16px;
+  padding: 0.4em 0 0.4em 24px;
 }
 
 .popup-menu .popup-menu-item:checked {
@@ -1984,7 +1972,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-view-control:active {
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .app-view-control:checked {

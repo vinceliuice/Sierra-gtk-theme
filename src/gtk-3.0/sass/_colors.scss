@@ -8,7 +8,7 @@ $bg_color: if($variant =='light', #f5f5f5, #333333);
 $fg_color: if($variant =='light', #242424, #dedede);
 
 $selected_fg_color: #ffffff;
-$selected_bg_color: if($variant == 'light', #0e6bff, #0062FF);
+$selected_bg_color: if($variant == 'light', #0046DB, #0062FF);
 $selected_borders_color: darken($selected_bg_color, 20%);
 $borders_color: if($variant =='light', rgba(black, 0.11), rgba(white, 0.12));
 $highlight: if($variant =='light', rgba(white, 0.75), transparent);
@@ -16,7 +16,7 @@ $highlight: if($variant =='light', rgba(white, 0.75), transparent);
 $link_color: #3484e2;
 $link_visited_color: if($variant == 'light', lighten($text_color, 10%), darken($text_color, 15%));
 
-$selection_mode_bg: $selected_bg_color;
+$selection_mode_bg: #0e6bff;
 $selection_mode_fg: $selected_fg_color;
 $warning_color: #F27835;
 $error_color: #FC4138;
@@ -63,7 +63,7 @@ $dark_sidebar_bg: white;
 
 $dark_sidebar_fg: $text_color;
 $dark_sidebar_border: if($variant=='light', darken(opacify($dark_sidebar_bg, 1), 5%), lighten(opacify($dark_sidebar_bg, 1), 5%));
-$sidebar_theme_color: if($variant=='light', #CAD2DE, $selected_bg_color);
+$sidebar_theme_color: if($variant=='light', #C7C7C7, rgba(#C7C7C7, 0.25));
 
 $osd_fg_color: $text_color;
 $osd_bg_color: if($variant=='light', transparentize(#f5f5f5, 0.05), transparentize(#242424, 0.05));
@@ -83,7 +83,7 @@ $panel_fg: $dark_sidebar_fg;
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
 $entry_border: $borders_color;
-$entry_highlight: lighten($selected_bg_color, 20%);
+$entry_highlight: lighten($selection_mode_bg, 25%);
 
 $header_entry_bg: if($darker == 'true' or $variant == 'dark', transparentize(lighten($header_bg, 22%), 0.6), transparentize($base_color, 0.1));
 $header_entry_border: if($darker == 'true' or $variant == 'dark', transparentize(darken($header_bg, 12%), 0.6), transparentize($header_fg, 0.7));

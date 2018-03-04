@@ -566,25 +566,25 @@ $slider_color: if($variant == 'light', $accent_color, white);
     box-shadow: none;
   }
 
-  .popup-sub-menu .popup-menu-item {
-    &:ltr { /* 8px spacing + 2*4px padding */
-          padding-left: 6px;
-          padding-right: 24px;
-    }
-    &:rtl { /* 8px spacing + 2*4px padding */
-          padding-left: 24px;
-          padding-right: 6px;
-    }
-  }
+//  .popup-sub-menu .popup-menu-item {
+//    &:ltr { /* 8px spacing + 2*4px padding */
+//          padding-left: 8px;
+//          padding-right: 24px;
+//    }
+//    &:rtl { /* 8px spacing + 2*4px padding */
+//          padding-left: 24px;
+//          padding-right: 8px;
+//    }
+//  }
 
   .popup-menu-content { padding: 6px 0; margin: 0 4px; }
   .popup-menu-item {
-    spacing: 0;
+    spacing: 8px;
     transition-duration: $shorter_duration;
     border-radius: $material_radius;
 
-    &:ltr { padding: 0.4em 16px 0.4em 0; }
-    &:rtl { padding: 0.4em 0 0.4em 16px; }
+    &:ltr { padding: 0.4em 24px 0.4em 0; }
+    &:rtl { padding: 0.4em 0 0.4em 24px; }
 
     &:checked {
       background-color: $primary_color;
@@ -1587,7 +1587,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     }
     &:active {
       color: $inverse_fg_color;
-      background-color: $inverse_track_color !important;
+      background-color: $inverse_track_color;
     }
     &:checked {
       color: $inverse_fg_color;

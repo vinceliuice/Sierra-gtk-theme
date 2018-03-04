@@ -18,6 +18,7 @@ arrow-up-small-insens
 arrow-up-small-prelight
 menu-arrow
 menu-arrow-prelight
+menu-separator
 border
 button
 button-hover
