@@ -36,7 +36,7 @@
   box-shadow: 0 1px 2px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
               0 2px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
 
-  background-color: rgba($bg_color, 0.95);
+  background-color: if($transparency == 'true', rgba($bg_color, 0.95), $bg_color);
 
   .container { padding: 2px; }
 
@@ -425,7 +425,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
 // Raven
 .raven {
-  background-color: rgba($bg_color, 0.95);
+  background-color: if($transparency == 'true', rgba($bg_color, 0.95), $bg_color);
 
   // for >=10.4
   > box { margin-bottom: -10px; }
@@ -642,7 +642,7 @@ window.budgie-switcher-window {
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent,
               0 3px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1));
 
-  background-color: rgba($base_color, 0.95);
+  background-color: if($transparency == 'true', rgba($base_color, 0.95), $base_color);
   background-image: none;
 
   button { @extend %budgiebutton.flat; }

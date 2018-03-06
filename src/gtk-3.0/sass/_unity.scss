@@ -1,13 +1,13 @@
 // Decorations
 UnityDecoration {
-  -UnityDecoration-extents: 28px 0 0 0;
+  -UnityDecoration-extents: 28px 1px 1px 1px;
   -UnityDecoration-input-extents: 10px;
 
   -UnityDecoration-shadow-offset-x: 0px;
-  -UnityDecoration-shadow-offset-y: 3px;
-  -UnityDecoration-active-shadow-color: rgba(0, 0, 0, 0.2);
+  -UnityDecoration-shadow-offset-y: 6px;
+  -UnityDecoration-active-shadow-color: rgba(0, 0, 0, 0.35);
   -UnityDecoration-active-shadow-radius: 12px;
-  -UnityDecoration-inactive-shadow-color: rgba(0, 0, 0, 0.07);
+  -UnityDecoration-inactive-shadow-color: rgba(0, 0, 0, 0.15);
   -UnityDecoration-inactive-shadow-radius: 7px;
 
   -UnityDecoration-glow-size: 10px;
@@ -17,13 +17,16 @@ UnityDecoration {
   -UnityDecoration-title-fade: 35px;
   -UnityDecoration-title-alignment: 0.0;
 
+  &.background { border-radius: $wm_radius; background-color: transparent; }
+
   .top {
-    border: 1px solid if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), transparentize(black, 0.9));
+
+    border: 1px solid $borders_color;
     border-bottom-width: 0;
     border-radius: $wm_radius $wm_radius 0 0;
     padding: 1px 6px 0 6px;
 
-    background-color: opacify($header_bg, 1);
+    background-color: $header_bg;
     background-image: if($darker=='false' and $variant=='light', linear-gradient(0deg, $header_middle 0%, $header_highlight 100%), none);
     color: $header_fg;                         // The foreground color will be used to paint the text
 
