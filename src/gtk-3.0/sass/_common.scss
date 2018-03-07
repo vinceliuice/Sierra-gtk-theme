@@ -379,11 +379,10 @@ $_dot_color: $selected_bg_color;
   }
 }
 
-%outline_solid,
-button:not(.flat):not(.osd) {
+@at-root %outline_solid, button {
   outline-color: $entry_highlight;
   outline-style: solid;
-  outline-offset: -1px;
+  outline-offset: 0;
   outline-width: 3px;
   -gtk-outline-radius: $bt_radius + 1px;
 }
@@ -395,10 +394,17 @@ button {
   border: 1px solid;
   border-radius: $bt_radius;
   padding: 0 6px;
-
   @include button(normal);
 
   separator { margin: 4px 1px; }
+
+  @at-root %outline_dashed,
+  &.flat, &.osd, &.sidebar-button, &.circular-button {
+    outline-color: gtkalpha(currentColor, 0.3);
+    outline-style: dashed;
+    outline-offset: -3px;
+    outline-width: 1px;
+  }
 
   &.flat {
     @include button(flat-normal);
@@ -630,17 +636,9 @@ button {
   .linked.vertical > &:active,
   .linked.vertical > &:checked { @extend %linked_vertical; }
 
-  // reset some buttons outline style
-  %outline_dashed,
-  &.image-button,
-  .linked.vertical > &,
-  .linked:not(.vertical) > & {
-      outline-color: gtkalpha(currentColor, 0.3);
-      outline-style: dashed;
-      outline-offset: -3px;
-      outline-width: 1px;
-      -gtk-outline-radius: $bt_radius;
-  }
+  // reset some linked buttons outline style
+  .linked:not(.vertical) > &,
+  .linked.vertical > & { @extend %outline_dashed; }
 }
 
 // all the following is for the +|- buttons on inline toolbars, that way
@@ -956,6 +954,7 @@ spinbutton {
 // Comboboxes
 //
 combobox {
+  @extend %outline_dashed;
   button.combo {
     min-width: 0;       // otherwise the arrow placement is unsymmetric
 //    margin: 0;
@@ -1345,6 +1344,9 @@ headerbar {
   button {
     min-width: 22px;
     @include button(header-normal);
+
+    &.circular-button { @extend button.circular; }
+
     &:backdrop { opacity: 0.7; box-shadow: none; background-image: none; }
     &:hover {
       @include button(header-hover);
@@ -1994,6 +1996,8 @@ popover.background {
       border-radius: $wm_radius;
       border: 1px solid if($variant=='light', darken($borders_color, 5%), lighten($borders_color, 5%));
     }
+
+  button { @extend %outline_dashed; }
 
   separator,
   & separator,
@@ -2956,7 +2960,6 @@ separator {
 list {
   background-color: $base_color;
   border-color: $borders_color;
-  @extend %outline_solid;
 //  border-radius: $wm_radius;
 
   row { padding: 2px; }
@@ -2964,6 +2967,8 @@ list {
 
 row {
   &:not(:hover) { transition: all 300ms $ease-out-quad; }
+
+  button.circular-button { @extend button.circular; }
 
   &:selected {
     @extend %selected_items;
@@ -3012,7 +3017,6 @@ row {
     min-height: 24px;
     min-width: 24px;
     border-radius: 100px;
-    outline-offset: -1px;
     -gtk-outline-radius: 100px;
 
     &:hover { @include button(flat-hover); }
@@ -3218,16 +3222,19 @@ placessidebar {
       &:dir(rtl) { padding-left: 2px; }
     }
 
-    button.sidebar-button {
+    @at-root button.sidebar-button {
       min-width: 22px;
       min-height: 22px;
       margin-top: 2px;
       margin-bottom: 2px;
       padding: 0;
-//      @extend button.flat;
-      border-radius: 100%;
-      -gtk-outline-radius: 100%;
+      border-radius: 100px;
+      -gtk-outline-radius: 100px;
 
+      &:active, &:checked {
+        @include button(flat-checked);
+        border-color: if($variant=='light', rgba(black, 0.35), rgba(white, 0.35));
+      }
       &:not(:hover):not(:active) > image { opacity: 0.5 };
     }
 
@@ -3570,11 +3577,10 @@ button.circular-button {
   border: none;
   @if $variant=='light' { box-shadow: $shadow_3, 0 0 0 1px $borders_color, inset 0 0 0 1px rgba($borders_color, 0.01); }
 
-  &:active { @include button(flat-active); }
-  &:checked { @include button(flat-checked); }
+  &:active { @include button(flat-active); border: none; }
+  &:checked { @include button(flat-checked); border: none; }
 
   label { padding: 0; }
-
 }
 
 .keycap {
@@ -3592,7 +3598,15 @@ button.circular-button {
 
 stackswitcher button {
   &.text-button { min-width: 80px; }
-  &.circular { min-width: 0; }
+}
+
+stackswitcher button.circular,
+stackswitcher button.text-button.circular { // FIXME aggregate with buttons
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 100px;
+  -gtk-outline-radius: 100px;
+  padding: 0;
 }
 
 //
