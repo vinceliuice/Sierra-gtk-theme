@@ -3701,12 +3701,14 @@ headerbar,
       @include button(header-active);
     }
     &.close, &.maximize, &.minimize, &.restore {
-      min-width: 18px;
-      min-height: 18px;
+      min-width: 16px;
+      min-height: 16px;
+      margin: 0;
       color: transparent;
       background-color: transparent;
       background-position: center;
       background-repeat: no-repeat;
+      background-size: auto;
       border-width: 0;
       box-shadow: none;
 

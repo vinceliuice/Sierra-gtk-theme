@@ -4747,12 +4747,14 @@ headerbar button.titlebutton.close, headerbar button.titlebutton.maximize, heade
 .titlebar button.titlebutton.maximize,
 .titlebar button.titlebutton.minimize,
 .titlebar button.titlebutton.restore {
-  min-width: 18px;
-  min-height: 18px;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0;
   color: transparent;
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: auto;
   border-width: 0;
   box-shadow: none;
 }
@@ -6426,10 +6428,11 @@ window.background.chromium headerbar.titlebar button.toggle:checked, window.back
 }
 
 window.background.chromium headerbar.titlebar button.titlebutton {
-  min-width: 22px;
-  min-height: 22px;
+  min-width: 16px;
+  min-height: 16px;
   margin: 0;
-  padding: 0;
+  padding: 0 0;
+  background-size: auto;
   color: transparent;
 }
 
