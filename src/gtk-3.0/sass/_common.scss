@@ -1277,7 +1277,14 @@ headerbar {
     }
   }
 
-  > separator { background-image: _solid($header_border); }
+  > separator {
+    background-image: $_header_image;
+
+    &:backdrop {
+      background-image: none;
+      background-color: $header_bg_backdrop;
+    }
+  }
 
   @extend %titlebar;
 }
@@ -1285,7 +1292,7 @@ headerbar {
 %header_separator {
   min-width: 0;
   min-height: 0;
-  background: none;
+  background-color: transparent;
   border-width: 0;
   border-image: none;
 

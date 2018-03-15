@@ -1587,13 +1587,18 @@ window.csd > .titlebar:not(headerbar):backdrop {
 }
 
 .titlebar:not(headerbar) > separator {
-  background-image: linear-gradient(to bottom, #484848, #484848);
+  background-image: none;
+}
+
+.titlebar:not(headerbar) > separator:backdrop {
+  background-image: none;
+  background-color: #404040;
 }
 
 .primary-toolbar:not(.libreoffice-toolbar) separator, headerbar separator.titlebutton, .titlebar:not(headerbar) separator.titlebutton {
   min-width: 0;
   min-height: 0;
-  background: none;
+  background-color: transparent;
   border-width: 0;
   border-image: none;
 }
@@ -5598,6 +5603,9 @@ dialog.csd > headerbar.titlebar > switch {
   margin: 8px 0;
 }
 
+/************************
+  * Gnome Control Center *
+  ************************/
 box.horizontal.titlebar > headerbar > stack > box.vertical > .title {
   margin: 0;
 }
