@@ -1869,11 +1869,9 @@ menu,
   padding: 6px 0;
   border-radius: $wm_radius;
   background-color: $_menu_bg;
-  transition: none;
 //  border: 1px solid $borders_color;
 
   .csd & {
-    transition: none;
     border-radius: $wm_radius;
     background-color: $_menu_bg;
 //    border: 1px solid $borders_color;
@@ -1902,7 +1900,6 @@ menu,
     transition: none;
 
     &:hover {
-      transition: none;
       color: $selected_fg_color;
       background-color: $selected_bg_color;
       text-shadow: $text_shadow;
@@ -1968,13 +1965,16 @@ menu,
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
+
     &.bottom {
       margin: 0 0 -18px 0;
       border-radius: 0 0 $wm_radius $wm_radius;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
-    &:hover { transition: none; background-color: mix($fg_color, $base_color, 10%); }
+
+    &:hover { background-color: mix($fg_color, $base_color, 10%); }
+
     &:disabled {
       color: transparent;
       background-color: transparent;

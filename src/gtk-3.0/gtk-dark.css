@@ -2325,12 +2325,10 @@ menu,
   padding: 6px 0;
   border-radius: 6px;
   background-color: rgba(51, 51, 51, 0.98);
-  transition: none;
 }
 
 .csd menu, .csd
 .menu {
-  transition: none;
   border-radius: 6px;
   background-color: rgba(51, 51, 51, 0.98);
 }
@@ -2358,7 +2356,6 @@ menu menuitem,
 
 menu menuitem:hover,
 .menu menuitem:hover {
-  transition: none;
   color: #ffffff;
   background-color: #0046DB;
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
@@ -2450,7 +2447,6 @@ menu > arrow.bottom,
 
 menu > arrow:hover,
 .menu > arrow:hover {
-  transition: none;
   background-color: #373737;
 }
 
