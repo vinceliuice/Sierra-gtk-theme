@@ -922,7 +922,9 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
     .app-menu-icon {
       -st-icon-style: symbolic;
-      margin-left: 4px;
+      height: 0;
+      width: 0;
+      margin-left: 0;
       margin-right: 0;
       //dimensions of the icon are hardcoded
     }

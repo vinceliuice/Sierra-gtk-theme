@@ -105,11 +105,11 @@ for trans in '' '-solid' ; do
 		ln -s assets/process-working.svg process-working.svg
 		ln -s assets/no-notifications.svg no-notifications.svg
 
-		cd ${srcdir}/gnome-shell
-		glib-compile-resources \
-			--sourcedir=${themedir}/gnome-shell \
-			--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
-			gnome-shell-theme.gresource.xml
+		# cd ${srcdir}/gnome-shell
+		# glib-compile-resources \
+		# 	--sourcedir=${themedir}/gnome-shell \
+		# 	--target=${themedir}/gnome-shell/gnome-shell-theme.gresource \
+		# 	gnome-shell-theme.gresource.xml
 
 	# Install GTK+ 2 Theme
 	install -d ${themedir}/gtk-2.0

@@ -1114,7 +1114,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-button .app-menu-icon {
   -st-icon-style: symbolic;
-  margin-left: 4px;
+  height: 0;
+  width: 0;
+  margin-left: 0;
   margin-right: 0;
 }
 

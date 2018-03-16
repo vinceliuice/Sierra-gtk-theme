@@ -1897,7 +1897,6 @@ menu,
     text-shadow: none;
 //    border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
-    transition: none;
 
     &:hover {
       color: $selected_fg_color;
@@ -1919,7 +1918,6 @@ menu,
 
     //submenu indicators
     arrow {
-      transition: none;
       min-height: 16px;
       min-width: 16px;
       background-color: transparent;
@@ -1949,7 +1947,6 @@ menu,
   }
   // overflow buttons
   > arrow {
-    transition: none;
     min-width: 16px;
     min-height: 16px;
     padding: 2px;

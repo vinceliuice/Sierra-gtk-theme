@@ -303,17 +303,17 @@ $disk_space_free: darken($bg_color, 3%);
     }
 }
 
-.gedit-document-panel {
+.gedit-document-panel { // 'documents' pane
 
-    row button {
+    row.activatable { padding: 6px 0; }
+
+    row button { // 'close' button
         min-width: 22px;
         min-height: 22px;
         padding: 0;
-
-        color: transparent;
-        background: none;
-        border: none;
-        box-shadow: none;
+        margin: 0 6px;
+        border-radius: 100px;
+        -gtk-outline-radius: 100px;
 
         image {
             color: inherit;
@@ -333,9 +333,6 @@ $disk_space_free: darken($bg_color, 3%);
 
     row:hover:selected button:hover {
         color: lighten(red, 20%);
-        background: none;
-        border: none;
-        box-shadow: none;
 
         &:active {
             color: $selected_fg_color;
@@ -401,6 +398,21 @@ $disk_space_free: darken($bg_color, 3%);
     }
   }
 }
+
+paned.titlebar.horizontal {
+  headerbar {
+    button.flat.toggle.popup:not(.image-button) { // left-pane header button
+      @extend %headerbar_buttons;
+      @if $variant == 'light' { border: 1px solid $borders_color; }
+
+      box > .title {
+        padding: 0; // remove lateral padding
+        margin: -2px 0;
+      }
+    }
+  }
+}
+
 
 //
 // Pluma
