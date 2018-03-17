@@ -44,6 +44,8 @@ $alt_base_color: if($variant =='dark', lighten($base_color, 25%), darken($base_c
 $bg_color:         rgba($black, $middle_opacity);
 $alt_bg_color:     rgba($black, $lower_opacity);
 $inverse_bg_color: rgba($inverse_fg_color, 0.13);
+$keyboard_bg_color:  if($variant == 'light', $grey_50, fade($grey_700)); // for gnome-shell keyboard
+$alt_keyboard_bg_color:  if($variant == 'light', $grey_300, fade($grey_900)); // for gnome-shell keyboard
 
 // Misc colors
 

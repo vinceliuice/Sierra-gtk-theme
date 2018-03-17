@@ -66,6 +66,9 @@ for trans in '' '-solid' ; do
 			toggle-on.svg \
 			more-results.svg \
 			checkbox.svg \
+			key-enter.svg \
+			key-shift-latched-uppercase.svg \
+			key-shift-uppercase.svg \
 			${themedir}/gnome-shell/assets
 
 		cp -ur \
@@ -99,6 +102,18 @@ for trans in '' '-solid' ; do
 		cp -ur \
 			toggle-off${color}.svg \
 			${themedir}/gnome-shell/assets/toggle-off.svg
+
+		cp -ur \
+			key-hide${color}.svg \
+			${themedir}/gnome-shell/assets/key-hide.svg
+
+		cp -ur \
+			key-layout${color}.svg \
+			${themedir}/gnome-shell/assets/key-layout.svg
+
+		cp -ur \
+			key-shift${color}.svg \
+			${themedir}/gnome-shell/assets/key-shift.svg
 
 		cd ${themedir}/gnome-shell
 		ln -s assets/no-events.svg no-events.svg
