@@ -1716,8 +1716,8 @@ paned.titlebar.horizontal headerbar button.flat.toggle.popup:not(.image-button),
 headerbar button,
 .nemo-window .primary-toolbar button {
   min-width: 22px;
+  border-color: rgba(0, 0, 0, 0.11);
   color: rgba(40, 32, 32, 0.8);
-  outline-offset: -3px;
   background-color: white;
   background-image: linear-gradient(0deg, #f1f1f1 0%, #fdfdfd 95%, #fefefe 100%);
   box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
@@ -1734,6 +1734,7 @@ headerbar button:backdrop,
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:hover:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:hover:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:hover:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:hover:not(.image-button),
 headerbar button:hover,
 .nemo-window .primary-toolbar button:hover {
+  border-color: rgba(0, 0, 0, 0.11);
   color: rgba(34, 28, 28, 0.8);
   background-color: #fafafa;
   background-image: linear-gradient(0deg, #f8f8f8 0%, #ffffff 100%);
@@ -1796,6 +1797,10 @@ headerbar button:disabled:checked,
   color: rgba(255, 255, 255, 0.75);
   background-color: rgba(175, 175, 175, 0.65);
   box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+}
+
+headerbar button.flat.toggle.popup, .nemo-window .primary-toolbar button.flat.toggle.popup, headerbar button.toggle.popup.budgie-menu-launcher, .nemo-window .primary-toolbar button.toggle.popup.budgie-menu-launcher, headerbar .budgie-panel .toggle.popup#tasklist-button, .budgie-panel headerbar .toggle.popup#tasklist-button, .nemo-window .primary-toolbar .budgie-panel .toggle.popup#tasklist-button, .budgie-panel .nemo-window .primary-toolbar .toggle.popup#tasklist-button, headerbar .budgie-panel button.toggle.popup.flat.launcher, .budgie-panel headerbar button.toggle.popup.flat.launcher {
+  border: 1px solid rgba(0, 0, 0, 0.11);
 }
 
 headerbar.selection-mode button, .nemo-window .selection-mode.primary-toolbar button, headerbar.selection-mode button.flat, .nemo-window .selection-mode.primary-toolbar button.flat, headerbar.selection-mode button.budgie-menu-launcher, .nemo-window .selection-mode.primary-toolbar button.budgie-menu-launcher, headerbar.selection-mode .budgie-panel #tasklist-button, .budgie-panel headerbar.selection-mode #tasklist-button, .nemo-window .selection-mode.primary-toolbar .budgie-panel #tasklist-button, .budgie-panel .nemo-window .selection-mode.primary-toolbar #tasklist-button, headerbar.selection-mode .budgie-panel button.flat.launcher, .budgie-panel headerbar.selection-mode button.flat.launcher {
@@ -1870,8 +1875,8 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:acti
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button,
 headerbar .linked:not(.vertical).path-bar > button,
 .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button {
+  border-color: rgba(0, 0, 0, 0.11);
   color: rgba(40, 32, 32, 0.8);
-  outline-offset: -3px;
   background-color: white;
   background-image: linear-gradient(0deg, #f1f1f1 0%, #fdfdfd 95%, #fefefe 100%);
   box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
@@ -1880,6 +1885,7 @@ headerbar .linked:not(.vertical).path-bar > button,
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
 headerbar .linked:not(.vertical).path-bar > button:hover,
 .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:hover {
+  border-color: rgba(0, 0, 0, 0.11);
   color: rgba(34, 28, 28, 0.8);
   background-color: #fafafa;
   background-image: linear-gradient(0deg, #f8f8f8 0%, #ffffff 100%);
@@ -2038,6 +2044,7 @@ headerbar spinbutton:not(.vertical):focus, .nemo-window .primary-toolbar spinbut
 }
 
 headerbar spinbutton:not(.vertical) button, .nemo-window .primary-toolbar spinbutton:not(.vertical) button, headerbar spinbutton:not(.vertical) button:disabled, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:disabled {
+  border-color: rgba(0, 0, 0, 0.11);
   color: rgba(34, 28, 28, 0.8);
   background-color: #fafafa;
   background-image: linear-gradient(0deg, #f8f8f8 0%, #ffffff 100%);
@@ -4842,6 +4849,7 @@ headerbar button.titlebutton,
 
 headerbar button.titlebutton:hover,
 .titlebar button.titlebutton:hover {
+  border-color: rgba(0, 0, 0, 0.11);
   color: rgba(34, 28, 28, 0.8);
   background-color: #fafafa;
   background-image: linear-gradient(0deg, #f8f8f8 0%, #ffffff 100%);
@@ -5161,6 +5169,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 @keyframes needs_attention_keyframes {
   0% {
+    border-color: rgba(0, 0, 0, 0.11);
     color: rgba(34, 28, 28, 0.8);
     background-color: #fafafa;
     background-image: linear-gradient(0deg, #f8f8f8 0%, #ffffff 100%);
@@ -5409,10 +5418,6 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   margin: 0 6px 6px 6px;
   border-radius: 0;
   box-shadow: 0px 1px 2px 0px rgba(16, 16, 16, 0.15), 0px 2px 3px 0px rgba(16, 16, 16, 0.1);
-}
-
-paned.titlebar.horizontal headerbar button.flat.toggle.popup:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:not(.image-button) {
-  border: 1px solid rgba(0, 0, 0, 0.11);
 }
 
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:not(.image-button) box > .title, paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:not(.image-button) box > .title, paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:not(.image-button) box > .title, .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:not(.image-button) box > .title {
@@ -5941,6 +5946,9 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
 
+/********************
+  * Gnome Calculator *
+  ********************/
 window.background > headerbar.titlebar > button.flat.popup.toggle.text-button.title, window.background > headerbar.titlebar > button.popup.toggle.text-button.title.budgie-menu-launcher, .budgie-panel window.background > headerbar.titlebar > .popup.toggle.text-button.title#tasklist-button, .budgie-panel window.background > headerbar.titlebar > button.popup.toggle.text-button.title.flat.launcher {
   margin: 6px 0;
 }
@@ -5983,6 +5991,9 @@ window.background > grid.vertical > box.vertical grid.math-buttons button:not(.s
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
 
+/************
+  * Epiphany *
+  ************/
 headerbar.titlebar.incognito-mode entry {
   color: rgba(40, 32, 32, 0.8);
   background-color: white;

@@ -286,8 +286,8 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
   // normal header-bar button
   //
+    border-color: $borders_color;
     color: $header_fg;
-    outline-offset: -3px;
     background-color: $header_button_bg;
     background-image: if($variant=='light', linear-gradient( 0deg, #f1f1f1 0%, #fdfdfd 95%, #fefefe 100%), none);
     box-shadow: $shadow_3;
@@ -300,6 +300,7 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
   // hovered header-bar button
   //
+    border-color: $borders_color;
     color: darken($header_fg, 2%);
     background-color: $header_button_hover_bg;
     background-image: if($variant=='light', linear-gradient( 0deg, #f8f8f8 0%, #ffffff 100%), none);

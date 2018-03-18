@@ -403,7 +403,6 @@ paned.titlebar.horizontal {
   headerbar {
     button.flat.toggle.popup:not(.image-button) { // left-pane header button
       @extend %headerbar_buttons;
-      @if $variant == 'light' { border: 1px solid $borders_color; }
 
       box > .title {
         padding: 0; // remove lateral padding
@@ -986,9 +985,9 @@ window.background > box.vertical > toolbar.primary-toolbar {
   }
 }
 
-// /********************
-//  * Gnome-Calculator *
-//  ********************/
+ /********************
+  * Gnome Calculator *
+  ********************/
 
 window.background {
   > headerbar.titlebar { // mode-selector button
@@ -1022,9 +1021,9 @@ window.background {
   }
 }
 
-// /************
-//  * Epiphany *
-//  ************/
+ /************
+  * Epiphany *
+  ************/
 
 $question_bg_color: #FFEA00;
 

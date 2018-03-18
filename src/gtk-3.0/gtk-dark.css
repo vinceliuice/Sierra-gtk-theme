@@ -1716,8 +1716,8 @@ paned.titlebar.horizontal headerbar button.flat.toggle.popup:not(.image-button),
 headerbar button,
 .nemo-window .primary-toolbar button {
   min-width: 22px;
+  border-color: rgba(255, 255, 255, 0.12);
   color: rgba(225, 219, 219, 0.8);
-  outline-offset: -3px;
   background-color: rgba(119, 119, 119, 0.58);
   background-image: none;
   box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
@@ -1735,6 +1735,7 @@ headerbar button:backdrop,
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:hover:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:hover:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:hover:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:hover:not(.image-button),
 headerbar button:hover,
 .nemo-window .primary-toolbar button:hover {
+  border-color: rgba(255, 255, 255, 0.12);
   color: rgba(221, 213, 213, 0.8);
   background-color: rgba(119, 119, 119, 0.88);
   background-image: none;
@@ -1865,8 +1866,8 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:acti
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button,
 headerbar .linked:not(.vertical).path-bar > button,
 .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button {
+  border-color: rgba(255, 255, 255, 0.12);
   color: rgba(225, 219, 219, 0.8);
-  outline-offset: -3px;
   background-color: rgba(119, 119, 119, 0.58);
   background-image: none;
   box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
@@ -1876,6 +1877,7 @@ headerbar .linked:not(.vertical).path-bar > button,
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
 headerbar .linked:not(.vertical).path-bar > button:hover,
 .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:hover {
+  border-color: rgba(255, 255, 255, 0.12);
   color: rgba(221, 213, 213, 0.8);
   background-color: rgba(119, 119, 119, 0.88);
   background-image: none;
@@ -2022,6 +2024,7 @@ headerbar spinbutton:not(.vertical):focus, .nemo-window .primary-toolbar spinbut
 }
 
 headerbar spinbutton:not(.vertical) button, .nemo-window .primary-toolbar spinbutton:not(.vertical) button, headerbar spinbutton:not(.vertical) button:disabled, .nemo-window .primary-toolbar spinbutton:not(.vertical) button:disabled {
+  border-color: rgba(255, 255, 255, 0.12);
   color: rgba(221, 213, 213, 0.8);
   background-color: rgba(119, 119, 119, 0.88);
   background-image: none;
@@ -4822,6 +4825,7 @@ headerbar button.titlebutton,
 
 headerbar button.titlebutton:hover,
 .titlebar button.titlebutton:hover {
+  border-color: rgba(255, 255, 255, 0.12);
   color: rgba(221, 213, 213, 0.8);
   background-color: rgba(119, 119, 119, 0.88);
   background-image: none;
@@ -5141,6 +5145,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 @keyframes needs_attention_keyframes {
   0% {
+    border-color: rgba(255, 255, 255, 0.12);
     color: rgba(221, 213, 213, 0.8);
     background-color: rgba(119, 119, 119, 0.88);
     background-image: none;
@@ -5916,6 +5921,9 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
   -gtk-icon-shadow: none;
 }
 
+/********************
+  * Gnome Calculator *
+  ********************/
 window.background > headerbar.titlebar > button.flat.popup.toggle.text-button.title, window.background > headerbar.titlebar > button.popup.toggle.text-button.title.budgie-menu-launcher, .budgie-panel window.background > headerbar.titlebar > .popup.toggle.text-button.title#tasklist-button, .budgie-panel window.background > headerbar.titlebar > button.popup.toggle.text-button.title.flat.launcher {
   margin: 6px 0;
 }
@@ -5958,6 +5966,9 @@ window.background > grid.vertical > box.vertical grid.math-buttons button:not(.s
   -gtk-icon-shadow: none;
 }
 
+/************
+  * Epiphany *
+  ************/
 headerbar.titlebar.incognito-mode entry {
   border: none;
   color: rgba(225, 219, 219, 0.8);

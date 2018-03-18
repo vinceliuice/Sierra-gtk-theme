@@ -1376,6 +1376,8 @@ headerbar {
 //    &.text-button.image-button label { padding-left: 6px; padding-right: 6px; }
   }
 
+  button.flat.toggle.popup { @if $variant == 'light' { border: 1px solid $borders_color; } }
+
   &.selection-mode button {
 
     &, &.flat {
