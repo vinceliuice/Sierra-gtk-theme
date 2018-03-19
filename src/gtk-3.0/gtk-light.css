@@ -419,7 +419,7 @@ treeview entry.flat:focus, treeview .raven .raven-background spinbutton:focus:no
 button {
   outline-color: #8eb9ff;
   outline-style: solid;
-  outline-offset: 0;
+  outline-offset: -1px;
   outline-width: 3px;
   -gtk-outline-radius: 6px;
 }

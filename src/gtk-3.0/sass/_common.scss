@@ -382,7 +382,7 @@ $_dot_color: $selected_bg_color;
 @at-root %outline_solid, button {
   outline-color: $entry_highlight;
   outline-style: solid;
-  outline-offset: 0;
+  outline-offset: -1px;
   outline-width: 3px;
   -gtk-outline-radius: $bt_radius + 1px;
 }
