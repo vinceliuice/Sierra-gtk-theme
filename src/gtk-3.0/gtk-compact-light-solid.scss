@@ -1,10 +1,10 @@
-$variant: 'dark';
+$variant: 'light';
 $darker: 'false';
-$compact: 'false';
+$compact: 'true';
 $transparency: 'false';
 
 @import 'sass/colors';
-@import 'sass/drawing';
+@import 'sass/drawing-compact';
 @import 'sass/common';
 @import 'sass/applications';
 @import 'sass/unity';

@@ -17,23 +17,24 @@ srcdir=${repodir}/src
   rm -rf $DEST_DIR/Sierra*
 
 # Copying files
-for trans in '' '-solid' ; do
-  for color in '-light' '-dark'; do
-	echo -e "   Installing Sierra${color}${trans} ..."
+for compact in '' '-compact' ; do
+  for trans in '' '-solid' ; do
+    for color in '-light' '-dark'; do
+	echo -e "   Installing Sierra${compact}${color}${trans} ..."
 
-	themedir=$DEST_DIR/Sierra${color}${trans}
+	themedir=$DEST_DIR/Sierra${compact}${color}${trans}
 	install -d ${themedir}
 
 	# Install index.theme
 	echo "[Desktop Entry]" >> ${themedir}/index.theme
 	echo "Type=X-GNOME-Metatheme" >> ${themedir}/index.theme
-	echo "Name=Sierra${color}${trans}" >> ${themedir}/index.theme
+	echo "Name=Sierra${compact}${color}${trans}" >> ${themedir}/index.theme
 	echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >> ${themedir}/index.theme
 	echo "Encoding=UTF-8" >> ${themedir}/index.theme
 	echo "" >> ${themedir}/index.theme
 	echo "[X-GNOME-Metatheme]" >> ${themedir}/index.theme
-	echo "GtkTheme=Sierra${color}${trans}" >> ${themedir}/index.theme
-	echo "MetacityTheme=Sierra${color}${trans}" >> ${themedir}/index.theme
+	echo "GtkTheme=Sierra${compact}${color}${trans}" >> ${themedir}/index.theme
+	echo "MetacityTheme=Sierra${compact}${color}${trans}" >> ${themedir}/index.theme
 	echo "IconTheme=Adwaita" >> ${themedir}/index.theme
 	echo "CursorTheme=Adwaita" >> ${themedir}/index.theme
 	echo "ButtonLayout=close,minimize,maximize:menu" >> ${themedir}/index.theme
@@ -157,15 +158,15 @@ for trans in '' '-solid' ; do
 		${themedir}/gtk-3.0
 
 	cp -ur \
-		thumbnail${color}.png \
+		thumbnail${compact}${color}.png \
 		${themedir}/gtk-3.0/thumbnail.png
 
 	cp -ur \
-		gtk${color}${trans}.css \
+		gtk${compact}${color}${trans}.css \
 		${themedir}/gtk-3.0/gtk.css
 
 	cp -ur \
-		gtk-dark${trans}.css \
+		gtk${compact}-dark${trans}.css \
 		${themedir}/gtk-3.0/gtk-dark.css
 
 	# Install Metacity Theme
@@ -205,6 +206,7 @@ for trans in '' '-solid' ; do
 		themerc${color} \
 		${themedir}/xfwm4/themerc
 
+    done
   done
 done
 

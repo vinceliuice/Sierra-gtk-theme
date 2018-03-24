@@ -729,7 +729,7 @@ toolbar.inline-toolbar toolbutton {
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', transparentize($button_border, 0.6), transparentize($button_border, 0.5))) {
 
-  > button + button { border-left-style: solid; }
+  > button + button { border-left-style: none; }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
@@ -1306,7 +1306,7 @@ headerbar {
 //    min-height: if($variant == 'light', 20px, 22px);
     @include entry(header-normal);
 
-    &:backdrop { opacity: 0.85; box-shadow: none; background-image: none; }
+    &:backdrop { opacity: 0.85; background-image: none; @if $compact == 'false' { box-shadow: none; } }
 
     &:focus {
       @include entry(header-focus);
@@ -1354,7 +1354,7 @@ headerbar {
 
     &.circular-button { @extend button.circular; }
 
-    &:backdrop { opacity: 0.7; box-shadow: none; background-image: none; }
+    &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
     &:hover {
       @include button(header-hover);
       transition: $button_transition;
@@ -1364,19 +1364,25 @@ headerbar {
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
       transition: $button_transition;
       transition-duration: 300ms;
+      @if $compact == 'true' { box-shadow: none; }
     }
     &:active {
       @include button(header-active);
       transition: $button_transition;
       transition-duration: 300ms;
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+      @if $compact == 'true' { box-shadow: none; }
     }
     &:disabled { @include button(header-insensitive); }
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
 //    &.text-button.image-button label { padding-left: 6px; padding-right: 6px; }
+
+    &.flat {
+      @include button(undecorated);
+      }
   }
 
-  button.flat.toggle.popup { @if $variant == 'light' { border: 1px solid $borders_color; } }
+  button.flat.toggle.popup { @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; } }
 
   &.selection-mode button {
 
@@ -1425,7 +1431,7 @@ headerbar {
   .linked:not(.vertical):not(.path-bar):not(.stack-switcher) {
     button:not(:only-child):not(:last-child) {
       &, &:hover, &:active, &:checked, &:disabled {
-        margin-right: if($variant=='light', 0, 1px);
+        margin-right: if($variant=='light' and $compact=='false', 0, 1px);
       }
     }
   }
@@ -1436,7 +1442,7 @@ headerbar {
   .linked:not(.vertical):not(.path-bar) > button {
     &, &:hover, &:active, &:checked, &:disabled {
       border-radius: $bt_radius;
-      @if $variant == 'light' { border: 1px solid $borders_color; }
+      @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; }
     }
   }
 
@@ -1446,10 +1452,10 @@ headerbar {
       border-radius: $bt_radius;
       margin-right: 4px;
       margin-left: 3px;
-      @if $variant == 'light' { border: 1px solid $borders_color; }
+      @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; }
     }
 
-    &:focus { @if $variant == 'light' { border: 1px solid $entry_highlight; } }
+    &:focus { @if $variant == 'light' and $compact == 'false' { border: 1px solid $entry_highlight; } }
   }
 
   // use linking rules for entries only
@@ -1471,15 +1477,15 @@ headerbar {
     }
   }
 
-  .linked:not(.vertical):not(.path-bar) {
-    $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
+//  .linked:not(.vertical):not(.path-bar) {
+//    $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
 
-    > #{$_uncolored_button}:hover:not(:only-child),
-    > #{$_uncolored_button}:hover + #{$_uncolored_button},
-    > #{$_uncolored_button}:disabled:not(:only-child),
-    > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: none; }
-    > #{$_uncolored_button}:disabled:backdrop { box-shadow: none; }
-  }
+//    > #{$_uncolored_button}:hover:not(:only-child),
+//    > #{$_uncolored_button}:hover + #{$_uncolored_button},
+//    > #{$_uncolored_button}:disabled:not(:only-child),
+//    > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: none; }
+//    > #{$_uncolored_button}:disabled:backdrop { box-shadow: none; }
+//  }
 
   // special case for path-bars and stack-switchers
   .linked:not(.vertical):not(.path-bar).stack-switcher,
@@ -1491,14 +1497,14 @@ headerbar {
       &:active { @include button(header-active); }
       &:checked { @include button(header-checked); }
       &:disabled { color: transparentize($header_fg, 0.4); }
-      &:backdrop { opacity: 0.7; box-shadow: none; background-image: none; }
+      &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
     }
 
     // fixed ugly border color
     > button:not(:last-child) {
-      &:active { @if $variant=='light' { box-shadow: 1px 0 $header_button_active_bg; } }
-      &:checked { @if $variant=='light' { box-shadow: 1px 0 $header_button_checked_bg; } }
+      &:active { @if $variant=='light'and $compact == 'false' { box-shadow: 1px 0 $header_button_active_bg; } }
+      &:checked { @if $variant=='light' and $compact == 'false' { box-shadow: 1px 0 $header_button_checked_bg; } }
     }
 
     // @include pathbar_linking_rules($sep_color: $button_border);

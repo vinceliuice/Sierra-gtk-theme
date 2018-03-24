@@ -17,13 +17,23 @@ if [ ! -z "${TRANS_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _TRANS_VARIANTS <<< "${TRANS_VARIANTS:-}"
 fi
 
+_COMPACT_VARIANTS=('' '-compact')
+if [ ! -z "${COMPACT_VARIANTS:-}" ]; then
+  IFS=', ' read -r -a _COMPACT_VARIANTS <<< "${COMPACT_VARIANTS:-}"
+fi
+
 for color in "${_COLOR_VARIANTS[@]}"; do
   for trans in "${_TRANS_VARIANTS[@]}"; do
+    for compact in "${_COMPACT_VARIANTS[@]}"; do
+    sassc $SASSC_OPT src/gtk-3.0/gtk${compact}${color}${trans}.{scss,css}
+    echo "== Generating the gtk${compact}${color}${trans}.css..."
+    done
+  done
+done
 
-  sassc $SASSC_OPT src/gtk-3.0/gtk${color}${trans}.{scss,css}
-  echo "== Generating the gtk${color}${trans}.css..."
+for color in "${_COLOR_VARIANTS[@]}"; do
+  for trans in "${_TRANS_VARIANTS[@]}"; do
   sassc $SASSC_OPT src/gnome-shell/gnome-shell${color}${trans}.{scss,css}
   echo "== Generating the gnome-shell${color}${trans}.css..."
-
   done
 done

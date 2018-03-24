@@ -926,7 +926,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical).path-bar > button + button {
-  border-left-style: solid;
+  border-left-style: none;
 }
 
 .linked.vertical > entry + entry {
@@ -1648,8 +1648,8 @@ headerbar entry image, .nemo-window .primary-toolbar entry image, headerbar entr
 
 headerbar entry:backdrop, .nemo-window .primary-toolbar entry:backdrop {
   opacity: 0.85;
-  box-shadow: none;
   background-image: none;
+  box-shadow: none;
 }
 
 headerbar entry:focus, .nemo-window .primary-toolbar entry:focus {
@@ -1728,8 +1728,8 @@ paned.titlebar.horizontal headerbar button.flat.toggle.popup:backdrop:not(.image
 headerbar button:backdrop,
 .nemo-window .primary-toolbar button:backdrop {
   opacity: 0.7;
-  box-shadow: none;
   background-image: none;
+  box-shadow: none;
 }
 
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:hover:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:hover:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:hover:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:hover:not(.image-button),
@@ -1800,6 +1800,25 @@ headerbar button:disabled:checked,
   box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
 }
 
+paned.titlebar.horizontal headerbar button.flat.toggle.popup:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:not(.image-button),
+headerbar button.flat,
+.nemo-window .primary-toolbar button.flat,
+headerbar button.budgie-menu-launcher,
+.nemo-window .primary-toolbar button.budgie-menu-launcher,
+headerbar .budgie-panel #tasklist-button,
+.budgie-panel headerbar #tasklist-button,
+.nemo-window .primary-toolbar .budgie-panel #tasklist-button,
+.budgie-panel .nemo-window .primary-toolbar #tasklist-button,
+headerbar .budgie-panel button.flat.launcher,
+.budgie-panel headerbar button.flat.launcher,
+.nemo-window .primary-toolbar .budgie-panel button.flat.launcher,
+.budgie-panel .nemo-window .primary-toolbar button.flat.launcher {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
 headerbar.selection-mode button, .nemo-window .selection-mode.primary-toolbar button, headerbar.selection-mode button.flat, .nemo-window .selection-mode.primary-toolbar button.flat, headerbar.selection-mode button.budgie-menu-launcher, .nemo-window .selection-mode.primary-toolbar button.budgie-menu-launcher, headerbar.selection-mode .budgie-panel #tasklist-button, .budgie-panel headerbar.selection-mode #tasklist-button, .nemo-window .selection-mode.primary-toolbar .budgie-panel #tasklist-button, .budgie-panel .nemo-window .selection-mode.primary-toolbar #tasklist-button, headerbar.selection-mode .budgie-panel button.flat.launcher, .budgie-panel headerbar.selection-mode button.flat.launcher {
   border-color: transparent;
   background-color: transparent;
@@ -1847,20 +1866,6 @@ headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) +
 headerbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + combobox > box > button.combo,
 .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > entry:focus:not(:only-child) + combobox > box > button.combo {
   border-left-color: rgba(255, 255, 255, 0.12);
-}
-
-headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child), .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover:not(:only-child),
-headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action),
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):hover + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action),
-headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:not(:only-child),
-headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover),
-.nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled + button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):not(:hover) {
-  box-shadow: none;
-}
-
-headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:backdrop, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action):disabled:backdrop {
-  box-shadow: none;
 }
 
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button,
@@ -1920,8 +1925,8 @@ headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop
 headerbar .linked:not(.vertical).path-bar > button:backdrop,
 .nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:backdrop {
   opacity: 0.7;
-  box-shadow: none;
   background-image: none;
+  box-shadow: none;
 }
 
 headerbar button.suggested-action, .nemo-window .primary-toolbar button.suggested-action {
@@ -5266,7 +5271,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
-  border-left-style: solid;
+  border-left-style: none;
 }
 
 .caja-notebook {

@@ -5,7 +5,7 @@ $shadow_2: 0px 1px 1px 0px rgba(16, 16, 16, 0.1), 0px 1px 2px 0px rgba(16, 16, 1
 $shadow_3: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01); // Normal button shadow
 $shadow_4: 0px 2px 3px 0px rgba(16, 16, 16, 0.2), 0px 3px 5px 0px rgba(16, 16, 16, 0.15); // Switch-slider hover shadow
 $shadow_5: 0px 1px 2px 0px rgba(16, 16, 16, 0.15), 0px 2px 3px 0px rgba(16, 16, 16, 0.1); // Switch-slider normal shadow
-$text_shadow: 0 -1px rgba(#ffffff, 0.04), -1px  0px rgba(#202020, 0.05), 1px  0px rgba(#202020, 0.05), 
+$text_shadow: 0 -1px rgba(#ffffff, 0.04), -1px  0px rgba(#202020, 0.05), 1px  0px rgba(#202020, 0.05),
               0px  1px rgba(#202020, 0.3), 0px  2px rgba(#202020, 0.05); // text and icon shadow
 
 // Transitions
@@ -99,10 +99,11 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
   // normal header-bar entry
   //
-    @if $variant == 'dark' { border: none; }
     color: $header_fg;
+    border-style: none;
     background-color: $header_button_bg;
-    background-image: if($variant=='light', linear-gradient( 0deg, #f1f1f1 0%, #fdfdfd 95%, #fefefe 100%), none);
+    background-image: none;
+    box-shadow: $shadow_1;
 
     image, image:hover { color: inherit; }
   }
@@ -111,10 +112,11 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
   // focused header-bar entry
   //
-    @if $variant == 'dark' { border: none; box-shadow: 0 0 0 2px $entry_highlight, inset 0 0 0 1px $entry_highlight; }
-    @if $variant == 'light' { box-shadow: 0 0 0 2px $entry_highlight; }
-    border-color: $entry_highlight;
-    background-image: none;
+    border: none;
+    box-shadow: 0px 1px 1px 0px transparent, //
+                0px 1px 2px 0px transparent, // set the same size transparent shadow for entry transition
+                0 0 0 2px $entry_highlight,
+                inset 0 0 0 1px $entry_highlight;
   }
 
   @if $t==header-insensitive {
@@ -123,6 +125,7 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
 
     color: transparentize($header_fg, 0.45);
+    border-style: none;
     background-color: transparentize($header_entry_bg, 0.15);
   }
 
@@ -285,25 +288,21 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
   // normal header-bar button
   //
-    border-color: $borders_color;
     color: $header_fg;
+    border: none;
     background-color: $header_button_bg;
-    background-image: if($variant=='light', linear-gradient( 0deg, #f1f1f1 0%, #fdfdfd 95%, #fefefe 100%), none);
-    box-shadow: $shadow_3;
-
-    @if $variant == 'dark' { border: none; }
-
+    background-image: none;
+    box-shadow: $shadow_1;
   }
 
   @else if $t==header-hover {
   //
   // hovered header-bar button
   //
-    border-color: $borders_color;
-    color: darken($header_fg, 2%);
+    color: $header_fg;
+    border: none;
     background-color: $header_button_hover_bg;
-    background-image: if($variant=='light', linear-gradient( 0deg, #f8f8f8 0%, #ffffff 100%), none);
-    box-shadow: none;
+    box-shadow: $shadow_1;
   }
 
   @else if $t==header-active {
@@ -311,12 +310,12 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   // pushed header-bar button
   //
     color: $selected_fg_color;
+    border: none;
     background-color: $header_button_active_bg;
     background-image: none;
-    border-color: $borders_color;
     text-shadow: if($variant=='light', $text_shadow, none);
     -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
-    box-shadow: none;
+    box-shadow: $shadow_1;
   }
 
   @else if $t==header-checked {
@@ -324,14 +323,12 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   // pushed header-bar button
   //
     color: $selected_fg_color;
+    border: none;
     background-color: $header_button_checked_bg;
-    background-image: if($variant=='light', linear-gradient( 0deg, #656565 0%, #707070 100%), none);
-    border-color: $borders_color;
-    border-top-color: if($variant=='light', lighten($borders_color, 0%), $borders_color);
-    border-bottom-color: if($variant=='light', lighten($borders_color, 0%), $borders_color);
+    background-image: none;
     text-shadow: if($variant=='light', $text_shadow, none);
     -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
-    box-shadow: none;
+    box-shadow: $shadow_1;
   }
 
   @else if $t==header-insensitive {
@@ -341,7 +338,8 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
     label, & { color: transparentize($header_fg, 0.45); }
 
     background-color: $header_button_bg;
-    box-shadow: $shadow_3;
+    border: none;
+    box-shadow: $shadow_1;
   }
 
   @else if $t==header-insensitive-active {
@@ -349,8 +347,9 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   // header-bar insensitive pushed button
   //
     color: transparentize($selected_fg_color, 0.25);
+    border: none;
     background-color: transparentize($header_button_active_bg, 0.35);
-    box-shadow: $shadow_3;
+    box-shadow: none;
   }
 
   @else if $t==osd {
