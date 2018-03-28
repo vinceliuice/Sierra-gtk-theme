@@ -1611,6 +1611,7 @@ window.csd > .titlebar:not(headerbar):backdrop {
 }
 
 .titlebar:not(headerbar) > separator {
+  background-color: rgba(55, 55, 55, 0.98);
   background-image: none;
 }
 
@@ -1624,8 +1625,7 @@ window.csd > .titlebar:not(headerbar):backdrop {
   min-width: 0;
   min-height: 0;
   background-color: transparent;
-  border-width: 0;
-  border-image: none;
+  border: none;
 }
 
 .primary-toolbar:not(.libreoffice-toolbar) separator:backdrop, headerbar separator.titlebutton:backdrop,
@@ -1717,7 +1717,7 @@ headerbar button,
   border: none;
   background-color: rgba(119, 119, 119, 0.58);
   background-image: none;
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
 }
 
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:backdrop:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:backdrop:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:backdrop:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:backdrop:not(.image-button),
@@ -1871,7 +1871,7 @@ headerbar .linked:not(.vertical).path-bar > button,
   border: none;
   background-color: rgba(119, 119, 119, 0.58);
   background-image: none;
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
 }
 
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,

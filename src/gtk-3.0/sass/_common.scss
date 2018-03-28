@@ -1278,6 +1278,7 @@ headerbar {
   }
 
   > separator {
+    background-color: $header_bg;
     background-image: $_header_image;
 
     &:backdrop {
@@ -1293,8 +1294,7 @@ headerbar {
   min-width: 0;
   min-height: 0;
   background-color: transparent;
-  border-width: 0;
-  border-image: none;
+  border: none;
 
   &:backdrop { opacity: 0.6; }
 }

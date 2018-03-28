@@ -1613,6 +1613,7 @@ window.csd > .titlebar:not(headerbar):backdrop {
 }
 
 .titlebar:not(headerbar) > separator {
+  background-color: #373737;
   background-image: none;
 }
 
@@ -1626,8 +1627,7 @@ window.csd > .titlebar:not(headerbar):backdrop {
   min-width: 0;
   min-height: 0;
   background-color: transparent;
-  border-width: 0;
-  border-image: none;
+  border: none;
 }
 
 .primary-toolbar:not(.libreoffice-toolbar) separator:backdrop, headerbar separator.titlebutton:backdrop,

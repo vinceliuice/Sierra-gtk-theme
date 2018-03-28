@@ -292,7 +292,7 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
     border: none;
     background-color: $header_button_bg;
     background-image: none;
-    box-shadow: $shadow_1;
+    box-shadow: $shadow_1, inset 0 0 0 1px rgba($borders_color, 0.01);
   }
 
   @else if $t==header-hover {
