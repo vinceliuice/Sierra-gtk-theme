@@ -4,9 +4,7 @@ ROOT_UID=0
 DEST_DIR=
 
 # Destination directory
-if [ -n ${DESTDIR} ]; then
-  DEST_DIR="${DESTDIR}"
-elif [ "$UID" -eq "$ROOT_UID" ]; then
+if [ "$UID" -eq "$ROOT_UID" ]; then
   DEST_DIR="/usr/share/themes"
 else
   DEST_DIR="$HOME/.themes"
