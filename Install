@@ -1,5 +1,4 @@
 #!/bin/bash
-  # Copying files
 
 ROOT_UID=0
 DEST_DIR=
@@ -14,7 +13,7 @@ fi
 repodir=$(cd $(dirname $0) && pwd)
 srcdir=${repodir}/src
 
-  rm -rf $DEST_DIR/Sierra*
+rm -rf $DEST_DIR/Sierra*
 
 # Copying files
 for compact in '' '-compact' ; do
