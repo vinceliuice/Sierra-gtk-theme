@@ -926,7 +926,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical).path-bar > button + button {
-  border-left-style: none;
+  border-left-style: solid;
 }
 
 .linked.vertical > entry + entry {
@@ -2181,15 +2181,12 @@ headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disa
 }
 
 .path-bar button:active, .path-bar button:checked {
-  color: #ffffff;
-  background-color: rgba(132, 132, 132, 0.98);
   background-image: none;
-  border-color: rgba(255, 255, 255, 0.12);
-  border-top-color: rgba(255, 255, 255, 0.12);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.35);
   text-shadow: none;
   -gtk-icon-shadow: none;
-  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .path-bar button.text-button.image-button label {
@@ -5115,7 +5112,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
-  border-radius: 0 0 6px 0;
+  border-radius: 0 0 6px 6px;
 }
 
 .nautilus-window.maximized notebook,
@@ -5271,7 +5268,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
-  border-left-style: none;
+  border-left-style: solid;
 }
 
 .caja-notebook {

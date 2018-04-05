@@ -74,7 +74,7 @@ terminal-window,
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
-    border-radius: 0 0 $wm_radius 0;
+    border-radius: 0 0 $wm_radius $wm_radius;
 }
 
 .nautilus-window.maximized notebook,

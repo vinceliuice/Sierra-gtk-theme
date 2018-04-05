@@ -928,7 +928,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical).path-bar > button + button {
-  border-left-style: none;
+  border-left-style: solid;
 }
 
 .linked.vertical > entry + entry {
@@ -1937,15 +1937,23 @@ headerbar .linked:not(.vertical).path-bar > button:backdrop,
   box-shadow: none;
 }
 
-headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):active,
-headerbar .linked:not(.vertical).path-bar > button:not(:last-child):active,
-.nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:not(:last-child):active {
+
+headerbar .linked:not(.vertical).path-bar > button:active,
+.nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:active {
   box-shadow: 1px 0 #afafaf;
 }
 
-headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):checked, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):checked,
-headerbar .linked:not(.vertical).path-bar > button:not(:last-child):checked,
-.nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:not(:last-child):checked {
+
+headerbar .linked:not(.vertical).path-bar > button:checked,
+.nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button:checked {
+  box-shadow: 1px 0 #686868;
+}
+
+headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):active, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):active {
+  box-shadow: 1px 0 #afafaf;
+}
+
+headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):checked, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:not(:last-child):checked {
   box-shadow: 1px 0 #686868;
 }
 
@@ -2199,15 +2207,12 @@ headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disa
 }
 
 .path-bar button:active, .path-bar button:checked {
+  background-image: none;
   color: #ffffff;
-  background-color: #686868;
-  background-image: linear-gradient(0deg, #656565 0%, #707070 100%);
-  border-color: rgba(0, 0, 0, 0.11);
-  border-top-color: rgba(0, 0, 0, 0.11);
-  border-bottom-color: rgba(0, 0, 0, 0.11);
+  background-color: rgba(0, 0, 0, 0.65);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
-  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 .path-bar button.text-button.image-button label {
@@ -5139,7 +5144,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
-  border-radius: 0 0 6px 0;
+  border-radius: 0 0 6px 6px;
 }
 
 .nautilus-window.maximized notebook,
@@ -5295,7 +5300,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
-  border-left-style: none;
+  border-left-style: solid;
 }
 
 .caja-notebook {

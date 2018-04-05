@@ -729,7 +729,7 @@ toolbar.inline-toolbar toolbutton {
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', transparentize($button_border, 0.6), transparentize($button_border, 0.5))) {
 
-  > button + button { border-left-style: none; }
+  > button + button { border-left-style: solid; }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
@@ -1364,14 +1364,14 @@ headerbar {
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
       transition: $button_transition;
       transition-duration: 300ms;
-      @if $compact == 'true' { box-shadow: none; }
+      @if $variant=='light' and $compact == 'true' { box-shadow: none; }
     }
     &:active {
       @include button(header-active);
       transition: $button_transition;
       transition-duration: 300ms;
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
-      @if $compact == 'true' { box-shadow: none; }
+      @if $variant=='light' and $compact == 'true' { box-shadow: none; }
     }
     &:disabled { @include button(header-insensitive); }
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
@@ -1501,13 +1501,25 @@ headerbar {
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
     }
 
+    // @include pathbar_linking_rules($sep_color: $button_border);
+  }
+
+  .linked:not(.vertical).path-bar {
+
     // fixed ugly border color
-    > button:not(:last-child) {
-      &:active { @if $variant=='light'and $compact == 'false' { box-shadow: 1px 0 $header_button_active_bg; } }
+    > button {
+      &:active { @if $variant=='light' and $compact == 'false' { box-shadow: 1px 0 $header_button_active_bg; } }
       &:checked { @if $variant=='light' and $compact == 'false' { box-shadow: 1px 0 $header_button_checked_bg; } }
     }
+  }
 
-    // @include pathbar_linking_rules($sep_color: $button_border);
+  .linked:not(.vertical):not(.path-bar).stack-switcher {
+
+    // fixed ugly border color
+    > button:not(:last-child) {
+      &:active { @if $variant=='light' and $compact == 'false' { box-shadow: 1px 0 $header_button_active_bg; } }
+      &:checked { @if $variant=='light' and $compact == 'false' { box-shadow: 1px 0 $header_button_checked_bg; } }
+    }
   }
 
   // Headerbar Suggested and Destructive Action buttons
@@ -1664,7 +1676,7 @@ headerbar {
   }
 
   &:hover { box-shadow: none; }
-  &:active, &:checked { @include button(header-checked); }
+  &:active, &:checked { @include button(flat-checked); border-color: $borders_color; }
 
   &.text-button.image-button label { padding-left: 0; padding-right: 0; }
 

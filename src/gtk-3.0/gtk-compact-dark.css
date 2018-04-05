@@ -926,7 +926,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical).path-bar > button + button {
-  border-left-style: none;
+  border-left-style: solid;
 }
 
 .linked.vertical > entry + entry {
@@ -1750,7 +1750,6 @@ headerbar button:checked,
   background-clip: padding-box;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 300ms;
-  box-shadow: none;
 }
 
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:active:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:active:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:active:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:active:not(.image-button),
@@ -1766,7 +1765,6 @@ headerbar button:active,
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 300ms;
   background-clip: padding-box;
-  box-shadow: none;
 }
 
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:disabled:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:disabled:not(.image-button), paned.titlebar.horizontal headerbar .budgie-panel .toggle.popup#tasklist-button:disabled:not(.image-button), .budgie-panel paned.titlebar.horizontal headerbar .toggle.popup#tasklist-button:disabled:not(.image-button),
@@ -2171,13 +2169,12 @@ headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disa
 }
 
 .path-bar button:active, .path-bar button:checked {
-  color: #ffffff;
-  border: none;
-  background-color: rgba(132, 132, 132, 0.98);
   background-image: none;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.35);
   text-shadow: none;
   -gtk-icon-shadow: none;
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .path-bar button.text-button.image-button label {
@@ -5102,7 +5099,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
-  border-radius: 0 0 6px 0;
+  border-radius: 0 0 6px 6px;
 }
 
 .nautilus-window.maximized notebook,
@@ -5257,7 +5254,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 }
 
 .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button + button {
-  border-left-style: none;
+  border-left-style: solid;
 }
 
 .caja-notebook {
