@@ -29,7 +29,18 @@ ArchLinux:
 Other:
 Search for the engines in your distributions repository or install the engines from source.
 
-## Install
+## Installation
+
+### Distributions
+
+openSUSE [package](https://build.opensuse.org/package/show/home:jubalh/sierra-gtk-theme):
+```
+sudo zypper ar obs://home:jubalh homejubalh
+sudo zypper ref
+sudo zypper in sierra-gtk-theme
+```
+
+### From source
 
 Open the terminal at current directory.
 
