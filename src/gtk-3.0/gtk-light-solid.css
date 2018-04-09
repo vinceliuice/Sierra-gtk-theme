@@ -208,7 +208,7 @@ entry {
 }
 
 entry.search {
-  border-radius: 100px;
+  border-radius: 5px;
 }
 
 entry image {
@@ -1095,7 +1095,7 @@ headerbar .linked:not(.vertical).path-bar > button:only-child:disabled {
 }
 
 menuitem.button.flat,
-modelbutton.flat, button:link, button:visited, button:link:hover, button:link:active, button:link:checked, button:visited:hover, button:visited:active, button:visited:checked, notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.budgie-menu-launcher:hover, notebook > header > tabs > tab .budgie-panel #tasklist-button:hover, .budgie-panel notebook > header > tabs > tab #tasklist-button:hover, notebook > header > tabs > tab .budgie-panel button.flat.launcher:hover, .budgie-panel notebook > header > tabs > tab button.flat.launcher:hover, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.budgie-menu-launcher:active, notebook > header > tabs > tab .budgie-panel #tasklist-button:active, .budgie-panel notebook > header > tabs > tab #tasklist-button:active, notebook > header > tabs > tab .budgie-panel button.flat.launcher:active, .budgie-panel notebook > header > tabs > tab button.flat.launcher:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.budgie-menu-launcher:active:hover, .app-notification button, calendar.button {
+modelbutton.flat, button:link, button:visited, button:link:hover, button:link:active, button:link:checked, button:visited:hover, button:visited:active, button:visited:checked, notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.budgie-menu-launcher:hover, notebook > header > tabs > tab .budgie-panel #tasklist-button:hover, .budgie-panel notebook > header > tabs > tab #tasklist-button:hover, notebook > header > tabs > tab .budgie-panel button.flat.launcher:hover, .budgie-panel notebook > header > tabs > tab button.flat.launcher:hover, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.budgie-menu-launcher:active, notebook > header > tabs > tab .budgie-panel #tasklist-button:active, .budgie-panel notebook > header > tabs > tab #tasklist-button:active, notebook > header > tabs > tab .budgie-panel button.flat.launcher:active, .budgie-panel notebook > header > tabs > tab button.flat.launcher:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.budgie-menu-launcher:active:hover, .app-notification button, calendar.button, calendar.raven-calendar.button {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -1478,6 +1478,7 @@ headerbar .subtitle,
   font-size: smaller;
   padding-left: 12px;
   padding-right: 12px;
+  margin-top: -3px;
 }
 
 headerbar.selection-mode,
@@ -1816,10 +1817,6 @@ headerbar .budgie-panel button.flat.launcher,
   background-color: transparent;
   background-image: none;
   box-shadow: none;
-}
-
-headerbar button.flat.toggle.popup, .nemo-window .primary-toolbar button.flat.toggle.popup, headerbar button.toggle.popup.budgie-menu-launcher, .nemo-window .primary-toolbar button.toggle.popup.budgie-menu-launcher, headerbar .budgie-panel .toggle.popup#tasklist-button, .budgie-panel headerbar .toggle.popup#tasklist-button, .nemo-window .primary-toolbar .budgie-panel .toggle.popup#tasklist-button, .budgie-panel .nemo-window .primary-toolbar .toggle.popup#tasklist-button, headerbar .budgie-panel button.toggle.popup.flat.launcher, .budgie-panel headerbar button.toggle.popup.flat.launcher {
-  border: 1px solid rgba(0, 0, 0, 0.11);
 }
 
 headerbar.selection-mode button, .nemo-window .selection-mode.primary-toolbar button, headerbar.selection-mode button.flat, .nemo-window .selection-mode.primary-toolbar button.flat, headerbar.selection-mode button.budgie-menu-launcher, .nemo-window .selection-mode.primary-toolbar button.budgie-menu-launcher, headerbar.selection-mode .budgie-panel #tasklist-button, .budgie-panel headerbar.selection-mode #tasklist-button, .nemo-window .selection-mode.primary-toolbar .budgie-panel #tasklist-button, .budgie-panel .nemo-window .selection-mode.primary-toolbar #tasklist-button, headerbar.selection-mode .budgie-panel button.flat.launcher, .budgie-panel headerbar.selection-mode button.flat.launcher {
@@ -2920,7 +2917,7 @@ scrollbar.vertical slider {
   min-height: 40px;
 }
 
-row switch:not(:indeterminate), row switch:not(:indeterminate) slider:not(:indeterminate), row switch:disabled:not(:indeterminate), row switch:not(:indeterminate) slider:disabled:not(:indeterminate) {
+row switch:not(:indeterminate), row switch:not(:indeterminate) slider:not(:indeterminate), .raven .raven-background switch:not(:indeterminate), .raven .raven-background switch:not(:indeterminate) slider:not(:indeterminate), row switch:disabled:not(:indeterminate), row switch:not(:indeterminate) slider:disabled:not(:indeterminate), .raven .raven-background switch:disabled:not(:indeterminate), .raven .raven-background switch:not(:indeterminate) slider:disabled:not(:indeterminate) {
   padding: 0;
   border: none;
   color: transparent;
@@ -2934,7 +2931,7 @@ row switch:not(:indeterminate), row switch:not(:indeterminate) slider:not(:indet
   outline-color: transparent;
 }
 
-row switch:dir(rtl):not(:indeterminate), row switch:not(:indeterminate) slider:dir(rtl):not(:indeterminate), row switch:disabled:dir(rtl):not(:indeterminate), row switch:not(:indeterminate) slider:disabled:dir(rtl):not(:indeterminate) {
+row switch:dir(rtl):not(:indeterminate), row switch:not(:indeterminate) slider:dir(rtl):not(:indeterminate), .raven .raven-background switch:dir(rtl):not(:indeterminate), .raven .raven-background switch:not(:indeterminate) slider:dir(rtl):not(:indeterminate), row switch:disabled:dir(rtl):not(:indeterminate), row switch:not(:indeterminate) slider:disabled:dir(rtl):not(:indeterminate), .raven .raven-background switch:disabled:dir(rtl):not(:indeterminate), .raven .raven-background switch:not(:indeterminate) slider:disabled:dir(rtl):not(:indeterminate) {
   background-position: left center;
 }
 
@@ -2972,6 +2969,33 @@ row switch:not(:indeterminate):checked:disabled, row switch:not(:indeterminate):
 
 row switch:not(:indeterminate):disabled, row switch:not(:indeterminate):disabled:hover {
   background-image: -gtk-scaled(url("assets/switch-insensitive.png"), url("assets/switch-insensitive@2.png"));
+}
+
+.raven .raven-background switch:not(:indeterminate) {
+  min-width: 50px;
+  min-height: 20px;
+  margin: 6px 2px;
+  background-size: 50px 20px;
+  transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-image: -gtk-scaled(url("assets/toggle-off.svg"));
+}
+
+.raven .raven-background switch:not(:indeterminate) slider:not(:indeterminate) {
+  margin: 0;
+  background-size: 50px 20px;
+}
+
+.raven .raven-background switch:not(:indeterminate):checked {
+  transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background-image: -gtk-scaled(url("assets/toggle-on.svg"));
+}
+
+.raven .raven-background switch:not(:indeterminate):checked:disabled {
+  background-image: -gtk-scaled(url("assets/toggle-on-disabled.svg"));
+}
+
+.raven .raven-background switch:not(:indeterminate):disabled {
+  background-image: -gtk-scaled(url("assets/toggle-off-disabled.svg"));
 }
 
 
@@ -3340,7 +3364,7 @@ scale.vertical highlight, scale.vertical fill {
 scale slider {
   min-height: 15px;
   min-width: 15px;
-  margin: -6px;
+  margin: -7px;
 }
 
 scale.fine-tune slider {
@@ -3878,6 +3902,8 @@ progressbar.osd trough {
 }
 
 progressbar progress {
+  min-height: 4px;
+  min-width: 4px;
   background-color: #0046DB;
   border: none;
   border-radius: 5px;
@@ -3890,6 +3916,8 @@ infobar progressbar progress {
 }
 
 progressbar trough {
+  min-height: 4px;
+  min-width: 4px;
   border: none;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.11);
@@ -5844,6 +5872,9 @@ gf-candidate-box:hover, gf-candidate-box:selected {
   border-radius: 2px;
 }
 
+/*************
+  * rhythmbox *
+  *************/
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar {
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.11);
   padding: 4px;
@@ -5856,6 +5887,7 @@ gf-candidate-box:hover, gf-candidate-box:selected {
   background-color: rgba(0, 0, 0, 0.5);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 .sidebar-paned .inline-toolbar.horizontal.sidebar-toolbar button.image-button > widget > box > image {
@@ -5895,6 +5927,7 @@ window.solid-csd > box.vertical > box.vertical > .horizontal.inline-toolbar butt
   background-color: rgba(0, 0, 0, 0.5);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 window.csd > box.vertical > box.vertical > frame,
@@ -5921,6 +5954,7 @@ window.background > box.vertical > toolbar.primary-toolbar toolitem .linked > bu
   background-color: rgba(0, 0, 0, 0.5);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 window.background > box.vertical > toolbar.primary-toolbar toolitem .linked > button.image-button.raised > widget > box > image, window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem .linked > button.image-button.raised > widget > box > image {
@@ -5954,6 +5988,7 @@ window.background > box.vertical > .primary-toolbar.inline-toolbar toolitem > .l
   background-color: rgba(0, 0, 0, 0.5);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 /********************
@@ -8098,7 +8133,7 @@ frame.raven-frame > border {
 }
 
 .raven {
-  background-color: #333333;
+  background-color: #2A2A2A;
   color: #dedede;
 }
 
@@ -8111,14 +8146,30 @@ frame.raven-frame > border {
 }
 
 .raven stackswitcher.linked > button {
-  background-color: #545454;
+  background-color: #616161;
   color: #dedede;
   border: none;
 }
 
+.raven stackswitcher.linked > button:hover {
+  background-color: #6e6e6e;
+}
+
+.raven stackswitcher.linked > button:active {
+  background-color: #bcbcbc;
+  background-image: none;
+  color: #242424;
+}
+
+.raven stackswitcher.linked > button:checked {
+  background-color: #AFAFAF;
+  background-image: none;
+  color: #2A2A2A;
+}
+
 .raven .raven-header {
   min-height: 36px;
-  padding: 3px;
+  padding: 2px;
 }
 
 .raven .raven-header:not(.top) {
@@ -8143,8 +8194,9 @@ frame.raven-frame > border {
 }
 
 .raven .raven-header.top stackswitcher button {
-  margin: -6px 0;
-  min-height: 26px;
+  margin: 0;
+  padding: 0 20px;
+  min-height: 16px;
 }
 
 .raven .raven-header.top button.image-button:dir(ltr) {
@@ -8165,7 +8217,7 @@ frame.raven-frame > border {
 }
 
 .raven .raven-header.bottom {
-  border-top: 1px solid rgba(0, 0, 0, 0.11);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .raven viewport.frame .raven-header {
@@ -8180,7 +8232,7 @@ frame.raven-frame > border {
 .raven .raven-background {
   border-style: solid none;
   border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.11);
+  border-color: rgba(255, 255, 255, 0.12);
   background-color: #242424;
   color: #dedede;
 }
@@ -8204,6 +8256,7 @@ frame.raven-frame > border {
 
 .raven .raven-background.frame {
   border-style: solid none;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .raven .raven-background > overlay > widget > image {
@@ -8250,6 +8303,26 @@ calendar.raven-calendar {
 calendar.raven-calendar:selected {
   border-radius: 3px;
   background-color: #0046DB;
+}
+
+calendar.raven-calendar.button {
+  color: rgba(222, 222, 222, 0.45);
+}
+
+calendar.raven-calendar.button:hover {
+  color: #dedede;
+}
+
+calendar.raven-calendar.button:disabled {
+  color: rgba(222, 222, 222, 0.25);
+}
+
+calendar.raven-calendar:indeterminate {
+  color: alpha(#dedede,0.35);
+}
+
+calendar.raven-calendar.highlight {
+  color: #dedede;
 }
 
 .raven-mpris {

@@ -211,7 +211,7 @@ entry {
   border-radius: $bt_radius;
   transition: $transition_2;
 
-  &.search { border-radius: 100px; }
+  &.search { border-radius: $bt_radius; }
 
   @include entry(normal);
 
@@ -1152,6 +1152,7 @@ headerbar,
     font-size: smaller;
     padding-left: 12px;
     padding-right: 12px;
+    margin-top: -3px;
     @extend .dim-label;
   }
 
@@ -1382,7 +1383,7 @@ headerbar {
       }
   }
 
-  button.flat.toggle.popup { @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; } }
+//  button.flat.toggle.popup { @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; } }
 
   &.selection-mode button {
 
@@ -1498,7 +1499,10 @@ headerbar {
       &:checked { @include button(header-checked); }
       &:disabled { color: transparentize($header_fg, 0.4); }
       &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
-      &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
+      &, &:hover, &:active, &:checked, &:disabled {
+        @extend %linked;
+        @if $compact == 'true' { border-right: 1px solid $header_button_border; }
+      }
     }
 
     // @include pathbar_linking_rules($sep_color: $button_border);
@@ -2392,6 +2396,40 @@ scrollbar {
   }
 }
 
+%switch_mac {
+    // 'indeterminate' is the synthetic wildcard
+    &:not(:indeterminate) {
+      @extend %reset_switch;
+      min-width: 50px;
+      min-height: 20px;
+      margin: 6px 2px;
+      background-size: 50px 20px;
+      transition: all 350ms $ease-out-quad;
+
+      slider:not(:indeterminate) {
+        @extend %reset_switch;
+        margin: 0;
+        background-size: 50px 20px;
+      }
+
+      // use ugly pixmaps
+      background-image: -gtk-scaled(url("assets/toggle-off.svg"));
+
+      &:checked {
+        transition: all 350ms $ease-out-quad;
+        background-image:  -gtk-scaled(url("assets/toggle-on.svg"));
+
+        &:disabled {
+          background-image:  -gtk-scaled(url("assets/toggle-on-disabled.svg"));
+        }
+      }
+
+      &:disabled {
+        background-image:  -gtk-scaled(url("assets/toggle-off-disabled.svg"));
+    }
+  }
+}
+
 %switch,
 switch {
   transition: $transition_1;
@@ -2544,7 +2582,7 @@ scale {
   slider {
     min-height: 15px;
     min-width: 15px;
-    margin: -6px;
+    margin: -7px;
   }
 
   // Click-and-hold the slider to activate
@@ -2844,6 +2882,8 @@ progressbar {
   }
   // Moving bit
   progress {
+    min-height: 4px;
+    min-width: 4px;
     background-color: $progress_color;
     border: none;
     border-radius: $bt_radius;
@@ -2854,6 +2894,8 @@ progressbar {
   }
   // Trough
   trough {
+    min-height: 4px;
+    min-width: 4px;
     border: none;
     border-radius: $bt_radius;
     background-color: if($variant == 'light', $button_border, darken($bg_color, 5%));
