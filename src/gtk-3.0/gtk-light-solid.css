@@ -5414,7 +5414,7 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 }
 
 .gedit-side-panel-paned statusbar {
-  border-top: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
   background-color: #f5f5f5;
   border-radius: 0 0 6px 6px;
 }
