@@ -39,6 +39,12 @@ sudo zypper ar obs://home:jubalh homejubalh
 sudo zypper ref
 sudo zypper in sierra-gtk-theme
 ```
+Ubuntu [PPA](https://launchpad.net/~dyatlov-igor/+archive/ubuntu/sierra-theme) (maintained by [@igor-dyatlov](https://github.com/igor-dyatlov)):
+```
+sudo add-apt-repository ppa:dyatlov-igor/sierra-theme
+sudo apt update
+sudo apt install sierra-gtk-theme
+```
 
 ### From source
 
