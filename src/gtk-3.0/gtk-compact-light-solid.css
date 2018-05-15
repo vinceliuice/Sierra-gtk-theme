@@ -6696,6 +6696,45 @@ window > box.vertical > box.horizontal > widget {
   background-color: transparent;
 }
 
+WingpanelWidgetsIndicatorPopover.popover {
+  padding: 0;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+
+WingpanelWidgetsIndicatorPopover.popover menuitem {
+  padding: 5px;
+  outline-color: transparent;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  border: solid transparent;
+  border-width: 1px 0;
+}
+
+WingpanelWidgetsIndicatorPopover.popover menuitem label, WingpanelWidgetsIndicatorPopover.popover menuitem image {
+  padding: 0 3px;
+}
+
+WingpanelWidgetsIndicatorPopover.popover menuitem:hover, WingpanelWidgetsIndicatorPopover.popover menuitem:active {
+  background-color: rgba(0, 0, 0, 0.04);
+  border: solid rgba(0, 0, 0, 0.08);
+  border-width: 1px 0;
+}
+
+WingpanelWidgetsIndicatorPopover.popover menuitem *:disabled {
+  color: rgba(36, 36, 36, 0.55);
+}
+
+PantheonTerminalPantheonTerminalWindow.background {
+  background-color: transparent;
+}
+
+SwitchboardCategoryView .view:selected, SwitchboardCategoryView iconview:selected,
+SwitchboardCategoryView .view:selected:focus,
+SwitchboardCategoryView iconview:selected:focus {
+  color: #242424;
+}
+
 UnityDecoration {
   -UnityDecoration-extents: 28px 1px 1px 1px;
   -UnityDecoration-input-extents: 10px;
