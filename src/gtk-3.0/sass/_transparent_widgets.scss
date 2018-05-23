@@ -178,18 +178,18 @@ filechooser {
 }
 
 %dark_sidebar_button {
-  @include button(osd);
+  @include button(normal);
 
-  &:hover { @include button(osd-hover); }
-  &:active, &:checked { @include button(osd-active); }
-  &:disabled { @include button(osd-insensitive); }
+  &:hover { @include button(hover); }
+  &:active, &:checked { @include button(active); }
+  &:disabled { @include button(insensitive); }
 }
 
 %dark_sidebar_entry {
-  @include entry(osd);
+  @include entry(normal);
 
-  &:focus { @include entry(osd-focus); }
-  &:disabled { @include entry(osd-insensitive); }
+  &:focus { @include entry(focus); }
+  &:disabled { @include entry(insensitive); }
 }
 
 %dark_sidebar_scrollbar {

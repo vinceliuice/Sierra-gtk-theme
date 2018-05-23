@@ -7547,48 +7547,55 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 filechooser actionbar button {
-  color: #363636;
+  color: #242424;
   border-color: rgba(0, 0, 0, 0.11);
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: white;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01), inset 0 0 0 1px rgba(0, 0, 0, 0.01);
 }
 
 .caja-side-pane > box button:hover:not(:active), filechooser actionbar button:hover {
-  color: #363636;
+  color: #0b0b0b;
   border-color: rgba(0, 0, 0, 0.11);
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: #f7f7f7;
+  box-shadow: none;
 }
 
 filechooser actionbar button:active, filechooser actionbar button:checked {
   color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.11);
-  background-color: #0046DB;
+  background-color: #0e6bff;
+  border-color: #0e6bff;
+  background-image: linear-gradient(180deg, #4c97fe 0%, #0564e3 100%);
+  box-shadow: none;
 }
 
 filechooser actionbar button:disabled {
-  color: #bcbcbc;
   border-color: rgba(0, 0, 0, 0.11);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+}
+
+filechooser actionbar button:disabled label, filechooser actionbar button:disabled {
+  color: rgba(36, 36, 36, 0.55);
 }
 
 filechooser actionbar entry {
   color: #363636;
   border-color: rgba(0, 0, 0, 0.11);
-  background-color: rgba(255, 255, 255, 0.35);
-}
-
-filechooser actionbar entry image, filechooser actionbar entry image:hover {
-  color: inherit;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01), inset 0 0 0 1px rgba(0, 0, 0, 0.01);
 }
 
 filechooser actionbar entry:focus {
-  color: #ffffff;
-  border-color: rgba(0, 0, 0, 0.11);
-  background-color: #0046DB;
+  color: #363636;
+  border-color: #8eb9ff;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 1px 0px transparent, 0px 1px 2px 0px transparent, inset 0 0 0 2px #8eb9ff;
 }
 
 filechooser actionbar entry:disabled {
-  color: #363636;
-  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(36, 36, 36, 0.55);
+  border-color: rgba(0, 0, 0, 0.11);
+  background-color: rgba(255, 255, 255, 0.55);
 }
 
 filechooser placessidebar.sidebar scrollbar,

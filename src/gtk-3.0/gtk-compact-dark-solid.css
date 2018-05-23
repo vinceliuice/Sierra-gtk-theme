@@ -7523,46 +7523,51 @@ filechooser actionbar label, filechooser actionbar combobox {
 filechooser actionbar button {
   color: #dedede;
   border-color: rgba(255, 255, 255, 0.12);
-  background-color: rgba(92, 92, 92, 0.35);
+  background-color: #484848;
 }
 
 .caja-side-pane > box button:hover:not(:active), filechooser actionbar button:hover {
-  color: #dedede;
+  color: #c5c5c5;
   border-color: rgba(255, 255, 255, 0.12);
-  background-color: rgba(110, 110, 110, 0.45);
+  background-color: #5c5c5c;
+  box-shadow: none;
 }
 
 filechooser actionbar button:active, filechooser actionbar button:checked {
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
-  background-color: #498dff;
+  background-color: #0e6bff;
+  border-color: #0e6bff;
+  background-image: linear-gradient(180deg, #4c97fe 0%, #0564e3 100%);
+  box-shadow: none;
 }
 
 filechooser actionbar button:disabled {
-  color: #5c5c5c;
   border-color: rgba(255, 255, 255, 0.12);
-  background-color: rgba(92, 92, 92, 0.2);
+  background-color: rgba(72, 72, 72, 0.55);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+}
+
+filechooser actionbar button:disabled label, filechooser actionbar button:disabled {
+  color: rgba(222, 222, 222, 0.45);
 }
 
 filechooser actionbar entry {
   color: #dedede;
   border-color: rgba(255, 255, 255, 0.12);
-  background-color: rgba(92, 92, 92, 0.35);
-}
-
-filechooser actionbar entry image, filechooser actionbar entry image:hover {
-  color: inherit;
+  background-color: #242424;
 }
 
 filechooser actionbar entry:focus {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.12);
-  background-color: #498dff;
+  color: #dedede;
+  border-color: #8eb9ff;
+  background-color: #242424;
+  box-shadow: inset 0 0 0 2px #8eb9ff;
 }
 
 filechooser actionbar entry:disabled {
-  color: #dedede;
-  background-color: rgba(92, 92, 92, 0.2);
+  color: rgba(222, 222, 222, 0.45);
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(36, 36, 36, 0.55);
 }
 
 filechooser placessidebar.sidebar scrollbar,
