@@ -1510,7 +1510,7 @@ window.background:not(.csd) {
     .separator:not(label),
     .csd & .separator:not(label) { color: $borders_color; }
   }
-  > menu > menuitem { padding: 3px 6px; }
+  > menu > menuitem { padding: 4px 6px; }
   > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
   > menu > menuitem > radio,
   > menu > menuitem > check { padding: 0 2px 0 4px; }
