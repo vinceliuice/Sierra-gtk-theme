@@ -6505,7 +6505,7 @@ window.background:not(.csd) .menu .separator:not(label) {
 }
 
 window.background:not(.csd) > menu > menuitem {
-  padding: 0 6px;
+  padding: 3px 6px;
 }
 
 window.background:not(.csd) > menu > menuitem > label:disabled {
