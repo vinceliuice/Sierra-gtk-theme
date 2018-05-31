@@ -6533,16 +6533,18 @@ window.background:not(.csd) > widget > button > button label {
 }
 
 window.background:not(.csd) > menu,
-window.background:not(.csd) .menu {
+window.background:not(.csd) .menu, window.background:not(.csd) menu {
   background-color: #ffffff;
   border-radius: 0;
+  border: none;
 }
 
 window.background:not(.csd) > menu .separator:not(label),
 .csd window.background:not(.csd) > menu .separator:not(label),
 window.background:not(.csd) .menu .separator:not(label),
 .csd
-window.background:not(.csd) .menu .separator:not(label) {
+window.background:not(.csd) .menu .separator:not(label), window.background:not(.csd) menu .separator:not(label),
+.csd window.background:not(.csd) menu .separator:not(label) {
   color: rgba(0, 0, 0, 0.11);
 }
 
