@@ -368,7 +368,9 @@ popover.background.places-menu {
     > menuitem {
       border: none;
       background-image: none;
-
+      menu {
+        border-radius: 0 0 $wm_radius $wm_radius;
+      }
       &:hover {
         background-color: $selected_bg_color;
       }
