@@ -1502,7 +1502,7 @@ window.background:not(.csd) {
   }
 
   > menu,
-  .menu, menu { // context-menus
+  .menu { // context-menus
     background-color: if($variant == 'light', $base_color, lighten($bg_color, 5%));
     border-radius: 0;
     border: none;

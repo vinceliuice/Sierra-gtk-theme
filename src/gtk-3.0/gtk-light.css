@@ -2435,8 +2435,6 @@ menubar > menuitem:disabled,
   border-color: transparent;
 }
 
-.context-menu, popover.touch-selection, .csd popover.touch-selection,
-popover.background.touch-selection, .csd popover.background.touch-selection,
 menu,
 .menu {
   padding: 6px 0;
@@ -2445,19 +2443,15 @@ menu,
   border: 1px solid #E1E1E1;
 }
 
-.csd .context-menu, .csd popover.touch-selection, .csd popover.background.touch-selection, .csd
-menu, .csd
+.csd menu, .csd
 .menu {
+  border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #E1E1E1;
 }
 
-.context-menu separator, popover.touch-selection separator, .csd popover.touch-selection separator, popover.background.touch-selection separator, .csd popover.background.touch-selection separator,
-.csd .context-menu separator,
-.csd popover.touch-selection separator,
-.csd popover.background.touch-selection separator,
 menu separator,
-.csd
-menu separator,
+.csd menu separator,
 .menu separator,
 .csd
 .menu separator {
@@ -2467,7 +2461,6 @@ menu separator,
   background-color: transparent;
 }
 
-.context-menu menuitem, popover.touch-selection menuitem, .csd popover.touch-selection menuitem, popover.background.touch-selection menuitem, .csd popover.background.touch-selection menuitem,
 menu menuitem,
 .menu menuitem {
   min-height: 12px;
@@ -2477,7 +2470,6 @@ menu menuitem,
   border: 1px solid transparent;
 }
 
-.context-menu menuitem:hover, popover.touch-selection menuitem:hover, .csd popover.background.touch-selection menuitem:hover,
 menu menuitem:hover,
 .menu menuitem:hover {
   color: #ffffff;
@@ -2485,7 +2477,6 @@ menu menuitem:hover,
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
 
-.context-menu menuitem:hover arrow, popover.touch-selection menuitem:hover arrow, .csd popover.background.touch-selection menuitem:hover arrow,
 menu menuitem:hover arrow,
 .menu menuitem:hover arrow {
   transition: none;
@@ -2493,13 +2484,11 @@ menu menuitem:hover arrow,
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
 
-.context-menu menuitem:disabled, popover.touch-selection menuitem:disabled, .csd popover.background.touch-selection menuitem:disabled,
 menu menuitem:disabled,
 .menu menuitem:disabled {
   color: rgba(36, 36, 36, 0.55);
 }
 
-.context-menu menuitem arrow, popover.touch-selection menuitem arrow, .csd popover.touch-selection menuitem arrow, popover.background.touch-selection menuitem arrow, .csd popover.background.touch-selection menuitem arrow,
 menu menuitem arrow,
 .menu menuitem arrow {
   min-height: 16px;
@@ -2510,14 +2499,12 @@ menu menuitem arrow,
   color: #242424;
 }
 
-.context-menu menuitem arrow:dir(ltr), popover.touch-selection menuitem arrow:dir(ltr), .csd popover.touch-selection menuitem arrow:dir(ltr), popover.background.touch-selection menuitem arrow:dir(ltr), .csd popover.background.touch-selection menuitem arrow:dir(ltr),
 menu menuitem arrow:dir(ltr),
 .menu menuitem arrow:dir(ltr) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
   margin-right: 0;
 }
 
-.context-menu menuitem arrow:dir(rtl), popover.touch-selection menuitem arrow:dir(rtl), .csd popover.touch-selection menuitem arrow:dir(rtl), popover.background.touch-selection menuitem arrow:dir(rtl), .csd popover.background.touch-selection menuitem arrow:dir(rtl),
 menu menuitem arrow:dir(rtl),
 .menu menuitem arrow:dir(rtl) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
@@ -2543,7 +2530,6 @@ menuitem check:dir(rtl), menuitem radio:dir(rtl) {
   margin-right: 2px;
 }
 
-.context-menu > arrow, popover.touch-selection > arrow, .csd popover.touch-selection > arrow, popover.background.touch-selection > arrow, .csd popover.background.touch-selection > arrow,
 menu > arrow,
 .menu > arrow {
   min-width: 16px;
@@ -2556,7 +2542,6 @@ menu > arrow,
   color: #242424;
 }
 
-.context-menu > arrow.top, popover.touch-selection > arrow.top, .csd popover.touch-selection > arrow.top,
 menu > arrow.top,
 .menu > arrow.top {
   margin: -8px 0 0 0;
@@ -2565,7 +2550,6 @@ menu > arrow.top,
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
-.context-menu > arrow.bottom, popover.touch-selection > arrow.bottom, .csd popover.touch-selection > arrow.bottom,
 menu > arrow.bottom,
 .menu > arrow.bottom {
   margin: 0 0 -18px 0;
@@ -2574,13 +2558,11 @@ menu > arrow.bottom,
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-.context-menu > arrow:hover, popover.touch-selection > arrow:hover, .csd popover.touch-selection > arrow:hover,
 menu > arrow:hover,
 .menu > arrow:hover {
   background-color: #e9e9e9;
 }
 
-.context-menu > arrow:disabled, popover.touch-selection > arrow:disabled, .csd popover.touch-selection > arrow:disabled,
 menu > arrow:disabled,
 .menu > arrow:disabled {
   color: transparent;
@@ -6533,7 +6515,7 @@ window.background:not(.csd) > widget > button > button label {
 }
 
 window.background:not(.csd) > menu,
-window.background:not(.csd) .menu, window.background:not(.csd) menu {
+window.background:not(.csd) .menu {
   background-color: #ffffff;
   border-radius: 0;
   border: none;
@@ -6543,8 +6525,7 @@ window.background:not(.csd) > menu .separator:not(label),
 .csd window.background:not(.csd) > menu .separator:not(label),
 window.background:not(.csd) .menu .separator:not(label),
 .csd
-window.background:not(.csd) .menu .separator:not(label), window.background:not(.csd) menu .separator:not(label),
-.csd window.background:not(.csd) menu .separator:not(label) {
+window.background:not(.csd) .menu .separator:not(label) {
   color: rgba(0, 0, 0, 0.11);
 }
 
@@ -8160,6 +8141,11 @@ popover.background.places-menu row {
 
 .budgie-panel button.launcher.budgie-menu-launcher:checked, .budgie-panel .launcher#tasklist-button:checked, .budgie-panel button.launcher.flat:checked {
   background-color: rgba(36, 36, 36, 0.15);
+}
+
+window.background:not(.csd) menu {
+  border-color: rgba(0, 0, 0, 0.11);
+  border-top-color: rgba(255, 255, 255, 0.95);
 }
 
 .top .budgie-panel #tasklist-button, .budgie-panel .top #tasklist-button, .top .budgie-panel button.flat.launcher, .budgie-panel .top button.flat.launcher {

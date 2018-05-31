@@ -368,9 +368,11 @@ popover.background.places-menu {
     > menuitem {
       border: none;
       background-image: none;
+
       menu {
         border-radius: 0 0 $wm_radius $wm_radius;
       }
+
       &:hover {
         background-color: $selected_bg_color;
       }
@@ -417,6 +419,13 @@ popover.background.places-menu {
 
   .unpinned button.flat.launcher,
   .pinned button.flat.launcher.running { @extend %underscores:checked; }
+}
+
+window.background:not(.csd) {
+  menu { // menubar context-menus
+    border-color: $borders_color;
+    border-top-color: $_menu_bg;
+  }
 }
 
 %underscores {

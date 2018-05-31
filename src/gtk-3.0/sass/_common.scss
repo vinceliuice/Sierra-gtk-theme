@@ -1890,7 +1890,7 @@ menubar,
   }
 }
 
-.context-menu,
+//.context-menu,
 menu,
 .menu {
 //  margin: 4px;
@@ -1900,7 +1900,9 @@ menu,
   border: 1px solid $bar_border;
 
   .csd & {
+    border-radius: $wm_radius;
     background-color: $_menu_bg;
+    border: 1px solid $bar_border;
   }
 
   separator,
