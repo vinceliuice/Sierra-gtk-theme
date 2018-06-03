@@ -1549,8 +1549,8 @@ headerbar.default-decoration,
 headerbar.default-decoration button.titlebutton,
 .default-decoration.titlebar:not(headerbar) button.titlebutton {
   border: none;
-  min-height: 18px;
-  min-width: 18px;
+  min-width: 16px;
+  min-height: 16px;
   margin: 0;
   padding: 0;
 }
@@ -2388,13 +2388,7 @@ menubar > menuitem,
   padding: 4px 8px;
 }
 
-menubar > menuitem .context-menu, menubar > menuitem popover.touch-selection, menubar > menuitem .csd popover.touch-selection, .csd menubar > menuitem popover.touch-selection,
-menubar > menuitem popover.background.touch-selection, menubar > menuitem .csd popover.background.touch-selection, .csd menubar > menuitem popover.background.touch-selection, menubar > menuitem menu, menubar > menuitem menu,
-.menubar > menuitem .context-menu,
-.menubar > menuitem popover.touch-selection,
-.csd .menubar > menuitem popover.touch-selection,
-.menubar > menuitem .csd popover.background.touch-selection,
-.menubar > menuitem menu,
+menubar > menuitem menu,
 .menubar > menuitem menu {
   border-top-color: #333333;
   border-radius: 0 0 6px 6px;
@@ -2416,13 +2410,6 @@ menubar > menuitem:disabled,
 menu,
 .menu {
   padding: 6px 0;
-  border-radius: 6px;
-  background-color: #333333;
-  border: 1px solid #4B4B4B;
-}
-
-.csd menu, .csd
-.menu {
   border-radius: 6px;
   background-color: #333333;
   border: 1px solid #4B4B4B;

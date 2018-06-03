@@ -81,3 +81,19 @@ titlebutton-restore-backdrop
 titlebutton-restore-hover
 titlebutton-restore-active
 
+titlebutton-close-thin
+titlebutton-close-backdrop-thin
+titlebutton-close-hover-thin
+titlebutton-close-active-thin
+titlebutton-maximize-thin
+titlebutton-maximize-backdrop-thin
+titlebutton-maximize-hover-thin
+titlebutton-maximize-active-thin
+titlebutton-minimize-thin
+titlebutton-minimize-backdrop-thin
+titlebutton-minimize-hover-thin
+titlebutton-minimize-active-thin
+titlebutton-restore-thin
+titlebutton-restore-backdrop-thin
+titlebutton-restore-hover-thin
+titlebutton-restore-active-thin
