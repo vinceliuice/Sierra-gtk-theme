@@ -421,12 +421,12 @@ popover.background.places-menu {
   .pinned button.flat.launcher.running { @extend %underscores:checked; }
 }
 
-window.background:not(.csd) {
-  menu { // menubar context-menus
-    border-color: $borders_color;
-    border-top-color: $_menu_bg;
-  }
-}
+//window.background:not(.csd) {
+//  menu { // menubar context-menus
+//    border-color: $borders_color;
+//    border-top-color: $_menu_bg;
+//  }
+//}
 
 %underscores {
   @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        2 0 0 0 / 2px 0 0 0),
