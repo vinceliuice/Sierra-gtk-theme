@@ -31,6 +31,14 @@ Search for the engines in your distributions repository or install the engines f
 
 ## Installation
 
+### Flathub
+
+Light Theme
+`flatpak install flathub org.gtk.Gtk3theme.High-Sierra`
+
+Dark Theme
+`flatpak install flathub org.gtk.Gtk3theme.High-Sierra-Dark`
+
 ### Distributions
 
 openSUSE [package](https://build.opensuse.org/package/show/home:jubalh/sierra-gtk-theme):
