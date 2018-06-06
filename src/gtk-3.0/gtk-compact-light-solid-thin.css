@@ -6003,6 +6003,7 @@ window.background > grid.vertical > box.vertical grid.math-buttons button:not(.s
   background-color: rgba(0, 0, 0, 0.5);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 window.background > grid.vertical > box.vertical > widget button:not(.suggested-action):checked,
@@ -6013,6 +6014,7 @@ window.background > grid.vertical > box.vertical grid.math-buttons button:not(.s
   background-color: rgba(0, 0, 0, 0.65);
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 /************
@@ -6302,122 +6304,6 @@ panel-toplevel.background button:checked:not(#tasklist-button) image,
   min-width: 22px;
 }
 
-.marlin-pathbar.pathbar {
-  border-radius: 3px;
-  padding-left: 4px;
-  padding-right: 4px;
-  color: rgba(40, 32, 32, 0.8);
-  border-style: none;
-  background-color: white;
-  background-image: none;
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
-}
-
-.marlin-pathbar.pathbar image, .marlin-pathbar.pathbar image:hover {
-  color: inherit;
-}
-
-.marlin-pathbar.pathbar:focus {
-  border: none;
-  box-shadow: 0px 1px 1px 0px transparent, 0px 1px 2px 0px transparent, 0 0 0 2px #8eb9ff, inset 0 0 0 1px #8eb9ff;
-}
-
-.marlin-pathbar.pathbar:disabled {
-  color: rgba(40, 32, 32, 0.35);
-  border-style: none;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
-.marlin-pathbar.pathbar:active, .marlin-pathbar.pathbar:checked {
-  color: #0046DB;
-}
-
-.gala-notification {
-  border: 1px solid rgba(0, 0, 0, 0.35);
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(to bottom, white, white);
-  background-color: transparent;
-}
-
-.gala-notification .title,
-.gala-notification .label {
-  color: #5c616c;
-}
-
-.panel {
-  background-color: transparent;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  -gtk-icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-.panel-shadow {
-  background-image: none;
-  background-color: transparent;
-}
-
-.panel .menu {
-  box-shadow: none;
-}
-
-.panel .menu .menuitem {
-  font-weight: normal;
-  text-shadow: none;
-  -gtk-icon-shadow: none;
-}
-
-.panel .menu .window-frame.menu.csd,
-.panel .menu .window-frame.popup.csd {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-.panel .menubar > .menuitem {
-  padding: 3px 6px;
-}
-
-.panel .menubar > .menuitem:hover {
-  background-color: transparent;
-}
-
-.panel .window-frame.menu.csd,
-.panel .window-frame.popup.csd {
-  box-shadow: none;
-}
-
-.composited-indicator {
-  background-color: transparent;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  -gtk-icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-.composited-indicator > GtkWidget > GtkWidget:first-child {
-  padding: 0 2px;
-}
-
-.composited-indicator .menuitem:active,
-.composited-indicator .menuitem:hover {
-  border-style: none;
-  background-image: none;
-  box-shadow: none;
-}
-
-.composited-indicator > .popup > .menu {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.panel-app-button > GtkWidget > GtkWidget:first-child {
-  padding: 0 2px 0 4px;
-}
-
-.panel .menu .spinner,
-.menu .spinner {
-  opacity: 1;
-}
-
 window.background:not(.csd) > widget > separator {
   padding-top: 1px;
   margin-top: 1px;
@@ -6692,6 +6578,141 @@ window > box.vertical > box.horizontal > toolbar toolitem > box > label, window 
 
 window > box.vertical > box.horizontal > widget {
   background-color: transparent;
+}
+
+BirdieWidgetsTweetList * {
+  background-image: none;
+  background-color: transparent;
+}
+
+MarlinViewWindow *:selected, MarlinViewWindow *:selected:focus {
+  color: #ffffff;
+  background-color: #0046DB;
+  outline-color: transparent;
+}
+
+MarlinViewWindow GtkIconView.view:selected, MarlinViewWindow GtkIconView.view:selected:focus, MarlinViewWindow GtkIconView.view:selected:hover, MarlinViewWindow GtkIconView.view:selected:focus:hover {
+  background-color: transparent;
+}
+
+MarlinViewWindow FMListView, MarlinViewWindow FMColumnView {
+  outline-color: transparent;
+}
+
+.marlin-pathbar.pathbar {
+  border-radius: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: rgba(40, 32, 32, 0.8);
+  border-style: none;
+  background-color: white;
+  background-image: none;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+}
+
+.marlin-pathbar.pathbar image, .marlin-pathbar.pathbar image:hover {
+  color: inherit;
+}
+
+.marlin-pathbar.pathbar:focus {
+  border: none;
+  box-shadow: 0px 1px 1px 0px transparent, 0px 1px 2px 0px transparent, 0 0 0 2px #8eb9ff, inset 0 0 0 1px #8eb9ff;
+}
+
+.marlin-pathbar.pathbar:disabled {
+  color: rgba(40, 32, 32, 0.35);
+  border-style: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.marlin-pathbar.pathbar:active, .marlin-pathbar.pathbar:checked {
+  color: #0046DB;
+}
+
+.gala-notification {
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to bottom, white, white);
+  background-color: transparent;
+}
+
+.gala-notification .title,
+.gala-notification .label {
+  color: #5c616c;
+}
+
+.panel {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  -gtk-icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.panel-shadow {
+  background-image: none;
+  background-color: transparent;
+}
+
+.panel .menu {
+  box-shadow: none;
+}
+
+.panel .menu .menuitem {
+  font-weight: normal;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+
+.panel .menu .window-frame.menu.csd,
+.panel .menu .window-frame.popup.csd {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.panel .menubar > .menuitem {
+  padding: 3px 6px;
+}
+
+.panel .menubar > .menuitem:hover {
+  background-color: transparent;
+}
+
+.panel .window-frame.menu.csd,
+.panel .window-frame.popup.csd {
+  box-shadow: none;
+}
+
+.composited-indicator {
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  -gtk-icon-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.composited-indicator > GtkWidget > GtkWidget:first-child {
+  padding: 0 2px;
+}
+
+.composited-indicator .menuitem:active,
+.composited-indicator .menuitem:hover {
+  border-style: none;
+  background-image: none;
+  box-shadow: none;
+}
+
+.composited-indicator > .popup > .menu {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.panel-app-button > GtkWidget > GtkWidget:first-child {
+  padding: 0 2px 0 4px;
+}
+
+.panel .menu .spinner,
+.menu .spinner {
+  opacity: 1;
 }
 
 WingpanelWidgetsIndicatorPopover.popover {

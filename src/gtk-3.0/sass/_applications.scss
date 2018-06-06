@@ -1015,8 +1015,8 @@ window.background {
       font-weight: 700;
 
       &:not(.suggested-action) {
-        &:active { @include button(flat-active); }
-        &:checked { @include button(flat-checked); }
+        &:active { @include button(flat-active); border-color: $borders_color; }
+        &:checked { @include button(flat-checked); border-color: $borders_color; }
       }
 
       &.suggested-action {  // '=' button
@@ -1303,139 +1303,6 @@ panel-toplevel.background {
   }
 }
 
-// Elementary Apps
-//
-// Birdie
-//
-//BirdieWidgetsTweetList * {
-//  background-image: none;
-//  background-color: transparent;
-//}
-//
-// Marlin / Pantheon Files
-//
-//MarlinViewWindow {
-//
-//  *:selected, *:selected:focus {
-//    color: $selected_fg_color;
-//    background-color: $selected_bg_color;
-//    outline-color: transparent;
-//  }
-//  GtkIconView.view:selected {
-//    &, &:focus, &:hover, &:focus:hover { background-color: transparent; }
-//  }
-//  FMListView, FMColumnView { outline-color: transparent; }
-//}
-.marlin-pathbar.pathbar {
-    border-radius: 3px;
-    padding-left: 4px;
-    padding-right: 4px;
-
-    @include entry(header-normal);
-
-    &:focus {
-        @include entry(header-focus)
-    }
-
-    &:disabled {
-        @include entry(header-insensitive)
-    }
-
-    &:active,
-    &:checked {
-        color: $selected_bg_color;
-    }
-}
-
-//
-// Gala
-//
-.gala-notification {
-    border: 1px solid rgba(0, 0, 0, 0.35);
-    border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-image: _solid(white);
-    background-color: transparent;
-
-    .title,
-    .label {
-        color: #5c616c;
-    }
-}
-
-//
-// Wingpanel
-//
-.panel {
-    background-color: transparent;
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 1px 2px transparentize(black, 0.4);
-    -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
-
-    &-shadow {
-        background-image: none;
-        background-color: transparent;
-    }
-    .menu {
-        box-shadow: none;
-
-        .menuitem {
-            font-weight: normal;
-            text-shadow: none;
-            -gtk-icon-shadow: none;
-        }
-
-        .window-frame.menu.csd,
-        .window-frame.popup.csd {
-            box-shadow: 0 0 0 1px transparentize(black, 0.8),
-            0 10px 20px transparentize(black, 0.81),
-            0 6px 6px transparentize(black, 0.77);
-        }
-    }
-    .menubar > .menuitem {
-        padding: 3px 6px;
-        &:hover {
-            background-color: transparent;
-        }
-    }
-    .window-frame.menu.csd,
-    .window-frame.popup.csd {
-        box-shadow: none;
-    }
-}
-
-.composited-indicator {
-    background-color: transparent;
-    color: white;
-    text-shadow: 0 1px 2px transparentize(black, 0.4);
-    -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
-
-    > GtkWidget > GtkWidget:first-child {
-        padding: 0 2px;
-    }
-
-    .menuitem:active,
-    .menuitem:hover {
-        border-style: none;
-        background-image: none;
-        box-shadow: none;
-    }
-    > .popup > .menu {
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-}
-
-.panel-app-button > GtkWidget > GtkWidget:first-child {
-    padding: 0 2px 0 4px;
-}
-
-.panel .menu .spinner,
-.menu .spinner {
-    opacity: 1;
-} // Fixes sound indicator buttons
-
 //
 // * Firefox and Thunderbird *
 //
@@ -1701,6 +1568,143 @@ window > box.vertical > box.horizontal {
 
   > widget { background-color: transparent; }
 }
+
+// * Elementary Apps *
+
+//
+// Birdie
+//
+BirdieWidgetsTweetList * {
+  background-image: none;
+  background-color: transparent;
+}
+
+//
+// Marlin / Pantheon Files
+//
+
+MarlinViewWindow {
+  *:selected, *:selected:focus {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    outline-color: transparent;
+  }
+
+  GtkIconView.view:selected {
+    &, &:focus, &:hover, &:focus:hover { background-color: transparent; }
+  }
+  FMListView, FMColumnView { outline-color: transparent; }
+}
+
+.marlin-pathbar.pathbar {
+    border-radius: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    @include entry(header-normal);
+
+    &:focus {
+        @include entry(header-focus)
+    }
+
+    &:disabled {
+        @include entry(header-insensitive)
+    }
+
+    &:active,
+    &:checked {
+        color: $selected_bg_color;
+    }
+}
+
+//
+// Gala
+//
+.gala-notification {
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-image: _solid(white);
+    background-color: transparent;
+
+    .title,
+    .label {
+        color: #5c616c;
+    }
+}
+
+//
+// Wingpanel
+//
+.panel {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 1px 2px transparentize(black, 0.4);
+    -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
+
+    &-shadow {
+        background-image: none;
+        background-color: transparent;
+    }
+    .menu {
+        box-shadow: none;
+
+        .menuitem {
+            font-weight: normal;
+            text-shadow: none;
+            -gtk-icon-shadow: none;
+        }
+
+        .window-frame.menu.csd,
+        .window-frame.popup.csd {
+            box-shadow: 0 0 0 1px transparentize(black, 0.8),
+            0 10px 20px transparentize(black, 0.81),
+            0 6px 6px transparentize(black, 0.77);
+        }
+    }
+    .menubar > .menuitem {
+        padding: 3px 6px;
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    .window-frame.menu.csd,
+    .window-frame.popup.csd {
+        box-shadow: none;
+    }
+}
+
+.composited-indicator {
+    background-color: transparent;
+    color: white;
+    text-shadow: 0 1px 2px transparentize(black, 0.4);
+    -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
+
+    > GtkWidget > GtkWidget:first-child {
+        padding: 0 2px;
+    }
+
+    .menuitem:active,
+    .menuitem:hover {
+        border-style: none;
+        background-image: none;
+        box-shadow: none;
+    }
+    > .popup > .menu {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+.panel-app-button > GtkWidget > GtkWidget:first-child {
+    padding: 0 2px 0 4px;
+}
+
+.panel .menu .spinner,
+.menu .spinner {
+    opacity: 1;
+} // Fixes sound indicator buttons
 
 //
 // Wingpanel Popover
