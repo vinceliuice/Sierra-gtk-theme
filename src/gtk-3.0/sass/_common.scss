@@ -1875,6 +1875,10 @@ menubar,
 
     menu {
       border-radius: 0 0 $wm_radius $wm_radius;
+
+      menu { //submenu
+        border-radius: $wm_radius;
+      }
     }
 
     &:hover { //Seems like it :hover even with keyboard focus
@@ -1933,6 +1937,14 @@ menu,
         color: $selected_fg_color;
         -gtk-icon-shadow: if($variant=='light', $text_shadow, none);
       }
+
+      menu { //sunmenu
+        arrow {
+          color: $fg_color;
+          text-shadow: none;
+          -gtk-icon-shadow: none;
+        }
+      }
     }
 
     &:disabled {
@@ -1973,7 +1985,7 @@ menu,
     min-width: 16px;
     min-height: 16px;
     padding: 2px;
-    background-color: $_menu_bg;
+    background-color: transparent;
     border-radius: 0;
     border: none;
     background-image: none;
@@ -1993,7 +2005,7 @@ menu,
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
     }
 
-    &:hover { background-color: mix($fg_color, $base_color, 10%); }
+    &:hover { background-color: rgba($fg_color, 0.08); }
 
     &:disabled {
       color: transparent;

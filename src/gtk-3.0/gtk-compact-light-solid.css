@@ -2399,6 +2399,11 @@ menubar > menuitem menu,
   border-radius: 0 0 6px 6px;
 }
 
+menubar > menuitem menu menu,
+.menubar > menuitem menu menu {
+  border-radius: 6px;
+}
+
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
   background-color: #0046DB;
@@ -2453,6 +2458,13 @@ menu menuitem:hover arrow,
   -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
 
+menu menuitem:hover menu arrow,
+.menu menuitem:hover menu arrow {
+  color: #242424;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+
 menu menuitem:disabled,
 .menu menuitem:disabled {
   color: rgba(36, 36, 36, 0.55);
@@ -2504,7 +2516,7 @@ menu > arrow,
   min-width: 16px;
   min-height: 16px;
   padding: 2px;
-  background-color: #ffffff;
+  background-color: transparent;
   border-radius: 0;
   border: none;
   background-image: none;
@@ -2529,7 +2541,7 @@ menu > arrow.bottom,
 
 menu > arrow:hover,
 .menu > arrow:hover {
-  background-color: #e9e9e9;
+  background-color: rgba(36, 36, 36, 0.08);
 }
 
 menu > arrow:disabled,
