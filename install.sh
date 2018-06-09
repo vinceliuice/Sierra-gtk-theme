@@ -142,7 +142,7 @@ install_gdm() {
       glib-compile-resources \
        --sourcedir=${THEME_DIR}/gnome-shell \
        --target=/usr/share/gnome-shell/gnome-shell-theme.gresource \
-       ${THEME_DIR}/gnome-shell/gnome-shell-theme.gresource.xml
+       ${SRC_DIR}/gnome-shell/gnome-shell-theme.gresource.xml
   echo "Installing 'gnome-shell-theme.gresource'..."
 }
 
