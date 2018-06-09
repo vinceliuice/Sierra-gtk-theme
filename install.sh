@@ -9,9 +9,8 @@ DEST_DIR=/usr/share/themes
 THEME_NAME=Sierra
 COMPACT_VARIANTS=('' '-compact')
 TRANS_VARIANTS=('' '-solid')
-COLOR_VARIANTS=( '-light' '-dark')
-THIN_VARIANTS=( '' '-thin')
-
+COLOR_VARIANTS=('-light' '-dark')
+THIN_VARIANTS=('' '-thin')
 
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
@@ -52,78 +51,79 @@ install() {
 
   echo "Installing '${THEME_DIR}'..."
 
-  mkdir -p                                                                      ${THEME_DIR}
-  cp -r ${REPO_DIR}/COPYING                                                     ${THEME_DIR}
+  mkdir -p                                                                            ${THEME_DIR}
+  cp -r ${REPO_DIR}/COPYING                                                           ${THEME_DIR}
   # Install index.theme
 	echo "[Desktop Entry]" >>                                                     ${THEME_DIR}/index.theme
 	echo "Type=X-GNOME-Metatheme" >>                                              ${THEME_DIR}/index.theme
-	echo "Name=Sierra${compact}${color}${trans}${thin}" >>                        ${THEME_DIR}/index.theme
+	echo "Name=${name}${compact}${color}${trans}${thin}" >>                       ${THEME_DIR}/index.theme
 	echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >>               ${THEME_DIR}/index.theme
 	echo "Encoding=UTF-8" >>                                                      ${THEME_DIR}/index.theme
 	echo "" >>                                                                    ${THEME_DIR}/index.theme
 	echo "[X-GNOME-Metatheme]" >>                                                 ${THEME_DIR}/index.theme
-	echo "GtkTheme=Sierra${compact}${color}${trans}${thin}" >>                    ${THEME_DIR}/index.theme
-	echo "MetacityTheme=Sierra${compact}${color}${trans}${thin}" >>               ${THEME_DIR}/index.theme
+	echo "GtkTheme=${name}${compact}${color}${trans}${thin}" >>                   ${THEME_DIR}/index.theme
+	echo "MetacityTheme=${name}${compact}${color}${trans}${thin}" >>              ${THEME_DIR}/index.theme
 	echo "IconTheme=Adwaita" >>                                                   ${THEME_DIR}/index.theme
 	echo "CursorTheme=Adwaita" >>                                                 ${THEME_DIR}/index.theme
 	echo "ButtonLayout=close,minimize,maximize:menu" >>                           ${THEME_DIR}/index.theme
 
-  mkdir -p                                                                      ${THEME_DIR}/gnome-shell
+  mkdir -p                                                                            ${THEME_DIR}/gnome-shell
   cd ${SRC_DIR}/gnome-shell
-  cp -r ${SRC_DIR}/gnome-shell/gnome-shell${color}${trans}.css                  ${THEME_DIR}/gnome-shell/gnome-shell.css
+  cp -r ${SRC_DIR}/gnome-shell/gnome-shell${color}${trans}.css                        ${THEME_DIR}/gnome-shell/gnome-shell.css
   cp -r ${SRC_DIR}/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} ${THEME_DIR}/gnome-shell
-  cp -r ${SRC_DIR}/gnome-shell/gnome-shell-theme.gresource.xml                  ${THEME_DIR}/gnome-shell
-  mkdir -p                                                                      ${THEME_DIR}/gnome-shell/assets
+
+  mkdir -p                                                                            ${THEME_DIR}/gnome-shell/assets
   cd ${SRC_DIR}/gnome-shell/assets
   cp -r ${SRC_DIR}/gnome-shell/assets/{dash,dash-placeholder.svg,noise-texture.svg,startup.png,process-working.svg,window-close.svg,window-close-active.svg,toggle-on.svg,more-results.svg,checkbox.svg,key-enter.svg,key-shift-latched-uppercase.svg,key-shift-uppercase.svg} ${THEME_DIR}/gnome-shell/assets
-  cp -r ${SRC_DIR}/gnome-shell/assets/activities${color}.svg                    ${THEME_DIR}/gnome-shell/assets/activities.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/no-events${color}.svg                     ${THEME_DIR}/gnome-shell/assets/no-events.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/no-notifications${color}.svg              ${THEME_DIR}/gnome-shell/assets/no-notifications.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/calendar-arrow-left${color}.svg           ${THEME_DIR}/gnome-shell/assets/calendar-arrow-left.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/calendar-arrow-right${color}.svg          ${THEME_DIR}/gnome-shell/assets/calendar-arrow-right.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/checkbox-off${color}.svg                  ${THEME_DIR}/gnome-shell/assets/checkbox-off.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/close${color}.svg                         ${THEME_DIR}/gnome-shell/assets/close.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/toggle-off${color}.svg                    ${THEME_DIR}/gnome-shell/assets/toggle-off.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/key-hide${color}.svg                      ${THEME_DIR}/gnome-shell/assets/key-hide.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/key-layout${color}.svg                    ${THEME_DIR}/gnome-shell/assets/key-layout.svg
-  cp -r ${SRC_DIR}/gnome-shell/assets/key-shift${color}.svg                     ${THEME_DIR}/gnome-shell/assets/key-shift.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/activities${color}.svg                          ${THEME_DIR}/gnome-shell/assets/activities.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/no-events${color}.svg                           ${THEME_DIR}/gnome-shell/assets/no-events.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/no-notifications${color}.svg                    ${THEME_DIR}/gnome-shell/assets/no-notifications.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/calendar-arrow-left${color}.svg                 ${THEME_DIR}/gnome-shell/assets/calendar-arrow-left.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/calendar-arrow-right${color}.svg                ${THEME_DIR}/gnome-shell/assets/calendar-arrow-right.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/checkbox-off${color}.svg                        ${THEME_DIR}/gnome-shell/assets/checkbox-off.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/close${color}.svg                               ${THEME_DIR}/gnome-shell/assets/close.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/toggle-off${color}.svg                          ${THEME_DIR}/gnome-shell/assets/toggle-off.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/key-hide${color}.svg                            ${THEME_DIR}/gnome-shell/assets/key-hide.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/key-layout${color}.svg                          ${THEME_DIR}/gnome-shell/assets/key-layout.svg
+  cp -r ${SRC_DIR}/gnome-shell/assets/key-shift${color}.svg                           ${THEME_DIR}/gnome-shell/assets/key-shift.svg
   cd ${THEME_DIR}/gnome-shell
   ln -s assets/no-events.svg no-events.svg
   ln -s assets/process-working.svg process-working.svg
   ln -s assets/no-notifications.svg no-notifications.svg
 
-  mkdir -p                                                                      ${THEME_DIR}/gtk-2.0
+  mkdir -p                                                                            ${THEME_DIR}/gtk-2.0
   cd ${SRC_DIR}/gtk-2.0
-  cp -r ${SRC_DIR}/gtk-2.0/gtkrc${color}                                        ${THEME_DIR}/gtk-2.0/gtkrc
-  cp -r ${SRC_DIR}/gtk-2.0/assets${color}                                       ${THEME_DIR}/gtk-2.0/assets
-  cp -r ${SRC_DIR}/gtk-2.0/{apps.rc,main.rc,panel.rc,xfce-notify.rc}            ${THEME_DIR}/gtk-2.0
-  cp -r ${SRC_DIR}/gtk-2.0/menubar-toolbar${color}.rc                           ${THEME_DIR}/gtk-2.0/menubar-toolbar.rc
+  cp -r ${SRC_DIR}/gtk-2.0/gtkrc${color}                                              ${THEME_DIR}/gtk-2.0/gtkrc
+  cp -r ${SRC_DIR}/gtk-2.0/assets${color}                                             ${THEME_DIR}/gtk-2.0/assets
+  cp -r ${SRC_DIR}/gtk-2.0/{apps.rc,main.rc,panel.rc,xfce-notify.rc}                  ${THEME_DIR}/gtk-2.0
+  cp -r ${SRC_DIR}/gtk-2.0/menubar-toolbar${color}.rc                                 ${THEME_DIR}/gtk-2.0/menubar-toolbar.rc
 
-  mkdir -p                                                                      ${THEME_DIR}/gtk-3.0
+  mkdir -p                                                                            ${THEME_DIR}/gtk-3.0
   cd ${SRC_DIR}/gtk-3.0
-  cp -r ${SRC_DIR}/gtk-3.0/assets                                               ${THEME_DIR}/gtk-3.0
+  cp -r ${SRC_DIR}/gtk-3.0/assets                                                     ${THEME_DIR}/gtk-3.0
 	cp -r ${SRC_DIR}/gtk-3.0/thumbnail${compact}${color}.png                      ${THEME_DIR}/gtk-3.0/thumbnail.png
 	cp -r ${SRC_DIR}/gtk-3.0/gtk${compact}${color}${trans}${thin}.css             ${THEME_DIR}/gtk-3.0/gtk.css
 	cp -r ${SRC_DIR}/gtk-3.0/gtk${compact}-dark${trans}${thin}.css                ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
-  mkdir -p                                                                      ${THEME_DIR}/metacity-1
+  mkdir -p                                                                            ${THEME_DIR}/metacity-1
   cd ${SRC_DIR}/metacity-1
-  cp -r ${SRC_DIR}/metacity-1/metacity-theme${color}.xml                        ${THEME_DIR}/metacity-1/metacity-theme.xml
-  cp -r ${SRC_DIR}/metacity-1/{*.png,*.svg}                                     ${THEME_DIR}/metacity-1
+  cp -r ${SRC_DIR}/metacity-1/metacity-theme${color}.xml                              ${THEME_DIR}/metacity-1/metacity-theme.xml
+  cp -r ${SRC_DIR}/metacity-1/{*.png,*.svg}                                           ${THEME_DIR}/metacity-1
   cd ${THEME_DIR}/metacity-1
 	ln -s metacity-theme.xml metacity-theme-1.xml
 	ln -s metacity-theme.xml metacity-theme-2.xml
 	ln -s metacity-theme.xml metacity-theme-3.xml
 
-  mkdir -p                                                                      ${THEME_DIR}/unity
+  mkdir -p                                                                            ${THEME_DIR}/unity
   cd ${SRC_DIR}
-  cp -r ${SRC_DIR}/unity                                                        ${THEME_DIR}
+  cp -r ${SRC_DIR}/unity                                                              ${THEME_DIR}
 
-  mkdir -p                                                                      ${THEME_DIR}/xfwm4
+  mkdir -p                                                                            ${THEME_DIR}/xfwm4
   cd ${SRC_DIR}/xfwm4
-  cp -r ${SRC_DIR}/xfwm4/assets${color}/*.png                                   ${THEME_DIR}/xfwm4
-  cp -r ${SRC_DIR}/xfwm4/themerc${color}                                        ${THEME_DIR}/xfwm4/themerc
+  cp -r ${SRC_DIR}/xfwm4/assets${color}/*.png                                         ${THEME_DIR}/xfwm4
+  cp -r ${SRC_DIR}/xfwm4/themerc${color}                                              ${THEME_DIR}/xfwm4/themerc
 }
+
 install_gdm() {
     local THEME_DIR=${1}/${2}${3}${4}${5}${6}
       # bakup and install files related to gdm theme
@@ -145,6 +145,7 @@ install_gdm() {
        ${THEME_DIR}/gnome-shell/gnome-shell-theme.gresource.xml
   echo "Installing 'gnome-shell-theme.gresource'..."
 }
+
 while [[ $# -gt 0 ]]; do
   case "${1}" in
     -d|--dest)
@@ -269,9 +270,10 @@ for compact in "${compacts[@]:-${COMPACT_VARIANTS[@]}}"; do
     done
   done
 done
-  if [[ $gdm == true ]]; then
-    install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${compact}" "${color}" "${trans}" "${thin}"
-  fi
+
+if [[ $gdm == true ]]; then
+  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${compact}" "${color}" "${trans}" "${thin}"
+fi
 
 echo
 echo Done.
