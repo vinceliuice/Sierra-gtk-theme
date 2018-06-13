@@ -3121,6 +3121,7 @@ expander {
 //
 // Calendar
 //
+%calendar,
 calendar {
   color: $fg_color;
   border: 1px solid $borders_color;
@@ -3132,6 +3133,8 @@ calendar {
     @extend %selected_items;
     border-radius: 50px;
   }
+
+  &:disabled { color: $insensitive_fg_color; }
 
   &.header {
     color: $fg_color;
@@ -3148,8 +3151,8 @@ calendar {
     &:disabled { color: $insensitive_fg_color; }
   }
 
-  &:indeterminate { color: gtkalpha(currentColor,0.55); }
-  &.highlight { color: $fg_color; }
+  &:indeterminate { color: rgba($fg_color, 0.55); }
+  &.highlight { color: rgba($fg_color, 0.65); }
 }
 
 //

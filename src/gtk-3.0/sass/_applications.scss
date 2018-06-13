@@ -793,9 +793,9 @@ button.documents-favorite:active:hover {
 .tweak-titlebar-right,
 dialog.csd > headerbar.titlebar { > switch { margin: 8px 0; } }
 
- /************************
-  * Gnome Control Center *
-  ************************/
+/************************
+ * Gnome Control Center *
+ ************************/
 
 // users section
 
@@ -1638,19 +1638,23 @@ window > box.vertical > box.horizontal {
     padding: 2px 4px;
 
     button {
-      @include button(flat-normal);
+      border-color: transparent;
+      background-color: transparent;
+      box-shadow: none;
       &:hover { @include button(flat-hover); }
       &:active { @include button(flat-active); label { color: white; } }
       &:checked { @include button(flat-checked); label { color: white; } }
       &:disabled { @include button(flat-insensitive); }
+      &, &:hover, &:active, &:checked, &:disabled { border-color: transparent; }
     }
 
     .linked > button {
-      @include button(normal);
-      &:hover { background-color: if($variant=='light', rgba(black, 0.15), rgba(white, 0.15)); }
-      &:active { background-color: if($variant=='light', rgba(black, 0.5), rgba(white, 0.25)); }
-      &:checked { background-color: if($variant=='light', rgba(black, 0.65), rgba(white, 0.35)); }
-      &, &:hover, &:active, &:checked, &:disabled { border: 1px solid $borders_color; }
+      color: $fg_color;
+      background-color: $button_bg;
+      border-color: $borders_color;
+      @if $variant=='light' { box-shadow: $shadow_3, inset 0 0 0 1px rgba($borders_color, 0.01); }
+      &:hover { @include button(hover); }
+      &:active, &:checked { @include button(active); }
     }
 
     separator.horizontal {

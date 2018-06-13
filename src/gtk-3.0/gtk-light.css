@@ -1095,7 +1095,8 @@ headerbar .linked:not(.vertical).path-bar > button:only-child:disabled {
 }
 
 menuitem.button.flat,
-modelbutton.flat, button:link, button:visited, button:link:hover, button:link:active, button:link:checked, button:visited:hover, button:visited:active, button:visited:checked, notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.budgie-menu-launcher:hover, notebook > header > tabs > tab .budgie-panel #tasklist-button:hover, .budgie-panel notebook > header > tabs > tab #tasklist-button:hover, notebook > header > tabs > tab .budgie-panel button.flat.launcher:hover, .budgie-panel notebook > header > tabs > tab button.flat.launcher:hover, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.budgie-menu-launcher:active, notebook > header > tabs > tab .budgie-panel #tasklist-button:active, .budgie-panel notebook > header > tabs > tab #tasklist-button:active, notebook > header > tabs > tab .budgie-panel button.flat.launcher:active, .budgie-panel notebook > header > tabs > tab button.flat.launcher:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.budgie-menu-launcher:active:hover, .app-notification button, calendar.button, calendar.raven-calendar.button {
+modelbutton.flat, button:link, button:visited, button:link:hover, button:link:active, button:link:checked, button:visited:hover, button:visited:active, button:visited:checked, notebook > header > tabs > tab button.flat:hover, notebook > header > tabs > tab button.budgie-menu-launcher:hover, notebook > header > tabs > tab .budgie-panel #tasklist-button:hover, .budgie-panel notebook > header > tabs > tab #tasklist-button:hover, notebook > header > tabs > tab .budgie-panel button.flat.launcher:hover, .budgie-panel notebook > header > tabs > tab button.flat.launcher:hover, notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.budgie-menu-launcher:active, notebook > header > tabs > tab .budgie-panel #tasklist-button:active, .budgie-panel notebook > header > tabs > tab #tasklist-button:active, notebook > header > tabs > tab .budgie-panel button.flat.launcher:active, .budgie-panel notebook > header > tabs > tab button.flat.launcher:active, notebook > header > tabs > tab button.flat:active:hover, notebook > header > tabs > tab button.budgie-menu-launcher:active:hover, .app-notification button,
+calendar.button, calendar.raven-calendar.button {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -4217,6 +4218,7 @@ expander arrow:checked {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
+
 calendar {
   color: #242424;
   border: 1px solid rgba(0, 0, 0, 0.11);
@@ -4225,33 +4227,45 @@ calendar {
   margin: 0;
 }
 
+
 calendar:selected {
   border-radius: 50px;
 }
+
+
+calendar:disabled {
+  color: rgba(36, 36, 36, 0.55);
+}
+
 
 calendar.header {
   color: #242424;
   border: none;
 }
 
+
 calendar.button {
   color: rgba(36, 36, 36, 0.45);
 }
+
 
 calendar.button:hover {
   color: #242424;
 }
 
+
 calendar.button:disabled {
   color: rgba(36, 36, 36, 0.55);
 }
 
+
 calendar:indeterminate {
-  color: alpha(currentColor,0.55);
+  color: rgba(36, 36, 36, 0.55);
 }
 
+
 calendar.highlight {
-  color: #242424;
+  color: rgba(36, 36, 36, 0.65);
 }
 
 messagedialog .titlebar {
@@ -5055,7 +5069,8 @@ headerbar button.titlebutton.restore:active,
 .view:selected, iconview:selected, .view:selected:focus, .view text:selected, iconview text:selected,
 textview text:selected, .view text selection:focus, iconview text selection:focus, .view text selection, iconview text selection,
 textview text selection:focus,
-textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
+textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
+calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .budgie-menu button:checked {
   background-color: #0046DB;
 }
@@ -5063,7 +5078,8 @@ textview text selection, flowbox flowboxchild:selected, entry selection:focus, e
 row:selected label, label:selected, .view:selected, iconview:selected, .view:selected:focus, .view text:selected, iconview text:selected,
 textview text:selected, .view text selection:focus, iconview text selection:focus, .view text selection, iconview text selection,
 textview text selection:focus,
-textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
+textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
+calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .budgie-menu button:checked {
   color: #ffffff;
 }
@@ -5071,7 +5087,8 @@ textview text selection, flowbox flowboxchild:selected, entry selection:focus, e
 row:selected label:disabled, label:disabled:selected, .view:disabled:selected, iconview:disabled:selected, iconview:disabled:selected:focus, .view text:disabled:selected, iconview text:disabled:selected,
 textview text:disabled:selected, iconview text:disabled:selected:focus,
 textview text:disabled:selected:focus, iconview text selection:disabled:focus, .view text selection:disabled, iconview text selection:disabled,
-textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
+textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected:focus, row:disabled:selected,
+calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .budgie-menu button:disabled:checked {
   color: #80a3ed;
 }
@@ -5796,8 +5813,8 @@ dialog.csd > headerbar.titlebar > switch {
 }
 
 /************************
-  * Gnome Control Center *
-  ************************/
+ * Gnome Control Center *
+ ************************/
 box.horizontal.titlebar > headerbar > stack > box.vertical > .title {
   margin: 0;
 }
@@ -6653,7 +6670,7 @@ menubar .panel,
 }
 
 .panel popover button {
-  border: none;
+  border-color: transparent;
   background-color: transparent;
   box-shadow: none;
 }
@@ -6696,27 +6713,30 @@ menubar .panel,
   color: rgba(36, 36, 36, 0.55);
 }
 
+.panel popover button, .panel popover button:hover, .panel popover button:active, .panel popover button:checked, .panel popover button:disabled {
+  border-color: transparent;
+}
+
 .panel popover .linked > button {
   color: #242424;
-  border-color: rgba(0, 0, 0, 0.11);
   background-color: white;
+  border-color: rgba(0, 0, 0, 0.11);
   box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01), inset 0 0 0 1px rgba(0, 0, 0, 0.01);
 }
 
 .panel popover .linked > button:hover {
-  background-color: rgba(0, 0, 0, 0.15);
+  color: #0b0b0b;
+  border-color: rgba(0, 0, 0, 0.11);
+  background-color: #f7f7f7;
+  box-shadow: none;
 }
 
-.panel popover .linked > button:active {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.panel popover .linked > button:checked {
-  background-color: rgba(0, 0, 0, 0.65);
-}
-
-.panel popover .linked > button, .panel popover .linked > button:hover, .panel popover .linked > button:active, .panel popover .linked > button:checked, .panel popover .linked > button:disabled {
-  border: 1px solid rgba(0, 0, 0, 0.11);
+.panel popover .linked > button:active, .panel popover .linked > button:checked {
+  color: #ffffff;
+  background-color: #0e6bff;
+  border-color: #0e6bff;
+  background-image: linear-gradient(180deg, #4c97fe 0%, #0564e3 100%);
+  box-shadow: none;
 }
 
 .panel popover separator.horizontal {
