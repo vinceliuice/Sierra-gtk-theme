@@ -3144,7 +3144,7 @@ calendar {
   &.button {
     @extend %undecorated_button;
 
-    color: transparentize($fg_color,0.55);
+    color: rgba($fg_color, 0.45);
 
     &:hover { color: $fg_color; }
 
@@ -3152,7 +3152,7 @@ calendar {
   }
 
   &:indeterminate { color: rgba($fg_color, 0.55); }
-  &.highlight { color: rgba($fg_color, 0.65); }
+  &.highlight { color: rgba($fg_color, 0.65); font-weight: 500; }
 }
 
 //

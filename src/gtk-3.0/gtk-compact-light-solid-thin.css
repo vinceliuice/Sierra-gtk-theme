@@ -4250,6 +4250,7 @@ calendar:indeterminate {
 
 calendar.highlight {
   color: rgba(36, 36, 36, 0.65);
+  font-weight: 500;
 }
 
 messagedialog .titlebar {
@@ -8111,6 +8112,11 @@ popover.background.places-menu row {
   border-radius: 0 0 6px 6px;
 }
 
+.budgie-panel menubar > menuitem menu menu,
+.budgie-panel .menubar > menuitem menu menu {
+  border-radius: 6px;
+}
+
 .budgie-panel menubar > menuitem:hover,
 .budgie-panel .menubar > menuitem:hover {
   background-color: #0046DB;
@@ -8274,7 +8280,7 @@ frame.raven-frame > border {
 .raven .raven-header.top stackswitcher button {
   margin: 0;
   padding: 0 20px;
-  min-height: 16px;
+  min-height: 20px;
 }
 
 .raven .raven-header.top button.image-button:dir(ltr) {
