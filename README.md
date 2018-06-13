@@ -51,7 +51,8 @@ Ubuntu [PPA](https://launchpad.net/~dyatlov-igor/+archive/ubuntu/sierra-theme) (
 ```
 sudo add-apt-repository ppa:dyatlov-igor/sierra-theme
 sudo apt update
-sudo apt install sierra-gtk-theme
+sudo apt install sierra-gtk-theme       # point releases
+sudo apt install sierra-gtk-theme-git   # git master branch
 ```
 
 ### From source
@@ -60,7 +61,7 @@ Open the terminal at current directory.
 
 Run
 
-        ./Install
+       sudo ./install.sh
 
 When running the installer script in ubuntu16.04 or later, if you had this error:
 
