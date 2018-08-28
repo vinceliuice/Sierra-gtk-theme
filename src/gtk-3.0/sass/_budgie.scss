@@ -371,6 +371,10 @@ popover.background.places-menu {
 
       menu {
         border-radius: 0 0 $wm_radius $wm_radius;
+
+        menu { //submenu
+          border-radius: $wm_radius;
+        }
       }
 
       &:hover {
@@ -536,7 +540,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       stackswitcher button {
         margin: 0;
         padding: 0 20px;
-        min-height: 16px;
+        min-height: 20px;
       }
 
       // for <10.4

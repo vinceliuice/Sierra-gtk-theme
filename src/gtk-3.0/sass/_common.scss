@@ -3121,6 +3121,7 @@ expander {
 //
 // Calendar
 //
+%calendar,
 calendar {
   color: $fg_color;
   border: 1px solid $borders_color;
@@ -3133,6 +3134,8 @@ calendar {
     border-radius: 50px;
   }
 
+  &:disabled { color: $insensitive_fg_color; }
+
   &.header {
     color: $fg_color;
     border: none;
@@ -3141,15 +3144,15 @@ calendar {
   &.button {
     @extend %undecorated_button;
 
-    color: transparentize($fg_color,0.55);
+    color: rgba($fg_color, 0.45);
 
     &:hover { color: $fg_color; }
 
     &:disabled { color: $insensitive_fg_color; }
   }
 
-  &:indeterminate { color: gtkalpha(currentColor,0.55); }
-  &.highlight { color: $fg_color; }
+  &:indeterminate { color: rgba($fg_color, 0.55); }
+  &.highlight { color: rgba($fg_color, 0.65); font-weight: 500; }
 }
 
 //

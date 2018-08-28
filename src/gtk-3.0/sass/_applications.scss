@@ -773,9 +773,9 @@ button.documents-favorite:active:hover {
 .tweak-titlebar-right,
 dialog.csd > headerbar.titlebar { > switch { margin: 8px 0; } }
 
- /************************
-  * Gnome Control Center *
-  ************************/
+/************************
+ * Gnome Control Center *
+ ************************/
 
 // users section
 
@@ -1552,183 +1552,150 @@ window > box.vertical > box.horizontal {
 // * Elementary Apps *
 
 //
-// Birdie
-//
-BirdieWidgetsTweetList * {
-  background-image: none;
-  background-color: transparent;
-}
-
-//
-// Marlin / Pantheon Files
-//
-
-MarlinViewWindow {
-  *:selected, *:selected:focus {
-    color: $selected_fg_color;
-    background-color: $selected_bg_color;
-    outline-color: transparent;
-  }
-
-  GtkIconView.view:selected {
-    &, &:focus, &:hover, &:focus:hover { background-color: transparent; }
-  }
-  FMListView, FMColumnView { outline-color: transparent; }
-}
-
-.marlin-pathbar.pathbar {
-    border-radius: 3px;
-    padding-left: 4px;
-    padding-right: 4px;
-
-    @include entry(header-normal);
-
-    &:focus {
-        @include entry(header-focus)
-    }
-
-    &:disabled {
-        @include entry(header-insensitive)
-    }
-
-    &:active,
-    &:checked {
-        color: $selected_bg_color;
-    }
-}
-
-//
-// Gala
-//
-.gala-notification {
-    border: 1px solid rgba(0, 0, 0, 0.35);
-    border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-image: _solid(white);
-    background-color: transparent;
-
-    .title,
-    .label {
-        color: #5c616c;
-    }
-}
-
-//
 // Wingpanel
 //
+
 .panel {
-    background-color: transparent;
+  background-color: transparent;
+  transition: all 100ms ease-in-out;
+  color: white;
+
+  &.maximized {
+    background-color: black;
+  }
+
+  &.translucent {
+    background-color: rgba(#000, 0.5);
+    box-shadow:
+      0 1px 3px rgba(#000, 0.24),
+      0 1px 1px rgba(#000, 0.52);
+//    margin-bottom: 4px;
+  }
+
+  &.color-light {
+
+    .translucent {
+      background-color: rgba(#fff, 0.85);
+      box-shadow:
+        inset 0 -1px 1px rgba(#fff, 0.2),
+        0 1px 3px rgba(#000, 0.24),
+        0 1px 1px rgba(#000, 0.12);
+//      margin-bottom: 4px;
+    }
+
+    .composited-indicator {
+       > revealer label,
+       > revealer image,
+       > revealer spinner {
+         background-color: rgba(#fff, 0.85);
+         box-shadow:
+           inset 0 -1px 1px rgba(#fff, 0.2),
+           0 1px 3px rgba(#000, 0.24),
+           0 1px 1px rgba(#000, 0.12);
+//         margin-bottom: 4px;
+      }
+
+       .keyboard {
+         background-color: rgba(#000, 0.65);
+         box-shadow:
+           0 0 2px rgba(#fff, 0.3),
+           0 1px 0 rgba(#fff, 0.25);
+         color: #fff;
+         text-shadow: none;
+      }
+    }
+  }
+
+  menubar &,
+  & menubar {
+    box-shadow: none;
+    border: none;
+    background: none;
     color: white;
-    font-weight: bold;
-    text-shadow: 0 1px 2px transparentize(black, 0.4);
-    -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
+  }
 
-    &-shadow {
-        background-image: none;
-        background-color: transparent;
+  popover {
+    padding: 2px 4px;
+
+    button {
+      border-color: transparent;
+      background-color: transparent;
+      box-shadow: none;
+      &:hover { @include button(flat-hover); }
+      &:active { @include button(flat-active); label { color: white; } }
+      &:checked { @include button(flat-checked); label { color: white; } }
+      &:disabled { @include button(flat-insensitive); }
+      &, &:hover, &:active, &:checked, &:disabled { border-color: transparent; }
     }
-    .menu {
-        box-shadow: none;
 
-        .menuitem {
-            font-weight: normal;
-            text-shadow: none;
-            -gtk-icon-shadow: none;
-        }
-
-        .window-frame.menu.csd,
-        .window-frame.popup.csd {
-            box-shadow: 0 0 0 1px transparentize(black, 0.8),
-            0 10px 20px transparentize(black, 0.81),
-            0 6px 6px transparentize(black, 0.77);
-        }
+    .linked > button {
+      color: $fg_color;
+      background-color: $button_bg;
+      border-color: $borders_color;
+      @if $variant=='light' { box-shadow: $shadow_3, inset 0 0 0 1px rgba($borders_color, 0.01); }
+      &:hover { @include button(hover); }
+      &:active, &:checked { @include button(active); }
     }
-    .menubar > .menuitem {
-        padding: 3px 6px;
+
+    separator.horizontal {
+      margin: 0 -4px;
+    }
+
+    separator.vertical {
+      background: none;
+    }
+
+    .sidebar {
+      border-style: none;
+      background: none;
+
+      .view {
+
         &:hover {
-            background-color: transparent;
+          border-radius: $bt_radius;
+          background-color: if($variant=='light', rgba(black, 0.1), rgba(white, 0.1));
         }
+
+        &:selected {
+          &, &:focus {
+            text-shadow: none;
+            transition: all 200ms $ease-out-quad;
+            background-color: if($variant=='light', rgba(black, 0.65), rgba(white, 0.35));
+            border-radius: $bt_radius;
+          }
+        }
+      }
     }
-    .window-frame.menu.csd,
-    .window-frame.popup.csd {
-        box-shadow: none;
-    }
+  }
 }
 
 .composited-indicator {
-    background-color: transparent;
-    color: white;
-    text-shadow: 0 1px 2px transparentize(black, 0.4);
-    -gtk-icon-shadow: 0 1px 2px transparentize(black, 0.4);
+  padding: 0 6px;
 
-    > GtkWidget > GtkWidget:first-child {
-        padding: 0 2px;
-    }
-
-    .menuitem:active,
-    .menuitem:hover {
-        border-style: none;
-        background-image: none;
-        box-shadow: none;
-    }
-    > .popup > .menu {
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-}
-
-.panel-app-button > GtkWidget > GtkWidget:first-child {
-    padding: 0 2px 0 4px;
-}
-
-.panel .menu .spinner,
-.menu .spinner {
-    opacity: 1;
-} // Fixes sound indicator buttons
-
-//
-// Wingpanel Popover
-//
-
-WingpanelWidgetsIndicatorPopover.popover {
-  padding: 0;
-
-  text-shadow: none;
-  -gtk-icon-shadow: none;
-
-  menuitem {
-    padding: 5px;
-    outline-color: transparent;
-    text-shadow: none;
-    -gtk-icon-shadow: none;
-    border: solid transparent;
-    border-width: 1px 0;
-
-    label, image { padding: 0 3px; }
-
-    &:hover, &:active {
-      background-color: if($variant == 'light', transparentize(black, 0.96), transparentize(white, 0.95));
-      border: solid if($variant == 'light', transparentize(black, 0.92), transparentize(white, 0.93));
-      border-width: 1px 0;
-    }
-    *:disabled { color: $insensitive_fg_color; }
+  > revealer label,
+  > revealer image,
+  > revealer spinner {
+    color: #fff;
+    font-weight: bold;
+    text-shadow:
+        0 0 2px alpha (#000, 0.3),
+        0 1px 2px alpha (#000, 0.6);
+    transition: all 200ms ease-in-out;
+    -gtk-icon-shadow:
+        0 0 2px alpha (#000, 0.3),
+        0 1px 2px alpha (#000, 0.6);
   }
-}
 
-//
-// Pantheon Terminal
-//
-
-PantheonTerminalPantheonTerminalWindow.background {
-   background-color: transparent;
-}
-
-//
-// Switchboard
-//
-
-SwitchboardCategoryView .view:selected,
-SwitchboardCategoryView .view:selected:focus {
-  color: $fg_color;
+  .keyboard {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow:
+        0 0 2px alpha (#000, 0.3),
+        0 1px 2px alpha (#000, 0.6);
+    color: #333;
+    font-weight: 600;
+    padding: 0 3px;
+    text-shadow: none;
+  }
 }
 
