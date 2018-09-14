@@ -2407,6 +2407,12 @@ menu,
   padding: 6px 0;
   border-radius: 6px;
   background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+.csd menu, .csd
+.menu {
+  border: none;
 }
 
 menu separator,

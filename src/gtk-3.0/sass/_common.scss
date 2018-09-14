@@ -1901,10 +1901,11 @@ menu,
   padding: 6px 0;
   border-radius: $wm_radius;
   background-color: $_menu_bg;
-//  box-shadow: inset 0 0 0 1px $borders_color;
+  border: 1px solid $borders_color;
 
   .csd & {
 //    background-color: $_menu_bg;
+    border: none;
   }
 
   separator,
