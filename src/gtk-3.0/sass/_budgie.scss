@@ -13,7 +13,7 @@ $raven_fg_color:   #dedede;
 $raven_button_bg_color: #616161;
 $raven_button_active_color: #AFAFAF;
 
-%budgiebutton.flat {
+%budgiebutton {
   @include button(flat-normal);
   &:hover { @include button(flat-hover); }
   &:checked { @include button(flat-checked); }
@@ -61,7 +61,7 @@ $raven_button_active_color: #AFAFAF;
     border-radius: $bt_radius;
     -gtk-outline-radius: $bt_radius;
 
-    @extend %budgiebutton.flat;
+    @extend %budgiebutton;
   }
 }
 
@@ -92,7 +92,7 @@ $raven_button_active_color: #AFAFAF;
   switch { margin-left: 56px; margin-right: 6px; }
 
   &:not(.budgie-menu) button.flat:not(.image-button) {
-    @extend %budgiebutton.flat;
+    @extend %budgiebutton;
     min-height: 28px;
     padding: 0 8px;
     color: $fg_color;
@@ -199,7 +199,7 @@ window.budgie-popover:not(.csd) {
   .workspace-add-button {
     background-color: transparent;
     background-image: none;
-    @extend %budgiebutton.flat;
+    @extend %budgiebutton;
 
     &:hover { box-shadow: none; }
 
@@ -689,9 +689,16 @@ calendar.raven-calendar {
   label { min-height: 24px; }
 
   button.image-button {
+<<<<<<< HEAD
     padding: 8px;
     border: none;
     @extend %budgiebutton.flat;
+=======
+    padding: 8px 7px;
+    border: none;
+    border-radius: 100px;
+    @extend %selected-button;
+>>>>>>> origin/master
   }
 }
 
@@ -865,7 +872,7 @@ window.budgie-switcher-window {
   background-color: if($transparency == 'true', rgba($base_color, 0.95), $base_color);
   background-image: none;
 
-  button { @extend %budgiebutton.flat; }
+  button { @extend %budgiebutton; }
 
   .linked > button { border-radius: $bt_radius; }
 }
