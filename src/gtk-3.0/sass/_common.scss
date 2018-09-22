@@ -3681,6 +3681,7 @@ stackswitcher button {
   &.text-button { min-width: 80px; }
 }
 
+@at-root %circle_button,
 stackswitcher button.circular,
 stackswitcher button.text-button.circular { // FIXME aggregate with buttons
   min-width: 28px;
