@@ -2148,7 +2148,7 @@ headerbar scale trough, .nemo-window .primary-toolbar scale trough {
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .path-bar button {
@@ -8210,7 +8210,6 @@ popover.background.places-menu row {
 
 .budgie-panel button.launcher.budgie-menu-launcher, .budgie-panel button.launcher.flat {
   padding: 0;
-  margin: 0;
 }
 
 .budgie-panel button.launcher.budgie-menu-launcher:not(:checked), .budgie-panel button.launcher.flat:not(:checked) {
@@ -8238,7 +8237,7 @@ popover.background.places-menu row {
 }
 
 .top .budgie-panel #tasklist-button:checked, .budgie-panel .top #tasklist-button:checked, .top .budgie-panel button.flat.launcher:checked, .budgie-panel .top button.flat.launcher:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(1px), #0e6bff 100%, transparent 0%) 2 0 0 0/2px 0 0 0;
+  border-image: radial-gradient(circle closest-corner at center calc(1px), #0e6bff 100%, transparent 0%) 3 0 0 0/3px 0 0 0;
 }
 
 .bottom .budgie-panel #tasklist-button, .budgie-panel .bottom #tasklist-button, .bottom .budgie-panel button.flat.launcher, .budgie-panel .bottom button.flat.launcher {
@@ -8246,7 +8245,7 @@ popover.background.places-menu row {
 }
 
 .bottom .budgie-panel #tasklist-button:checked, .budgie-panel .bottom #tasklist-button:checked, .bottom .budgie-panel button.flat.launcher:checked, .budgie-panel .bottom button.flat.launcher:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #0e6bff 100%, transparent 0%) 0 0 2 0/0 0 2px 0;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #0e6bff 100%, transparent 0%) 0 0 3 0/0 0 3px 0;
 }
 
 .left .budgie-panel #tasklist-button, .budgie-panel .left #tasklist-button, .left .budgie-panel button.flat.launcher, .budgie-panel .left button.flat.launcher {
@@ -8254,7 +8253,7 @@ popover.background.places-menu row {
 }
 
 .left .budgie-panel #tasklist-button:checked, .budgie-panel .left #tasklist-button:checked, .left .budgie-panel button.flat.launcher:checked, .budgie-panel .left button.flat.launcher:checked {
-  border-image: radial-gradient(circle closest-corner at calc(1px) center, #0e6bff 100%, transparent 0%) 0 0 0 2/0 0 0 2px;
+  border-image: radial-gradient(circle closest-corner at calc(1px) center, #0e6bff 100%, transparent 0%) 0 0 0 3/0 0 0 3px;
 }
 
 .right .budgie-panel #tasklist-button, .budgie-panel .right #tasklist-button, .right .budgie-panel button.flat.launcher, .budgie-panel .right button.flat.launcher {
@@ -8262,7 +8261,7 @@ popover.background.places-menu row {
 }
 
 .right .budgie-panel #tasklist-button:checked, .budgie-panel .right #tasklist-button:checked, .right .budgie-panel button.flat.launcher:checked, .budgie-panel .right button.flat.launcher:checked {
-  border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, #0e6bff 100%, transparent 0%) 0 2 0 0/0 2px 0 0;
+  border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, #0e6bff 100%, transparent 0%) 0 3 0 0/0 3px 0 0;
 }
 
 
@@ -8359,7 +8358,7 @@ button.launcher.budgie-menu-launcher:checked > image,
 .top .budgie-panel .pinned button.launcher.running.budgie-menu-launcher > image,
 .top .budgie-panel .pinned button.launcher.running.flat > image,
 .top .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 6px 2px;
+  background-size: 6px 3px;
   background-position: top center;
   background-image: image(#498dff);
 }
@@ -8378,7 +8377,7 @@ button.launcher.budgie-menu-launcher:checked > image,
 .bottom .budgie-panel .pinned button.launcher.running.budgie-menu-launcher > image,
 .bottom .budgie-panel .pinned button.launcher.running.flat > image,
 .bottom .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 6px 2px;
+  background-size: 6px 3px;
   background-position: bottom center;
   background-image: image(#498dff);
 }
@@ -8397,7 +8396,7 @@ button.launcher.budgie-menu-launcher:checked > image,
 .left .budgie-panel .pinned button.launcher.running.budgie-menu-launcher > image,
 .left .budgie-panel .pinned button.launcher.running.flat > image,
 .left .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 2px 6px;
+  background-size: 3px 6px;
   background-position: left center;
   background-image: image(#498dff);
 }
@@ -8416,7 +8415,7 @@ button.launcher.budgie-menu-launcher:checked > image,
 .right .budgie-panel .pinned button.launcher.running.budgie-menu-launcher > image,
 .right .budgie-panel .pinned button.launcher.running.flat > image,
 .right .budgie-panel .pinned button.launcher.running.sidebar-button > image {
-  background-size: 2px 6px;
+  background-size: 3px 6px;
   background-position: right center;
   background-image: image(#498dff);
 }

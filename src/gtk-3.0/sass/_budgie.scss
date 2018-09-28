@@ -451,7 +451,6 @@ popover.background.places-menu {
   // Icon Tasklist
   button.flat.launcher {
     padding: 0;
-    margin: 0;
     @extend button.flat;
     @extend %underscores;
 
@@ -469,10 +468,10 @@ popover.background.places-menu {
 }
 
 %underscores {
-  @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        2 0 0 0 / 2px 0 0 0),
-                                (bottom, center calc(100% - 1px), 0 0 2 0 / 0 0 2px 0),
-                                (left,   calc(1px) center,        0 0 0 2 / 0 0 0 2px),
-                                (right,  calc(100% - 1px) center, 0 2 0 0 / 0 2px 0 0) {
+  @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        3 0 0 0 / 3px 0 0 0),
+                                (bottom, center calc(100% - 1px), 0 0 3 0 / 0 0 3px 0),
+                                (left,   calc(1px) center,        0 0 0 3 / 0 0 0 3px),
+                                (right,  calc(100% - 1px) center, 0 3 0 0 / 0 3px 0 0) {
     .#{$pos} & {
       & {
         border-image: radial-gradient(circle closest-corner at #{$b_pos},
@@ -534,10 +533,10 @@ popover.background.places-menu {
 }
 
 // draw underscores and dots
-@each $position, $_dot in (top, 6px 2px),
-                          (bottom, 6px 2px),
-                          (left, 2px 6px),
-                          (right, 2px 6px) {
+@each $position, $_dot in (top, 6px 3px),
+                          (bottom, 6px 3px),
+                          (left, 3px 6px),
+                          (right, 3px 6px) {
   .#{$position} .budgie-panel {
 
     .unpinned button.flat.launcher,
