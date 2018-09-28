@@ -439,8 +439,11 @@ popover.background.places-menu {
   // Tasklist
   #tasklist-button {
     padding: 0 4px;
-    @extend button.flat;
     @extend %underscores;
+    box-shadow: none;
+    background-image: none;
+    &:active { background-color: rgba($header_fg, 0.15); color: rgba($header_fg, 0.75); }
+    &:checked { background-color: rgba($header_fg, 0.12); color: $header_fg; }
   }
 
   &.vertical #tasklist-button { min-height: 32px; }
@@ -448,6 +451,7 @@ popover.background.places-menu {
   // Icon Tasklist
   button.flat.launcher {
     padding: 0;
+    margin: 0;
     @extend button.flat;
     @extend %underscores;
 
@@ -462,17 +466,7 @@ popover.background.places-menu {
     &:active { background-color: rgba($fg_color, 0.20); }
     &:checked { background-color: rgba($fg_color, 0.15); }
   }
-
-  .unpinned button.flat.launcher,
-  .pinned button.flat.launcher.running { @extend %underscores:checked; }
 }
-
-//window.background:not(.csd) {
-//  menu { // menubar context-menus
-//    border-color: $borders_color;
-//    border-top-color: $_menu_bg;
-//  }
-//}
 
 %underscores {
   @each $pos, $b_pos, $b_wid in (top,    center calc(1px),        2 0 0 0 / 2px 0 0 0),
@@ -496,6 +490,71 @@ popover.background.places-menu {
     }
   }
 }
+
+.budgie-panel {
+  @at-root %budgie_icon_tasklist_button,
+  button.flat.launcher {
+    min-width: 16px;
+    min-height: 16px;
+    padding: 0;
+    border-radius: 0;
+    background-position: center center;
+
+    > image { opacity: 0.87; }
+
+    &:hover {
+      -gtk-icon-effect: highlight;
+      > image { opacity: 1.0; }
+    }
+    &:active {
+      > image { opacity: 1.0; }
+    }
+    &:checked {
+      &:hover { -gtk-icon-effect: highlight; }
+      > image { opacity: 1.0; }
+    }
+  }
+
+  @at-root %running_budgie_icon_tasklist_button,
+  .unpinned button.flat.launcher,
+  .pinned button.flat.launcher.running,
+  .pinned button.launcher.running.sidebar-button {
+    &:hover { -gtk-icon-effect: highlight; }
+
+    > image {
+      background-repeat: no-repeat;
+      opacity: 1.0;
+    }
+
+    &:active,
+    &:checked {
+      > image { background-image: none; }
+    }
+  }
+}
+
+// draw underscores and dots
+@each $position, $_dot in (top, 6px 2px),
+                          (bottom, 6px 2px),
+                          (left, 2px 6px),
+                          (right, 2px 6px) {
+  .#{$position} .budgie-panel {
+
+    .unpinned button.flat.launcher,
+    .pinned button.flat.launcher.running,
+    .pinned button.launcher.running.sidebar-button {
+      > image {
+        background-size: #{$_dot};
+        background-position: #{$position} center;
+        background-image: image($selected_bg_color);
+      }
+
+      &:active, &:checked { > image { background-image: none; } }
+    }
+  }
+}
+
+box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher { border-image: none; } // unset before drawing indicators
 
 frame.raven-frame > border {
   border-style: none;
@@ -888,7 +947,7 @@ window.budgie-switcher-window {
   .dialog-title { font-size: 120%; }
 
   .linked.horizontal > button {
-    padding: 8px 16px;
+    padding: 4px 16px;
     border: none;
     border-top: 1px solid $borders_color;
     border-radius: 0;
