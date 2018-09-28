@@ -856,7 +856,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: rgba(0, 0, 0, 0);
+  border-left-color: transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -932,7 +932,7 @@ button.font separator, button.file separator {
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: rgba(0, 0, 0, 0);
+  border-top-color: transparent;
 }
 
 .linked.vertical > entry.error + entry,
@@ -1223,7 +1223,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
+  box-shadow: inset 1px 0 transparent;
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -4304,7 +4304,7 @@ messagedialog.csd .dialog-action-area button:only-child {
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid transparent;
 }
 
 filechooserbutton:drop(active) {
@@ -8236,23 +8236,23 @@ popover.background.places-menu row {
 
 frame.raven-frame > border {
   border-style: none;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25), 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: none;
 }
 
-.top frame.raven-frame > border {
-  margin-bottom: 32px;
+.top .shadow-block {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.23), transparent);
 }
 
-.bottom frame.raven-frame > border {
-  margin-top: 32px;
+.bottom .shadow-block {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.23), transparent);
 }
 
-.left frame.raven-frame > border {
-  margin-right: 32px;
+.left .shadow-block {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.23), transparent);
 }
 
-.right frame.raven-frame > border {
-  margin-left: 32px;
+.right .shadow-block {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.23), transparent);
 }
 
 .raven {

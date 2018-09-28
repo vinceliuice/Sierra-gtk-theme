@@ -2152,7 +2152,7 @@ headerbar scale trough, .nemo-window .primary-toolbar scale trough {
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .path-bar button {
@@ -8219,23 +8219,23 @@ popover.background.places-menu row {
 
 frame.raven-frame > border {
   border-style: none;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 }
 
-.top frame.raven-frame > border {
-  margin-bottom: 32px;
+.top .shadow-block {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.23), transparent);
 }
 
-.bottom frame.raven-frame > border {
-  margin-top: 32px;
+.bottom .shadow-block {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.23), transparent);
 }
 
-.left frame.raven-frame > border {
-  margin-right: 32px;
+.left .shadow-block {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.23), transparent);
 }
 
-.right frame.raven-frame > border {
-  margin-left: 32px;
+.right .shadow-block {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.23), transparent);
 }
 
 .raven {
