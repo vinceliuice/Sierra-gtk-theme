@@ -856,7 +856,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0);
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -932,7 +932,7 @@ button.font separator, button.file separator {
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .linked.vertical > entry.error + entry,
@@ -1223,7 +1223,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 transparent;
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -4304,7 +4304,7 @@ messagedialog.csd .dialog-action-area button:only-child {
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 filechooserbutton:drop(active) {
@@ -7743,20 +7743,50 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
   color: rgba(36, 36, 36, 0.55);
 }
 
-.raven button.image-button, .raven .raven-header:not(.top) button {
+.raven button, .raven stackswitcher.linked > button {
+  background-color: #616161;
+  color: #dedede;
+  border: none;
+}
+
+.raven button:hover, .raven stackswitcher.linked > button:hover {
+  background-color: #6e6e6e;
+}
+
+.raven button:active, .raven stackswitcher.linked > button:active {
+  background-color: #bcbcbc;
+  background-image: none;
+  color: #242424;
+}
+
+.raven button:checked, .raven stackswitcher.linked > button:checked {
+  background-color: #AFAFAF;
+  background-image: none;
+  color: #2A2A2A;
+}
+
+.raven button:disabled, .raven stackswitcher.linked > button:disabled {
+  background-color: rgba(97, 97, 97, 0.5);
+}
+
+.raven button:disabled label, .raven button:disabled, .raven stackswitcher.linked > button:disabled {
+  color: rgba(222, 222, 222, 0.5);
+}
+
+.raven button.flat, .raven button.budgie-menu-launcher, .raven .budgie-panel #tasklist-button, .budgie-panel .raven #tasklist-button, .raven .budgie-panel button.flat.launcher, .budgie-panel .raven button.flat.launcher, .raven stackswitcher.linked > button.flat, .raven stackswitcher.linked > button.budgie-menu-launcher, .raven .raven-header:not(.top) button {
   border: none;
   background-color: transparent;
   color: #dedede;
   box-shadow: none;
 }
 
-.raven button.image-button:hover, .raven .raven-header:not(.top) button:hover {
+.raven button.flat:hover, .raven button.budgie-menu-launcher:hover, .raven .budgie-panel #tasklist-button:hover, .budgie-panel .raven #tasklist-button:hover, .raven .raven-header:not(.top) button:hover {
   color: #c5c5c5;
   background-color: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.raven button.image-button:checked, .raven .raven-header:not(.top) button:checked {
+.raven button.flat:checked, .raven button.budgie-menu-launcher:checked, .raven .budgie-panel #tasklist-button:checked, .budgie-panel .raven #tasklist-button:checked, .raven .raven-header:not(.top) button:checked {
   background-image: none;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.35);
@@ -7764,7 +7794,7 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
   -gtk-icon-shadow: none;
 }
 
-.raven button.image-button:active, .raven .raven-header:not(.top) button:active {
+.raven button.flat:active, .raven button.budgie-menu-launcher:active, .raven .budgie-panel #tasklist-button:active, .budgie-panel .raven #tasklist-button:active, .raven .raven-header:not(.top) button:active {
   background-image: none;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.25);
@@ -7772,12 +7802,12 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
   -gtk-icon-shadow: none;
 }
 
-.raven button.image-button:disabled, .raven .raven-header:not(.top) button:disabled {
+.raven button.flat:disabled, .raven button.budgie-menu-launcher:disabled, .raven .budgie-panel #tasklist-button:disabled, .budgie-panel .raven #tasklist-button:disabled, .raven .raven-header:not(.top) button:disabled {
   background-color: transparent;
 }
 
-.raven button.image-button:disabled label, .raven .raven-header:not(.top) button:disabled label, .raven button.image-button:disabled, .raven .raven-header:not(.top) button:disabled {
-  color: rgba(222, 222, 222, 0.45);
+.raven button.flat:disabled label, .raven button.budgie-menu-launcher:disabled label, .raven .budgie-panel #tasklist-button:disabled label, .budgie-panel .raven #tasklist-button:disabled label, .raven .raven-header:not(.top) button:disabled label, .raven button.flat:disabled, .raven button.budgie-menu-launcher:disabled, .raven .budgie-panel #tasklist-button:disabled, .budgie-panel .raven #tasklist-button:disabled, .raven .raven-header:not(.top) button:disabled {
+  color: rgba(222, 222, 222, 0.5);
 }
 
 .budgie-container {
@@ -8270,28 +8300,6 @@ frame.raven-frame > border {
 
 .raven stackswitcher {
   padding: 0 8px 12px 8px;
-}
-
-.raven stackswitcher.linked > button {
-  background-color: #616161;
-  color: #dedede;
-  border: none;
-}
-
-.raven stackswitcher.linked > button:hover {
-  background-color: #6e6e6e;
-}
-
-.raven stackswitcher.linked > button:active {
-  background-color: #bcbcbc;
-  background-image: none;
-  color: #242424;
-}
-
-.raven stackswitcher.linked > button:checked {
-  background-color: #AFAFAF;
-  background-image: none;
-  color: #2A2A2A;
 }
 
 .raven .raven-header {

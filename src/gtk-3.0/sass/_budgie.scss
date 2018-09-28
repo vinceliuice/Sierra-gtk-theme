@@ -13,7 +13,7 @@ $raven_fg_color:   #dedede;
 $raven_button_bg_color: #616161;
 $raven_button_active_color: #AFAFAF;
 
-%budgiebutton {
+%budgie_button {
   @include button(flat-normal);
   &:hover { @include button(flat-hover); }
   &:checked { @include button(flat-checked); }
@@ -21,34 +21,58 @@ $raven_button_active_color: #AFAFAF;
   &:disabled { @include button(flat-insensitive); }
 }
 
-%raven.flat {
-  border: none;
-  background-color: transparent;
+%raven_button {
+  background-color: $raven_button_bg_color;
   color: $raven_fg_color;
-  box-shadow: none;
+  border: none;
 
   &:hover {
-    color: darken($raven_fg_color, 10%);
-    background-color: rgba(white, 0.15);
-    border-color: rgba(white, 0.15);
-  }
-  &:checked {
-    background-image: none;
-    color: $selected_fg_color;
-    background-color: rgba(white, 0.35);
-    text-shadow: none;
-    -gtk-icon-shadow: none;
+    background-color: lighten($raven_button_bg_color, 5%);
   }
   &:active {
+    background-color: lighten($raven_button_active_color, 5%);
     background-image: none;
-    color: $selected_fg_color;
-    background-color: rgba(white, 0.25);
-    text-shadow: none;
-    -gtk-icon-shadow: none;
+    color: $raven_base_color;
+  }
+  &:checked {
+    background-color: $raven_button_active_color;
+    background-image: none;
+    color: $raven_bg_color;
   }
   &:disabled {
-    label, & { color: transparentize($raven_fg_color, 0.55); }
+    label, & { color: rgba($raven_fg_color, 0.5); }
+    background-color: rgba($raven_button_bg_color, 0.5);
+  }
+
+  &.flat {
+    border: none;
     background-color: transparent;
+    color: $raven_fg_color;
+    box-shadow: none;
+
+    &:hover {
+      color: darken($raven_fg_color, 10%);
+      background-color: rgba(white, 0.15);
+      border-color: rgba(white, 0.15);
+    }
+    &:checked {
+      background-image: none;
+      color: $selected_fg_color;
+      background-color: rgba(white, 0.35);
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+    }
+    &:active {
+      background-image: none;
+      color: $selected_fg_color;
+      background-color: rgba(white, 0.25);
+      text-shadow: none;
+      -gtk-icon-shadow: none;
+    }
+    &:disabled {
+      label, & { color: rgba($raven_fg_color, 0.5); }
+      background-color: transparent;
+    }
   }
 }
 
@@ -61,7 +85,7 @@ $raven_button_active_color: #AFAFAF;
     border-radius: $bt_radius;
     -gtk-outline-radius: $bt_radius;
 
-    @extend %budgiebutton;
+    @extend %budgie_button;
   }
 }
 
@@ -92,7 +116,7 @@ $raven_button_active_color: #AFAFAF;
   switch { margin-left: 56px; margin-right: 6px; }
 
   &:not(.budgie-menu) button.flat:not(.image-button) {
-    @extend %budgiebutton;
+    @extend %budgie_button;
     min-height: 28px;
     padding: 0 8px;
     color: $fg_color;
@@ -199,7 +223,7 @@ window.budgie-popover:not(.csd) {
   .workspace-add-button {
     background-color: transparent;
     background-image: none;
-    @extend %budgiebutton;
+    @extend %budgie_button;
 
     &:hover { box-shadow: none; }
 
@@ -506,34 +530,14 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
   // > stack > box:last-child > stack { margin-top: -6px; }
 
-  button.image-button {
-    @extend %circle_button;
-    @extend %raven.flat;
+  button {
+    @extend %raven_button;
+    &.image-button { @extend %circle_button; }
   }
 
   stackswitcher { padding: 0 8px 12px 8px; }
 
-  stackswitcher.linked > button {
-    background-color: $raven_button_bg_color;
-    color: $raven_fg_color;
-    border: none;
-
-    &:hover {
-      background-color: lighten($raven_button_bg_color, 5%);
-    }
-
-    &:active {
-      background-color: lighten($raven_button_active_color, 5%);
-      background-image: none;
-      color: $raven_base_color;
-    }
-
-    &:checked {
-      background-color: $raven_button_active_color;
-      background-image: none;
-      color: $raven_bg_color;
-    }
-  }
+  stackswitcher.linked > button { @extend %raven_button; }
 
   .raven-header {
     min-height: 36px;
@@ -543,7 +547,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
       margin-top: -6px; // remove extra spaces, but not perfect :(
 
       button {
-        @extend %raven.flat;
+        @extend %raven_button.flat;
         min-height: 32px;
         min-width: 32px;
         margin: 0;
@@ -689,7 +693,7 @@ calendar.raven-calendar {
   button.image-button {
     padding: 8px;
     border: none;
-    @extend %budgiebutton;
+    @extend %budgie_button;
   }
 }
 
@@ -863,7 +867,7 @@ window.budgie-switcher-window {
   background-color: if($transparency == 'true', rgba($base_color, 0.95), $base_color);
   background-image: none;
 
-  button { @extend %budgiebutton; }
+  button { @extend %budgie_button; }
 
   .linked > button { border-radius: $bt_radius; }
 }
