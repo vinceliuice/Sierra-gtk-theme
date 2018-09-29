@@ -525,7 +525,6 @@ popover.background.places-menu {
       opacity: 1.0;
     }
 
-    &:active,
     &:checked {
       > image { background-image: none; }
     }
@@ -548,7 +547,7 @@ popover.background.places-menu {
         background-image: image($selected_bg_color);
       }
 
-      &:active, &:checked { > image { background-image: none; } }
+      &:checked { > image { background-image: none; } }
     }
   }
 }
