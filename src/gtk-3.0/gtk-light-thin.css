@@ -856,7 +856,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0);
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -932,7 +932,7 @@ button.font separator, button.file separator {
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .linked.vertical > entry.error + entry,
@@ -1225,7 +1225,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 transparent;
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -4316,7 +4316,7 @@ messagedialog.csd .dialog-action-area button:only-child {
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 filechooserbutton:drop(active) {
@@ -4332,13 +4332,13 @@ filechooserbutton:drop(active) {
 stacksidebar.sidebar:dir(ltr) list,
 stacksidebar.sidebar.left list,
 stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
-  border-right: 1px solid rgba(0, 0, 0, 0.11);
+  border-right: 1px solid gainsboro;
   border-left-style: none;
 }
 
 stacksidebar.sidebar:dir(rtl) list,
 stacksidebar.sidebar.right list, .sidebar:dir(rtl), .sidebar.right {
-  border-left: 1px solid rgba(0, 0, 0, 0.11);
+  border-left: 1px solid gainsboro;
   border-right-style: none;
 }
 
@@ -7795,19 +7795,19 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
 .raven button.flat, .raven button.budgie-menu-launcher, .raven .budgie-panel button.flat.launcher, .budgie-panel .raven button.flat.launcher, .raven stackswitcher.linked > button.flat, .raven stackswitcher.linked > button.budgie-menu-launcher, .raven .raven-header:not(.top) button {
   border: none;
   background-color: transparent;
-  color: #dedede;
+  color: white;
   box-shadow: none;
 }
 
 .raven button.flat:hover, .raven button.budgie-menu-launcher:hover, .raven .raven-header:not(.top) button:hover {
-  color: #c5c5c5;
+  color: #e6e6e6;
   background-color: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.15);
 }
 
 .raven button.flat:checked, .raven button.budgie-menu-launcher:checked, .raven .raven-header:not(.top) button:checked {
   background-image: none;
-  color: #ffffff;
+  color: white;
   background-color: rgba(255, 255, 255, 0.35);
   text-shadow: none;
   -gtk-icon-shadow: none;
@@ -7815,7 +7815,7 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
 
 .raven button.flat:active, .raven button.budgie-menu-launcher:active, .raven .raven-header:not(.top) button:active {
   background-image: none;
-  color: #ffffff;
+  color: white;
   background-color: rgba(255, 255, 255, 0.25);
   text-shadow: none;
   -gtk-icon-shadow: none;
@@ -7826,7 +7826,7 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
 }
 
 .raven button.flat:disabled label, .raven button.budgie-menu-launcher:disabled label, .raven .raven-header:not(.top) button:disabled label, .raven button.flat:disabled, .raven button.budgie-menu-launcher:disabled, .raven .raven-header:not(.top) button:disabled {
-  color: rgba(222, 222, 222, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .budgie-container {
@@ -8145,7 +8145,7 @@ popover.background.places-menu row {
 }
 
 .budgie-panel.transparent {
-  background-color: rgba(229, 229, 229, 0.65);
+  background-color: rgba(229, 229, 229, 0.85);
 }
 
 .budgie-panel button {
@@ -8223,16 +8223,17 @@ popover.background.places-menu row {
   padding: 0 4px;
   box-shadow: none;
   background-image: none;
+  color: #242424;
 }
 
 .budgie-panel #tasklist-button:active {
-  background-color: rgba(40, 32, 32, 0.15);
-  color: rgba(40, 32, 32, 0.75);
+  background-color: rgba(36, 36, 36, 0.15);
+  color: #171717;
 }
 
 .budgie-panel #tasklist-button:checked {
-  background-color: rgba(40, 32, 32, 0.12);
-  color: rgba(40, 32, 32, 0.8);
+  background-color: rgba(36, 36, 36, 0.12);
+  color: #171717;
 }
 
 .budgie-panel.vertical #tasklist-button {

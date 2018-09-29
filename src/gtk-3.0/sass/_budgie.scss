@@ -47,30 +47,30 @@ $raven_button_active_color: #AFAFAF;
   &.flat {
     border: none;
     background-color: transparent;
-    color: $raven_fg_color;
+    color: white;
     box-shadow: none;
 
     &:hover {
-      color: darken($raven_fg_color, 10%);
+      color: darken(white, 10%);
       background-color: rgba(white, 0.15);
       border-color: rgba(white, 0.15);
     }
     &:checked {
       background-image: none;
-      color: $selected_fg_color;
+      color: white;
       background-color: rgba(white, 0.35);
       text-shadow: none;
       -gtk-icon-shadow: none;
     }
     &:active {
       background-image: none;
-      color: $selected_fg_color;
+      color: white;
       background-color: rgba(white, 0.25);
       text-shadow: none;
       -gtk-icon-shadow: none;
     }
     &:disabled {
-      label, & { color: rgba($raven_fg_color, 0.5); }
+      label, & { color: rgba(white, 0.5); }
       background-color: transparent;
     }
   }
@@ -378,7 +378,7 @@ popover.background.places-menu {
   color: $header_fg;
   font-weight: 500;
 
-  &.transparent { background-color: rgba($header_bg, 0.65); }
+  &.transparent { background-color: rgba($header_bg, 0.85); }
 
   button {
     min-height: 16px;
@@ -442,8 +442,15 @@ popover.background.places-menu {
     @extend %underscores;
     box-shadow: none;
     background-image: none;
-    &:active { background-color: rgba($header_fg, 0.15); color: rgba($header_fg, 0.75); }
-    &:checked { background-color: rgba($header_fg, 0.12); color: $header_fg; }
+    color: $fg_color;
+    &:active {
+      background-color: rgba($fg_color, 0.15);
+      color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 5%));
+    }
+    &:checked {
+      background-color: rgba($fg_color, 0.12);
+      color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 5%));
+    }
   }
 
   &.vertical #tasklist-button { min-height: 32px; }
