@@ -57,23 +57,23 @@ sudo apt install sierra-gtk-theme-git   # git master branch
 
 ### From source
 
-Open the terminal at current directory.
-
 Run
 
-       sudo ./install.sh
+    ./install.sh
 
-When running the installer script in ubuntu16.04 or later, if you had this error:
+#### Install tips
 
-    XMLLINT not set and xmllint not found in path; skipping xml preprocessing.
+Usage:  `./Install`  **[OPTIONS...]**
 
-To fix it you have to install libxml2-utils
-
-    sudo apt install libxml2-utils
-
-When running the installer script in Fedora 24 or later, you need to install 'glib2-devel'.
-
-    sudo dnf install glib2-devel
+|  OPTIONS:           | |
+|:--------------------|:-------------|
+|-d, --dest           | Specify theme destination directory (Default: $HOME/.themes)|
+|-n, --name           | Specify theme name (Default: Sierra)|
+|-c, --color          | Specify theme color variant(s) **[light/dark]** (Default: All variants)|
+|-t, --trans          | Specify theme transparent variant(s) **[standard/solid]** (Default: All variants)|
+|-s, --size           | Specify theme size variant(s) **[standard/compact]** (Default: All variants)|
+|-g, --gdm            | Install GDM theme|
+|-h, --help           | Show this help|
 
 ## Screenshots
 
@@ -85,4 +85,3 @@ When running the installer script in Fedora 24 or later, you need to install 'gl
 ![03](https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/screenshot3.jpeg?raw=true)
 ![04](https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/screenshot4.jpeg?raw=true)
 ![05](https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/screenshot5.jpeg?raw=true)
-
