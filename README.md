@@ -71,7 +71,7 @@ Usage:  `./Install`  **[OPTIONS...]**
 |-n, --name           | Specify theme name (Default: Sierra)|
 |-c, --color          | Specify theme color variant(s) **[light/dark]** (Default: All variants)|
 |-o, --opacity        | Specify theme opacity variant(s) **[standard/solid]** (Default: All variants)|
-|-f, --falt           | Specify theme flat variant(s) **[standard/compact]** (Default: All variants)|
+|-f, --flat           | Specify theme flat variant(s) **[standard/compact]** (Default: All variants)|
 |-t, --thin           | Specify theme titilebutton variant(s) **[standard/thin]** (Default: All variants)|
 |-g, --gdm            | Install GDM theme|
 |-h, --help           | Show this help|
