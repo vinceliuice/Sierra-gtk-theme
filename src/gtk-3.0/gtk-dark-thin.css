@@ -6208,7 +6208,7 @@ MsdOsdWindow.background.osd .trough {
 .mate-panel-menu-bar menubar,
 panel-toplevel.background,
 panel-toplevel.background menubar {
-  background-color: #2f2f2f;
+  background-color: #3b3b3b;
 }
 
 .mate-panel-menu-bar menubar,
@@ -6234,12 +6234,12 @@ panel-toplevel.background #tasklist-button image {
 .mate-panel-menu-bar .wnck-pager,
 panel-toplevel.background .wnck-pager {
   color: #6f6f6f;
-  background-color: rgba(22, 22, 22, 0.94);
+  background-color: rgba(34, 34, 34, 0.95);
 }
 
 .mate-panel-menu-bar .wnck-pager:hover,
 panel-toplevel.background .wnck-pager:hover {
-  background-color: rgba(60, 60, 60, 0.94);
+  background-color: rgba(72, 72, 72, 0.95);
 }
 
 .mate-panel-menu-bar .wnck-pager:selected,
@@ -6255,7 +6255,7 @@ panel-toplevel.background na-tray-applet {
 }
 
 .xfce4-panel.panel {
-  background-color: rgba(47, 47, 47, 0.94);
+  background-color: rgba(59, 59, 59, 0.95);
   text-shadow: none;
   -gtk-icon-shadow: none;
 }
@@ -6264,7 +6264,7 @@ panel-toplevel.background na-tray-applet {
   color: rgba(222, 222, 222, 0.8);
   border-radius: 0;
   border: none;
-  background-color: rgba(47, 47, 47, 0);
+  background-color: rgba(59, 59, 59, 0);
 }
 
 #tasklist-button:hover {
@@ -6283,13 +6283,13 @@ panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel butto
   color: #dedede;
   border-radius: 0;
   border: none;
-  background-color: rgba(47, 47, 47, 0);
+  background-color: rgba(59, 59, 59, 0);
 }
 
 .mate-panel-menu-bar button:hover:not(#tasklist-button),
 panel-toplevel.background button:hover:not(#tasklist-button), .xfce4-panel.panel button.flat:hover, .xfce4-panel.panel button.budgie-menu-launcher:hover {
   border: none;
-  background-color: rgba(73, 73, 73, 0.94);
+  background-color: rgba(85, 85, 85, 0.95);
 }
 
 .mate-panel-menu-bar button:active:not(#tasklist-button),
@@ -6818,7 +6818,7 @@ UnityDecoration .left:backdrop, UnityDecoration .right:backdrop, UnityDecoration
 
 UnityPanelWidget,
 .unity-panel {
-  background-color: rgba(47, 47, 47, 0.95);
+  background-color: rgba(59, 59, 59, 0.95);
   color: white;
   box-shadow: none;
 }
@@ -7132,10 +7132,10 @@ GtkListBox .h4 {
 }
 
 #panel_window {
-  background-color: rgba(47, 47, 47, 0.94);
+  background-color: rgba(59, 59, 59, 0.95);
   color: #dedede;
   font-weight: bold;
-  box-shadow: inset 0 -1px rgba(29, 29, 29, 0.94);
+  box-shadow: inset 0 -1px rgba(41, 41, 41, 0.95);
 }
 
 #panel_window menubar {
@@ -7691,7 +7691,7 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
 @define-color wm_icon_active_bg #ffffff;
 @define-color budgie_tasklist_indicator_color #498dff;
 @define-color budgie_tasklist_indicator_color_active #498dff;
-@define-color budgie_tasklist_indicator_color_active_window rgba(62, 101, 165, 0.9724);
+@define-color budgie_tasklist_indicator_color_active_window rgba(67, 105, 170, 0.977);
 @define-color budgie_tasklist_indicator_color_attention #F27835;
 /******************
  * Budgie Desktop *
@@ -8109,13 +8109,17 @@ popover.background.places-menu row {
 
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: rgba(55, 55, 55, 0.98);
-  color: rgba(225, 219, 219, 0.8);
+  background-color: #3b3b3b;
+  color: #dedede;
   font-weight: 500;
 }
 
 .budgie-panel.transparent {
-  background-color: rgba(55, 55, 55, 0.85);
+  background-color: rgba(59, 59, 59, 0.45);
+}
+
+.top .budgie-panel.transparent {
+  background-color: rgba(59, 59, 59, 0.85);
 }
 
 .budgie-panel button {
@@ -8126,17 +8130,17 @@ popover.background.places-menu row {
   border-top-width: 0;
   border-bottom-width: 0;
   border: none;
-  color: rgba(225, 219, 219, 0.8);
+  color: #dedede;
 }
 
 .budgie-panel button:active {
-  background-color: rgba(225, 219, 219, 0.15);
-  color: rgba(225, 219, 219, 0.75);
+  background-color: rgba(222, 222, 222, 0.15);
+  color: rgba(222, 222, 222, 0.75);
 }
 
 .budgie-panel button:checked {
-  background-color: rgba(225, 219, 219, 0.12);
-  color: rgba(225, 219, 219, 0.8);
+  background-color: rgba(222, 222, 222, 0.12);
+  color: #dedede;
 }
 
 .budgie-panel.horizontal button {
@@ -8154,7 +8158,7 @@ popover.background.places-menu row {
 .budgie-panel menubar,
 .budgie-panel .menubar {
   box-shadow: none;
-  color: rgba(225, 219, 219, 0.8);
+  color: #dedede;
   background-image: none;
   background-color: transparent;
 }
@@ -8182,7 +8186,7 @@ popover.background.places-menu row {
 
 .budgie-panel menubar > menuitem:disabled,
 .budgie-panel .menubar > menuitem:disabled {
-  color: rgba(225, 219, 219, 0.2);
+  color: rgba(222, 222, 222, 0.4);
 }
 
 .budgie-panel .alert {

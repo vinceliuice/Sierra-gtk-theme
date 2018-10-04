@@ -79,8 +79,10 @@ $osd_insensitive_bg_color: darken($osd_bg_color, 3%);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 30%);
 $osd_borders_color: $borders_color;
 
-$panel_bg: darken($dark_sidebar_bg, 4.7%);
-$panel_fg: $dark_sidebar_fg;
+$panel_bg: white;
+@if $transparency=='true' { $panel_bg: if($variant == 'light', rgba(#FEFEFE, 0.95), rgba(#3B3B3B, 0.95)); }
+@if $transparency=='false' { $panel_bg: if($variant == 'light', #FEFEFE, #3B3B3B); }
+$panel_fg: $text_color;
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));
 $entry_border: $borders_color;

@@ -374,11 +374,12 @@ popover.background.places-menu {
 // Panel
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: $header_bg;
-  color: $header_fg;
+  background-color: opacify($panel_bg, 1);
+  color: $panel_fg;
   font-weight: 500;
 
-  &.transparent { background-color: rgba($header_bg, 0.85); }
+  &.transparent { background-color: rgba(opacify($panel_bg, 1), 0.45); }
+  .top &.transparent { background-color: rgba(opacify($panel_bg, 1), 0.85); }
 
   button {
     min-height: 16px;
@@ -388,9 +389,9 @@ popover.background.places-menu {
     border-top-width: 0;
     border-bottom-width: 0;
     border: none;
-    color: $header_fg;
-    &:active { background-color: rgba($header_fg, 0.15); color: rgba($header_fg, 0.75); }
-    &:checked { background-color: rgba($header_fg, 0.12); color: $header_fg; }
+    color: $panel_fg;
+    &:active { background-color: rgba($panel_fg, 0.15); color: rgba($panel_fg, 0.75); }
+    &:checked { background-color: rgba($panel_fg, 0.12); color: $panel_fg; }
   }
 
   &.horizontal button { padding: 0 4px; }
@@ -403,7 +404,7 @@ popover.background.places-menu {
   menubar,
   .menubar {
     box-shadow: none;
-    color: $header_fg;
+    color: $panel_fg;
     background-image: none;
     background-color: transparent;
 
@@ -423,7 +424,7 @@ popover.background.places-menu {
         background-color: $selected_bg_color;
       }
       &:disabled {
-        color: transparentize($header_fg, 0.6);
+        color: transparentize($panel_fg, 0.6);
       }
     }
   }
