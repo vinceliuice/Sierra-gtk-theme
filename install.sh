@@ -28,7 +28,7 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-o, --opacity VARIANTS" "Specify theme opacity variant(s) [standard|solid] (Default: All variants)"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-i, --thin VARIANTS" "Specify theme titilebutton variant(s) [standard|thin] (Default: All variants)"
+  printf "  %-25s%s\n" "-t, --thin VARIANTS" "Specify theme titilebutton variant(s) [standard|thin] (Default: All variants)"
   printf "  %-25s%s\n" "-f, --flat VARIANT" "Specify theme flat compact variant [standard|compact] (Default: All variants)"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
@@ -157,7 +157,7 @@ while [[ $# -gt 0 ]]; do
       gdm='true'
       shift 1
       ;;
-    -t|--opacity)
+    -o|--opacity)
       shift
       for opacity in "${@}"; do
         case "${opacity}" in
@@ -203,7 +203,7 @@ while [[ $# -gt 0 ]]; do
         esac
       done
       ;;
-    -s|--flat)
+    -f|--flat)
       shift
       for flat in "${@}"; do
         case "${flat}" in
@@ -226,7 +226,7 @@ while [[ $# -gt 0 ]]; do
         esac
       done
       ;;
-    -i|--thin)
+    -t|--thin)
       shift
       for thin in "${@}"; do
         case "${thin}" in
