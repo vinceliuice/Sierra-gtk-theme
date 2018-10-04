@@ -16,9 +16,9 @@ else
 fi
 
 THEME_NAME=Sierra
-SIZE_VARIANTS=('' '-compact')
-TRANS_VARIANTS=('' '-solid')
+FLAT_VARIANTS=('' '-compact')
 COLOR_VARIANTS=('-light' '-dark')
+OPACITY_VARIANTS=('' '-solid')
 THIN_VARIANTS=('' '-thin')
 
 usage() {
@@ -26,10 +26,10 @@ usage() {
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-t, --trans VARIANTS" "Specify theme trans variant(s) [standard|solid] (Default: All variants)"
+  printf "  %-25s%s\n" "-o, --opacity VARIANTS" "Specify theme opacity variant(s) [standard|solid] (Default: All variants)"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [light|dark] (Default: All variants)"
   printf "  %-25s%s\n" "-i, --thin VARIANTS" "Specify theme titilebutton variant(s) [standard|thin] (Default: All variants)"
-  printf "  %-25s%s\n" "-s, --size VARIANT" "Specify theme compact variant [standard|compact] (Default: All variants)"
+  printf "  %-25s%s\n" "-f, --flat VARIANT" "Specify theme flat compact variant [standard|compact] (Default: All variants)"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
   printf "\n%s\n" "INSTALLATION EXAMPLES:"
@@ -38,23 +38,23 @@ usage() {
   printf "%s\n" "Install all theme variants into ~/.themes including GDM theme"
   printf "  %s\n" "$0 --dest ~/.themes --gdm"
   printf "%s\n" "Install standard theme variant only"
-  printf "  %s\n" "$0 --color standard --size standard"
+  printf "  %s\n" "$0 --color standard --flat standard"
   printf "%s\n" "Install specific theme variants with different name into ~/.themes"
-  printf "  %s\n" "$0 --dest ~/.themes --name MyTheme --color light dark --size compact"
+  printf "  %s\n" "$0 --dest ~/.themes --name MyTheme --color light dark --flat compact"
 }
 
 install() {
   local dest=${1}
   local name=${2}
-  local size=${3}
+  local flat=${3}
   local color=${4}
-  local trans=${5}
+  local opacity=${5}
   local thin=${6}
 
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
 
-  local THEME_DIR=${dest}/${name}${size}${color}${trans}${thin}
+  local THEME_DIR=${dest}/${name}${flat}${color}${opacity}${thin}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -66,13 +66,13 @@ install() {
   # Install index.theme
   echo "[Desktop Entry]" >>                                                             ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >>                                                      ${THEME_DIR}/index.theme
-  echo "Name=${name}${size}${color}${trans}${thin}" >>                                  ${THEME_DIR}/index.theme
+  echo "Name=${name}${flat}${color}${opacity}${thin}" >>                                ${THEME_DIR}/index.theme
   echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >>                       ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >>                                                              ${THEME_DIR}/index.theme
   echo "" >>                                                                            ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >>                                                         ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${size}${color}${trans}${thin}" >>                              ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${size}${color}${trans}${thin}" >>                         ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${flat}${color}${opacity}${thin}" >>                            ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${flat}${color}${opacity}${thin}" >>                       ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >>                                                           ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >>                                                         ${THEME_DIR}/index.theme
   echo "ButtonLayout=close,minimize,maximize:menu" >>                                   ${THEME_DIR}/index.theme
@@ -80,7 +80,7 @@ install() {
 
   mkdir -p                                                                              ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/gnome-shell/{extensions,message-indicator-symbolic.svg,pad-osd.css} ${THEME_DIR}/gnome-shell
-  cp -ur ${SRC_DIR}/gnome-shell/gnome-shell${color}${trans}.css                         ${THEME_DIR}/gnome-shell/gnome-shell.css
+  cp -ur ${SRC_DIR}/gnome-shell/gnome-shell${color}${opacity}.css                       ${THEME_DIR}/gnome-shell/gnome-shell.css
   cp -ur ${SRC_DIR}/gnome-shell/common-assets                                           ${THEME_DIR}/gnome-shell/assets
   cp -ur ${SRC_DIR}/gnome-shell/assets${ELSE_DARK}/*.svg                                ${THEME_DIR}/gnome-shell/assets
   cd ${THEME_DIR}/gnome-shell
@@ -96,10 +96,10 @@ install() {
 
   mkdir -p                                                                              ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/gtk-3.0/assets                                                      ${THEME_DIR}/gtk-3.0
-  cp -ur ${SRC_DIR}/gtk-3.0/thumbnail${size}${color}.png                                ${THEME_DIR}/gtk-3.0/thumbnail.png
-  cp -ur ${SRC_DIR}/gtk-3.0/gtk${size}${color}${trans}${thin}.css                       ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/gtk-3.0/thumbnail${flat}${color}.png                                ${THEME_DIR}/gtk-3.0/thumbnail.png
+  cp -ur ${SRC_DIR}/gtk-3.0/gtk${flat}${color}${opacity}${thin}.css                     ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/gtk-3.0/gtk${size}-dark${trans}${thin}.css                          ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/gtk-3.0/gtk${flat}-dark${opacity}${thin}.css                        ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
   mkdir -p                                                                              ${THEME_DIR}/metacity-1
   cp -ur ${SRC_DIR}/metacity-1/metacity-theme${color}.xml                               ${THEME_DIR}/metacity-1/metacity-theme.xml
@@ -157,23 +157,23 @@ while [[ $# -gt 0 ]]; do
       gdm='true'
       shift 1
       ;;
-    -t|--trans)
+    -t|--opacity)
       shift
-      for trans in "${@}"; do
-        case "${trans}" in
+      for opacity in "${@}"; do
+        case "${opacity}" in
           standard)
-            transs+=("${TRANS_VARIANTS[0]}")
+            opacitys+=("${OPACITY_VARIANTS[0]}")
             shift
             ;;
           solid)
-            transs+=("${TRANS_VARIANTS[1]}")
+            opacitys+=("${OPACITY_VARIANTS[1]}")
             shift
             ;;
           -*|--*)
             break
             ;;
           *)
-            echo "ERROR: Unrecognized trans variant '$1'."
+            echo "ERROR: Unrecognized opacity variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -203,16 +203,16 @@ while [[ $# -gt 0 ]]; do
         esac
       done
       ;;
-    -s|--size)
+    -s|--flat)
       shift
-      for size in "${@}"; do
-        case "${size}" in
+      for flat in "${@}"; do
+        case "${flat}" in
           standard)
-            sizes+=("${SIZE_VARIANTS[0]}")
+            flats+=("${FLAT_VARIANTS[0]}")
             shift
             ;;
           compact)
-            sizes+=("${SIZE_VARIANTS[1]}")
+            flats+=("${FLAT_VARIANTS[1]}")
             shift
             ;;
           -*|--*)
@@ -261,18 +261,18 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-for size in "${sizes[@]:-${COMPACT_VARIANTS[@]}}"; do
-  for trans in "${transs[@]:-${TRANS_VARIANTS[@]}}"; do
+for flat in "${flats[@]:-${FLAT_VARIANTS[@]}}"; do
+  for opacity in "${opacitys[@]:-${OPACITY_VARIANTS[@]}}"; do
     for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
       for thin in "${thins[@]:-${THIN_VARIANTS[@]}}"; do
-        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${size}" "${color}" "${trans}" "${thin}"
+        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${thin}"
       done
     done
   done
 done
 
 if [[ "${gdm:-}" == 'true' ]]; then
-  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${size}" "${color}" "${trans}" "${thin}"
+  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${thin}"
 fi
 
 echo
