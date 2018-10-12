@@ -110,7 +110,7 @@ textview border {
   background-color: #2c2c2c;
 }
 
-rubberband, flowbox rubberband, treeview.view rubberband, .content-view rubberband,
+rubberband, flowbox rubberband, treeview.view rubberband, .content-view rubberband, XfdesktopIconView.view .rubberband,
 .rubberband {
   border: 1px solid #166dff;
   background-color: rgba(22, 109, 255, 0.2);
@@ -926,7 +926,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical).path-bar > button + button {
-  border-left-style: solid;
+  border-left-style: none;
 }
 
 .linked.vertical > entry + entry {
@@ -2446,6 +2446,11 @@ menu menuitem:hover menu arrow,
   color: #dedede;
   text-shadow: none;
   -gtk-icon-shadow: none;
+}
+
+menu menuitem:hover menu menuitem:hover arrow,
+.menu menuitem:hover menu menuitem:hover arrow {
+  color: #ffffff;
 }
 
 menu menuitem:disabled,
@@ -4237,9 +4242,13 @@ messagedialog .titlebar {
   border-bottom: 1px solid #484848;
 }
 
+messagedialog .dialog-action-area {
+  padding: 6px;
+}
+
 messagedialog .dialog-action-area button {
-  padding: 5px 8px 6px 8px;
-  min-height: 0;
+  min-height: 16px;
+  padding: 2px 8px;
 }
 
 messagedialog.csd.background {
@@ -4248,7 +4257,13 @@ messagedialog.csd.background {
   border: none;
 }
 
+messagedialog.csd .dialog-action-area {
+  padding: 0;
+}
+
 messagedialog.csd .dialog-action-area button {
+  min-height: 16px;
+  padding: 4px 8px;
   border-bottom-style: none;
   background-image: none;
 }
@@ -5119,6 +5134,11 @@ terminal-window notebook > header.top button,
   padding: 0;
   min-width: 24px;
   min-height: 24px;
+}
+
+.nautilus-window headerbar .path-bar-box.background.frame {
+  border: none;
+  background-color: transparent;
 }
 
 .nautilus-canvas-item {
@@ -6253,62 +6273,156 @@ panel-toplevel.background na-tray-applet {
   -NaTrayApplet-icon-size: 16px;
 }
 
+.mate-panel-menu-bar button:not(#tasklist-button),
+panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel button, .xfce4-panel.panel button.flat, .xfce4-panel.panel button.budgie-menu-launcher, .xfce4-panel button.flat, .xfce4-panel button.budgie-menu-launcher, .xfce4-panel .budgie-panel button.flat.launcher, .budgie-panel .xfce4-panel button.flat.launcher, .xfce4-panel button {
+  color: #dedede;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.mate-panel-menu-bar button:hover:not(:active):not(:checked):not(#tasklist-button),
+panel-toplevel.background button:hover:not(:active):not(:checked):not(#tasklist-button), .xfce4-panel button:hover:not(:active):not(:checked) {
+  color: #dedede;
+  box-shadow: inset 0 -2px rgba(73, 141, 255, 0.5);
+}
+
+.mate-panel-menu-bar button:checked:not(#tasklist-button),
+panel-toplevel.background button:checked:not(#tasklist-button), .xfce4-panel button:checked {
+  color: #dedede;
+  box-shadow: inset 0 -2px #498dff;
+  background-color: rgba(222, 222, 222, 0.12);
+  background-image: none;
+}
+
+.mate-panel-menu-bar button:checked:not(#tasklist-button) label, panel-toplevel.background button:checked:not(#tasklist-button) label, .xfce4-panel button:checked label, .mate-panel-menu-bar button:checked:not(#tasklist-button) image, panel-toplevel.background button:checked:not(#tasklist-button) image, .xfce4-panel button:checked image {
+  color: inherit;
+}
+
+.mate-panel-menu-bar button:active:not(#tasklist-button),
+panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel button:active {
+  background-color: rgba(222, 222, 222, 0.18);
+  color: #dedede;
+  background-image: none;
+  box-shadow: inset 0 -2px #498dff;
+}
+
 .xfce4-panel.panel {
   background-color: #3B3B3B;
   text-shadow: none;
   -gtk-icon-shadow: none;
-}
-
-#tasklist-button {
-  color: rgba(222, 222, 222, 0.8);
-  border-radius: 0;
   border: none;
-  background-color: rgba(59, 59, 59, 0);
 }
 
-#tasklist-button:hover {
-  color: #f8f8f8;
-  background-color: rgba(0, 0, 0, 0.17);
-}
-
-#tasklist-button:checked {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 -2px #498dff;
-}
-
-.mate-panel-menu-bar button:not(#tasklist-button),
-panel-toplevel.background button:not(#tasklist-button), .xfce4-panel.panel button.flat, .xfce4-panel.panel button.budgie-menu-launcher {
+.XfceHeading {
+  border: 0 none transparent;
+  background-color: #333333;
   color: #dedede;
-  border-radius: 0;
-  border: none;
-  background-color: rgba(59, 59, 59, 0);
 }
 
-.mate-panel-menu-bar button:hover:not(#tasklist-button),
-panel-toplevel.background button:hover:not(#tasklist-button), .xfce4-panel.panel button.flat:hover, .xfce4-panel.panel button.budgie-menu-launcher:hover {
-  border: none;
-  background-color: #555555;
+.xfce4-panel {
+  background-color: #3B3B3B;
+  color: #dedede;
+  font-weight: 700;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
 }
 
-.mate-panel-menu-bar button:active:not(#tasklist-button),
-panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel.panel button.flat:active, .xfce4-panel.panel button.budgie-menu-launcher:active, .mate-panel-menu-bar button:checked:not(#tasklist-button),
-panel-toplevel.background button:checked:not(#tasklist-button), .xfce4-panel.panel button.flat:checked, .xfce4-panel.panel button.budgie-menu-launcher:checked {
+.xfce4-panel,
+.xfce4-panel frame > border {
+  border: none;
+}
+
+.xfce4-panel#XfcePanelWindow {
+  border: none;
+}
+
+.xfce4-panel#XfcePanelWindow, .xfce4-panel#XfcePanelWindow.marching-ants {
+  transition: none;
+}
+
+.xfce4-panel button {
+  font-weight: 700;
+}
+
+.xfce4-panel button#launcher-arrow:hover, .xfce4-panel button#launcher-arrow + button.toggle:hover {
+  box-shadow: none;
+}
+
+.xfce4-panel button#launcher-arrow + button.toggle:checked {
+  color: #498dff;
+  box-shadow: none;
+}
+
+.xfce4-panel button#xfce4-notification-plugin {
+  padding: 0 1px;
+}
+
+.xfce4-panel menu {
+  font-weight: 400;
+  text-shadow: none;
+  -gtk-icon-effect: none;
+}
+
+.xfce4-panel widget.tasklist > button.toggle {
+  font-weight: 400;
+}
+
+XfdesktopIconView.view {
+  border-radius: 2px;
+  background: transparent;
   color: #ffffff;
-  border: none;
-  background-color: #498dff;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.26), 0 1px 2px rgba(0, 0, 0, 0.32), 0 2px 3px rgba(0, 0, 0, 0.12);
 }
 
-.mate-panel-menu-bar button:active:not(#tasklist-button) label, panel-toplevel.background button:active:not(#tasklist-button) label, .xfce4-panel.panel button.flat:active label, .xfce4-panel.panel button.budgie-menu-launcher:active label,
-.mate-panel-menu-bar button:active:not(#tasklist-button) image,
-panel-toplevel.background button:active:not(#tasklist-button) image,
-.xfce4-panel.panel button.flat:active image,
-.xfce4-panel.panel button.budgie-menu-launcher:active image, .mate-panel-menu-bar button:checked:not(#tasklist-button) label, panel-toplevel.background button:checked:not(#tasklist-button) label, .xfce4-panel.panel button.flat:checked label, .xfce4-panel.panel button.budgie-menu-launcher:checked label,
-.mate-panel-menu-bar button:checked:not(#tasklist-button) image,
-panel-toplevel.background button:checked:not(#tasklist-button) image,
-.xfce4-panel.panel button.flat:checked image,
-.xfce4-panel.panel button.budgie-menu-launcher:checked image {
-  color: inherit;
+XfdesktopIconView.view:active, XfdesktopIconView.view:checked {
+  background-color: #498dff;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+window#whiskermenu-window {
+  background-color: #242424;
+}
+
+window#whiskermenu-window > frame > border {
+  border-radius: 0;
+}
+
+window#whiskermenu-window scrolledwindow > viewport button.radio {
+  padding: 2px 6px;
+  margin: 2px;
+}
+
+window#whiskermenu-window scrolledwindow > viewport button.radio:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+window#whiskermenu-window scrolledwindow > viewport button.radio:checked, window#whiskermenu-window scrolledwindow > viewport button.radio:active {
+  background-color: #498dff;
+  color: #ffffff;
+}
+
+window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #dedede;
+}
+
+window.thunar toolbar#location-toolbar, window.thunar #location-toolbar.inline-toolbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.inline-toolbar entry {
+  min-height: 0;
+}
+
+window.thunar notebook stack > scrolledwindow.frame.standard-view {
+  border-top-width: 0;
+  border-right-width: 0;
+}
+
+window.thunar notebook header.top tab.reorderable-page > box > label {
+  min-height: 0;
 }
 
 /*********
@@ -8853,7 +8967,7 @@ window.budgie-switcher-window flowboxchild {
   text-shadow: none;
   -gtk-icon-shadow: none;
   border-color: rgba(255, 255, 255, 0.12);
-  text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.26), 0 1px 2px rgba(0, 0, 0, 0.32), 0 2px 3px rgba(0, 0, 0, 0.12);
 }
 
 .budgie-polkit-dialog .message {

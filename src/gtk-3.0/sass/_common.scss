@@ -730,7 +730,7 @@ toolbar.inline-toolbar toolbutton {
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', transparentize($button_border, 0.6), transparentize($button_border, 0.5))) {
 
-  > button + button { border-left-style: solid; }
+  > button + button { border-left-style: none; }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
@@ -1944,6 +1944,9 @@ menu,
           color: $fg_color;
           text-shadow: none;
           -gtk-icon-shadow: none;
+        }
+        menuitem:hover {
+          arrow { color: $selected_fg_color; }
         }
       }
     }
@@ -3167,7 +3170,13 @@ messagedialog { // Message Dialog styling
     border-bottom: 1px solid $header_border;
   }
 
-  .dialog-action-area button { padding: 5px 8px 6px 8px; min-height: 0; }
+  .dialog-action-area {
+    padding: 6px;
+    button {
+      min-height: 16px;
+      padding: 2px 8px;
+    }
+  }
 
   &.csd { // rounded bottom border styling for csd version
     &.background {
@@ -3175,14 +3184,20 @@ messagedialog { // Message Dialog styling
       border-bottom-right-radius: $wm_radius;
       border: none;
     }
-    .dialog-action-area button {
-      border-bottom-style: none;
-      background-image: none;
 
-      @extend %middle_button;
-      &:first-child{ @extend %first_button; }
-      &:last-child { @extend %last_button; }
-      &:only-child { @extend %single_button; }
+    .dialog-action-area {
+      padding: 0;
+      button {
+        min-height: 16px;
+        padding: 4px 8px;
+        border-bottom-style: none;
+        background-image: none;
+
+        @extend %middle_button;
+        &:first-child{ @extend %first_button; }
+        &:last-child { @extend %last_button; }
+        &:only-child { @extend %single_button; }
+      }
     }
 
     .dialog-action-area button:not(.suggested-action):not(.destructive-action) {
