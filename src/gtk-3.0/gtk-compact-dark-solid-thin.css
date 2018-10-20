@@ -5145,6 +5145,11 @@ terminal-window notebook > header.top button,
   min-height: 24px;
 }
 
+.nautilus-window headerbar .path-bar-box {
+  color: transparent;
+  background-color: transparent;
+}
+
 .nautilus-window headerbar .path-bar-box.background.frame {
   border: none;
   background-color: transparent;
