@@ -1373,6 +1373,17 @@ window#whiskermenu-window {
 //
 
 window.thunar {
+
+  treeview.view {
+    background-color: $dark_sidebar_bg;
+
+    &:hover { background-color: if($variant == 'light', rgba(black, 0.08), rgba(white, 0.08)); }
+    &:selected, &:selected:hover, &:active:hover {
+      color: $fg_color;
+      background-color: $sidebar_theme_color;
+    }
+  }
+
   toolbar#location-toolbar {
     border-bottom: 1px solid $borders_color;
 

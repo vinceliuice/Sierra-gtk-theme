@@ -730,7 +730,12 @@ toolbar.inline-toolbar toolbutton {
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', transparentize($button_border, 0.6), transparentize($button_border, 0.5))) {
 
-  > button + button { border-left-style: none; }
+  > button {
+    border-left-style: none;
+    border-right-style: none;
+    &:first-child { border-left-style: solid; }
+    &:last-child { border-right-style: solid; }
+  }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
 
@@ -834,10 +839,12 @@ modelbutton.flat {
     background-color: if($variant=='light', mix($fg_color,$bg_color,5%), mix($fg_color,$bg_color,10%));
     transition-duration: 50ms;
   }
-  &:active, &:selected { &, arrow {
+  &:active, &:selected {
+    &, arrow {
       @include button(header-checked);
       transition: none;
-      animation: none; }
+      animation: none;
+    }
   }
   &:checked { color: $fg_color; }
   &:disabled { color: $insensitive_fg_color; }
