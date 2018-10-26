@@ -728,22 +728,19 @@ toolbar.inline-toolbar toolbutton {
 }
 
 // special case, because path-bars are bugged
-@mixin pathbar_linking_rules($sep_color:if($variant=='light', transparentize($button_border, 0.6), transparentize($button_border, 0.5))) {
+@mixin pathbar_linking_rules ($sep_color: $button_border, $button_rules: 'true') {
 
-  > button {
-    border-left-style: none;
-    border-right-style: none;
-    &:first-child { border-left-style: solid; }
-    &:last-child { border-right-style: solid; }
+  @if $button_rules=='true' {
+    > button {
+      border-left-style: none;
+      border-right-style: none;
+      &:first-child { border-left-style: solid; }
+      &:last-child { border-right-style: solid; }
+    }
   }
 
-  > button:hover:not(:checked):not(:active):not(:only-child) {
-
-//    &:hover {
-//      box-shadow: $shadow_1;
-//    }
-//    &:first-child:hover { box-shadow: $shadow_1; }
-//    &:last-child:hover { box-shadow: $shadow_1; }
+  @if $button_rules=='header' {
+    > button + button { border-left-style: solid; }
   }
 }
 
@@ -1388,7 +1385,7 @@ headerbar {
 
     &.flat {
       @include button(undecorated);
-      }
+    }
   }
 
 //  button.flat.toggle.popup { @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; } }
@@ -1513,7 +1510,7 @@ headerbar {
       }
     }
 
-    // @include pathbar_linking_rules($sep_color: $button_border);
+    @include pathbar_linking_rules($button_rules: 'header');
   }
 
   .linked:not(.vertical).path-bar {

@@ -856,7 +856,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: rgba(0, 0, 0, 0);
+  border-left-color: transparent;
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -941,7 +941,7 @@ button.font separator, button.file separator {
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: rgba(0, 0, 0, 0);
+  border-top-color: transparent;
 }
 
 .linked.vertical > entry.error + entry,
@@ -1234,7 +1234,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
+  box-shadow: inset 1px 0 transparent;
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -1922,6 +1922,12 @@ headerbar .linked:not(.vertical).path-bar > button:backdrop,
   opacity: 0.7;
   background-image: none;
   box-shadow: none;
+}
+
+headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button, .nemo-window .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button + button,
+headerbar .linked:not(.vertical).path-bar > button + button,
+.nemo-window .primary-toolbar .linked:not(.vertical).path-bar > button + button {
+  border-left-style: solid;
 }
 
 
@@ -4340,7 +4346,7 @@ messagedialog.csd .dialog-action-area button:only-child {
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid transparent;
 }
 
 filechooserbutton:drop(active) {
@@ -6776,7 +6782,7 @@ window > box.vertical > box.horizontal > widget {
 }
 
 .panel.maximized {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 .panel.translucent {
@@ -6784,31 +6790,13 @@ window > box.vertical > box.horizontal > widget {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 1px rgba(0, 0, 0, 0.52);
 }
 
-.panel.color-light .translucent {
-  background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 1px rgba(0, 0, 0, 0.12);
-}
-
-.panel.color-light .composited-indicator > revealer label,
-.panel.color-light .composited-indicator > revealer image,
-.panel.color-light .composited-indicator > revealer spinner {
-  background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 1px rgba(0, 0, 0, 0.12);
-}
-
-.panel.color-light .composited-indicator .keyboard {
-  background-color: rgba(0, 0, 0, 0.65);
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.3), 0 1px 0 rgba(255, 255, 255, 0.25);
-  color: #fff;
-  text-shadow: none;
-}
-
 menubar .panel,
 .panel menubar {
   box-shadow: none;
   border: none;
-  background: none;
+  background-color: transparent;
   color: white;
+  background-image: none;
 }
 
 .panel popover {
