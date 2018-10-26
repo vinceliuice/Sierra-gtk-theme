@@ -8614,19 +8614,19 @@ frame.raven-frame > border {
 }
 
 .top .shadow-block {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.23), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.08), transparent);
 }
 
 .bottom .shadow-block {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.23), transparent);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.08), transparent);
 }
 
 .left .shadow-block {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.23), transparent);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.08), transparent);
 }
 
 .right .shadow-block {
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.23), transparent);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.08), transparent);
 }
 
 .raven {
