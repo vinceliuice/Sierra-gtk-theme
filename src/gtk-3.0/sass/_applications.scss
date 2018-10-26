@@ -1707,12 +1707,12 @@ window > box.vertical > box.horizontal {
 //
 
 .panel {
-  background-color: transparent;
+  background-color: rgba(black, 0.0);
   transition: all 100ms ease-in-out;
   color: white;
 
   &.maximized {
-    background-color: black;
+    background-color: rgba(black, 0.65);
   }
 
   &.translucent {
@@ -1723,46 +1723,13 @@ window > box.vertical > box.horizontal {
 //    margin-bottom: 4px;
   }
 
-  &.color-light {
-
-    .translucent {
-      background-color: rgba(#fff, 0.85);
-      box-shadow:
-        inset 0 -1px 1px rgba(#fff, 0.2),
-        0 1px 3px rgba(#000, 0.24),
-        0 1px 1px rgba(#000, 0.12);
-//      margin-bottom: 4px;
-    }
-
-    .composited-indicator {
-       > revealer label,
-       > revealer image,
-       > revealer spinner {
-         background-color: rgba(#fff, 0.85);
-         box-shadow:
-           inset 0 -1px 1px rgba(#fff, 0.2),
-           0 1px 3px rgba(#000, 0.24),
-           0 1px 1px rgba(#000, 0.12);
-//         margin-bottom: 4px;
-      }
-
-       .keyboard {
-         background-color: rgba(#000, 0.65);
-         box-shadow:
-           0 0 2px rgba(#fff, 0.3),
-           0 1px 0 rgba(#fff, 0.25);
-         color: #fff;
-         text-shadow: none;
-      }
-    }
-  }
-
   menubar &,
   & menubar {
     box-shadow: none;
     border: none;
-    background: none;
+    background-color: transparent;
     color: white;
+    background-image: none;
   }
 
   popover {
@@ -1849,4 +1816,3 @@ window > box.vertical > box.horizontal {
     text-shadow: none;
   }
 }
-
