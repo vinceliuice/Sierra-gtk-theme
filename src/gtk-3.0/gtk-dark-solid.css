@@ -2161,7 +2161,7 @@ headerbar scale trough, .nemo-window .primary-toolbar scale trough {
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .path-bar button {
@@ -6758,7 +6758,7 @@ window > box.vertical > box.horizontal > widget {
 }
 
 .panel {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   transition: all 100ms ease-in-out;
   color: white;
 }
@@ -7821,54 +7821,6 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
   background-color: transparent;
 }
 
-@define-color theme_fg_color #dedede;
-@define-color theme_text_color #dedede;
-@define-color theme_bg_color #333333;
-@define-color theme_base_color #242424;
-@define-color theme_selected_bg_color #498dff;
-@define-color theme_selected_fg_color #ffffff;
-@define-color fg_color #dedede;
-@define-color text_color #dedede;
-@define-color bg_color #333333;
-@define-color base_color #242424;
-@define-color selected_bg_color #498dff;
-@define-color selected_fg_color #ffffff;
-@define-color insensitive_bg_color #383838;
-@define-color insensitive_fg_color alpha(rgba(222, 222, 222, 0.45), 0.5);
-@define-color insensitive_base_color #242424;
-@define-color theme_unfocused_fg_color #dedede;
-@define-color theme_unfocused_text_color #dedede;
-@define-color theme_unfocused_bg_color #333333;
-@define-color theme_unfocused_base_color #242424;
-@define-color borders rgba(255, 255, 255, 0.12);
-@define-color unfocused_borders rgba(255, 255, 255, 0.12);
-@define-color warning_color #F27835;
-@define-color error_color #FC4138;
-@define-color success_color #71c837;
-@define-color placeholder_text_color #A8A8A8;
-@define-color link_color #3484e2;
-@define-color content_view_bg #242424;
-@define-color wm_title alpha(#e1dbdb, 0.8);
-@define-color wm_unfocused_title alpha(#e1dbdb, 0.5);
-@define-color wm_bg #373737;
-@define-color wm_bg_unfocused #404040;
-@define-color wm_highlight #3f3f3f;
-@define-color wm_shadow alpha(black, 0.35);
-@define-color wm_button_close_bg #cc575d;
-@define-color wm_button_close_hover_bg #d7787d;
-@define-color wm_button_close_active_bg #be3841;
-@define-color wm_icon_close_bg #2f343f;
-@define-color wm_button_hover_bg #454C5C;
-@define-color wm_button_active_bg #498dff;
-@define-color wm_button_hover_border #262932;
-@define-color wm_icon_bg #90939B;
-@define-color wm_icon_unfocused_bg #666A74;
-@define-color wm_icon_hover_bg #C4C7CC;
-@define-color wm_icon_active_bg #ffffff;
-@define-color budgie_tasklist_indicator_color #498dff;
-@define-color budgie_tasklist_indicator_color_active #498dff;
-@define-color budgie_tasklist_indicator_color_active_window #4367a5;
-@define-color budgie_tasklist_indicator_color_attention #F27835;
 /******************
  * Budgie Desktop *
  ******************/
@@ -9060,3 +9012,54 @@ window.budgie-switcher-window flowboxchild {
 .budgie-run-dialog scrolledwindow {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
+
+@define-color theme_fg_color #dedede;
+@define-color theme_text_color #dedede;
+@define-color theme_bg_color #333333;
+@define-color theme_base_color #242424;
+@define-color theme_selected_bg_color #498dff;
+@define-color theme_selected_fg_color #ffffff;
+@define-color fg_color #dedede;
+@define-color text_color #dedede;
+@define-color bg_color #333333;
+@define-color base_color #242424;
+@define-color selected_bg_color #498dff;
+@define-color selected_fg_color #ffffff;
+@define-color insensitive_bg_color #383838;
+@define-color insensitive_fg_color alpha(rgba(222, 222, 222, 0.45), 0.5);
+@define-color insensitive_base_color #242424;
+@define-color theme_unfocused_fg_color #dedede;
+@define-color theme_unfocused_text_color #dedede;
+@define-color theme_unfocused_bg_color #333333;
+@define-color theme_unfocused_base_color #242424;
+@define-color borders rgba(255, 255, 255, 0.12);
+@define-color unfocused_borders rgba(255, 255, 255, 0.12);
+@define-color warning_color #F27835;
+@define-color error_color #FC4138;
+@define-color success_color #71c837;
+@define-color placeholder_text_color #A8A8A8;
+@define-color link_color #3484e2;
+@define-color content_view_bg #242424;
+@define-color wm_title alpha(#e1dbdb, 0.8);
+@define-color wm_unfocused_title alpha(#e1dbdb, 0.5);
+@define-color wm_bg #373737;
+@define-color wm_bg_unfocused #404040;
+@define-color wm_highlight #3f3f3f;
+@define-color wm_shadow alpha(black, 0.35);
+@define-color wm_button_close_bg #cc575d;
+@define-color wm_button_close_hover_bg #d7787d;
+@define-color wm_button_close_active_bg #be3841;
+@define-color wm_icon_close_bg #2f343f;
+@define-color wm_button_hover_bg #454C5C;
+@define-color wm_button_active_bg #498dff;
+@define-color wm_button_hover_border #262932;
+@define-color wm_icon_bg #90939B;
+@define-color wm_icon_unfocused_bg #666A74;
+@define-color wm_icon_hover_bg #C4C7CC;
+@define-color wm_icon_active_bg #ffffff;
+@define-color titlebar_gradient_a #f5f5f5;
+@define-color titlebar_gradient_b #e2e2e2;
+@define-color budgie_tasklist_indicator_color #498dff;
+@define-color budgie_tasklist_indicator_color_active #498dff;
+@define-color budgie_tasklist_indicator_color_active_window #4367a5;
+@define-color budgie_tasklist_indicator_color_attention #F27835;

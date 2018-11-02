@@ -8,7 +8,6 @@
 	<description>Sierra Metacity Theme</description>
 </info>
 
-
 <!-- CONSTANTS -->
 <constant name="C_titlebar" value="#e5e5e5" />
 <constant name="C_titlebar_unfocused" value="#e5e5e5" />

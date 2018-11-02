@@ -120,3 +120,6 @@ $wm_icon_unfocused_bg: if($variant == 'light' and $darker == 'false', #B6B8C0, #
 $wm_icon_hover_bg: if($variant == 'light' and $darker == 'false', #7A7F8B, #C4C7CC);
 $wm_icon_active_bg: $selected_fg_color;
 
+// Titlebar
+$titlebar_gradient_a: $header_highlight;
+$titlebar_gradient_b: $header_middle;

@@ -856,7 +856,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0);
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -941,7 +941,7 @@ button.font separator, button.file separator {
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .linked.vertical > entry.error + entry,
@@ -1232,7 +1232,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 transparent;
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -4330,7 +4330,7 @@ messagedialog.csd .dialog-action-area button:only-child {
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 filechooserbutton:drop(active) {
@@ -6762,7 +6762,7 @@ window > box.vertical > box.horizontal > widget {
 }
 
 .panel {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   transition: all 100ms ease-in-out;
   color: white;
 }
@@ -7837,54 +7837,6 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
   background-color: transparent;
 }
 
-@define-color theme_fg_color #242424;
-@define-color theme_text_color #363636;
-@define-color theme_bg_color #f5f5f5;
-@define-color theme_base_color #ffffff;
-@define-color theme_selected_bg_color #0046DB;
-@define-color theme_selected_fg_color #ffffff;
-@define-color fg_color #242424;
-@define-color text_color #363636;
-@define-color bg_color #f5f5f5;
-@define-color base_color #ffffff;
-@define-color selected_bg_color #0046DB;
-@define-color selected_fg_color #ffffff;
-@define-color insensitive_bg_color #fbfbfb;
-@define-color insensitive_fg_color alpha(rgba(36, 36, 36, 0.55), 0.5);
-@define-color insensitive_base_color #ffffff;
-@define-color theme_unfocused_fg_color #242424;
-@define-color theme_unfocused_text_color #363636;
-@define-color theme_unfocused_bg_color #f5f5f5;
-@define-color theme_unfocused_base_color #ffffff;
-@define-color borders rgba(0, 0, 0, 0.11);
-@define-color unfocused_borders rgba(0, 0, 0, 0.11);
-@define-color warning_color #F27835;
-@define-color error_color #FC4138;
-@define-color success_color #71c837;
-@define-color placeholder_text_color #A8A8A8;
-@define-color link_color #3484e2;
-@define-color content_view_bg #ffffff;
-@define-color wm_title alpha(#282020, 0.8);
-@define-color wm_unfocused_title alpha(#282020, 0.5);
-@define-color wm_bg #e5e5e5;
-@define-color wm_bg_unfocused #f6f6f6;
-@define-color wm_highlight #ededed;
-@define-color wm_shadow alpha(black, 0.35);
-@define-color wm_button_close_bg #f46067;
-@define-color wm_button_close_hover_bg #f68086;
-@define-color wm_button_close_active_bg #f13039;
-@define-color wm_icon_close_bg #F8F8F9;
-@define-color wm_button_hover_bg #fdfdfd;
-@define-color wm_button_active_bg #0046DB;
-@define-color wm_button_hover_border #D1D3DA;
-@define-color wm_icon_bg #90949E;
-@define-color wm_icon_unfocused_bg #B6B8C0;
-@define-color wm_icon_hover_bg #7A7F8B;
-@define-color wm_icon_active_bg #ffffff;
-@define-color budgie_tasklist_indicator_color #0046DB;
-@define-color budgie_tasklist_indicator_color_active #0046DB;
-@define-color budgie_tasklist_indicator_color_active_window #759beb;
-@define-color budgie_tasklist_indicator_color_attention #F27835;
 /******************
  * Budgie Desktop *
  ******************/
@@ -9076,3 +9028,54 @@ window.budgie-switcher-window flowboxchild {
 .budgie-run-dialog scrolledwindow {
   border-top: 1px solid rgba(0, 0, 0, 0.11);
 }
+
+@define-color theme_fg_color #242424;
+@define-color theme_text_color #363636;
+@define-color theme_bg_color #f5f5f5;
+@define-color theme_base_color #ffffff;
+@define-color theme_selected_bg_color #0046DB;
+@define-color theme_selected_fg_color #ffffff;
+@define-color fg_color #242424;
+@define-color text_color #363636;
+@define-color bg_color #f5f5f5;
+@define-color base_color #ffffff;
+@define-color selected_bg_color #0046DB;
+@define-color selected_fg_color #ffffff;
+@define-color insensitive_bg_color #fbfbfb;
+@define-color insensitive_fg_color alpha(rgba(36, 36, 36, 0.55), 0.5);
+@define-color insensitive_base_color #ffffff;
+@define-color theme_unfocused_fg_color #242424;
+@define-color theme_unfocused_text_color #363636;
+@define-color theme_unfocused_bg_color #f5f5f5;
+@define-color theme_unfocused_base_color #ffffff;
+@define-color borders rgba(0, 0, 0, 0.11);
+@define-color unfocused_borders rgba(0, 0, 0, 0.11);
+@define-color warning_color #F27835;
+@define-color error_color #FC4138;
+@define-color success_color #71c837;
+@define-color placeholder_text_color #A8A8A8;
+@define-color link_color #3484e2;
+@define-color content_view_bg #ffffff;
+@define-color wm_title alpha(#282020, 0.8);
+@define-color wm_unfocused_title alpha(#282020, 0.5);
+@define-color wm_bg #e5e5e5;
+@define-color wm_bg_unfocused #f6f6f6;
+@define-color wm_highlight #ededed;
+@define-color wm_shadow alpha(black, 0.35);
+@define-color wm_button_close_bg #f46067;
+@define-color wm_button_close_hover_bg #f68086;
+@define-color wm_button_close_active_bg #f13039;
+@define-color wm_icon_close_bg #F8F8F9;
+@define-color wm_button_hover_bg #fdfdfd;
+@define-color wm_button_active_bg #0046DB;
+@define-color wm_button_hover_border #D1D3DA;
+@define-color wm_icon_bg #90949E;
+@define-color wm_icon_unfocused_bg #B6B8C0;
+@define-color wm_icon_hover_bg #7A7F8B;
+@define-color wm_icon_active_bg #ffffff;
+@define-color titlebar_gradient_a #f5f5f5;
+@define-color titlebar_gradient_b #e2e2e2;
+@define-color budgie_tasklist_indicator_color #0046DB;
+@define-color budgie_tasklist_indicator_color_active #0046DB;
+@define-color budgie_tasklist_indicator_color_active_window #759beb;
+@define-color budgie_tasklist_indicator_color_attention #F27835;

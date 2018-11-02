@@ -64,6 +64,10 @@ $wm_bg_unfocused: opacify($header_bg_backdrop, 1);
 @define-color wm_icon_hover_bg #{"" + $wm_icon_hover_bg};
 @define-color wm_icon_active_bg #{"" + $wm_icon_active_bg};
 
+// Titlebar
+@define-color titlebar_gradient_a #{"" + $titlebar_gradient_a};
+@define-color titlebar_gradient_b #{"" + $titlebar_gradient_b};
+
 //
 // Budgie-desktop specific indicator colours
 //
