@@ -579,7 +579,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
   }
 
   // Shadows
-   .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, rgba(black, 0.23), transparent); }
+   .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, rgba(black, 0.23), rgba(black, 0.08), transparent); }
 }
 
 // Raven

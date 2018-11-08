@@ -102,12 +102,10 @@ install() {
   cp -ur ${SRC_DIR}/gtk-3.0/gtk${flat}-dark${opacity}${thin}.css                        ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
   mkdir -p                                                                              ${THEME_DIR}/metacity-1
-  cp -ur ${SRC_DIR}/metacity-1/metacity-theme${color}.xml                               ${THEME_DIR}/metacity-1/metacity-theme.xml
-  cp -ur ${SRC_DIR}/metacity-1/{*.png,*.svg}                                            ${THEME_DIR}/metacity-1
-  cd ${THEME_DIR}/metacity-1
-	ln -s metacity-theme.xml metacity-theme-1.xml
-	ln -s metacity-theme.xml metacity-theme-2.xml
-	ln -s metacity-theme.xml metacity-theme-3.xml
+  cp -ur ${SRC_DIR}/metacity-1/metacity-theme${color}.xml                               ${THEME_DIR}/metacity-1/metacity-theme-1.xml
+  cp -ur ${SRC_DIR}/metacity-1/metacity-theme-2.xml                                     ${THEME_DIR}/metacity-1
+  cp -ur ${SRC_DIR}/metacity-1/metacity-theme-3.xml                                     ${THEME_DIR}/metacity-1
+  cp -ur ${SRC_DIR}/metacity-1/assets/*.png                                             ${THEME_DIR}/metacity-1
 
   mkdir -p                                                                              ${THEME_DIR}/unity
   cp -ur ${SRC_DIR}/unity                                                               ${THEME_DIR}
