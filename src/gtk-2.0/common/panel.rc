@@ -10,13 +10,13 @@ style "theme-panel" {
 
   fg[NORMAL] = shade(1.0, @tooltip_fg_color)
   fg[PRELIGHT] = @fg_color
-  fg[ACTIVE] = @selected_fg_color
-  fg[SELECTED] = @selected_fg_color
+  fg[ACTIVE] = @tooltip_fg_color
+  fg[SELECTED] = @tooltip_fg_color
 
   text[NORMAL] = shade(1.0, @tooltip_fg_color)
   text[PRELIGHT] = shade(1.1, @tooltip_fg_color)
   text[ACTIVE] = shade(1.0, @tooltip_fg_color)
-  text[SELECTED] = @selected_fg_color
+  text[SELECTED] = @tooltip_fg_color
 
   engine "pixmap" {
     image {
@@ -33,15 +33,10 @@ style "theme-panel-progressbar" {
 }
 
 style "panelbar" {
-
   fg[NORMAL] = shade(1.0, @tooltip_fg_color)
   fg[ACTIVE] = shade(1.0, @tooltip_fg_color)
   fg[PRELIGHT] = shade(1.1, @tooltip_fg_color)
-  fg[SELECTED] = @selected_fg_color
-
-  bg[SELECTED] = @selected_bg_color
-
-  engine "murrine" {}
+  fg[SELECTED] = @tooltip_fg_color
 }
 
 style "panelbuttons" {
@@ -50,9 +45,9 @@ style "panelbuttons" {
   ythickness = 0
 
   fg[NORMAL] = shade(0.8, @tooltip_fg_color)
-  fg[PRELIGHT] = @selected_fg_color
-  fg[ACTIVE] = @selected_fg_color
-  fg[SELECTED] = @selected_fg_color
+  fg[PRELIGHT] = @tooltip_fg_color
+  fg[ACTIVE] = @tooltip_fg_color
+  fg[SELECTED] = @tooltip_fg_color
   fg[INSENSITIVE] = mix(0.28, @tooltip_fg_color, @tooltip_bg_color)
   bg[PRELIGHT] = shade(1.2, @tooltip_bg_color)
   bg[ACTIVE] = shade(1.5, @tooltip_bg_color)
@@ -96,11 +91,11 @@ style "regular-label" {
 style "theme-panel-text" {
 
   fg[NORMAL] = shade(1.0, @tooltip_fg_color)
-  fg[PRELIGHT] = @selected_fg_color
+  fg[PRELIGHT] = @tooltip_fg_color
   fg[ACTIVE] = shade(1.0, @tooltip_fg_color)
 
   text[NORMAL] = shade(1.0, @tooltip_fg_color)
-  text[PRELIGHT] = @selected_fg_color
+  text[PRELIGHT] = @tooltip_fg_color
   text[ACTIVE] = shade(1.0, @tooltip_fg_color)
 
   engine "murrine" {
@@ -126,11 +121,12 @@ style "panel-entry" {
 }
 
 style "theme-main-menu-text" = "theme-panel-text" {
-  fg[PRELIGHT] = @selected_fg_color
-  text[PRELIGHT] = @selected_fg_color
+  fg[PRELIGHT] = @tooltip_fg_color
+  text[PRELIGHT] = @tooltip_fg_color
 }
 
 style "workspace-switcher" = "theme-panel" {
+  fg[SELECTED] = @selected_fg_color
   bg[SELECTED] = @selected_bg_color
 }
 

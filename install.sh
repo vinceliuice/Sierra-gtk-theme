@@ -115,6 +115,8 @@ install() {
   mkdir -p                                                                              ${THEME_DIR}/xfwm4
   cp -ur ${SRC_DIR}/xfwm4/assets${color}/*.png                                          ${THEME_DIR}/xfwm4
   cp -ur ${SRC_DIR}/xfwm4/themerc${color}                                               ${THEME_DIR}/xfwm4/themerc
+
+  cp -ur ${SRC_DIR}/plank                                                               ${THEME_DIR}
 }
 
 install_gdm() {
