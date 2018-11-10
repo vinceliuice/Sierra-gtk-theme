@@ -80,8 +80,8 @@ $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 30%);
 $osd_borders_color: $borders_color;
 
 $panel_bg: white;
-@if $transparency=='true' { $panel_bg: if($variant == 'light', rgba(#FEFEFE, 0.95), rgba(#3B3B3B, 0.95)); }
-@if $transparency=='false' { $panel_bg: if($variant == 'light', #FEFEFE, #3B3B3B); }
+@if $transparency=='true' { $panel_bg: if($variant == 'light', rgba(#FEFEFE, 0.95), rgba(#242424, 0.95)); }
+@if $transparency=='false' { $panel_bg: if($variant == 'light', #FEFEFE, #242424); }
 $panel_fg: $text_color;
 
 $entry_bg: if($variant=='light', $base_color, lighten($base_color, 0%));

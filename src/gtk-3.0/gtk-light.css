@@ -8273,11 +8273,15 @@ popover.background.places-menu row {
 }
 
 .budgie-panel.transparent {
-  background-color: rgba(254, 254, 254, 0.45);
+  background-color: rgba(254, 254, 254, 0.65);
 }
 
 .top .budgie-panel.transparent {
-  background-color: rgba(254, 254, 254, 0.85);
+  background-image: linear-gradient(0deg, rgba(226, 226, 226, 0.9) 0%, rgba(245, 245, 245, 0.9) 100%);
+}
+
+.top .budgie-panel {
+  background-image: linear-gradient(0deg, #e2e2e2 0%, whitesmoke 100%);
 }
 
 .budgie-panel button {

@@ -378,8 +378,15 @@ popover.background.places-menu {
   color: $panel_fg;
   font-weight: 500;
 
-  &.transparent { background-color: rgba(opacify($panel_bg, 1), 0.45); }
-  .top &.transparent { background-color: rgba(opacify($panel_bg, 1), 0.85); }
+  &.transparent { background-color: rgba(opacify($panel_bg, 1), 0.65); }
+
+  .top &.transparent {
+    background-image: if($darker=='false' and $variant=='light', linear-gradient(0deg, rgba($header_middle, 0.9) 0%, rgba($header_highlight, 0.9) 100%), none);
+  }
+
+  .top & {
+    background-image: if($darker=='false' and $variant=='light', linear-gradient(0deg, $header_middle 0%, $header_highlight 100%), none);
+  }
 
   button {
     min-height: 16px;
