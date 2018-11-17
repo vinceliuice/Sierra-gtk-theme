@@ -4266,7 +4266,7 @@ messagedialog.csd .dialog-action-area {
 
 messagedialog.csd .dialog-action-area button {
   min-height: 16px;
-  padding: 4px 8px;
+  padding: 6px 12px;
   border-bottom-style: none;
   background-image: none;
 }
@@ -7872,12 +7872,21 @@ popover.background.places-menu row {
   border-top-width: 0;
   border-bottom-width: 0;
   border: none;
-  color: #dedede;
+  box-shadow: none;
+  color: rgba(222, 222, 222, 0.85);
+  background: none;
+}
+
+.budgie-panel button:hover {
+  background-color: rgba(222, 222, 222, 0.1);
+  color: rgba(222, 222, 222, 0.95);
+  background-image: none;
 }
 
 .budgie-panel button:active {
   background-color: rgba(222, 222, 222, 0.15);
-  color: rgba(222, 222, 222, 0.75);
+  color: #dedede;
+  background-image: none;
 }
 
 .budgie-panel button:checked {

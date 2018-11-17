@@ -396,9 +396,26 @@ popover.background.places-menu {
     border-top-width: 0;
     border-bottom-width: 0;
     border: none;
-    color: $panel_fg;
-    &:active { background-color: rgba($panel_fg, 0.15); color: rgba($panel_fg, 0.75); }
-    &:checked { background-color: rgba($panel_fg, 0.12); color: $panel_fg; }
+    box-shadow: none;
+    color: rgba($panel_fg, 0.85);
+    background: none;
+
+    &:hover {
+      background-color: rgba($panel_fg, 0.10);
+      color: rgba($panel_fg, 0.95);
+      background-image: none;
+    }
+
+    &:active {
+      background-color: rgba($panel_fg, 0.15);
+      color: $panel_fg;
+      background-image: none;
+    }
+
+    &:checked {
+      background-color: rgba($panel_fg, 0.12);
+      color: $panel_fg;
+    }
   }
 
   &.horizontal button { padding: 0 4px; }
