@@ -35,7 +35,7 @@
 
 .background {
   color: #dedede;
-  background-color: rgba(51, 51, 51, 0.999);
+  background-color: #333333;
 }
 
 .background.csd, .background.ssd, .background.osd {
@@ -79,35 +79,44 @@
   color: #ffffff;
 }
 
-.view, iconview,
-.view text,
-iconview text,
-textview text {
+.view,
+textview text,
+iconview,
+filechooser stack.view scrolledwindow treeview.view,
+window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view {
   color: #dedede;
   background-color: #242424;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.view:hover, iconview:hover,
-.view text:hover,
-iconview text:hover,
-textview text:hover {
+.view:hover,
+textview text:hover,
+iconview:hover,
+filechooser stack.view scrolledwindow treeview.view:hover,
+window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:hover {
   background-color: #2c2c2c;
 }
 
-.view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
-.view text:selected,
-iconview text:selected,
+.view:selected,
 textview text:selected,
-.view text:selected:focus,
-iconview text:selected:focus,
-textview text:selected:focus {
+iconview:selected,
+filechooser stack.view scrolledwindow treeview.view:selected,
+window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected {
+  color: #ffffff;
+  background-color: #498dff;
   transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border-radius: 5px;
+}
+
+textview {
+  background-color: #242424;
 }
 
 textview border {
   background-color: #2c2c2c;
+}
+
+iconview {
+  border-radius: 5px;
 }
 
 rubberband, flowbox rubberband, treeview.view rubberband, .content-view rubberband, XfdesktopIconView.view .rubberband,
@@ -2585,12 +2594,10 @@ popover.background separator {
 
 popover > list,
 popover > .view,
-popover > iconview,
 popover > toolbar,
 popover > .inline-toolbar,
 popover.background > list,
 popover.background > .view,
-popover.background > iconview,
 popover.background > toolbar,
 popover.background > .inline-toolbar {
   border-style: none;
@@ -3058,7 +3065,6 @@ filechooser actionbar check {
 
 menuitem check:hover,
 .view check:selected,
-iconview check:selected,
 treeview.check:selected,
 row:selected check,
 infobar check {
@@ -3078,7 +3084,6 @@ filechooser actionbar check:disabled {
 
 menuitem check:disabled:hover,
 .view check:disabled:selected,
-iconview check:disabled:selected,
 treeview.check:disabled:selected,
 row:selected check:disabled,
 infobar check:disabled {
@@ -3098,7 +3103,6 @@ filechooser actionbar check:indeterminate {
 
 menuitem check:indeterminate:hover,
 .view check:indeterminate:selected,
-iconview check:indeterminate:selected,
 treeview.check:indeterminate:selected,
 row:selected check:indeterminate,
 infobar check:indeterminate {
@@ -3118,7 +3122,6 @@ filechooser actionbar check:indeterminate:disabled {
 
 menuitem check:indeterminate:disabled:hover,
 .view check:indeterminate:disabled:selected,
-iconview check:indeterminate:disabled:selected,
 treeview.check:indeterminate:disabled:selected,
 row:selected check:indeterminate:disabled,
 infobar check:indeterminate:disabled {
@@ -3138,7 +3141,6 @@ filechooser actionbar check:checked {
 
 menuitem check:checked:hover,
 .view check:checked:selected,
-iconview check:checked:selected,
 treeview.check:checked:selected,
 row:selected check:checked,
 infobar check:checked {
@@ -3158,7 +3160,6 @@ filechooser actionbar check:checked:disabled {
 
 menuitem check:checked:disabled:hover,
 .view check:checked:disabled:selected,
-iconview check:checked:disabled:selected,
 treeview.check:checked:disabled:selected,
 row:selected check:checked:disabled,
 infobar check:checked:disabled {
@@ -3178,7 +3179,6 @@ filechooser actionbar radio {
 
 menuitem radio:hover,
 .view radio:selected,
-iconview radio:selected,
 treeview.radio:selected,
 row:selected radio,
 infobar radio {
@@ -3198,7 +3198,6 @@ filechooser actionbar radio:disabled {
 
 menuitem radio:disabled:hover,
 .view radio:disabled:selected,
-iconview radio:disabled:selected,
 treeview.radio:disabled:selected,
 row:selected radio:disabled,
 infobar radio:disabled {
@@ -3218,7 +3217,6 @@ filechooser actionbar radio:indeterminate {
 
 menuitem radio:indeterminate:hover,
 .view radio:indeterminate:selected,
-iconview radio:indeterminate:selected,
 treeview.radio:indeterminate:selected,
 row:selected radio:indeterminate,
 infobar radio:indeterminate {
@@ -3238,7 +3236,6 @@ filechooser actionbar radio:indeterminate:disabled {
 
 menuitem radio:indeterminate:disabled:hover,
 .view radio:indeterminate:disabled:selected,
-iconview radio:indeterminate:disabled:selected,
 treeview.radio:indeterminate:disabled:selected,
 row:selected radio:indeterminate:disabled,
 infobar radio:indeterminate:disabled {
@@ -3258,7 +3255,6 @@ filechooser actionbar radio:checked {
 
 menuitem radio:checked:hover,
 .view radio:checked:selected,
-iconview radio:checked:selected,
 treeview.radio:checked:selected,
 row:selected radio:checked,
 infobar radio:checked {
@@ -3278,19 +3274,18 @@ filechooser actionbar radio:checked:disabled {
 
 menuitem radio:checked:disabled:hover,
 .view radio:checked:disabled:selected,
-iconview radio:checked:disabled:selected,
 treeview.radio:checked:disabled:selected,
 row:selected radio:checked:disabled,
 infobar radio:checked:disabled {
   -gtk-icon-source: -gtk-scaled(url("assets/radio-checked-insensitive-selected.png"), url("assets/radio-checked-insensitive-selected@2.png"));
 }
 
-.view.content-view.check:not(list), iconview.content-view.check:not(list) {
+.view.content-view.check:not(list) {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-selectionmode-dark.png"), url("assets/checkbox-selectionmode-dark@2.png"));
   background-color: transparent;
 }
 
-.view.content-view.check:checked:not(list), iconview.content-view.check:checked:not(list) {
+.view.content-view.check:checked:not(list) {
   -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked-selectionmode-dark.png"), url("assets/checkbox-checked-selectionmode-dark@2.png"));
   background-color: transparent;
 }
@@ -4325,6 +4320,19 @@ filechooser #pathbarbox {
   border-bottom: 1px solid rgba(255, 255, 255, 0);
 }
 
+filechooser stack.view {
+  background-color: transparent;
+}
+
+filechooser stack.view scrolledwindow {
+  background-color: #242424;
+  border-radius: 0 0 6px 6px;
+}
+
+filechooser stack.view scrolledwindow treeview.view {
+  background-color: transparent;
+}
+
 filechooserbutton:drop(active) {
   box-shadow: none;
   border-color: transparent;
@@ -5063,28 +5071,19 @@ headerbar button.titlebutton.restore:active,
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active.png"), url("assets/titlebutton-restore-active@2.png"));
 }
 
-.view:selected, iconview:selected, .view:selected:focus, .view text:selected, iconview text:selected,
-textview text:selected, .view text selection:focus, iconview text selection:focus, .view text selection, iconview text selection,
-textview text selection:focus,
-textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
+.view:selected:focus, textview text:selected:focus, iconview:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
 calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .budgie-menu button:checked {
   background-color: #498dff;
 }
 
-row:selected label, label:selected, .view:selected, iconview:selected, .view:selected:focus, .view text:selected, iconview text:selected,
-textview text:selected, .view text selection:focus, iconview text selection:focus, .view text selection, iconview text selection,
-textview text selection:focus,
-textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
+row:selected label, label:selected, .view:selected:focus, textview text:selected:focus, iconview:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
 calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .budgie-menu button:checked {
   color: #ffffff;
 }
 
-row:selected label:disabled, label:disabled:selected, .view:disabled:selected, iconview:disabled:selected, iconview:disabled:selected:focus, .view text:disabled:selected, iconview text:disabled:selected,
-textview text:disabled:selected, iconview text:disabled:selected:focus,
-textview text:disabled:selected:focus, iconview text selection:disabled:focus, .view text selection:disabled, iconview text selection:disabled,
-textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected:focus, row:disabled:selected,
+row:selected label:disabled, label:disabled:selected, .view:disabled:selected:focus, textview text:disabled:selected:focus, iconview:disabled:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:disabled:selected:focus, textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected, row:disabled:selected,
 calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .budgie-menu button:disabled:checked {
   color: #a4c6ff;
@@ -5394,16 +5393,16 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   border-width: 0 0 1px;
 }
 
-.open-document-selector-treeview.view, iconview.open-document-selector-treeview {
+.open-document-selector-treeview.view {
   padding: 3px 6px 3px 6px;
   border-color: #242424;
 }
 
-.open-document-selector-treeview.view:hover, iconview.open-document-selector-treeview:hover {
+.open-document-selector-treeview.view:hover {
   background-color: #313131;
 }
 
-.open-document-selector-treeview.view:hover:selected, iconview.open-document-selector-treeview:hover:selected {
+.open-document-selector-treeview.view:hover:selected {
   color: #ffffff;
   background-color: #498dff;
 }
@@ -5836,9 +5835,18 @@ dialog.csd > headerbar.titlebar > switch {
   margin: 8px 0;
 }
 
-/************************
- * Gnome Control Center *
- ************************/
+stack.background {
+  background: none;
+}
+
+scrolledwindow.view {
+  border-radius: 0 0 0 6px;
+}
+
+scrolledwindow.view > viewport.frame > stack > list {
+  border-radius: 0 0 0 6px;
+}
+
 box.horizontal.titlebar > headerbar > stack > box.vertical > .title {
   margin: 0;
 }
@@ -5849,6 +5857,15 @@ box.horizontal.titlebar > headerbar > stack > box.vertical > .subtitle {
 
 dialog.background.csd > headerbar.titlebar > label:not(.title):not(.subtitle) {
   font-weight: 700;
+}
+
+window#gnome-system-monitor.background.csd stack {
+  background-color: #242424;
+  border-radius: 0 0 6px 6px;
+}
+
+window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view {
+  background: none;
 }
 
 .tr-workarea undershoot,
@@ -6228,6 +6245,43 @@ flowboxchild.bookmark-tag-widget-selected {
   color: #ffffff;
 }
 
+dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame {
+  border: none;
+}
+
+dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame > viewport.frame {
+  border: none;
+}
+
+dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame > viewport.frame list:first-child {
+  border-radius: 0 0 0 6px;
+}
+
+dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame > viewport.frame list:last-child {
+  border-radius: 0 0 6px 0;
+}
+
+dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+dialog.background.csd box.dialog-vbox notebook > stack {
+  border-radius: 0 0 6px 6px;
+}
+
+dialog.background.csd stack entry {
+  margin: 2px;
+}
+
+dialog.background.csd stack spinbutton entry,
+dialog.background.csd stack .linked entry {
+  margin: 0;
+}
+
+dialog.background.csd entry.search {
+  margin: 2px;
+}
+
 MsdOsdWindow.background.osd {
   border-radius: 2px;
   border: 1px solid rgba(16, 16, 16, 0.95);
@@ -6580,6 +6634,11 @@ window.background:not(.csd) > menu > menuitem > check {
   padding: 0 2px 0 4px;
 }
 
+window.background:not(.csd) > window > menu menuitem,
+window.background:not(.csd) > menu > menu menuitem {
+  transition: none;
+}
+
 #MozillaGtkWidget.background {
   background-color: #333333;
 }
@@ -6869,12 +6928,12 @@ menubar .panel,
   background: none;
 }
 
-.panel popover .sidebar .view:hover, .panel popover .sidebar iconview:hover {
+.panel popover .sidebar .view:hover {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.panel popover .sidebar .view:selected, .panel popover .sidebar iconview:selected, .panel popover .sidebar .view:selected:focus, .panel popover .sidebar iconview:selected:focus {
+.panel popover .sidebar .view:selected, .panel popover .sidebar .view:selected:focus {
   text-shadow: none;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-color: rgba(255, 255, 255, 0.35);
@@ -7122,8 +7181,7 @@ toolbar.bottom-toolbar button, .bottom-toolbar.inline-toolbar button {
 }
 
 .source-list,
-.source-list.view,
-iconview.source-list {
+.source-list.view {
   background-color: #333333;
   color: #dedede;
   -gtk-icon-style: regular;
@@ -7133,15 +7191,13 @@ iconview.source-list {
   color: transparent;
 }
 
-.source-list.view:hover, iconview.source-list:hover {
+.source-list.view:hover {
   background-color: #404040;
 }
 
-.source-list.view:selected, iconview.source-list:selected,
+.source-list.view:selected,
 .source-list.view:hover:selected,
-iconview.source-list:hover:selected,
 .source-list.view:selected:focus,
-iconview.source-list:selected:focus,
 .source-list.category-expander:hover {
   color: #ffffff;
   background-color: #498dff;
@@ -7226,7 +7282,7 @@ GraniteWidgetsPopOver {
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-GraniteWidgetsPopOver .sidebar.view, GraniteWidgetsPopOver iconview.sidebar,
+GraniteWidgetsPopOver .sidebar.view,
 GraniteWidgetsPopOver * {
   background-color: transparent;
 }
@@ -7443,12 +7499,27 @@ GtkListBox .h4 {
   font-weight: bold;
 }
 
+filechooser paned > separator,
 .nautilus-window paned > separator {
-  background-image: linear-gradient(to bottom, #484848, #484848);
+  border: none;
+  background-color: transparent;
+  background-image: image(#242424);
+  background-size: 8px 8px;
+  background-position: left bottom;
 }
 
-filechooser paned > separator {
-  background-image: linear-gradient(to bottom, #484848, #484848);
+filechooser paned > separator:dir(ltr),
+.nautilus-window paned > separator:dir(ltr) {
+  margin-left: -1px;
+}
+
+filechooser paned > separator:dir(rtl),
+.nautilus-window paned > separator:dir(rtl) {
+  margin-right: -1px;
+}
+
+filechooser placessidebar.sidebar.frame {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 
@@ -7471,7 +7542,7 @@ filechooser placessidebar,
 
 filechooser placessidebar.sidebar,
 .nautilus-window placessidebar.sidebar {
-  border-right: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
   background-color: transparent;
 }
 
@@ -7641,21 +7712,21 @@ filechooser.maximized placessidebar.sidebar,
   background-color: rgba(59, 59, 59, 0.94);
 }
 
-.nemo-window .sidebar .view, .nemo-window .sidebar iconview, .nemo-window .sidebar row {
+.nemo-window .sidebar .view, .nemo-window .sidebar row {
   background-color: transparent;
   color: #dedede;
 }
 
-.nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar iconview.cell:selected, .nemo-window .sidebar row.cell:selected {
+.nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar row.cell:selected {
   background-color: #498dff;
   color: #ffffff;
 }
 
-.nemo-window .sidebar .view.expander, .nemo-window .sidebar iconview.expander, .nemo-window .sidebar row.expander {
+.nemo-window .sidebar .view.expander, .nemo-window .sidebar row.expander {
   color: rgba(145, 145, 145, 0.97);
 }
 
-.nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar iconview.expander:hover, .nemo-window .sidebar row.expander:hover {
+.nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar row.expander:hover {
   color: #dedede;
 }
 
@@ -7940,6 +8011,11 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
 .budgie-settings-window buttonbox.inline-toolbar button {
   border-radius: 5px;
   -gtk-outline-radius: 5px;
+}
+
+.budgie-settings-window list.sidebar {
+  background-color: #242424;
+  border-radius: 0 0 0 6px;
 }
 
 .budgie-popover {

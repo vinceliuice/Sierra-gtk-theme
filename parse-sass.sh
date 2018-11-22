@@ -22,17 +22,17 @@ if [ ! -z "${COMPACT_VARIANTS:-}" ]; then
   IFS=', ' read -r -a _COMPACT_VARIANTS <<< "${COMPACT_VARIANTS:-}"
 fi
 
-_THIN_VARIANTS=('' '-thin')
-if [ ! -z "${THIN_VARIANTS:-}" ]; then
-  IFS=', ' read -r -a _THIN_VARIANTS <<< "${THIN_VARIANTS:-}"
+_ALT_VARIANTS=('' '-alt')
+if [ ! -z "${ALT_VARIANTS:-}" ]; then
+  IFS=', ' read -r -a _THIN_VARIANTS <<< "${ALT_VARIANTS:-}"
 fi
 
 for color in "${_COLOR_VARIANTS[@]}"; do
   for trans in "${_TRANS_VARIANTS[@]}"; do
     for compact in "${_COMPACT_VARIANTS[@]}"; do
-      for thin in "${_THIN_VARIANTS[@]}"; do
-        sassc $SASSC_OPT src/gtk-3.0/gtk${compact}${color}${trans}${thin}.{scss,css}
-        echo "== Generating the gtk${compact}${color}${trans}${thin}.css..."
+      for alt in "${_ALT_VARIANTS[@]}"; do
+        sassc $SASSC_OPT src/gtk-3.0/gtk${compact}${color}${trans}${alt}.{scss,css}
+        echo "== Generating the gtk${compact}${color}${trans}${alt}.css..."
       done
     done
   done

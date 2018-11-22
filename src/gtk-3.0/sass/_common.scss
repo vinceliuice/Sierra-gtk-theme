@@ -4,7 +4,7 @@
 
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
 $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
-$thin_suffix: if($titlebutton=='thin', '-thin', ''); // use thin assets in thin titlebutton version
+$alt_suffix: if($titlebutton=='alt', '-alt', ''); // use thin assets in thin titlebutton version
 $bt_radius: 5px;
 $wm_radius: 6px;
 
@@ -40,7 +40,7 @@ $wm_radius: 6px;
 //  border-radius: 0 0 $wm_radius $wm_radius;
   color: $fg_color;
   // without this headerbar transparency doesn't seem to work
-  background-color: if($transparency == 'true', transparentize($bg_color, 0.001), $bg_color);
+  background-color: if($transparency == 'true', rgba($bg_color, 1), $bg_color);
 
   &.csd,
   &.ssd, &.osd { border-radius: 0 0 $wm_radius $wm_radius; } // Set csd windows botttom border radius
@@ -83,25 +83,28 @@ $wm_radius: 6px;
   &:hover { background-color: if($variant=='light', darken($base_color, 3%), lighten($base_color, 3%)); }
 
   &:selected {
-    &, &:focus {
-      transition: all 350ms $ease-out-quad;
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    transition: all 350ms $ease-out-quad;
+
+    &:focus {
       @extend %selected_items;
-      border-radius: $bt_radius;
     }
   }
 }
 
-.view,
 textview {
+  background-color: $base_color; // This will get overridden by .view, needed by gedit line numbers
+
   text {
     @extend %view;
     selection { &:focus, & { @extend %selected_items; } }
   }
+
+  border { background-color: mix($bg_color, $base_color, 50%); }
 }
 
-textview border { background-color: mix($bg_color, $base_color, 50%); }
-
-iconview { @extend .view; }
+iconview { @extend %view; border-radius: $bt_radius; }
 
 rubberband,
 .rubberband {
@@ -1213,8 +1216,8 @@ headerbar,
 
     button.titlebutton {
       border: none;
-      min-width: if($titlebutton == 'thin', 17px, 16px);
-      min-height: if($titlebutton == 'thin', 17px, 16px);
+      min-width: 16px;
+      min-height: 16px;
       margin: 0;
       padding: 0;
     }
@@ -3246,6 +3249,20 @@ messagedialog { // Message Dialog styling
 //
 filechooser {
   #pathbarbox { border-bottom: 1px solid transparentize($borders_color, 0.5); }
+
+  stack.view {
+    background-color: transparent;
+
+    scrolledwindow {
+      background-color: $base_color;
+      border-radius: 0 0 $wm_radius $wm_radius;
+
+      treeview.view {
+        @extend %view;
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 filechooserbutton:drop(active) {
@@ -3805,8 +3822,8 @@ headerbar,
       @include button(header-active);
     }
     &.close, &.maximize, &.minimize, &.restore {
-      min-width: if($titlebutton == 'thin', 17px, 16px);
-      min-height: if($titlebutton == 'thin', 17px, 16px);
+      min-width: 16px;
+      min-height: 16px;
       margin: 0;
       color: transparent;
       background-color: transparent;
@@ -3823,8 +3840,8 @@ headerbar,
     @each $k in ('close', 'maximize', 'minimize', 'restore') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
 
-        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$thin_suffix}.png'),
-                                                        url('assets/titlebutton-#{$k}#{$m}#{$thin_suffix}@2.png')); }
+        &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$alt_suffix}.png'),
+                                                     url('assets/titlebutton-#{$k}#{$m}#{$alt_suffix}@2.png')); }
       }
     }
   }
@@ -3833,8 +3850,8 @@ headerbar,
   .maximized & {
     button.titlebutton {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
-      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$thin_suffix}.png'),
-                                                      url('assets/titlebutton-restore#{$m}#{$thin_suffix}@2.png')); }
+      &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$alt_suffix}.png'),
+                                                      url('assets/titlebutton-restore#{$m}#{$alt_suffix}@2.png')); }
       }
     }
   }

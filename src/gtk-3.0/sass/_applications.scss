@@ -801,19 +801,24 @@ button.documents-favorite:active:hover {
 .tweak-titlebar-right,
 dialog.csd > headerbar.titlebar { > switch { margin: 8px 0; } }
 
-/************************
- * Gnome Control Center *
- ************************/
+//
+//  Gnome Control Center
+//
+
+stack.background { background: none; }
 
 // users section
-
 stack > box.vertical > widget > overlay grid.horizontal > stack {
   > button.toggle { }
 }
 
 // > 3.25.90
-scrolledwindow.view > viewport.frame > stack > list { // left-pane
-  > row.activatable { }
+scrolledwindow.view {
+  border-radius: 0 0 0 $wm_radius;
+  > viewport.frame > stack > list { // left-pane
+    border-radius: 0 0 0 $wm_radius;
+    // > row.activatable { }
+  }
 }
 
 box.horizontal.titlebar > headerbar > stack > box.vertical {
@@ -826,6 +831,23 @@ dialog.background.csd {
 
     > label:not(.title):not(.subtitle) {
       font-weight: 700;
+    }
+  }
+}
+
+//
+//  Gnome system monitor
+//
+window#gnome-system-monitor.background.csd {
+  stack {
+    background-color: $base_color;
+    border-radius: 0 0 $wm_radius $wm_radius;
+
+    scrolledwindow {
+      treeview.view {
+        background: none;
+        @extend %view;
+      }
     }
   }
 }
@@ -1051,22 +1073,6 @@ headerbar.titlebar.incognito-mode {
     &:focus { @include entry(header-focus); }
     &:disabled { @include entry(header-insensitive); }
   }
-
-//  button:not(.destructive-action):not(.suggested-action) {
-//    // these classes are specificity bump to override titlebuttons
-//    &:not(.appmenu):not(.icon):not(:indeterminate) {
-//      &,
-//      &:hover,
-//      &:active,
-//      &:checked {
-//        * { }
-//      }
-//      &:disabled,
-//      &:checked:disabled {
-//        * { }
-//      }
-//    }
-//  }
 }
 
 // reset inverted foreground colour
@@ -1163,6 +1169,45 @@ flowboxchild.bookmark-tag-widget {
   label { margin-bottom: 2px; }
 
   &-selected { color: $selected_fg_color; } // checked
+}
+
+//
+// Dialogs
+//
+dialog.background.csd {
+  box.dialog-vbox {
+    grid.horizontal {
+      > scrolledwindow.frame { //removed ugly boders for nautilus batch renaming dialog
+        border: none;
+
+        > viewport.frame {
+          border: none;
+
+          list:first-child { border-radius: 0 0 0 $wm_radius; }
+          list:last-child { border-radius: 0 0 $wm_radius 0; }
+        }
+      }
+
+      stack {
+        scrolledwindow.frame { // reset border for totem setting dialog
+          border: 1px solid $borders_color;
+        }
+      }
+    }
+
+    notebook > stack {
+      border-radius: 0 0 $wm_radius $wm_radius;
+    }
+  }
+
+  stack {
+    entry { margin: 2px; }
+
+    spinbutton entry,
+    .linked entry { margin: 0; }
+  }
+
+  entry.search { margin: 2px; }
 }
 
 //
@@ -1508,10 +1553,18 @@ window.background:not(.csd) {
     .separator:not(label),
     .csd & .separator:not(label) { color: $borders_color; }
   }
+
   > menu > menuitem { padding: 4px 6px; }
   > menu > menuitem > label:disabled { color: $insensitive_fg_color; }
   > menu > menuitem > radio,
   > menu > menuitem > check { padding: 0 2px 0 4px; }
+
+  > window > menu,
+  > menu > menu {
+    menuitem {
+      transition: none; // Fixed plank menu background issue
+    }
+  }
 }
 
 // /*******************
@@ -1601,8 +1654,8 @@ window.background.chromium {
     // from nav_button_provider_gtk3.cc (> 62.0.3202?)
     button.titlebutton { // title-buttons
       // define global titlebutton class sizing
-      min-width: if($titlebutton == 'thin', 17px, 16px);
-      min-height: if($titlebutton == 'thin', 17px, 16px);
+      min-width: 16px;
+      min-height: 16px;
       margin: 0; // unset margins
       padding: 0 0;
       background-size: auto;

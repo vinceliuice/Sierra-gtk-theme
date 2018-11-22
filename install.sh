@@ -19,7 +19,7 @@ THEME_NAME=Sierra
 FLAT_VARIANTS=('' '-compact')
 COLOR_VARIANTS=('-light' '-dark')
 OPACITY_VARIANTS=('' '-solid')
-THIN_VARIANTS=('' '-thin')
+ALT_VARIANTS=('' '-alt')
 
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
@@ -28,7 +28,7 @@ usage() {
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
   printf "  %-25s%s\n" "-o, --opacity VARIANTS" "Specify theme opacity variant(s) [standard|solid] (Default: All variants)"
   printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-t, --thin VARIANTS" "Specify theme titilebutton variant(s) [standard|thin] (Default: All variants)"
+  printf "  %-25s%s\n" "-a, --alt VARIANTS" "Specify theme titilebutton variant(s) [standard|alt] (Default: All variants)"
   printf "  %-25s%s\n" "-f, --flat VARIANT" "Specify theme flat compact variant [standard|compact] (Default: All variants)"
   printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
@@ -49,12 +49,12 @@ install() {
   local flat=${3}
   local color=${4}
   local opacity=${5}
-  local thin=${6}
+  local alt=${6}
 
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
 
-  local THEME_DIR=${dest}/${name}${flat}${color}${opacity}${thin}
+  local THEME_DIR=${dest}/${name}${flat}${color}${opacity}${alt}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -66,13 +66,13 @@ install() {
   # Install index.theme
   echo "[Desktop Entry]" >>                                                             ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >>                                                      ${THEME_DIR}/index.theme
-  echo "Name=${name}${flat}${color}${opacity}${thin}" >>                                ${THEME_DIR}/index.theme
+  echo "Name=${name}${flat}${color}${opacity}${alt}" >>                                 ${THEME_DIR}/index.theme
   echo "Comment=An Stylish Gtk+ theme based on Elegant Design" >>                       ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >>                                                              ${THEME_DIR}/index.theme
   echo "" >>                                                                            ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >>                                                         ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${flat}${color}${opacity}${thin}" >>                            ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${flat}${color}${opacity}${thin}" >>                       ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${flat}${color}${opacity}${alt}" >>                             ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${flat}${color}${opacity}${alt}" >>                        ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >>                                                           ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >>                                                         ${THEME_DIR}/index.theme
   echo "ButtonLayout=close,minimize,maximize:menu" >>                                   ${THEME_DIR}/index.theme
@@ -97,9 +97,9 @@ install() {
   mkdir -p                                                                              ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/gtk-3.0/assets                                                      ${THEME_DIR}/gtk-3.0
   cp -ur ${SRC_DIR}/gtk-3.0/thumbnail${flat}${color}.png                                ${THEME_DIR}/gtk-3.0/thumbnail.png
-  cp -ur ${SRC_DIR}/gtk-3.0/gtk${flat}${color}${opacity}${thin}.css                     ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/gtk-3.0/gtk${flat}${color}${opacity}${alt}.css                      ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/gtk-3.0/gtk${flat}-dark${opacity}${thin}.css                        ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/gtk-3.0/gtk${flat}-dark${opacity}${alt}.css                         ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
   mkdir -p                                                                              ${THEME_DIR}/metacity-1
   cp -ur ${SRC_DIR}/metacity-1/metacity-theme${color}.xml                               ${THEME_DIR}/metacity-1/metacity-theme-1.xml
@@ -226,23 +226,23 @@ while [[ $# -gt 0 ]]; do
         esac
       done
       ;;
-    -t|--thin)
+    -a|--alt)
       shift
-      for thin in "${@}"; do
-        case "${thin}" in
+      for alt in "${@}"; do
+        case "${alt}" in
           standard)
-            thins+=("${THIN_VARIANTS[0]}")
+            alts+=("${ALT_VARIANTS[0]}")
             shift
             ;;
-          thin)
-            thins+=("${THIN_VARIANTS[1]}")
+          alt)
+            alts+=("${ALT_VARIANTS[1]}")
             shift
             ;;
           -*|--*)
             break
             ;;
           *)
-            echo "ERROR: Unrecognized thin variant '$1'."
+            echo "ERROR: Unrecognized alt variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -264,15 +264,15 @@ done
 for flat in "${flats[@]:-${FLAT_VARIANTS[@]}}"; do
   for opacity in "${opacitys[@]:-${OPACITY_VARIANTS[@]}}"; do
     for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-      for thin in "${thins[@]:-${THIN_VARIANTS[@]}}"; do
-        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${thin}"
+      for alt in "${alts[@]:-${ALT_VARIANTS[@]}}"; do
+        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${alt}"
       done
     done
   done
 done
 
 if [[ "${gdm:-}" == 'true' ]]; then
-  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${thin}"
+  install_gdm "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${alt}"
 fi
 
 echo

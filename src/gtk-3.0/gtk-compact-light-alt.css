@@ -9,10 +9,10 @@
 
 @keyframes header_ripple_effect {
   from {
-    background-image: radial-gradient(circle farthest-corner at center, #e5e5e5 0%, transparent 0%);
+    background-image: radial-gradient(circle farthest-corner at center, rgba(229, 229, 229, 0.95) 0%, transparent 0%);
   }
   to {
-    background-image: radial-gradient(circle farthest-corner at center, #e5e5e5 100%, transparent 0%);
+    background-image: radial-gradient(circle farthest-corner at center, rgba(229, 229, 229, 0.95) 100%, transparent 0%);
   }
 }
 
@@ -35,7 +35,7 @@
 
 .background {
   color: #242424;
-  background-color: #f5f5f5;
+  background-color: whitesmoke;
 }
 
 .background.csd, .background.ssd, .background.osd {
@@ -1321,7 +1321,7 @@ combobox arrow {
 toolbar, .inline-toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
-  background-color: #e5e5e5;
+  background-color: rgba(229, 229, 229, 0.95);
   border-bottom: 1px solid rgba(0, 0, 0, 0.11);
 }
 
@@ -1432,15 +1432,15 @@ headerbar,
 .titlebar:not(headerbar) {
   min-height: 34px;
   padding: 0 8px;
-  background-image: linear-gradient(0deg, #d2d2d2 0%, #e2e2e2 50%, #e9e9e9 95%, #f5f5f5 100%);
+  background-image: linear-gradient(0deg, #d2d2d2 0%, #e2e2e2 50%, #e9e9e9 95%, whitesmoke 100%);
   color: rgba(40, 32, 32, 0.8);
-  background-color: #e5e5e5;
+  background-color: rgba(229, 229, 229, 0.95);
   border-bottom: 1px solid #afafaf;
 }
 
 .csd headerbar, .csd .titlebar:not(headerbar) {
-  background-image: linear-gradient(0deg, #d2d2d2 0%, #e2e2e2 50%, #e9e9e9 95%, #f5f5f5 100%);
-  background-color: #e5e5e5;
+  background-image: linear-gradient(0deg, #d2d2d2 0%, #e2e2e2 50%, #e9e9e9 95%, whitesmoke 100%);
+  background-color: rgba(229, 229, 229, 0.95);
   border-bottom: 1px solid #afafaf;
 }
 
@@ -1459,7 +1459,7 @@ headerbar:backdrop,
 }
 
 .maximized headerbar, .maximized .titlebar:not(headerbar) {
-  background-color: #e5e5e5;
+  background-color: rgba(229, 229, 229, 0.95);
   border-bottom: 1px solid #afafaf;
 }
 
@@ -1525,7 +1525,7 @@ headerbar.selection-mode .selection-menu .arrow,
 }
 
 .maximized headerbar, .maximized .titlebar:not(headerbar) {
-  background-color: #e5e5e5;
+  background-color: rgba(229, 229, 229, 0.95);
   border-color: #afafaf;
 }
 
@@ -1537,8 +1537,8 @@ headerbar.default-decoration,
 .default-decoration.titlebar:not(headerbar) {
   min-height: 26px;
   padding: 0 6px;
-  background-color: #e5e5e5;
-  background-image: linear-gradient(0deg, #e2e2e2 0%, #f5f5f5 100%);
+  background-color: rgba(229, 229, 229, 0.95);
+  background-image: linear-gradient(0deg, #e2e2e2 0%, whitesmoke 100%);
 }
 
 .tiled headerbar.default-decoration,
@@ -1617,8 +1617,8 @@ window.csd > .titlebar:not(headerbar):backdrop {
 }
 
 .titlebar:not(headerbar) > separator {
-  background-color: #e5e5e5;
-  background-image: linear-gradient(0deg, #d2d2d2 0%, #e2e2e2 50%, #e9e9e9 95%, #f5f5f5 100%);
+  background-color: rgba(229, 229, 229, 0.95);
+  background-image: linear-gradient(0deg, #d2d2d2 0%, #e2e2e2 50%, #e9e9e9 95%, whitesmoke 100%);
 }
 
 .titlebar:not(headerbar) > separator:backdrop {
@@ -1686,7 +1686,7 @@ headerbar entry progress, .nemo-window .primary-toolbar entry progress {
 headerbar entry.warning, .nemo-window .primary-toolbar entry.warning {
   color: white;
   border-color: #F27835;
-  background-color: #eda47b;
+  background-color: rgba(237, 161, 119, 0.98);
 }
 
 headerbar entry.warning:focus, .nemo-window .primary-toolbar entry.warning:focus {
@@ -1702,7 +1702,7 @@ headerbar entry.warning selection, .nemo-window .primary-toolbar entry.warning s
 headerbar entry.error, .nemo-window .primary-toolbar entry.error {
   color: white;
   border-color: #FC4138;
-  background-color: #f3837d;
+  background-color: rgba(243, 127, 121, 0.98);
 }
 
 headerbar entry.error:focus, .nemo-window .primary-toolbar entry.error:focus {
@@ -2140,7 +2140,7 @@ headerbar switch:backdrop, .nemo-window .primary-toolbar switch:backdrop {
 }
 
 headerbar progressbar trough, .nemo-window .primary-toolbar progressbar trough {
-  background-color: #cccccc;
+  background-color: rgba(204, 204, 204, 0.95);
 }
 
 headerbar progressbar:backdrop, .nemo-window .primary-toolbar progressbar:backdrop {
@@ -2167,16 +2167,16 @@ headerbar scale slider:active, .nemo-window .primary-toolbar scale slider:active
 }
 
 headerbar scale slider:disabled, .nemo-window .primary-toolbar scale slider:disabled {
-  background-color: #f7f7f7;
+  background-color: rgba(248, 248, 248, 0.985);
   border-color: rgba(0, 0, 0, 0.2);
 }
 
 headerbar scale trough, .nemo-window .primary-toolbar scale trough {
-  background-color: #cccccc;
+  background-color: rgba(204, 204, 204, 0.95);
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
-  background-color: rgba(204, 204, 204, 0.95);
+  background-color: rgba(204, 204, 204, 0.9);
 }
 
 .path-bar button {
@@ -2427,7 +2427,7 @@ menu,
 .menu {
   padding: 6px 0;
   border-radius: 6px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.11);
 }
 
@@ -2574,7 +2574,7 @@ popover.background {
   padding: 0;
   border-radius: 6px;
   background-clip: border-box;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -2639,7 +2639,7 @@ notebook > stack:not(:only-child) {
 
 notebook > header {
   padding: 0;
-  background-color: #cccccc;
+  background-color: rgba(204, 204, 204, 0.95);
 }
 
 notebook > header.top {
@@ -2796,13 +2796,13 @@ notebook > header > tabs > tab {
 notebook > header > tabs > tab:hover:not(:checked) {
   color: rgba(36, 36, 36, 0.775);
   background-color: rgba(255, 255, 255, 0.2);
-  border-color: #bfbfbf;
+  border-color: rgba(191, 191, 191, 0.95);
 }
 
 notebook > header > tabs > tab:checked {
   color: #242424;
-  background-color: #e5e5e5;
-  border-color: #bfbfbf;
+  background-color: rgba(229, 229, 229, 0.95);
+  border-color: rgba(191, 191, 191, 0.95);
 }
 
 notebook > header > tabs > tab button.flat, notebook > header > tabs > tab button.budgie-menu-launcher, notebook > header > tabs > tab .budgie-panel button.flat.launcher, .budgie-panel notebook > header > tabs > tab button.flat.launcher {
@@ -4258,7 +4258,7 @@ calendar.highlight {
 
 messagedialog .titlebar {
   min-height: 20px;
-  background-color: #e5e5e5;
+  background-color: rgba(229, 229, 229, 0.95);
   border-bottom: 1px solid #afafaf;
 }
 
@@ -4908,7 +4908,7 @@ messagedialog.csd decoration {
   border: 1px solid #E1E1E1;
   border-radius: 0;
   margin: 0;
-  background-color: #e5e5e5;
+  background-color: rgba(229, 229, 229, 0.95);
   box-shadow: none;
 }
 
@@ -4972,82 +4972,82 @@ headerbar button.titlebutton.close:backdrop, headerbar button.titlebutton.maximi
 
 headerbar button.titlebutton.close,
 .titlebar button.titlebutton.close {
-  background-image: -gtk-scaled(url("assets/titlebutton-close.png"), url("assets/titlebutton-close@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-close-alt.png"), url("assets/titlebutton-close-alt@2.png"));
 }
 
 headerbar button.titlebutton.close:backdrop,
 .titlebar button.titlebutton.close:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop.png"), url("assets/titlebutton-close-backdrop@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-close-backdrop-alt.png"), url("assets/titlebutton-close-backdrop-alt@2.png"));
 }
 
 headerbar button.titlebutton.close:hover,
 .titlebar button.titlebutton.close:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-close-hover.png"), url("assets/titlebutton-close-hover@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-close-hover-alt.png"), url("assets/titlebutton-close-hover-alt@2.png"));
 }
 
 headerbar button.titlebutton.close:active,
 .titlebar button.titlebutton.close:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-close-active.png"), url("assets/titlebutton-close-active@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-close-active-alt.png"), url("assets/titlebutton-close-active-alt@2.png"));
 }
 
 headerbar button.titlebutton.maximize,
 .titlebar button.titlebutton.maximize {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize.png"), url("assets/titlebutton-maximize@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-alt.png"), url("assets/titlebutton-maximize-alt@2.png"));
 }
 
 headerbar button.titlebutton.maximize:backdrop,
 .titlebar button.titlebutton.maximize:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop.png"), url("assets/titlebutton-maximize-backdrop@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-backdrop-alt.png"), url("assets/titlebutton-maximize-backdrop-alt@2.png"));
 }
 
 headerbar button.titlebutton.maximize:hover,
 .titlebar button.titlebutton.maximize:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover.png"), url("assets/titlebutton-maximize-hover@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-hover-alt.png"), url("assets/titlebutton-maximize-hover-alt@2.png"));
 }
 
 headerbar button.titlebutton.maximize:active,
 .titlebar button.titlebutton.maximize:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-maximize-active.png"), url("assets/titlebutton-maximize-active@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-maximize-active-alt.png"), url("assets/titlebutton-maximize-active-alt@2.png"));
 }
 
 headerbar button.titlebutton.minimize,
 .titlebar button.titlebutton.minimize {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize.png"), url("assets/titlebutton-minimize@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-alt.png"), url("assets/titlebutton-minimize-alt@2.png"));
 }
 
 headerbar button.titlebutton.minimize:backdrop,
 .titlebar button.titlebutton.minimize:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop.png"), url("assets/titlebutton-minimize-backdrop@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-backdrop-alt.png"), url("assets/titlebutton-minimize-backdrop-alt@2.png"));
 }
 
 headerbar button.titlebutton.minimize:hover,
 .titlebar button.titlebutton.minimize:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover.png"), url("assets/titlebutton-minimize-hover@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-hover-alt.png"), url("assets/titlebutton-minimize-hover-alt@2.png"));
 }
 
 headerbar button.titlebutton.minimize:active,
 .titlebar button.titlebutton.minimize:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-minimize-active.png"), url("assets/titlebutton-minimize-active@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-minimize-active-alt.png"), url("assets/titlebutton-minimize-active-alt@2.png"));
 }
 
 headerbar button.titlebutton.restore,
 .titlebar button.titlebutton.restore {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore.png"), url("assets/titlebutton-restore@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-alt.png"), url("assets/titlebutton-restore-alt@2.png"));
 }
 
 headerbar button.titlebutton.restore:backdrop,
 .titlebar button.titlebutton.restore:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop.png"), url("assets/titlebutton-restore-backdrop@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-alt.png"), url("assets/titlebutton-restore-backdrop-alt@2.png"));
 }
 
 headerbar button.titlebutton.restore:hover,
 .titlebar button.titlebutton.restore:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover.png"), url("assets/titlebutton-restore-hover@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-alt.png"), url("assets/titlebutton-restore-hover-alt@2.png"));
 }
 
 headerbar button.titlebutton.restore:active,
 .titlebar button.titlebutton.restore:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-active.png"), url("assets/titlebutton-restore-active@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-active-alt.png"), url("assets/titlebutton-restore-active-alt@2.png"));
 }
 
 .fullscreen headerbar button.titlebutton.maximize,
@@ -5055,7 +5055,7 @@ headerbar button.titlebutton.restore:active,
 .titlebar button.titlebutton.maximize,
 .maximized
 .titlebar button.titlebutton.maximize {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore.png"), url("assets/titlebutton-restore@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-alt.png"), url("assets/titlebutton-restore-alt@2.png"));
 }
 
 .fullscreen headerbar button.titlebutton.maximize:backdrop,
@@ -5063,7 +5063,7 @@ headerbar button.titlebutton.restore:active,
 .titlebar button.titlebutton.maximize:backdrop,
 .maximized
 .titlebar button.titlebutton.maximize:backdrop {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop.png"), url("assets/titlebutton-restore-backdrop@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-backdrop-alt.png"), url("assets/titlebutton-restore-backdrop-alt@2.png"));
 }
 
 .fullscreen headerbar button.titlebutton.maximize:hover,
@@ -5071,7 +5071,7 @@ headerbar button.titlebutton.restore:active,
 .titlebar button.titlebutton.maximize:hover,
 .maximized
 .titlebar button.titlebutton.maximize:hover {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover.png"), url("assets/titlebutton-restore-hover@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-hover-alt.png"), url("assets/titlebutton-restore-hover-alt@2.png"));
 }
 
 .fullscreen headerbar button.titlebutton.maximize:active,
@@ -5079,7 +5079,7 @@ headerbar button.titlebutton.restore:active,
 .titlebar button.titlebutton.maximize:active,
 .maximized
 .titlebar button.titlebutton.maximize:active {
-  background-image: -gtk-scaled(url("assets/titlebutton-restore-active.png"), url("assets/titlebutton-restore-active@2.png"));
+  background-image: -gtk-scaled(url("assets/titlebutton-restore-active-alt.png"), url("assets/titlebutton-restore-active-alt@2.png"));
 }
 
 .view:selected:focus, textview text:selected:focus, iconview:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
@@ -6334,12 +6334,12 @@ panel-toplevel.background #tasklist-button image {
 .mate-panel-menu-bar .wnck-pager,
 panel-toplevel.background .wnck-pager {
   color: #1b1b1b;
-  background-color: #e5e5e5;
+  background-color: rgba(229, 229, 229, 0.95);
 }
 
 .mate-panel-menu-bar .wnck-pager:hover,
 panel-toplevel.background .wnck-pager:hover {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .mate-panel-menu-bar .wnck-pager:selected,
@@ -6389,7 +6389,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel butt
 }
 
 .xfce4-panel.panel {
-  background-color: #FEFEFE;
+  background-color: rgba(254, 254, 254, 0.95);
   text-shadow: none;
   -gtk-icon-shadow: none;
   border: none;
@@ -6402,7 +6402,7 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel butt
 }
 
 .xfce4-panel {
-  background-color: #FEFEFE;
+  background-color: rgba(254, 254, 254, 0.95);
   color: #363636;
   font-weight: 700;
   text-shadow: none;
@@ -6490,7 +6490,7 @@ window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
 }
 
 window.thunar treeview.view {
-  background-color: #f6f6f6;
+  background-color: rgba(246, 246, 246, 0.94);
 }
 
 window.thunar treeview.view:hover {
@@ -6777,7 +6777,7 @@ window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal 
 }
 
 window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal > button.flat.small-button:hover, window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal > button.small-button.budgie-menu-launcher:hover, .budgie-panel window.background:not(.csd):not(.solid-csd) > grid.horizontal > grid.horizontal > button.small-button.flat.launcher:hover {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
   color: rgba(54, 44, 44, 0.8);
 }
 
@@ -6995,10 +6995,10 @@ UnityDecoration .top {
   border-bottom-width: 0;
   border-radius: 6px 6px 0 0;
   padding: 1px 6px 0 6px;
-  background-color: #e5e5e5;
-  background-image: linear-gradient(0deg, #e2e2e2 0%, #f5f5f5 100%);
+  background-color: rgba(229, 229, 229, 0.95);
+  background-image: linear-gradient(0deg, #e2e2e2 0%, whitesmoke 100%);
   color: rgba(40, 32, 32, 0.8);
-  box-shadow: inset 0 1px #ededed;
+  box-shadow: inset 0 1px rgba(237, 237, 237, 0.95);
 }
 
 UnityDecoration .top:backdrop {
@@ -7041,7 +7041,7 @@ UnityPanelWidget:backdrop,
 }
 
 .lightdm-combo .menu {
-  background-color: #f9f9f9;
+  background-color: rgba(249, 249, 249, 0.95);
   border-radius: 0px;
   padding: 0px;
   color: white;
@@ -7324,10 +7324,10 @@ GtkListBox .h4 {
 }
 
 #panel_window {
-  background-color: #FEFEFE;
+  background-color: rgba(254, 254, 254, 0.95);
   color: #363636;
   font-weight: bold;
-  box-shadow: inset 0 -1px #ececec;
+  box-shadow: inset 0 -1px rgba(236, 236, 236, 0.95);
 }
 
 #panel_window menubar {
@@ -7541,7 +7541,7 @@ filechooser.csd.background,
 filechooser placessidebar,
 .nautilus-window.csd.background,
 .nautilus-window placessidebar {
-  background-color: #f6f6f6;
+  background-color: rgba(246, 246, 246, 0.94);
   border-radius: 0 0 6px 6px;
 }
 
@@ -7715,7 +7715,7 @@ filechooser.maximized placessidebar.sidebar,
 
 .nemo-window .sidebar {
   color: #363636;
-  background-color: #f6f6f6;
+  background-color: rgba(246, 246, 246, 0.94);
 }
 
 .nemo-window .sidebar .view, .nemo-window .sidebar row {
@@ -7729,7 +7729,7 @@ filechooser.maximized placessidebar.sidebar,
 }
 
 .nemo-window .sidebar .view.expander, .nemo-window .sidebar row.expander {
-  color: #969696;
+  color: rgba(144, 144, 144, 0.97);
 }
 
 .nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar row.expander:hover {
@@ -7758,12 +7758,12 @@ filechooser.maximized placessidebar.sidebar,
 }
 
 .caja-side-pane junction {
-  background-color: #e9e9e9;
+  background-color: rgba(233, 233, 233, 0.94);
 }
 
 filechooser actionbar {
   color: #363636;
-  background-color: #f6f6f6;
+  background-color: rgba(246, 246, 246, 0.94);
   border-color: rgba(0, 0, 0, 0.11);
 }
 
@@ -7784,7 +7784,7 @@ filechooser actionbar label, filechooser actionbar combobox {
 }
 
 .gedit-document-panel {
-  background-color: #f6f6f6;
+  background-color: rgba(246, 246, 246, 0.94);
 }
 
 .maximized .gedit-document-panel {
@@ -8032,7 +8032,7 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
   border-color: rgba(0, 0, 0, 0.11);
   border-radius: 6px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 2px 3px 0 rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.11);
-  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, 0.95);
 }
 
 .budgie-popover .container {
@@ -8337,7 +8337,7 @@ popover.background.places-menu row {
 }
 
 .top .budgie-panel {
-  background-image: linear-gradient(0deg, #e2e2e2 0%, #f5f5f5 100%);
+  background-image: linear-gradient(0deg, #e2e2e2 0%, whitesmoke 100%);
 }
 
 .budgie-panel button {
@@ -8670,7 +8670,7 @@ frame.raven-frame > border {
 }
 
 .raven {
-  background-color: #2A2A2A;
+  background-color: rgba(42, 42, 42, 0.95);
   color: #dedede;
 }
 
@@ -9015,7 +9015,7 @@ window.budgie-switcher-window flowboxchild {
   padding: 8px;
   border-radius: 6px;
   box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.25);
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
   background-image: none;
 }
 
@@ -9156,9 +9156,9 @@ window.budgie-switcher-window flowboxchild {
 @define-color wm_icon_unfocused_bg #B6B8C0;
 @define-color wm_icon_hover_bg #7A7F8B;
 @define-color wm_icon_active_bg #ffffff;
-@define-color titlebar_gradient_a #f5f5f5;
+@define-color titlebar_gradient_a whitesmoke;
 @define-color titlebar_gradient_b #e2e2e2;
 @define-color budgie_tasklist_indicator_color #0046DB;
 @define-color budgie_tasklist_indicator_color_active #0046DB;
-@define-color budgie_tasklist_indicator_color_active_window #759beb;
+@define-color budgie_tasklist_indicator_color_active_window rgba(111, 150, 234, 0.977);
 @define-color budgie_tasklist_indicator_color_attention #F27835;
