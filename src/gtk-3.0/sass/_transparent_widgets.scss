@@ -15,7 +15,7 @@ filechooser,
   }
 }
 
-filechooser placessidebar.sidebar.frame { border-right: 1px solid $borders_color; }
+filechooser placessidebar.sidebar.frame { border-right: 1px solid $solid_borders_color; }
 
 // Dark transparent sidebars
 %placessidebar,
@@ -26,7 +26,7 @@ filechooser,
   &.csd.background, placessidebar { background-color: $dark_sidebar_bg; border-radius: 0 0 $wm_radius $wm_radius; }
 
   placessidebar.sidebar {
-    border-right: 1px solid $borders_color;
+    border-right: 1px solid $solid_borders_color;
     background-color: transparent;
 
     row.sidebar-row {

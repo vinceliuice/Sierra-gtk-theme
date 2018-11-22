@@ -2389,7 +2389,7 @@ menubar:backdrop,
 
 menubar > menuitem,
 .menubar > menuitem {
-  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1);
   padding: 4px 8px;
 }
 
@@ -2405,7 +2405,7 @@ menubar > menuitem menu menu,
 
 menubar > menuitem:hover,
 .menubar > menuitem:hover {
-  transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1);
+  transition: none;
   background-color: #498dff;
   color: #ffffff;
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
@@ -2417,6 +2417,8 @@ menubar > menuitem:disabled,
   border-color: transparent;
 }
 
+.context-menu, popover.touch-selection, .csd popover.touch-selection,
+popover.background.touch-selection, .csd popover.background.touch-selection,
 menu,
 .menu {
   padding: 6px 0;
@@ -2425,13 +2427,19 @@ menu,
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.csd menu, .csd
+.csd .context-menu, .csd popover.touch-selection, .csd popover.background.touch-selection, .csd
+menu, .csd
 .menu {
   border: none;
 }
 
+.context-menu separator, popover.touch-selection separator, .csd popover.touch-selection separator, popover.background.touch-selection separator, .csd popover.background.touch-selection separator,
+.csd .context-menu separator,
+.csd popover.touch-selection separator,
+.csd popover.background.touch-selection separator,
 menu separator,
-.csd menu separator,
+.csd
+menu separator,
 .menu separator,
 .csd
 .menu separator {
@@ -2441,23 +2449,27 @@ menu separator,
   background-color: transparent;
 }
 
+.context-menu menuitem, popover.touch-selection menuitem, .csd popover.touch-selection menuitem, popover.background.touch-selection menuitem, .csd popover.background.touch-selection menuitem,
 menu menuitem,
 .menu menuitem {
   min-height: 12px;
   min-width: 40px;
   padding: 2px 6px;
   text-shadow: none;
+  transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1), background-color 100ms cubic-bezier(0, 0, 0.2, 1);
 }
 
+.context-menu menuitem:hover, popover.touch-selection menuitem:hover, .csd popover.background.touch-selection menuitem:hover,
 menu menuitem:hover,
 .menu menuitem:hover {
-  transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1), background-color 100ms cubic-bezier(0, 0, 0.2, 1);
+  transition: none;
   color: #ffffff;
   background-color: #498dff;
   box-shadow: inset 0 -1px #166dff;
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
 
+.context-menu menuitem:hover arrow, popover.touch-selection menuitem:hover arrow, .csd popover.background.touch-selection menuitem:hover arrow,
 menu menuitem:hover arrow,
 .menu menuitem:hover arrow {
   transition: none;
@@ -2465,6 +2477,7 @@ menu menuitem:hover arrow,
   -gtk-icon-shadow: none;
 }
 
+.context-menu menuitem:hover menu arrow, popover.touch-selection menuitem:hover menu arrow, .csd popover.background.touch-selection menuitem:hover menu arrow,
 menu menuitem:hover menu arrow,
 .menu menuitem:hover menu arrow {
   color: #dedede;
@@ -2472,16 +2485,19 @@ menu menuitem:hover menu arrow,
   -gtk-icon-shadow: none;
 }
 
+.context-menu menuitem:hover menu menuitem:hover arrow, popover.touch-selection menuitem:hover menu menuitem:hover arrow,
 menu menuitem:hover menu menuitem:hover arrow,
 .menu menuitem:hover menu menuitem:hover arrow {
   color: #ffffff;
 }
 
+.context-menu menuitem:disabled, popover.touch-selection menuitem:disabled, .csd popover.background.touch-selection menuitem:disabled,
 menu menuitem:disabled,
 .menu menuitem:disabled {
   color: rgba(222, 222, 222, 0.45);
 }
 
+.context-menu menuitem arrow, popover.touch-selection menuitem arrow, .csd popover.touch-selection menuitem arrow, popover.background.touch-selection menuitem arrow, .csd popover.background.touch-selection menuitem arrow,
 menu menuitem arrow,
 .menu menuitem arrow {
   min-height: 16px;
@@ -2492,12 +2508,14 @@ menu menuitem arrow,
   color: #dedede;
 }
 
+.context-menu menuitem arrow:dir(ltr), popover.touch-selection menuitem arrow:dir(ltr), .csd popover.touch-selection menuitem arrow:dir(ltr), popover.background.touch-selection menuitem arrow:dir(ltr), .csd popover.background.touch-selection menuitem arrow:dir(ltr),
 menu menuitem arrow:dir(ltr),
 .menu menuitem arrow:dir(ltr) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
   margin-right: 0;
 }
 
+.context-menu menuitem arrow:dir(rtl), popover.touch-selection menuitem arrow:dir(rtl), .csd popover.touch-selection menuitem arrow:dir(rtl), popover.background.touch-selection menuitem arrow:dir(rtl), .csd popover.background.touch-selection menuitem arrow:dir(rtl),
 menu menuitem arrow:dir(rtl),
 .menu menuitem arrow:dir(rtl) {
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
@@ -2523,6 +2541,7 @@ menuitem check:dir(rtl), menuitem radio:dir(rtl) {
   margin-right: 2px;
 }
 
+.context-menu > arrow, popover.touch-selection > arrow, .csd popover.touch-selection > arrow, popover.background.touch-selection > arrow, .csd popover.background.touch-selection > arrow,
 menu > arrow,
 .menu > arrow {
   min-width: 16px;
@@ -2535,6 +2554,7 @@ menu > arrow,
   color: #dedede;
 }
 
+.context-menu > arrow.top, popover.touch-selection > arrow.top, .csd popover.touch-selection > arrow.top,
 menu > arrow.top,
 .menu > arrow.top {
   margin: -8px 0 0 0;
@@ -2543,6 +2563,7 @@ menu > arrow.top,
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
+.context-menu > arrow.bottom, popover.touch-selection > arrow.bottom, .csd popover.touch-selection > arrow.bottom,
 menu > arrow.bottom,
 .menu > arrow.bottom {
   margin: 0 0 -18px 0;
@@ -2551,11 +2572,13 @@ menu > arrow.bottom,
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
+.context-menu > arrow:hover, popover.touch-selection > arrow:hover, .csd popover.touch-selection > arrow:hover,
 menu > arrow:hover,
 .menu > arrow:hover {
   background-color: rgba(222, 222, 222, 0.08);
 }
 
+.context-menu > arrow:disabled, popover.touch-selection > arrow:disabled, .csd popover.touch-selection > arrow:disabled,
 menu > arrow:disabled,
 .menu > arrow:disabled {
   color: transparent;
@@ -7519,7 +7542,7 @@ filechooser paned > separator:dir(rtl),
 }
 
 filechooser placessidebar.sidebar.frame {
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid #4d4d4d;
 }
 
 
@@ -7542,7 +7565,7 @@ filechooser placessidebar,
 
 filechooser placessidebar.sidebar,
 .nautilus-window placessidebar.sidebar {
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid #4d4d4d;
   background-color: transparent;
 }
 
