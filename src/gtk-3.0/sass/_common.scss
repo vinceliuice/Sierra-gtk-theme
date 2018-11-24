@@ -4,7 +4,7 @@
 
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
 $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
-$alt_suffix: if($titlebutton=='alt', '-alt', ''); // use thin assets in thin titlebutton version
+$alt_suffix: if($titlebutton=='alt', '-alt', '');
 $bt_radius: 5px;
 $wm_radius: 6px;
 
@@ -14,7 +14,6 @@ $wm_radius: 6px;
   -GtkTextView-error-underline-color: $error_color;
 
   -GtkScrolledWindow-scrollbar-spacing: 0;
-
   -GtkToolItemGroup-expander-size: 11;
 
   -GtkWidget-text-handle-width: 20;
@@ -30,7 +29,6 @@ $wm_radius: 6px;
   outline-width: 1px;
   -gtk-outline-radius: $bt_radius;
 }
-
 
 //
 // Base States
@@ -104,7 +102,11 @@ textview {
   border { background-color: mix($bg_color, $base_color, 50%); }
 }
 
-iconview { @extend %view; border-radius: $bt_radius; }
+iconview {
+  @extend %view;
+
+  &:hover, &:selected { border-radius: $bt_radius; }
+}
 
 rubberband,
 .rubberband {
@@ -167,10 +169,6 @@ assistant {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
   }
-}
-
-textview { // This will get overridden by .view, needed by gedit line numbers
-  background-color: $base_color;
 }
 
 %osd, .osd {
@@ -489,6 +487,10 @@ button {
     }
 
     &.popup { padding-right: 8px; padding-left: 8px; }
+  }
+
+  &.close { // The Bloody Circul Button
+    @extend button.circular;
   }
 
   &:drop(active) {
@@ -908,7 +910,6 @@ spinbutton {
 
   &:not(.vertical) {
     entry { min-width: 28px; }
-
     button, entry { @extend %linked; }
 
     &:dir(ltr) entry,
@@ -927,7 +928,6 @@ spinbutton {
     > entry + button:not(:active):hover { box-shadow: none; }
 
     > entry:focus + button { border-left-color: $entry_highlight; }
-
     > entry:drop(active) + button { border-left-color: $drop_target_color; }
 
     .osd & {
@@ -941,6 +941,7 @@ spinbutton {
       > entry:focus + button { border-left-color: $entry_highlight; }
     }
   }
+
   &.vertical {
     button, entry {
       padding-left: 4px;
@@ -953,7 +954,6 @@ spinbutton {
     button.up { border-radius: $bt_radius $bt_radius 0 0; }
 
     > entry:focus + button { border-top-color: $entry_highlight; }
-
     > entry:drop(active) + button { border-top-color: $drop_target_color; }
   }
 }
@@ -991,7 +991,7 @@ combobox {
     // the combobox is a composite widget so the way we do button linking doesn't
     // work, special case needed.
 
-  arrow { border-radius: 0; }
+    arrow { border-radius: 0; }
 
     &:dir(ltr),
     &:dir(rtl) { @extend %linked_middle; } // specificity bump
@@ -1014,8 +1014,9 @@ toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
   background-color: $header_bg;
-  border-bottom: 1px solid $borders_color;
 //  border-radius: $wm_radius;
+
+  &.horizontal { border-bottom: 1px solid $borders_color; }
 
   separator { background: none; }
   &.horizontal separator { margin: 0 6px; }
@@ -1074,15 +1075,17 @@ toolbar {
   border-color: $borders_color;
   border-width: 0 1px 1px;
   padding: 3px;
-  border-radius: 0 0 $bt_radius $bt_radius;
+
+  .background.csd & {
+    border-radius: 0 0 $bt_radius $bt_radius;
+  }
 }
 
 searchbar {
   background-color: $bg_color;
-  border-style: solid;
-  border-color: $bar_border;
-  border-width: 0 0 1px;
-  padding: 3px;
+  border: none;
+  box-shadow: inset 0 -1 $borders_color;
+  padding: 3px 3px 4px 3px;
 
   // Close button on searchbar
   button.flat {
@@ -1098,7 +1101,10 @@ actionbar {
   padding: 6px;
   border-top: 1px solid $borders_color;
   background-color: darken($bg_color, 3%);
-  border-radius: 0 0 $wm_radius $wm_radius;
+
+  .background.csd & {
+    border-radius: 0 0 $wm_radius $wm_radius;
+  }
 }
 
 //
@@ -1227,9 +1233,9 @@ headerbar,
   .csd &.default-decoration,             // needed under wayland, since all gtk3 windows are csd windows
   &.default-decoration:backdrop,
   .csd &.default-decoration:backdrop {
-      box-shadow: none;
-      border: none;
-    }
+//    box-shadow: none;
+    border: none;
+  }
 
   separator.titlebutton { @extend %header_separator; }
 }
@@ -1248,8 +1254,7 @@ headerbar {
   }
 
   entry {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 6px 3px;
   }
 
   // Fixes split headerbars
@@ -1323,6 +1328,7 @@ headerbar {
 
       image { color: $selected_bg_color; }
     }
+
     &:disabled { @include entry(header-insensitive); }
 
     selection:focus {
@@ -1347,6 +1353,7 @@ headerbar {
           color: $e_fg_color;
           background-color: $e_color;
         }
+
         selection, selection:focus {
           background-color: $e_fg_color;
           color: $e_color;
@@ -1480,9 +1487,9 @@ headerbar {
     > button:checked + entry { border-left-color: $borders_color; }
 
     > entry:focus:not(:only-child) {
-        + entry,
-        + button,
-        + combobox > box > button.combo { border-left-color: $borders_color; }
+      + entry,
+      + button,
+      + combobox > box > button.combo { border-left-color: $borders_color; }
     }
   }
 
@@ -1749,7 +1756,7 @@ treeview.view {
 
   &.separator {
     min-height: 2px;
-    color: transparentize(black, 0.9);
+    color: $borders_color;
   }
 
   &:drop(active) {
@@ -2097,7 +2104,7 @@ notebook {
 //  margin-top: -1px;
 
   &.frame {
-    border: 1px solid $borders_color;
+    border: 1px solid $solid_borders_color;
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
@@ -2111,7 +2118,7 @@ notebook {
     // Set box-shadow to make the header frame color more easy to see
     // Set margin to hide the ugly borders around the header
     &.top {
-      box-shadow: inset 0 1px $borders_color, inset 0 -1px $borders_color;
+      box-shadow: inset 0 1px $solid_borders_color, inset 0 -1px $borders_color;
       @if $variant=='light' {
           box-shadow: inset 0 1px $borders_color,
                       inset 0 -1px $borders_color,
@@ -2121,7 +2128,7 @@ notebook {
       margin-top: -1px; }
 
     &.bottom {
-      box-shadow: inset 0 1px $borders_color, inset 0 -1px $borders_color;
+      box-shadow: inset 0 1px $borders_color, inset 0 -1px $solid_borders_color;
       @if $variant=='light' {
           box-shadow: inset 0 1px $borders_color,
                       inset 0 -1px $borders_color,
@@ -2131,7 +2138,7 @@ notebook {
       margin-bottom: -1px; }
 
     &.right {
-      box-shadow: inset 1px 0 $borders_color, inset -1px 0 $borders_color;
+      box-shadow: inset 1px 0 $borders_color, inset -1px 0 $solid_borders_color;
       @if $variant=='light' {
           box-shadow: inset 1px 0 $borders_color,
                       inset -1px 0 $borders_color,
@@ -2141,7 +2148,7 @@ notebook {
       margin-right: -1px; }
 
     &.left {
-      box-shadow: inset 1px 0 $borders_color, inset -1px 0 $borders_color;
+      box-shadow: inset 1px 0 $solid_borders_color, inset -1px 0 $borders_color;
       @if $variant=='light' {
           box-shadow: inset 1px 0 $borders_color,
                       inset -1px 0 $borders_color,
@@ -2208,6 +2215,26 @@ notebook {
       &:hover { color: mix($fg_color, $insensitive_fg_color, 50%); }
       &:active { color: $fg_color; }
       &:disabled { color: transparentize($insensitive_fg_color,0.3); }
+    }
+
+    &.top,
+    &.bottom {
+      tabs > tab {
+        &:not(:only-child) {
+          &:first-child { border-left: none; }
+          // &:last-child { border-right: none; }
+        }
+      }
+    }
+
+    &.left,
+    &.right {
+      tabs > tab {
+        &:not(:only-child) {
+          &:first-child { border-top: none; }
+          // &:last-child { border-bottom: none; }
+        }
+      }
     }
 
     > tabs > tab {

@@ -63,60 +63,60 @@ terminal-window,
 }
 
 .nautilus-canvas-item {
-    border-radius: 2px;
+  border-radius: 2px;
 }
 
 .nautilus-desktop.nautilus-canvas-item {
-    color: white;
-    text-shadow: 1px 1px transparentize(black, 0.4);
+  color: white;
+  text-shadow: 1px 1px transparentize(black, 0.4);
 
-    &:active {
-        color: $fg_color;
-    }
+  &:active {
+    color: $fg_color;
+  }
 
-    &:selected {
-        color: $selected_fg_color;
-        text-shadow: none;
-    }
+  &:selected {
+    color: $selected_fg_color;
+    text-shadow: none;
+  }
 }
 
 .nautilus-canvas-item.dim-label,
 .nautilus-list-dim-label {
-    color: mix($fg_color, $bg_color, 50%);
+  color: mix($fg_color, $bg_color, 50%);
 
-    &:selected,
-    &:selected:focus {
-        color: mix($selected_fg_color, $selected_bg_color, 80%);
-    }
+  &:selected,
+  &:selected:focus {
+    color: mix($selected_fg_color, $selected_bg_color, 80%);
+  }
 }
 
 .nautilus-window {
-    // Workaround for https://bugzilla.gnome.org/show_bug.cgi?id=724096
-    searchbar {
-        border-top: 1px solid $borders_color;
-    }
-    .searchbar-container {
-        margin-top: -1px;
-    }
+  // Workaround for https://bugzilla.gnome.org/show_bug.cgi?id=724096
+  searchbar {
+    border-top: 1px solid $borders_color;
+  }
+  .searchbar-container {
+    margin-top: -1px;
+  }
 }
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack {
-    border-radius: 0 0 $wm_radius $wm_radius;
+  border-radius: 0 0 $wm_radius $wm_radius;
 }
 
 .nautilus-window.maximized notebook,
 .nautilus-window.maximized notebook > stack {
-    border-radius: 0 0 0 0;
+  border-radius: 0 0 0 0;
 }
 
 .nautilus-window notebook,
 .nautilus-window notebook > stack:not(:only-child) searchbar {
-    background-color: $base_color;
+  background-color: $base_color;
 }
 
 button.nautilus-circular-button.image-button {
-    @extend button.circular;
+  @extend button.circular;
 }
 
 $disk_space_unknown: transparentize($fg_color, 0.5);
@@ -124,83 +124,83 @@ $disk_space_used: transparentize($selected_bg_color, 0.2);
 $disk_space_free: darken($bg_color, 3%);
 
 .disk-space-display {
-    border-style: solid;
-    border-width: 1px;
+  border-style: solid;
+  border-width: 1px;
 
-    &.unknown {
-        background-color: $disk_space_unknown;
-        border-color: darken($disk_space_unknown, 10%);
-    }
-    &.used {
-        background-color: $disk_space_used;
-        border-color: darken($disk_space_used, 10%);
-    }
-    &.free {
-        background-color: $disk_space_free;
-        border-color: darken($disk_space_free, 10%);
-    }
+  &.unknown {
+    background-color: $disk_space_unknown;
+    border-color: darken($disk_space_unknown, 10%);
+  }
+  &.used {
+    background-color: $disk_space_used;
+    border-color: darken($disk_space_used, 10%);
+  }
+  &.free {
+    background-color: $disk_space_free;
+    border-color: darken($disk_space_free, 10%);
+  }
 }
 
 @keyframes needs_attention_keyframes {
-    0% {
-        @include button(header-hover);
-    }
-    100% {
-        @include button(header-active)
-    }
+  0% {
+    @include button(header-hover);
+  }
+  100% {
+    @include button(header-active)
+  }
 }
 
 .nautilus-operations-button-needs-attention {
-    animation: needs_attention_keyframes 2s ease-in-out;
+  animation: needs_attention_keyframes 2s ease-in-out;
 }
 
 .nautilus-operations-button-needs-attention-multiple {
-    animation: needs_attention_keyframes 3s ease-in-out;
-    animation-iteration-count: 3;
+  animation: needs_attention_keyframes 3s ease-in-out;
+  animation-iteration-count: 3;
 }
 
 // Batch renaming dialog
 .conflict-row.activatable {
-    &,
-    &:active {
-        color: $error_fg_color;
-        background-color: $error_color;
-    }
+  &,
+  &:active {
+    color: $error_fg_color;
+    background-color: $error_color;
+  }
 
-    &:hover {
-        background-color: lighten($error_color, 10%);
-    }
+  &:hover {
+    background-color: lighten($error_color, 10%);
+  }
 
-    &:selected {
-        color: $selected_fg_color;
-        background-color: $selected_bg_color;
-    }
+  &:selected {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+  }
 }
 
 // Floating Bar
 .nautilus-window .floating-bar {
-    padding: 1px;
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-    border-radius: 3px 0 $wm_radius - 2px 0;
+  padding: 1px;
+  background-color: $selected_bg_color;
+  color: $selected_fg_color;
+  border-radius: 3px 0 $wm_radius - 2px 0;
 
-    &.bottom.left {
-        border-top-left-radius: 0;
-    }
-    &.bottom.right {
-        border-top-right-radius: 0;
-    }
+  &.bottom.left {
+    border-top-left-radius: 0;
+  }
+  &.bottom.right {
+    border-top-right-radius: 0;
+  }
 
-    button {
-        border: none;
-        border-radius: 100px;
-        min-height: 0;
-        min-width: 0;
-        padding: 0;
-        margin-right: 6px;
-        -gtk-icon-shadow: none;
-        @extend %selected-button;
-    }
+  button {
+    border: none;
+    border-radius: 100px;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    margin-right: 6px;
+    -gtk-icon-shadow: none;
+    @extend %selected-button;
+  }
 }
 
 // Reset maximized nautilus-window floating-bar border-radius
@@ -210,56 +210,56 @@ $disk_space_free: darken($bg_color, 3%);
 // Nemo
 //
 .nemo-desktop.nemo-canvas-item {
-    @extend .nautilus-desktop.nautilus-canvas-item;
+  @extend .nautilus-desktop.nautilus-canvas-item;
 }
 
 .nemo-window {
 
-    .nemo-places-sidebar.frame {
-        border-width: 0;
+  .nemo-places-sidebar.frame {
+    border-width: 0;
+  }
+  notebook {
+    background-color: $base_color;
+  } // Rename entry
+  .nemo-window-pane widget.entry {
+    border: 1px solid;
+    border-radius: 3px;
+
+    @include entry(focus);
+
+    &:selected {
+      &:focus,
+      & {
+        @extend %selected_items;
+      }
     }
-    notebook {
-        background-color: $base_color;
-    } // Rename entry
-    .nemo-window-pane widget.entry {
-        border: 1px solid;
-        border-radius: 3px;
+  }
 
-        @include entry(focus);
+  .primary-toolbar {
+    @extend %header_widgets;
+    border: none;
+    color: $header_fg;
+    background-color: opacify($header_bg, 1);
+    box-shadow: inset 0 -1px $borders_color;
+  } // Pathbar
 
-        &:selected {
-            &:focus,
-            & {
-                @extend %selected_items;
-            }
-        }
+  .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) {
+
+    > button {
+      @include button(header-normal);
+      &:hover { @include button(header-hover); }
+      &:active { @include button(header-active); }
+      &:checked { @include button(header-checked); }
+      &:disabled { color: transparentize($header_fg, 0.4); }
+      &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
+      &, &:hover, &:active, &:checked, &:disabled {
+        @extend %linked;
+        @if $compact == 'true' { border-right: 1px solid $header_button_border; }
+      }
     }
 
-    .primary-toolbar {
-        @extend %header_widgets;
-        border: none;
-        color: $header_fg;
-        background-color: opacify($header_bg, 1);
-        box-shadow: inset 0 -1px $borders_color;
-    } // Pathbar
-
-    .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) {
-
-        > button {
-          @include button(header-normal);
-          &:hover { @include button(header-hover); }
-          &:active { @include button(header-active); }
-          &:checked { @include button(header-checked); }
-          &:disabled { color: transparentize($header_fg, 0.4); }
-          &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
-          &, &:hover, &:active, &:checked, &:disabled {
-            @extend %linked;
-            @if $compact == 'true' { border-right: 1px solid $header_button_border; }
-          }
-        }
-
-        // @include pathbar_linking_rules($sep_color:$header_button_border);
-    }
+  // @include pathbar_linking_rules($sep_color:$header_button_border);
+  }
 }
 
 
@@ -267,129 +267,129 @@ $disk_space_free: darken($bg_color, 3%);
 // Caja
 //
 .caja-desktop {
-    @extend .nautilus-desktop.nautilus-canvas-item;
+  @extend .nautilus-desktop.nautilus-canvas-item;
 }
 
 .caja-notebook {
-    border-top: 1px solid $borders_color;
+  border-top: 1px solid $borders_color;
 }
 
 .caja-side-pane .frame {
-    border-width: 1px 0 0;
+  border-width: 1px 0 0;
 }
 
 .caja-notebook .frame {
-    border-width: 0 0 1px;
+  border-width: 0 0 1px;
 }
 
 //
 // Gedit
 //
 .open-document-selector-treeview.view {
-    padding: 3px 6px 3px 6px;
-    border-color: $base_color; // disable borders, making them transparent doesn't work for some reason
-    &:hover {
-        background-color: mix($fg_color, $base_color, 7%);
+  padding: 3px 6px 3px 6px;
+  border-color: $base_color; // disable borders, making them transparent doesn't work for some reason
+  &:hover {
+    background-color: mix($fg_color, $base_color, 7%);
 
-        &:selected {
-            color: $selected_fg_color;
-            background-color: $selected_bg_color;
-        }
+    &:selected {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
     }
+  }
 }
 
 .open-document-selector-name-label {
-    color: $fg_color;
+  color: $fg_color;
 }
 
 .open-document-selector-path-label {
-    color: mix($fg_color, $base_color, 50%);
-    font-size: smaller;
+  color: mix($fg_color, $base_color, 50%);
+  font-size: smaller;
 
-    &:selected {
-        color: transparentize($selected_fg_color, 0.1);
-    }
+  &:selected {
+    color: transparentize($selected_fg_color, 0.1);
+  }
 }
 
 .gedit-document-panel { // 'documents' pane
 
-    row.activatable { padding: 6px 0; }
+  row.activatable { padding: 6px 0; }
 
-    row button { // 'close' button
-        min-width: 22px;
-        min-height: 22px;
-        padding: 0;
-        margin: 0 6px;
-        border-radius: 100px;
-        -gtk-outline-radius: 100px;
+  row button { // 'close' button
+    min-width: 22px;
+    min-height: 22px;
+    padding: 0;
+    margin: 0 6px;
+    border-radius: 100px;
+    -gtk-outline-radius: 100px;
 
-        image {
-            color: inherit;
-        }
+    image {
+      color: inherit;
     }
+  }
 
-    row:hover:not(:selected) button {
-        color: mix($bg_color, $fg_color, 35%);
+  row:hover:not(:selected) button {
+    color: mix($bg_color, $fg_color, 35%);
 
-        &:hover {
-            color: lighten(red, 15%);
-        }
-        &:active {
-            color: $fg_color;
-        }
+    &:hover {
+      color: lighten(red, 15%);
     }
-
-    row:hover:selected button:hover {
-        color: lighten(red, 20%);
-
-        &:active {
-            color: $selected_fg_color;
-        }
+    &:active {
+      color: $fg_color;
     }
+  }
+
+  row:hover:selected button:hover {
+    color: lighten(red, 20%);
+
+    &:active {
+      color: $selected_fg_color;
+    }
+  }
 }
 
 .gedit-document-panel-dragged-row {
-    border: 1px solid $borders_color;
-    background-color: darken($bg_color, 10%);
-    color: $fg_color;
+  border: 1px solid $borders_color;
+  background-color: darken($bg_color, 10%);
+  color: $fg_color;
 }
 
 .gedit-side-panel-paned statusbar {
-    border-top: 1px solid $borders_color;
-    background-color: $bg_color;
-    border-radius: 0 0 $wm_radius $wm_radius;
+  border-top: 1px solid $borders_color;
+  background-color: $bg_color;
+  border-radius: 0 0 $wm_radius $wm_radius;
 }
 
 .gedit-search-slider {
-    background-color: lighten($bg_color, 2%);
-    padding: 6px;
-    border-color: $borders_color;
-    border-radius: 0 0 $bt_radius $bt_radius;
-    border-width: 0 1px 1px 1px;
-    border-style: solid;
+  background-color: lighten($bg_color, 2%);
+  padding: 6px;
+  border-color: $borders_color;
+  border-radius: 0 0 $bt_radius $bt_radius;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
 }
 
 .gedit-search-entry-occurrences-tag {
-    color: transparentize($fg_color, 0.4);
-    border: none;
-    margin: 2px;
-    padding: 2px;
+  color: transparentize($fg_color, 0.4);
+  border: none;
+  margin: 2px;
+  padding: 2px;
 }
 
 .gedit-map-frame {
-    border {
-        @if $variant=='light' {
-            border-color: transparentize(black, 0.7);
-        }
-        border-width: 0;
-
-        &:dir(ltr) {
-            border-left-width: 1px;
-        }
-        &:dir(rtl) {
-            border-right-width: 1px;
-        }
+  border {
+    @if $variant=='light' {
+        border-color: transparentize(black, 0.7);
     }
+    border-width: 0;
+
+    &:dir(ltr) {
+      border-left-width: 1px;
+    }
+    &:dir(rtl) {
+      border-right-width: 1px;
+    }
+  }
 }
 
 .gedit-side-panel-paned.horizontal {
@@ -804,6 +804,9 @@ dialog.csd > headerbar.titlebar { > switch { margin: 8px 0; } }
 //
 //  Gnome Control Center
 //
+window.background.csd > stack {
+  border-radius: 0 0 $wm_radius $wm_radius;
+}
 
 stack.background { background: none; }
 
@@ -815,9 +818,21 @@ stack > box.vertical > widget > overlay grid.horizontal > stack {
 // > 3.25.90
 scrolledwindow.view {
   border-radius: 0 0 0 $wm_radius;
-  > viewport.frame > stack > list { // left-pane
+  background: none;
+
+  > viewport.frame > stack {
+    background-color: $base_color;
     border-radius: 0 0 0 $wm_radius;
-    // > row.activatable { }
+
+    list { // left-pane
+      border-radius: 0 0 0 $wm_radius;
+      background: none;
+
+      row.activatable:not(:hover):not(:selected) {
+        background: none;
+        border-radius: 0 0 0 $wm_radius;
+      }
+    }
   }
 }
 
@@ -849,6 +864,25 @@ window#gnome-system-monitor.background.csd {
         @extend %view;
       }
     }
+  }
+}
+
+//
+// gnome-sound-recorder
+//
+stack {
+  > grid.vertical {
+    > scrolledwindow.frame {
+      border: none;
+
+      > viewport.frame {
+        list {
+          border-radius: 0 0 $wm_radius $wm_radius;
+        }
+      }
+    }
+
+    scrolledwindow.frame.emptyGrid { border: none; } // Removed ugly borders
   }
 }
 
@@ -1172,6 +1206,24 @@ flowboxchild.bookmark-tag-widget {
 }
 
 //
+// documents-scrolledwi (Totem, Documents, EvView)
+//
+.documents-scrolledwin {
+  background-color: transparent;
+
+  .content-view {
+    border-radius: 0 0 $wm_radius $wm_radius;
+  }
+
+  viewport.frame { // Documents
+    background-color: transparent;
+    widget > frame.content-view {
+      border-radius: 0 0 $wm_radius $wm_radius;
+    }
+  }
+}
+
+//
 // Dialogs
 //
 dialog.background.csd {
@@ -1191,6 +1243,18 @@ dialog.background.csd {
       stack {
         scrolledwindow.frame { // reset border for totem setting dialog
           border: 1px solid $borders_color;
+        }
+      }
+    }
+
+    > stack {
+      > scrolledwindow {
+        border-radius: 0 0 $wm_radius $wm_radius;
+        background-color: $base_color;
+
+        iconview.view:not(:hover):not(:selected):not(:active) { // Wallpaper setting window
+          // @extend %view;
+          background-color: transparent;
         }
       }
     }
@@ -1479,6 +1543,28 @@ window.thunar {
   }
 }
 
+window#GearyMainWindow.background.csd {
+  box.vertical > paned.horizontal > box.sidebar.vertical {
+    border-bottom-left-radius: $wm_radius;
+
+    statusbar {
+      border-bottom-left-radius: $wm_radius;
+    }
+  }
+
+  stack#conversation_viewer {
+    border-bottom-right-radius: $wm_radius;
+
+    scrolledwindow.geary-conversation-scroller {
+      viewport.frame {
+        list.conversation-listbox {
+          border-bottom-right-radius: $wm_radius;
+        }
+      }
+    }
+  }
+}
+
 //
 // * Firefox and Thunderbird *
 //
@@ -1583,10 +1669,11 @@ window.background:not(.csd) {
   .background,
   frame,
   separator,
-  scrolledwindow { background-color: $bg_color; }
+  scrolledwindow { background-color: $base_color; }
 
   scrollbar {
     background-color: transparent;
+
     slider {
       background-color: mix($fg_color, $bg_color, 45%);
       &:hover { background-color: mix($fg_color, $bg_color, 60%); }
@@ -1603,7 +1690,7 @@ window.background:not(.csd) {
   }
 
   > window.background > menu { // context-menus
-    background-color: if($variant == 'light', $base_color, lighten($bg_color, 5%));
+    background-color: if($variant == 'light', $base_color, $bg_color);
     border-radius: 0;
     border-color: $borders_color;
 
@@ -1619,7 +1706,7 @@ window.background:not(.csd) {
     // FIXME: this affected to popover widget as well,
     // so we can not set $lighter_bg_color to search-bar...
     > scrolledwindow > textview {
-      background-color: if($variant == 'light', $base_color, lighten($bg_color, 5%));
+      background-color: if($variant == 'light', $base_color, $bg_color);
 
       text {
         background-color: transparent;
@@ -1685,34 +1772,33 @@ window.background.chromium {
 /****************
  * Libre-Office *
  ****************/
+window.background:not(.solid-csd) {
+  // reserved area at the most-right side of GtkMenuBar
+  > grid.horizontal > grid.horizontal {
+    background-image: linear-gradient(0deg, $header_bottom 0%, $header_middle 100%);
+    background-color: transparent;
+    box-shadow: inset 0 -1px $borders_color;
 
-window.background:not(.csd):not(.solid-csd) {
-    // reserved area at the most-right side of GtkMenuBar
-    > grid.horizontal > grid.horizontal {
-        background-image: if($darker=='false' and $variant=='light', linear-gradient(180deg, #E2E2E2 0%, #d2d2d2 100%), none);
-        background-color: transparent;
-        box-shadow: inset 0 -1px $borders_color;
-
-        > button.flat.small-button {
-            // 'close' button
-            color: $header_fg;
-            border: none;
-            border-radius: 50px;
-            background-image: none;
-            &:hover {
-                background-color: lighten($header_bg, 15%);
-                color: lighten($header_fg, 5%);
-            }
-            &:active,
-            &:checked {
-                background-color: rgba(red, 0.65);
-                color: white;
-            }
-            &:disabled {
-                color: rgba($header_fg, 0.6);
-            }
-        }
+    > button.flat.small-button {
+      // 'close' button
+      color: $header_fg;
+      border: none;
+      border-radius: 50px;
+      background-image: none;
+      &:hover {
+        background-color: lighten($header_bg, 15%);
+        color: lighten($header_fg, 5%);
+      }
+      &:active,
+      &:checked {
+        background-color: rgba(red, 0.65);
+        color: white;
+      }
+      &:disabled {
+        color: rgba($header_fg, 0.6);
+      }
     }
+  }
 }
 
 window.background:not(.solid-csd) {
@@ -1728,10 +1814,65 @@ window.background:not(.solid-csd) {
   }
 }
 
+//
+// Pamac
+//
+window.background.csd {
+  > box.vertical > separator.horizontal { min-height: 0; background: none; }
+
+  > box.vertical > stack {
+    > box.horizontal {
+      > box.vertical > stack {
+        background-color: $base_color;
+        border-radius: 0 0 $wm_radius 0;
+
+        > scrolledwindow.frame {
+          border: none;
+          background: none;
+
+          treeview.view:not(:hover):not(:selected) {
+            background: none;
+            border-radius: 0 0 $wm_radius 0;
+          }
+        }
+      }
+
+      > revealer > stack {
+        > scrolledwindow {
+          > viewport.frame {
+            list {
+              background-color: transparent;
+              border-right: 1px solid $borders_color;
+              border-bottom-left-radius: $wm_radius;
+            }
+          }
+        }
+      }
+    }
+
+    > box.horizontal > revealer > stack {
+      > scrolledwindow {
+        > viewport.frame {
+          list {
+            background-color: transparent;
+            border-right: 1px solid $borders_color;
+            border-bottom-left-radius: $wm_radius;
+
+            row.activatable:not(:hover):not(:selected) {
+              background-color: transparent;
+              background-image: none;
+              border-bottom-left-radius: $wm_radius;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // /************
 //  * Synaptic *
 //  ************/
-
 window > box.vertical > box.horizontal {
   > toolbar {
     background-color: transparent;
@@ -1758,7 +1899,6 @@ window > box.vertical > box.horizontal {
 //
 // Wingpanel
 //
-
 .panel {
   background-color: rgba(black, 0.0);
   transition: all 100ms ease-in-out;
