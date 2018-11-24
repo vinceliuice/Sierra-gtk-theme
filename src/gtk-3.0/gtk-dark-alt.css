@@ -5882,24 +5882,21 @@ stack.background {
   background: none;
 }
 
-scrolledwindow.view {
-  border-radius: 0 0 0 6px;
-  background: none;
-}
-
-scrolledwindow.view > viewport.frame > stack {
+.background.csd scrolledwindow.view {
   background-color: #242424;
-  border-radius: 0 0 0 6px;
+  border-bottom-left-radius: 7px;
 }
 
-scrolledwindow.view > viewport.frame > stack list {
-  border-radius: 0 0 0 6px;
-  background: none;
+.background.csd scrolledwindow.view > viewport.frame > stack {
+  background-color: transparent;
 }
 
-scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:selected), scrolledwindow.view > viewport.frame > stack list .budgie-menu button:not(:hover):not(:selected), .budgie-menu scrolledwindow.view > viewport.frame > stack list button:not(:hover):not(:selected) {
-  background: none;
-  border-radius: 0 0 0 6px;
+.background.csd scrolledwindow.view > viewport.frame > stack > list {
+  background-color: transparent;
+}
+
+.background.csd scrolledwindow.view > viewport.frame > stack > list > row.activatable:not(:hover):not(:active):not(:selected), .background.csd .budgie-menu scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected), .budgie-menu .background.csd scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected) {
+  background-color: transparent;
 }
 
 box.horizontal.titlebar > headerbar > stack > box.vertical > .title {

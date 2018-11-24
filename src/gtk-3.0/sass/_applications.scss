@@ -827,21 +827,18 @@ stack > box.vertical > widget > overlay grid.horizontal > stack {
 }
 
 // > 3.25.90
-scrolledwindow.view {
-  border-radius: 0 0 0 $wm_radius;
-  background: none;
+.background.csd scrolledwindow.view {
+  background-color: $base_color;
+  border-bottom-left-radius: $wm_radius + 1px;
 
   > viewport.frame > stack {
-    background-color: $base_color;
-    border-radius: 0 0 0 $wm_radius;
+    background-color: transparent;
 
-    list { // left-pane
-      border-radius: 0 0 0 $wm_radius;
-      background: none;
+    > list { // left-pane
+      background-color: transparent;
 
-      row.activatable:not(:hover):not(:selected) {
-        background: none;
-        border-radius: 0 0 0 $wm_radius;
+      > row.activatable:not(:hover):not(:active):not(:selected) {
+        background-color: transparent;
       }
     }
   }
