@@ -5541,6 +5541,10 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   box-shadow: 0px 1px 2px 0px rgba(16, 16, 16, 0.15), 0px 2px 3px 0px rgba(16, 16, 16, 0.1);
 }
 
+.gedit-side-panel-paned.horizontal stack scrolledwindow viewport.frame list.gedit-document-panel {
+  background: none;
+}
+
 paned.titlebar.horizontal headerbar button.flat.toggle.popup:not(.image-button) box > .title, paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:not(.image-button) box > .title {
   padding: 0;
   margin: -2px 0;
@@ -6904,6 +6908,12 @@ window.background.csd > box.vertical > separator.horizontal {
   background: none;
 }
 
+window.background.csd > box.vertical > stack > box.horizontal > list {
+  background-color: transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom-left-radius: 6px;
+}
+
 window.background.csd > box.vertical > stack > box.horizontal > box.vertical > stack {
   background-color: #242424;
   border-radius: 0 0 6px 0;
@@ -6917,6 +6927,12 @@ window.background.csd > box.vertical > stack > box.horizontal > box.vertical > s
 window.background.csd > box.vertical > stack > box.horizontal > box.vertical > stack > scrolledwindow.frame treeview.view:not(:hover):not(:selected) {
   background: none;
   border-radius: 0 0 6px 0;
+}
+
+window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > list {
+  background-color: transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom-left-radius: 6px;
 }
 
 window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list {
