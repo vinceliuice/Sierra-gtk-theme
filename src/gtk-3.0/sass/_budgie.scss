@@ -395,6 +395,12 @@ popover.background.places-menu {
     background-image: if($darker=='false' and $variant=='light', linear-gradient(0deg, $header_middle 0%, $header_highlight 100%), none);
   }
 
+  .bottom & {
+    &, &.transparent {
+      border-radius: $wm_radius $wm_radius 0 0;
+    }
+  }
+
   button {
     min-height: 16px;
     min-width: 16px;
@@ -443,13 +449,8 @@ popover.background.places-menu {
       border: none;
       background-image: none;
 
-      menu {
-        border-radius: 0 0 $wm_radius $wm_radius;
-
-        menu { //submenu
-          border-radius: $wm_radius;
-        }
-      }
+      > window.background.popup > decoration,
+      > window.background.popup > menu { border-radius: 0 0 $wm_radius $wm_radius; }
 
       &:hover {
         background-color: $selected_bg_color;
@@ -598,16 +599,16 @@ frame.raven-frame > border {
   box-shadow: none;
 }
 
-$pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
+$pos_list: ((top, bottom), (left, right), (right, left));
 
 @each $pos, $b_pos in $pos_list {
   // Panel borders
   // .#{$pos} .budgie-panel { border-#{$b_pos}: 1px solid $borders_color; }
 
   // Raven borders
-  .#{$pos} frame.raven-frame > border {
-    // border-#{$b_pos}: 1px solid $borders_color;
-  }
+  // .#{$pos} frame.raven-frame > border {
+  //   border-#{$b_pos}: 1px solid $borders_color;
+  // }
 
   // Shadows
    .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, rgba(black, 0.23), rgba(black, 0.08), transparent); }

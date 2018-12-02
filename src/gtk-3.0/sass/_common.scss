@@ -1887,13 +1887,8 @@ menubar,
     transition: background-color 100ms cubic-bezier(0.0, 0.0, 0.2, 1);
     padding: 4px 8px;
 
-    menu {
-      border-radius: 0 0 $wm_radius $wm_radius;
-
-      menu { //submenu
-        border-radius: $wm_radius;
-      }
-    }
+    > window.background.popup > decoration,
+    > window.background.popup > menu { border-radius: 0 0 $wm_radius $wm_radius; }
 
     &:hover { //Seems like it :hover even with keyboard focus
 //      @include button(active);
