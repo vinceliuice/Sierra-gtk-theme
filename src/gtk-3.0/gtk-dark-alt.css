@@ -2175,7 +2175,7 @@ headerbar scale trough, .nemo-window .primary-toolbar scale trough {
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .path-bar button {
