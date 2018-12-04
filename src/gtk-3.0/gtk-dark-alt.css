@@ -1611,6 +1611,23 @@ headerbar:last-child, headerbar:last-child:backdrop {
   border-radius: 0;
 }
 
+box.vertical > headerbar {
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+}
+
+box.vertical > headerbar, box.vertical > headerbar:backdrop {
+  background-image: none;
+}
+
+separator:first-child + box.vertical > headerbar, separator:first-child + box.vertical > headerbar:backdrop, box.vertical > headerbar:first-child, box.vertical > headerbar:first-child:backdrop {
+  border-top-left-radius: 0;
+}
+
+box.vertical > headerbar:last-child, box.vertical > headerbar:last-child:backdrop {
+  border-top-right-radius: 0;
+}
+
 window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop,
 window.csd > .titlebar:not(headerbar),
 window.csd > .titlebar:not(headerbar):backdrop {
