@@ -1278,6 +1278,31 @@ headerbar {
   }
 }
 
+box.vertical > headerbar { // reset headerbar style for not CSD window
+  &, &:backdrop {
+    background-image: if($darker=='false' and $variant=='light',
+                         linear-gradient(180deg, $header_middle 0%,
+                                                 $header_bottom 100%), none);
+  }
+
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+
+  // Fixes split headerbars
+  separator:first-child + &,
+  &:first-child {
+    &, &:backdrop {
+      border-top-left-radius: 0;
+    }
+  }
+
+  &:last-child {
+    &, &:backdrop {
+      border-top-right-radius: 0;
+    }
+  }
+}
+
 // Fixes split headerbars too
 .titlebar:not(headerbar) {
   window > &,
