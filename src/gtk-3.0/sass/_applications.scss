@@ -869,6 +869,14 @@ window#gnome-system-monitor.background.csd {
       treeview.view {
         background: none;
         @extend %view;
+
+        &.progressbar, &.progressbar:focus { // progress bar in treeviews
+          @extend treeview.view.progressbar;
+        }
+
+        &.trough { // progress bar trough in treeviews
+          @extend treeview.view.trough;
+        }
       }
     }
   }
@@ -1939,7 +1947,7 @@ window > box.vertical > box.horizontal {
     box-shadow: none;
   }
 
-  menubar &,
+  // menubar &,
   & menubar {
     box-shadow: none;
     border: none;
@@ -2018,13 +2026,15 @@ window > box.vertical > box.horizontal {
     transition: all 200ms ease-in-out;
     text-shadow: none;
     -gtk-icon-shadow: none;
+  }
 
-    &:hover {
-      background-color: $selected_bg_color;
-      color: $selected_fg_color
-    }
+  > revealer image,
+  > revealer spinner {
+    padding: 3px 0;
+  }
 
-    &:disabled { color: transparentize($panel_fg, 0.6); }
+  > revealer label {
+    padding: 3px 6px;
   }
 
   .keyboard {
