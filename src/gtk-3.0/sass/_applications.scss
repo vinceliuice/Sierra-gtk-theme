@@ -861,11 +861,11 @@ dialog.background.csd {
 //  Gnome system monitor
 //
 window#gnome-system-monitor.background.csd {
-  stack {
+  > box.vertical > stack {
     background-color: $base_color;
     border-radius: 0 0 $wm_radius $wm_radius;
 
-    scrolledwindow {
+    > box.vertical > scrolledwindow {
       treeview.view {
         background: none;
         @extend %view;

@@ -83,7 +83,7 @@
 textview text,
 iconview,
 filechooser stack.view scrolledwindow treeview.view,
-window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view,
+window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view,
 window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view {
   color: #dedede;
   background-color: #242424;
@@ -94,7 +94,7 @@ window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box
 textview text:hover,
 iconview:hover,
 filechooser stack.view scrolledwindow treeview.view:hover,
-window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:hover,
+window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:hover,
 window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:hover {
   background-color: #2c2c2c;
 }
@@ -103,7 +103,7 @@ window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box
 textview text:selected,
 iconview:selected,
 filechooser stack.view scrolledwindow treeview.view:selected,
-window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected,
+window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected,
 window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:selected {
   color: #ffffff;
   background-color: #498dff;
@@ -2316,26 +2316,26 @@ treeview.view.expander:checked {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
-treeview.view.progressbar, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.progressbar, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.progressbar:focus, treeview.view.progressbar:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.progressbar:focus {
+treeview.view.progressbar, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar:focus, treeview.view.progressbar:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar:focus {
   color: #ffffff;
   border-radius: 5px;
   background-color: #498dff;
 }
 
-treeview.view.progressbar:selected, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.progressbar:selected, treeview.view.progressbar:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.progressbar:selected:focus, treeview.view.progressbar:focus:selected, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.progressbar:focus:selected, treeview.view.progressbar:focus:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.progressbar:focus:selected:focus {
+treeview.view.progressbar:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar:selected, treeview.view.progressbar:selected:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar:selected:focus, treeview.view.progressbar:focus:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar:focus:selected, treeview.view.progressbar:focus:selected:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.progressbar:focus:selected:focus {
   color: #498dff;
   box-shadow: none;
   background-color: #ffffff;
 }
 
-treeview.view.trough, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.trough, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view.trough {
+treeview.view.trough, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.trough, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view.trough {
   color: #dedede;
   background-color: rgba(255, 255, 255, 0.12);
   border-radius: 5px;
   border-width: 0;
 }
 
-treeview.view.trough:selected, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.trough:selected, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view.trough:selected, treeview.view.trough:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view.trough:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view.trough:selected:focus {
+treeview.view.trough:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.trough:selected, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view.trough:selected, treeview.view.trough:selected:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view.trough:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view.trough:selected:focus {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -5123,19 +5123,19 @@ headerbar button.titlebutton.restore:active,
   background-image: -gtk-scaled(url("assets/titlebutton-restore-active.png"), url("assets/titlebutton-restore-active@2.png"));
 }
 
-.view:selected:focus, textview text:selected:focus, iconview:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
+.view:selected:focus, textview text:selected:focus, iconview:selected:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
 calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .budgie-menu button:checked {
   background-color: #498dff;
 }
 
-row:selected label, label:selected, .view:selected:focus, textview text:selected:focus, iconview:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
+row:selected label, label:selected, .view:selected:focus, textview text:selected:focus, iconview:selected:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:selected:focus, textview text selection:focus, textview text selection, flowbox flowboxchild:selected, entry selection:focus, entry selection, treeview.view:selected, treeview.view:selected:focus, row:selected,
 calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:selected:focus,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection, .budgie-menu button:checked {
   color: #ffffff;
 }
 
-row:selected label:disabled, label:disabled:selected, .view:disabled:selected:focus, textview text:disabled:selected:focus, iconview:disabled:selected:focus, window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view:disabled:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:disabled:selected:focus, textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected, row:disabled:selected,
+row:selected label:disabled, label:disabled:selected, .view:disabled:selected:focus, textview text:disabled:selected:focus, iconview:disabled:selected:focus, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:disabled:selected:focus, window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box.vertical treeview.view:disabled:selected:focus, textview text selection:disabled, flowbox flowboxchild:disabled:selected, label:disabled selection, entry selection:disabled, treeview.view:disabled:selected, row:disabled:selected,
 calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, #MozillaGtkWidget.background > widget > scrolledwindow > textview text:disabled:selected,
 #MozillaGtkWidget.background > widget > scrolledwindow > textview text selection:disabled, .budgie-menu button:disabled:checked {
   color: #a4c6ff;
@@ -5928,12 +5928,12 @@ dialog.background.csd > headerbar.titlebar > label:not(.title):not(.subtitle) {
   font-weight: 700;
 }
 
-window#gnome-system-monitor.background.csd stack {
+window#gnome-system-monitor.background.csd > box.vertical > stack {
   background-color: #242424;
   border-radius: 0 0 6px 6px;
 }
 
-window#gnome-system-monitor.background.csd stack scrolledwindow treeview.view {
+window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view {
   background: none;
 }
 
