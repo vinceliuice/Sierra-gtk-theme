@@ -864,7 +864,7 @@ button.font separator, button.file separator {
 }
 
 .linked:not(.vertical):not(.path-bar) > entry + entry {
-  border-left-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0);
 }
 
 .linked:not(.vertical):not(.path-bar) > entry.error + entry,
@@ -949,7 +949,7 @@ button.font separator, button.file separator {
 }
 
 .linked.vertical > entry + entry {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .linked.vertical > entry.error + entry,
@@ -1242,7 +1242,7 @@ spinbutton:not(.vertical) > button:hover + button {
 
 spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
 spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 transparent;
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0);
 }
 
 spinbutton:not(.vertical) > button:first-child:hover:not(:active),
@@ -4376,7 +4376,7 @@ messagedialog.csd .dialog-action-area button:only-child {
 }
 
 filechooser #pathbarbox {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
 filechooser stack.view {
@@ -7024,7 +7024,6 @@ window > box.vertical > box.horizontal > widget {
   box-shadow: none;
 }
 
-menubar .panel,
 .panel menubar {
   box-shadow: none;
   border: none;
@@ -7153,17 +7152,13 @@ menubar .panel,
   -gtk-icon-shadow: none;
 }
 
-.composited-indicator > revealer label:hover,
-.composited-indicator > revealer image:hover,
-.composited-indicator > revealer spinner:hover {
-  background-color: #0046DB;
-  color: #ffffff;
+.composited-indicator > revealer image,
+.composited-indicator > revealer spinner {
+  padding: 3px 0;
 }
 
-.composited-indicator > revealer label:disabled,
-.composited-indicator > revealer image:disabled,
-.composited-indicator > revealer spinner:disabled {
-  color: rgba(54, 54, 54, 0.4);
+.composited-indicator > revealer label {
+  padding: 3px 6px;
 }
 
 .composited-indicator .keyboard {

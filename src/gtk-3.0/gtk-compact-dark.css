@@ -2177,7 +2177,7 @@ headerbar scale trough, .nemo-window .primary-toolbar scale trough {
 }
 
 headerbar scale trough:disabled, .nemo-window .primary-toolbar scale trough:disabled {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .path-bar button {
@@ -7005,7 +7005,6 @@ window > box.vertical > box.horizontal > widget {
   box-shadow: none;
 }
 
-menubar .panel,
 .panel menubar {
   box-shadow: none;
   border: none;
@@ -7133,17 +7132,13 @@ menubar .panel,
   -gtk-icon-shadow: none;
 }
 
-.composited-indicator > revealer label:hover,
-.composited-indicator > revealer image:hover,
-.composited-indicator > revealer spinner:hover {
-  background-color: #498dff;
-  color: #ffffff;
+.composited-indicator > revealer image,
+.composited-indicator > revealer spinner {
+  padding: 3px 0;
 }
 
-.composited-indicator > revealer label:disabled,
-.composited-indicator > revealer image:disabled,
-.composited-indicator > revealer spinner:disabled {
-  color: rgba(222, 222, 222, 0.4);
+.composited-indicator > revealer label {
+  padding: 3px 6px;
 }
 
 .composited-indicator .keyboard {
