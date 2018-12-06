@@ -1221,6 +1221,25 @@ flowboxchild.bookmark-tag-widget {
 }
 
 //
+// Document Viewer
+//
+window.background.csd {
+  > box.vertical {
+    > scrolledwindow {
+      > iconview.view.content-view:not(:hover):not(:selected) {
+        background: none;
+        border-radius: 0 0 $wm_radius $wm_radius;
+      }
+    }
+  }
+
+  evview.view.content-view {
+    background: none;
+    border-radius: 0 0 $wm_radius $wm_radius;
+  }
+}
+
+//
 // documents-scrolledwi (Totem, Documents, EvView)
 //
 .documents-scrolledwin {
