@@ -2010,11 +2010,11 @@ window > box.vertical > box.horizontal {
   > widget { background-color: transparent; }
 }
 
+//
 // * Elementary Apps *
+//
 
-//
 // Wingpanel
-//
 .panel {
   background-color: $panel_bg;
   background-image: linear-gradient(0deg, rgba($panel_bottom_color, 0.9) 0%, rgba($panel_top_color, 0.9) 100%);
@@ -2234,10 +2234,10 @@ window.background.csd {
 headerbar.titlebar {
   // entry.pathbar { min-height: 0; }
 
-  button.flat.image-button.toggle {
-    margin-top: 9px;
-    margin-bottom: 10px;
-  }
+  // button.flat.image-button.toggle {
+  //   margin-top: 9px;
+  //   margin-bottom: 10px;
+  // }
 
   .linked.raised {
     > button.toggle {

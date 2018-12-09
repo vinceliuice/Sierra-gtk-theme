@@ -7345,11 +7345,6 @@ window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-headerbar.titlebar button.flat.image-button.toggle, headerbar.titlebar button.image-button.toggle.budgie-menu-launcher {
-  margin-top: 9px;
-  margin-bottom: 10px;
-}
-
 headerbar.titlebar .linked.raised > button.toggle {
   color: rgba(225, 219, 219, 0.8);
   border: none;
