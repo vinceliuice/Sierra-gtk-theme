@@ -4983,6 +4983,7 @@ headerbar button.titlebutton.close, headerbar button.titlebutton.maximize, heade
   min-width: 16px;
   min-height: 16px;
   margin: 0;
+  padding: 0;
   color: transparent;
   background-color: transparent;
   background-position: center;
