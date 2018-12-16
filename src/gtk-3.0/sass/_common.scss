@@ -3,6 +3,7 @@
 }
 
 $asset_suffix: if($variant=='dark', '-dark', ''); // use dark assets in dark variant
+$con_asset_suffix: if($variant=='dark', '', '-dark');
 $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
 $alt_suffix: if($titlebutton=='alt', '-alt', '');
 $bt_radius: 5px;
@@ -1226,6 +1227,15 @@ headerbar,
       min-height: 16px;
       margin: 0;
       padding: 0;
+
+      &.appmenu {
+        &, &:active, &:checked {
+          background-color: transparent;
+          box-shadow: none;
+          background-image: -gtk-scaled(url("assets/setting-icon#{$con_asset_suffix}.png"),
+                                        url("assets/setting-icon#{$con_asset_suffix}@2.png"));
+        }
+      }
     }
   }
 
@@ -3856,20 +3866,35 @@ headerbar,
 .titlebar {
 
   button.titlebutton {
-    min-width: 24px;
-    min-height: 24px;
-    margin: 0;
-    padding: 0;
+    &.appmenu {
+      transition: background-color 0.1s $ease-out-quad,
+                  box-shadow 0.1s $ease-out-quad,
+                  background-image 0,
+                  background-size 0;
 
-    @include button(undecorated);
-    background-color: transparentize($header_bg, 1);
+      color: transparent;
+      background-image: -gtk-scaled(url("assets/setting#{$asset_suffix}.png"),
+                                    url("assets/setting#{$asset_suffix}@2.png"));
+      background-repeat: no-repeat;
+      background-position: center;
 
-    &:hover {
-      @include button(header-hover);
+      image { opacity: 0; } // Make menu button default icon invisible
+
+      &:active, &:checked {
+        transition: background-color 0.3s $ease-out-quad,
+                    box-shadow 0.3s $ease-out-quad,
+                    background-image 0,
+                    background-size 0;
+        background-image: -gtk-scaled(url("assets/setting-icon#{$asset_suffix}.png"),
+                                      url("assets/setting-icon#{$asset_suffix}@2.png"));
+      }
+
+      &:backdrop {
+        background-image: -gtk-scaled(url("assets/setting-icon#{$con_asset_suffix}.png"),
+                                      url("assets/setting-icon#{$con_asset_suffix}@2.png"));
+      }
     }
-    &:active, &:checked {
-      @include button(header-active);
-    }
+
     &.close, &.maximize, &.minimize, &.restore {
       min-width: 16px;
       min-height: 16px;

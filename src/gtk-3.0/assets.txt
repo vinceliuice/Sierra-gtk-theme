@@ -97,3 +97,8 @@ titlebutton-restore-alt
 titlebutton-restore-backdrop-alt
 titlebutton-restore-hover-alt
 titlebutton-restore-active-alt
+
+setting
+setting-icon
+setting-dark
+setting-icon-dark
