@@ -24,14 +24,15 @@ ALT_VARIANTS=('' '-alt')
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
-  printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
-  printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-o, --opacity VARIANTS" "Specify theme opacity variant(s) [standard|solid] (Default: All variants)"
-  printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-a, --alt VARIANTS" "Specify theme titilebutton variant(s) [standard|alt] (Default: All variants)"
-  printf "  %-25s%s\n" "-f, --flat VARIANT" "Specify theme flat compact variant [standard|compact] (Default: All variants)"
-  printf "  %-25s%s\n" "-g, --gdm" "Install GDM theme"
-  printf "  %-25s%s\n" "-h, --help" "Show this help"
+  printf "  %-25s%s\n" "-d,  --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
+  printf "  %-25s%s\n" "-n,  --name NAME" "Specify theme name (Default: ${THEME_NAME})"
+  printf "  %-25s%s\n" "-o,  --opacity VARIANTS" "Specify theme opacity variant(s) [standard|solid] (Default: All variants)"
+  printf "  %-25s%s\n" "-c,  --color VARIANTS" "Specify theme color variant(s) [light|dark] (Default: All variants)"
+  printf "  %-25s%s\n" "-a,  --alt VARIANTS" "Specify theme titilebutton variant(s) [standard|alt] (Default: All variants)"
+  printf "  %-25s%s\n" "-f,  --flat VARIANT" "Specify theme flat compact variant [standard|compact] (Default: All variants)"
+  printf "  %-25s%s\n" "-na, --noapple VARIANT" "Specify gnome-shell to not display apple logo (Default: Display apple logo)"
+  printf "  %-25s%s\n" "-g,  --gdm" "Install GDM theme"
+  printf "  %-25s%s\n" "-h,  --help" "Show this help"
   printf "\n%s\n" "INSTALLATION EXAMPLES:"
   printf "%s\n" "Install all theme variants into ~/.themes"
   printf "  %s\n" "$0 --dest ~/.themes"
@@ -50,6 +51,7 @@ install() {
   local color=${4}
   local opacity=${5}
   local alt=${6}
+  local noapple=${7}
 
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
@@ -83,6 +85,11 @@ install() {
   cp -ur ${SRC_DIR}/gnome-shell/gnome-shell${color}${opacity}.css                       ${THEME_DIR}/gnome-shell/gnome-shell.css
   cp -ur ${SRC_DIR}/gnome-shell/common-assets                                           ${THEME_DIR}/gnome-shell/assets
   cp -ur ${SRC_DIR}/gnome-shell/assets${ELSE_DARK}/*.svg                                ${THEME_DIR}/gnome-shell/assets
+
+  if [ "${noapple}" = true ] ; then
+    cp -r ${SRC_DIR}/gnome-shell/assets${ELSE_DARK}/no-apple/*.svg                     ${THEME_DIR}/gnome-shell/assets
+  fi
+  
   cd ${THEME_DIR}/gnome-shell
   ln -s assets/no-events.svg no-events.svg
   ln -s assets/process-working.svg process-working.svg
@@ -156,6 +163,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     -g|--gdm)
       gdm='true'
+      shift 1
+      ;;
+    -na|--no-apple)
+      noapple=true
       shift 1
       ;;
     -o|--opacity)
@@ -266,7 +277,7 @@ for flat in "${flats[@]:-${FLAT_VARIANTS[@]}}"; do
   for opacity in "${opacitys[@]:-${OPACITY_VARIANTS[@]}}"; do
     for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
       for alt in "${alts[@]:-${ALT_VARIANTS[@]}}"; do
-        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${alt}"
+        install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${flat}" "${color}" "${opacity}" "${alt}" ${noapple}
       done
     done
   done
