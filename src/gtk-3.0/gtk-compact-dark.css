@@ -1411,7 +1411,7 @@ toolbar:not(.inline-toolbar) .linked > entry,
 searchbar {
   background-color: #333333;
   border: none;
-  box-shadow: inset 0 -1 rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
   padding: 3px 3px 4px 3px;
 }
 

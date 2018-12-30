@@ -1085,7 +1085,7 @@ toolbar {
 searchbar {
   background-color: $bg_color;
   border: none;
-  box-shadow: inset 0 -1 $borders_color;
+  box-shadow: inset 0 -1px $borders_color;
   padding: 3px 3px 4px 3px;
 
   // Close button on searchbar
