@@ -5207,9 +5207,79 @@ terminal-window notebook > header.top button,
   min-height: 24px;
 }
 
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher,
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
+  color: rgba(225, 219, 219, 0.8);
+  border: none;
+  background-color: rgba(119, 119, 119, 0.6);
+  background-image: none;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:hover, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:hover {
+  color: rgba(225, 219, 219, 0.8);
+  border: none;
+  background-color: rgba(119, 119, 119, 0.9);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:active, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:active {
+  color: #ffffff;
+  border: none;
+  background-color: #777777;
+  background-image: none;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:checked, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:checked {
+  color: #ffffff;
+  border: none;
+  background-color: #848484;
+  background-image: none;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+  border-radius: 0 5px 5px 0;
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:disabled, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:disabled {
+  color: rgba(225, 219, 219, 0.4);
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle:backdrop, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher:backdrop {
+  opacity: 0.7;
+  background-image: none;
+}
+
 .nautilus-window headerbar .path-bar-box {
   color: transparent;
-  background-color: transparent;
+  background: none;
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar {
+  padding: 0;
+  margin: 0;
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher,
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle,
+.nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0 0 0 -6px;
+  border-radius: 0;
+}
+
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle,
+.nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher {
+  border-radius: 5px 0 0 5px;
+}
+
+.nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle:checked, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher:checked {
+  border-radius: 5px 5px 5px 5px;
 }
 
 .nautilus-window headerbar .path-bar-box.background.frame {
