@@ -2453,7 +2453,7 @@ menu,
 .menu {
   padding: 6px 0;
   border-radius: 6px;
-  background-color: rgba(51, 51, 51, 0.98);
+  background-color: rgba(51, 51, 51, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -7033,6 +7033,10 @@ window.background.chromium button {
 window.background.chromium entry.chromium, window.background.chromium entry.chromium:focus {
   border-image: none;
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+window.background.chromium > menu {
+  border: 1px solid #4d4d4d;
 }
 
 window.background.chromium > textview.view {

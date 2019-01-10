@@ -42,7 +42,7 @@ terminal-window,
     border-radius: 0 $bt_radius $bt_radius 0;
   }
   &:disabled { color: transparentize($header_fg, 0.4); }
-  &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
+  &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; }}
 }
 
 .nautilus-window headerbar {
@@ -1897,6 +1897,8 @@ window.background.chromium {
       border: 1px solid $borders_color;
     }
   }
+
+  > menu { border: 1px solid $solid_borders_color; }
 
   // internal region of toolbar's entry widget
   > textview.view { background-color: $base_color; }
