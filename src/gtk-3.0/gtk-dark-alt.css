@@ -2436,10 +2436,18 @@ menubar > menuitem,
 }
 
 menubar > menuitem > window.background.popup > decoration,
+.menubar > menuitem > window.background.popup > decoration {
+  border-radius: 0 0 6px 6px;
+}
+
 menubar > menuitem > window.background.popup > menu,
-.menubar > menuitem > window.background.popup > decoration,
 .menubar > menuitem > window.background.popup > menu {
   border-radius: 0 0 6px 6px;
+}
+
+menubar > menuitem > window.background.popup > menu > menuitem,
+.menubar > menuitem > window.background.popup > menu > menuitem {
+  transition: none;
 }
 
 menubar > menuitem:hover,
