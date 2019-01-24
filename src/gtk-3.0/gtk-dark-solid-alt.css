@@ -1292,21 +1292,32 @@ spinbutton.vertical > entry:drop(active) + button {
 
 combobox button.combo {
   min-width: 0;
+  min-height: 20px;
   padding-left: 12px;
   padding-right: 12px;
 }
 
 combobox arrow {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  min-height: 16px;
+  min-width: 16px;
+}
+
+.background combobox button.combo arrow {
   -gtk-icon-source: -gtk-scaled(url("assets/combobox-arrow.png"), url("assets/combobox-arrow@2.png"));
   min-height: 16px;
-  min-width: 20px;
+  min-width: 16px;
   padding: 0;
   margin: -1px -13px -1px -1px;
   border-radius: 0 5px 5px 0;
+  border-width: 1px;
+  border-style: solid;
+  border-left-style: none;
   color: #ffffff;
-  border: 1px solid #686868;
-  background-color: #498dff;
-  background-image: linear-gradient(180deg, #686868 0%, #686868 100%);
+  background-color: #0e6bff;
+  border-color: #0e6bff;
+  background-image: linear-gradient(180deg, #4c97fe 0%, #0564e3 100%);
+  box-shadow: none;
 }
 
 .linked:not(.vertical) > combobox > box > button.combo arrow {
@@ -5311,6 +5322,11 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   color: #dbe8ff;
 }
 
+.nautilus-window {
+  background-color: transparent;
+  border-radius: 6px 6px 9px 9px;
+}
+
 .nautilus-window searchbar {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -5319,19 +5335,59 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
   margin-top: -1px;
 }
 
-.nautilus-window notebook,
-.nautilus-window notebook > stack {
-  border-radius: 0 0 6px 6px;
+.nautilus-window notebook {
+  margin-left: -1px;
+  margin-right: -1px;
+  background-color: #242424;
 }
 
-.nautilus-window.maximized notebook,
-.nautilus-window.maximized notebook > stack {
+.nautilus-window notebook tab {
+  margin-left: -1px;
+}
+
+.nautilus-window notebook scrolledwindow .view:not(:hover):not(:active):not(:selected) {
+  background-color: transparent;
+}
+
+.nautilus-window notebook, .nautilus-window notebook > stack {
+  border-radius: 0 0 9px 9px;
+}
+
+.nautilus-window notebook > stack:not(:only-child) searchbar {
+  background-color: #242424;
+}
+
+.nautilus-window .floating-bar {
+  padding: 1px;
+  background-color: #498dff;
+  color: #ffffff;
+  border-radius: 3px 0 6px 0;
+}
+
+.nautilus-window .floating-bar.bottom.left {
+  border-top-left-radius: 0;
+}
+
+.nautilus-window .floating-bar.bottom.right {
+  border-top-right-radius: 0;
+}
+
+.nautilus-window .floating-bar button {
+  border: none;
+  border-radius: 100px;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  margin-right: 6px;
+  -gtk-icon-shadow: none;
+}
+
+.nautilus-window.maximized notebook, .nautilus-window.maximized notebook > stack {
   border-radius: 0 0 0 0;
 }
 
-.nautilus-window notebook,
-.nautilus-window notebook > stack:not(:only-child) searchbar {
-  background-color: #242424;
+.nautilus-window.maximized .floating-bar {
+  border-radius: 3px 0 0 0;
 }
 
 .disk-space-display {
@@ -5394,35 +5450,6 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 .conflict-row.activatable:selected {
   color: #ffffff;
   background-color: #498dff;
-}
-
-.nautilus-window .floating-bar {
-  padding: 1px;
-  background-color: #498dff;
-  color: #ffffff;
-  border-radius: 3px 0 4px 0;
-}
-
-.nautilus-window .floating-bar.bottom.left {
-  border-top-left-radius: 0;
-}
-
-.nautilus-window .floating-bar.bottom.right {
-  border-top-right-radius: 0;
-}
-
-.nautilus-window .floating-bar button {
-  border: none;
-  border-radius: 100px;
-  min-height: 0;
-  min-width: 0;
-  padding: 0;
-  margin-right: 6px;
-  -gtk-icon-shadow: none;
-}
-
-.nautilus-window.maximized .floating-bar {
-  border-radius: 3px 0 0 0;
 }
 
 .nemo-window .nemo-places-sidebar.frame {
