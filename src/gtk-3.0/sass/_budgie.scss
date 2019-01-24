@@ -984,7 +984,7 @@ window.budgie-switcher-window {
   label:not(:last-child),
   .dialog-title { font-size: 120%; }
 
-  .linked.horizontal > button {
+  buttonbox.linked.horizontal > button {
     padding: 4px 16px;
     border: none;
     border-top: 1px solid $borders_color;
@@ -994,20 +994,19 @@ window.budgie-switcher-window {
     &:last-child { border-bottom-right-radius: $wm_radius; }
   }
 
-  .linked.horizontal > button:not(.suggested-action):not(.destructive-action) {
+  buttonbox.linked.horizontal > button:not(.suggested-action):not(.destructive-action) {
+    &:hover {
+      @include button(flat-hover);
+      border-color: $borders_color;
+      transition: $button_transition;
+     }
 
-      &:hover {
-        @include button(flat-hover);
-        border-color: $borders_color;
-        transition: $button_transition;
-       }
-
-      &:active, &:checked {
-        @include button(flat-active);
-        border-color: $borders_color;
-        text-shadow: $text_shadow;
-      }
+    &:active, &:checked {
+      @include button(flat-active);
+      border-color: $borders_color;
+      text-shadow: $text_shadow;
     }
+  }
 }
 
 // PolKit Dialog
@@ -1015,7 +1014,6 @@ window.budgie-switcher-window {
   @extend %budgie_dialog;
 
   .message { color: gtkalpha(currentColor, 0.6); }
-
   .failure { color: $destructive_color; }
 }
 
