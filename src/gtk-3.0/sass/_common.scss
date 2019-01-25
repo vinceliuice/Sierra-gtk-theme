@@ -1413,10 +1413,12 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
     &.circular-button { @extend button.circular; }
 
     &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
+
     &:hover {
       @include button(header-hover);
       transition: $button_transition;
-      }
+    }
+
     &:checked {
       @include button(header-checked);
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
@@ -1424,6 +1426,7 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
       transition-duration: 300ms;
       @if $variant=='light' and $compact == 'true' { box-shadow: none; }
     }
+
     &:active {
       @include button(header-active);
       transition: $button_transition;
@@ -1431,8 +1434,11 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
       background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
       @if $variant=='light' and $compact == 'true' { box-shadow: none; }
     }
+
     &:disabled { @include button(header-insensitive); }
+
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+
 //    &.text-button.image-button label { padding-left: 6px; padding-right: 6px; }
 
     &.flat {
@@ -1449,7 +1455,9 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
       color: $selection_mode_fg;
       background-color: transparentize($selection_mode_fg, 1);
     }
+
     &:hover { background-color: transparentize($selected_fg_color, 0.75); }
+
     &:active, &:checked { @extend %selected-button:active; text-shadow: none; }
 
     &:disabled {
@@ -1470,15 +1478,18 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
 
   %linked_header {
     @extend %linked_header_middle;
+
     &:first-child {
       border-top-left-radius: $bt_radius;
       border-bottom-left-radius: $bt_radius;
     }
+
     &:last-child {
       border-top-right-radius: $bt_radius;
       border-bottom-right-radius: $bt_radius;
       border-right-style: none;
     }
+
     &:only-child {
       border-radius: $bt_radius;
       border-style: none;
@@ -1548,7 +1559,6 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
   // special case for path-bars and stack-switchers
   .linked:not(.vertical):not(.path-bar).stack-switcher,
   .linked:not(.vertical).path-bar {
-
     > button {
       @include button(header-normal);
       &:hover { @include button(header-hover); }
