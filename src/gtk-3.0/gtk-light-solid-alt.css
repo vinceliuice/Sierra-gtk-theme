@@ -7481,6 +7481,73 @@ window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+headerbar.titlebar > box.horizontal > entry.pathbar {
+  min-height: 0;
+  padding: 2px 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(40, 32, 32, 0.8);
+  background-color: white;
+  background-image: linear-gradient(0deg, #f1f1f1 0%, #fdfdfd 95%, #fefefe 100%);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:not(:checked):not(:active), headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:not(:checked):not(:active), .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:not(:checked):not(:active) {
+  background-clip: padding-box;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:hover, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:hover, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  color: rgba(34, 28, 28, 0.8);
+  background-color: #fafafa;
+  background-image: linear-gradient(0deg, #f8f8f8 0%, #ffffff 100%);
+  box-shadow: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:active, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:active, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:active {
+  color: #ffffff;
+  background-color: #afafaf;
+  background-image: none;
+  border-color: rgba(0, 0, 0, 0.12);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.26), 0 1px 2px rgba(0, 0, 0, 0.32), 0 2px 3px rgba(0, 0, 0, 0.12);
+  -gtk-icon-shadow: 0 0 1px rgba(0, 0, 0, 0.26), 0 1px 2px rgba(0, 0, 0, 0.32), 0 2px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:checked, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:checked, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:checked {
+  color: #ffffff;
+  background-color: #686868;
+  background-image: linear-gradient(0deg, #656565 0%, #707070 100%);
+  border-color: rgba(0, 0, 0, 0.12);
+  border-top-color: rgba(0, 0, 0, 0.12);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.26), 0 1px 2px rgba(0, 0, 0, 0.32), 0 2px 3px rgba(0, 0, 0, 0.12);
+  -gtk-icon-shadow: 0 0 1px rgba(0, 0, 0, 0.26), 0 1px 2px rgba(0, 0, 0, 0.32), 0 2px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:disabled, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:disabled, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:disabled {
+  color: rgba(40, 32, 32, 0.4);
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:backdrop, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:backdrop, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:backdrop {
+  opacity: 0.7;
+  background-image: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle + button.flat.image-button.toggle, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.flat.image-button.toggle, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher + button.flat.image-button.toggle, headerbar.titlebar > button.flat.image-button.toggle + button.image-button.toggle.budgie-menu-launcher, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher + button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.flat.image-button.toggle + button.image-button.toggle.flat.launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.image-button.toggle.flat.launcher {
+  margin-right: -6px;
+}
+
 headerbar.titlebar .linked.raised > button.toggle {
   border-color: rgba(0, 0, 0, 0.12);
   color: rgba(40, 32, 32, 0.8);

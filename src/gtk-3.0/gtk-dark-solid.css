@@ -7462,6 +7462,71 @@ window.background.csd > paned.horizontal > scrolledwindow > viewport.frame > box
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+headerbar.titlebar > box.horizontal > entry.pathbar {
+  min-height: 0;
+  padding: 2px 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(225, 219, 219, 0.8);
+  background-color: rgba(119, 119, 119, 0.6);
+  background-image: none;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+  border: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:not(:checked):not(:active), headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:not(:checked):not(:active), .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:not(:checked):not(:active) {
+  background-clip: padding-box;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:hover, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:hover, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(221, 213, 213, 0.8);
+  background-color: rgba(119, 119, 119, 0.9);
+  background-image: none;
+  box-shadow: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:active, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:active, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:active {
+  color: #ffffff;
+  background-color: #777777;
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.12);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:checked, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:checked, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:checked {
+  color: #ffffff;
+  background-color: #848484;
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.12);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:disabled, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:disabled, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:disabled {
+  color: rgba(225, 219, 219, 0.4);
+}
+
+headerbar.titlebar > button.flat.image-button.toggle:backdrop, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher:backdrop, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher:backdrop {
+  opacity: 0.7;
+  background-image: none;
+}
+
+headerbar.titlebar > button.flat.image-button.toggle + button.flat.image-button.toggle, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.flat.image-button.toggle, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher + button.flat.image-button.toggle, headerbar.titlebar > button.flat.image-button.toggle + button.image-button.toggle.budgie-menu-launcher, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher + button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.flat.image-button.toggle + button.image-button.toggle.flat.launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.image-button.toggle.flat.launcher {
+  margin-right: -5px;
+}
+
 headerbar.titlebar .linked.raised > button.toggle {
   border-color: rgba(255, 255, 255, 0.12);
   color: rgba(225, 219, 219, 0.8);

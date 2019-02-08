@@ -2281,12 +2281,36 @@ window.background.csd {
 }
 
 headerbar.titlebar {
-  // entry.pathbar { min-height: 0; }
+  > box.horizontal > entry.pathbar {
+    min-height: 0;
+    padding: 2px 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
 
-  // button.flat.image-button.toggle {
-  //   margin-top: 9px;
-  //   margin-bottom: 10px;
-  // }
+  > button.flat.image-button.toggle {
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+    &:not(:checked):not(:active) {
+      background-clip: if($variant=='light', padding-box, padding-box);
+    }
+
+    @if $variant == 'light' {
+      border-width: 1px;
+      border-style: solid;
+      border-color: $borders_color;
+    }
+
+    @include button(header-normal);
+    &:hover { @include button(header-hover); }
+    &:active { @include button(header-active); }
+    &:checked { @include button(header-checked); }
+    &:disabled { color: transparentize($header_fg, 0.4); }
+    &:backdrop { opacity: 0.7; background-image: none;}
+
+    + button.flat.image-button.toggle { margin-right: if($variant=='light', -6px, -5px); }
+  }
 
   .linked.raised {
     > button.toggle {
