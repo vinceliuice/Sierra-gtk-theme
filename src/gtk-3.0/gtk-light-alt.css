@@ -3106,26 +3106,29 @@ switch {
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
   margin: 6px 0;
   border-radius: 50px;
-  background-color: alpha(currentColor,0.3);
+  background-color: rgba(36, 36, 36, 0.3);
   background-clip: padding-box;
+  color: rgba(36, 36, 36, 0.3);
   font-size: 0;
 }
 
 
 switch:disabled {
-  color: alpha(currentColor,0.4);
+  color: rgba(36, 36, 36, 0.15);
+  background-color: rgba(36, 36, 36, 0.15);
 }
 
 
 switch:checked {
   animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   background-color: #71c837;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 
 switch:checked:disabled {
-  background-color: alpha(#71c837,0.5);
-  color: rgba(36, 36, 36, 0.55);
+  background-color: rgba(113, 200, 55, 0.5);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 
@@ -6898,17 +6901,11 @@ window.background:not(.csd) > widget > frame > border {
 }
 
 window.background:not(.csd) > widget > entry,
-window.background:not(.csd) > widget > button > button {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 5px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
-}
-
-window.background:not(.csd) > widget > entry,
 window.background:not(.csd) > widget .entry {
   border-radius: 5px;
   background-image: image(#ffffff);
   border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
 }
 
 window.background:not(.csd) > widget > entry:focus,
@@ -6938,6 +6935,9 @@ window.background:not(.csd) > widget > button {
 
 window.background:not(.csd) > widget > button > button {
   outline-style: none;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
 }
 
 window.background:not(.csd) > widget > button > button:active {
@@ -6951,16 +6951,17 @@ window.background:not(.csd) > widget > button > button label {
 }
 
 window.background:not(.csd) > menu,
-window.background:not(.csd) .menu {
+window.background:not(.csd) > menu > menu {
   background-color: #ffffff;
+  border: none;
   border-radius: 0;
 }
 
 window.background:not(.csd) > menu .separator:not(label),
 .csd window.background:not(.csd) > menu .separator:not(label),
-window.background:not(.csd) .menu .separator:not(label),
+window.background:not(.csd) > menu > menu .separator:not(label),
 .csd
-window.background:not(.csd) .menu .separator:not(label) {
+window.background:not(.csd) > menu > menu .separator:not(label) {
   color: rgba(0, 0, 0, 0.12);
 }
 
@@ -6977,8 +6978,7 @@ window.background:not(.csd) > menu > menuitem > check {
   padding: 0 2px 0 4px;
 }
 
-window.background:not(.csd) > window > menu menuitem,
-window.background:not(.csd) > menu > menu menuitem {
+window.background:not(.csd) > window > menu menuitem {
   transition: none;
 }
 
