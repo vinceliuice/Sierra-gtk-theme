@@ -1359,7 +1359,7 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
 
   // Headerbar Entries
   entry {
-//    min-height: if($variant == 'light', 20px, 22px);
+    // min-height: if($variant == 'light', 20px, 22px);
     @include entry(header-normal);
 
     &:backdrop { opacity: 0.85; background-image: none; @if $compact == 'false' { box-shadow: none; } }
@@ -1439,14 +1439,14 @@ window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset
 
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
 
-//    &.text-button.image-button label { padding-left: 6px; padding-right: 6px; }
+    // &.text-button.image-button label { padding-left: 6px; padding-right: 6px; }
 
     &.flat {
       @include button(undecorated);
     }
   }
 
-//  button.flat.toggle.popup { @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; } }
+  // button.flat.toggle.popup { @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; } }
 
   &.selection-mode button {
 

@@ -55,6 +55,7 @@ $raven_button_active_color: #AFAFAF;
       background-color: rgba(white, 0.15);
       border-color: rgba(white, 0.15);
     }
+
     &:checked {
       background-image: none;
       color: white;
@@ -62,6 +63,7 @@ $raven_button_active_color: #AFAFAF;
       text-shadow: none;
       -gtk-icon-shadow: none;
     }
+
     &:active {
       background-image: none;
       color: white;
@@ -69,6 +71,7 @@ $raven_button_active_color: #AFAFAF;
       text-shadow: none;
       -gtk-icon-shadow: none;
     }
+
     &:disabled {
       label, & { color: rgba(white, 0.5); }
       background-color: transparent;
