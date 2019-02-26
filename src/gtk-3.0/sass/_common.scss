@@ -1257,9 +1257,19 @@ headerbar,
   separator.titlebutton { @extend %header_separator; }
 }
 
-.titlebar,
-.titlebar.background {
-  border-radius: $_header_radius $_header_radius 0 0;
+.titlebar {
+  &, &.background {
+    border-top-left-radius: $wm_radius;
+    border-top-right-radius: $wm_radius;
+  }
+
+  &, & headerbar {
+    box-shadow: inset 0 1px $highlight;
+
+    .tiled &,
+    .maximized &,
+    .fullscreen & { box-shadow: none; }
+  }
 }
 
 headerbar {
@@ -1293,9 +1303,33 @@ headerbar {
       .tiled & { border-radius: 0; }
     }
   }
+
+  stack & { // tackles the stacked headerbars case
+    &:first-child, &:last-child {
+      border-top-left-radius: $_header_radius;
+      border-top-right-radius: $_header_radius;
+    }
+  }
+
+  window.tiled &,
+  window.tiled-top &,
+  window.tiled-right &,
+  window.tiled-bottom &,
+  window.tiled-left &,
+  window.maximized &,
+  window.fullscreen &,
+  window.solid-csd & {
+    &,
+    &:first-child,
+    &:last-child,
+    &:only-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 }
 
-window.background:not(.csd) > box.vertical > headerbar:not(.titlebar) { // reset headerbar style for not CSD window
+window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar style for not CSD window
   &, &:backdrop {
     background-image: if($darker=='false' and $variant=='light',
                          linear-gradient(180deg, $header_middle 0%,
