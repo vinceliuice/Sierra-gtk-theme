@@ -1654,9 +1654,9 @@ window.thunar {
 // vala-panel
 //
 window#ValaPanel.background {
-  background-color: $panel_bg;
-  border: none;
-  color: $panel_fg;
+  // background-color: $panel_bg;
+  // border: none;
+  // color: $panel_fg;
 
   widget.-vala-panel-background {
     > separator { // separator applet
