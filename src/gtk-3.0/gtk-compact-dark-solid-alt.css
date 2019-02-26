@@ -6748,8 +6748,16 @@ panel-toplevel.background button:active:not(#tasklist-button), .xfce4-panel butt
   -gtk-icon-effect: none;
 }
 
+.xfce4-panel menubar.-vala-panel-appmenu-private > menuitem {
+  font-weight: normal;
+}
+
 .xfce4-panel widget.tasklist > button.toggle {
   font-weight: 400;
+}
+
+dialog.background .dialog-vbox .dialog-action-box buttonbox.dialog-action-area {
+  padding: 6px;
 }
 
 XfdesktopIconView.view {
