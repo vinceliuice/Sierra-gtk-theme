@@ -451,6 +451,7 @@ popover.background.places-menu {
     > menuitem {
       border: none;
       background-image: none;
+      font-weight: normal;
 
       > window.background.popup > decoration,
       > window.background.popup > menu { border-radius: 0 0 $wm_radius $wm_radius; }
@@ -458,6 +459,7 @@ popover.background.places-menu {
       &:hover {
         background-color: $selected_bg_color;
       }
+
       &:disabled {
         color: transparentize($panel_fg, 0.6);
       }

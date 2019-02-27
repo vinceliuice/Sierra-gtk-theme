@@ -9115,6 +9115,7 @@ popover.background.places-menu row {
 .budgie-panel .menubar > menuitem {
   border: none;
   background-image: none;
+  font-weight: normal;
 }
 
 .budgie-panel menubar > menuitem > window.background.popup > decoration,
