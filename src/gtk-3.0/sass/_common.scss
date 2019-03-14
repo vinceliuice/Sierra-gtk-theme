@@ -1389,95 +1389,132 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
   &:backdrop { opacity: 0.6; }
 }
 
+// Linking stuff
+%linked_header_middle {
+  border-radius: 0;
+  border-left-style: none;
+  border-right: 1px solid $borders_color;
+}
+
+%linked_header {
+  @extend %linked_header_middle;
+
+  &:first-child {
+    border-top-left-radius: $bt_radius;
+    border-bottom-left-radius: $bt_radius;
+    border-left-style: solid;
+  }
+
+  &:last-child {
+    border-top-right-radius: $bt_radius;
+    border-bottom-right-radius: $bt_radius;
+  }
+
+  &:only-child {
+    border-radius: $bt_radius;
+    border-style: solid;
+  }
+}
+
+// Headerbar Entries
+%headerbar_entrys {
+  @include entry(header-normal);
+
+  &:backdrop { opacity: 0.85; background-image: none; @if $compact == 'false' { box-shadow: none; } }
+
+  &:focus {
+    @include entry(header-focus);
+    background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+
+    image { color: $selected_bg_color; }
+  }
+
+  &:disabled { @include entry(header-insensitive); }
+
+  selection:focus {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
+
+  progress {
+    border-color: $progress_color;
+    background-image: none;
+    background-color: transparent;
+  }
+
+  @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
+                                          (error, $error_color, $error_fg_color) {
+    &.#{$e_type} {
+      color: $e_fg_color;
+      border-color: if($darker=='false' and $variant=='light', $e_color, $header_entry_border);
+      background-color: mix($e_color, $header_bg, 60%);
+
+      &:focus {
+        color: $e_fg_color;
+        background-color: $e_color;
+      }
+
+      selection, selection:focus {
+        background-color: $e_fg_color;
+        color: $e_color;
+      }
+    }
+  }
+}
+
+// Headerbar Buttons
+%headerbar_buttons {
+  @include button(header-normal);
+
+  &.circular-button { @extend button.circular; }
+
+  &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
+
+  &:hover {
+    @include button(header-hover);
+    transition: $button_transition;
+  }
+
+  &:checked {
+    @include button(header-checked);
+    background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+    transition: $button_transition;
+    transition-duration: 300ms;
+    @if $variant=='light' and $compact == 'true' { box-shadow: none; }
+  }
+
+  &:active {
+    @include button(header-active);
+    transition: $button_transition;
+    transition-duration: 300ms;
+    background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+    @if $variant=='light' and $compact == 'true' { box-shadow: none; }
+  }
+
+  &:disabled { @include button(header-insensitive); }
+
+  &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+
+  // &.text-button.image-button label { padding-left: 6px; padding-right: 6px; }
+
+  &.flat {
+    @include button(undecorated);
+  }
+}
+
 %header_widgets {
 
   // Headerbar Entries
   entry {
-    // min-height: if($variant == 'light', 20px, 22px);
-    @include entry(header-normal);
-
-    &:backdrop { opacity: 0.85; background-image: none; @if $compact == 'false' { box-shadow: none; } }
-
-    &:focus {
-      @include entry(header-focus);
-      background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
-
-      image { color: $selected_bg_color; }
-    }
-
-    &:disabled { @include entry(header-insensitive); }
-
-    selection:focus {
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
-    }
-
-    progress {
-      border-color: $progress_color;
-      background-image: none;
-      background-color: transparent;
-    }
-
-    @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
-                                            (error, $error_color, $error_fg_color) {
-      &.#{$e_type} {
-        color: $e_fg_color;
-        border-color: if($darker=='false' and $variant=='light', $e_color, $header_entry_border);
-        background-color: mix($e_color, $header_bg, 60%);
-
-        &:focus {
-          color: $e_fg_color;
-          background-color: $e_color;
-        }
-
-        selection, selection:focus {
-          background-color: $e_fg_color;
-          color: $e_color;
-        }
-      }
-    }
+    min-height: if($variant == 'light', 20px, 22px);
+    @extend %headerbar_entrys;
   }
 
   // Headerbar Buttons
-  %headerbar_buttons,
   button {
+    min-height: if($variant == 'light', 24px, 26px);
     min-width: 22px;
-    @include button(header-normal);
-
-    &.circular-button { @extend button.circular; }
-
-    &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
-
-    &:hover {
-      @include button(header-hover);
-      transition: $button_transition;
-    }
-
-    &:checked {
-      @include button(header-checked);
-      background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
-      transition: $button_transition;
-      transition-duration: 300ms;
-      @if $variant=='light' and $compact == 'true' { box-shadow: none; }
-    }
-
-    &:active {
-      @include button(header-active);
-      transition: $button_transition;
-      transition-duration: 300ms;
-      background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
-      @if $variant=='light' and $compact == 'true' { box-shadow: none; }
-    }
-
-    &:disabled { @include button(header-insensitive); }
-
-    &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
-
-    // &.text-button.image-button label { padding-left: 6px; padding-right: 6px; }
-
-    &.flat {
-      @include button(undecorated);
-    }
+    @extend %headerbar_buttons;
   }
 
   // button.flat.toggle.popup { @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; } }
@@ -1500,36 +1537,6 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
     }
   }
 
-  // Linking stuff
-
-  %linked_header_middle {
-    border-radius: 0;
-    border-left-style: none;
-    border-top-style: none;
-    border-bottom-style: none;
-    border-right-style: solid;
-  }
-
-  %linked_header {
-    @extend %linked_header_middle;
-
-    &:first-child {
-      border-top-left-radius: $bt_radius;
-      border-bottom-left-radius: $bt_radius;
-    }
-
-    &:last-child {
-      border-top-right-radius: $bt_radius;
-      border-bottom-right-radius: $bt_radius;
-      border-right-style: none;
-    }
-
-    &:only-child {
-      border-radius: $bt_radius;
-      border-style: none;
-    }
-  }
-
   // Disconnect linked buttons
   .linked:not(.vertical):not(.path-bar):not(.stack-switcher) {
     button:not(:only-child):not(:last-child) {
@@ -1539,12 +1546,35 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
     }
   }
 
-  // Reset buttons
-  .linked:not(.vertical):not(.path-bar):not(.stack-switcher) > button { min-width: 20px; }
+  // Reset linked buttons
+  .linked:not(.vertical) > button {
+    min-width: 20px;
+    @extend %outline_dashed;
 
-  .linked:not(.vertical):not(.path-bar) > button {
+    &, &:hover, &:active, &:checked, &:disabled {
+      @extend %linked_header;
+
+      @if $variant=='dark' or $compact == 'true' {
+        border: none;
+      }
+    }
+
+    @if $variant == 'light' and $compact == 'false' {
+      &:not(:first-child) {
+        &:active { box-shadow: -1px 0 mix(black, $header_button_active_bg, 15%); }
+        &:checked { box-shadow: -1px 0 mix(black, $header_button_checked_bg, 15%); }
+      }
+    }
+  }
+
+  .linked.raised:not(.vertical):not(.path-bar) > button.image-button {
+    @extend %outline_dashed;
+
     &, &:hover, &:active, &:checked, &:disabled {
       border-radius: $bt_radius;
+      margin-right: if($variant=='light', 0, 1px);
+      border-right: none;
+
       @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; }
     }
   }
@@ -1563,11 +1593,11 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
 
   // use linking rules for entries only
   .linked:not(.vertical):not(.path-bar) {
-//    @include linking_rules( $a:0.5,
-//                            $var:if($variant=='light' and $darker=='false', 'light', 'dark'),
-//                            $button_rules:'false',
-//                            $e_border:$header_entry_border,
-//                            $b_border:$header_button_border );
+    // @include linking_rules( $a:0.5,
+    //                         $var:if($variant=='light' and $darker=='false', 'light', 'dark'),
+    //                         $button_rules:'false',
+    //                         $e_border:$header_entry_border,
+    //                         $b_border:$header_button_border );
 
     // Reset headerbar linked rules
     > button:active + entry,
@@ -1580,15 +1610,15 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
     }
   }
 
-//  .linked:not(.vertical):not(.path-bar) {
-//    $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
-
-//    > #{$_uncolored_button}:hover:not(:only-child),
-//    > #{$_uncolored_button}:hover + #{$_uncolored_button},
-//    > #{$_uncolored_button}:disabled:not(:only-child),
-//    > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: none; }
-//    > #{$_uncolored_button}:disabled:backdrop { box-shadow: none; }
-//  }
+  // .linked:not(.vertical):not(.path-bar) {
+  //   $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
+  //
+  //   > #{$_uncolored_button}:hover:not(:only-child),
+  //   > #{$_uncolored_button}:hover + #{$_uncolored_button},
+  //   > #{$_uncolored_button}:disabled:not(:only-child),
+  //   > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: none; }
+  //   > #{$_uncolored_button}:disabled:backdrop { box-shadow: none; }
+  // }
 
   // special case for path-bars and stack-switchers
   .linked:not(.vertical):not(.path-bar).stack-switcher,
