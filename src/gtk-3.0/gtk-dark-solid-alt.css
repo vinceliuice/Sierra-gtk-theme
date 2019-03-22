@@ -4655,14 +4655,14 @@ infobar.info selection, infobar.question selection, infobar.warning selection, i
   background-color: #ffffff;
 }
 
-row:selected button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .nautilus-window .floating-bar button, .nemo-window .floating-bar button {
+row:selected button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .nautilus-window .floating-bar button, .nemo-window .floating-bar button, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.5);
   background-image: none;
 }
 
-row:selected button.flat, row:selected button.budgie-menu-launcher, row:selected .budgie-panel button.flat.launcher, .budgie-panel row:selected button.flat.launcher, infobar.info button.flat, infobar.info button.budgie-menu-launcher, infobar.info .budgie-panel button.flat.launcher, .budgie-panel infobar.info button.flat.launcher, infobar.question button.flat, infobar.question button.budgie-menu-launcher, infobar.question .budgie-panel button.flat.launcher, .budgie-panel infobar.question button.flat.launcher, infobar.warning button.flat, infobar.warning button.budgie-menu-launcher, infobar.warning .budgie-panel button.flat.launcher, .budgie-panel infobar.warning button.flat.launcher, infobar.error button.flat, infobar.error button.budgie-menu-launcher, infobar.error .budgie-panel button.flat.launcher, .budgie-panel infobar.error button.flat.launcher, .nautilus-window .floating-bar button.flat, .nautilus-window .floating-bar button.budgie-menu-launcher, .nemo-window .floating-bar button.flat, .nemo-window .floating-bar button.budgie-menu-launcher {
+row:selected button.flat, row:selected button.budgie-menu-launcher, row:selected .budgie-panel button.flat.launcher, .budgie-panel row:selected button.flat.launcher, infobar.info button.flat, infobar.info button.budgie-menu-launcher, infobar.info .budgie-panel button.flat.launcher, .budgie-panel infobar.info button.flat.launcher, infobar.question button.flat, infobar.question button.budgie-menu-launcher, infobar.question .budgie-panel button.flat.launcher, .budgie-panel infobar.question button.flat.launcher, infobar.warning button.flat, infobar.warning button.budgie-menu-launcher, infobar.warning .budgie-panel button.flat.launcher, .budgie-panel infobar.warning button.flat.launcher, infobar.error button.flat, infobar.error button.budgie-menu-launcher, infobar.error .budgie-panel button.flat.launcher, .budgie-panel infobar.error button.flat.launcher, .nautilus-window .floating-bar button.flat, .nautilus-window .floating-bar button.budgie-menu-launcher, .nemo-window .floating-bar button.flat, .nemo-window .floating-bar button.budgie-menu-launcher, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.flat.image-button, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button.budgie-menu-launcher, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher {
   border-color: transparent;
   background-color: transparent;
   background-image: none;
@@ -4672,32 +4672,32 @@ row:selected button.flat, row:selected button.budgie-menu-launcher, row:selected
   background-image: none;
 }
 
-headerbar.selection-mode button:disabled, row:selected button.flat:disabled, row:selected button.budgie-menu-launcher:disabled, infobar.info button.flat:disabled, infobar.info button.budgie-menu-launcher:disabled, infobar.question button.flat:disabled, infobar.question button.budgie-menu-launcher:disabled, infobar.warning button.flat:disabled, infobar.warning button.budgie-menu-launcher:disabled, infobar.error button.flat:disabled, infobar.error button.budgie-menu-launcher:disabled, .nautilus-window .floating-bar button.flat:disabled, .nautilus-window .floating-bar button.budgie-menu-launcher:disabled, .nemo-window .floating-bar button.flat:disabled, .nemo-window .floating-bar button.budgie-menu-launcher:disabled, headerbar.selection-mode button:disabled label, row:selected button.flat:disabled label, row:selected button.budgie-menu-launcher:disabled label, infobar.info button.flat:disabled label, infobar.info button.budgie-menu-launcher:disabled label, infobar.question button.flat:disabled label, infobar.question button.budgie-menu-launcher:disabled label, infobar.warning button.flat:disabled label, infobar.warning button.budgie-menu-launcher:disabled label, infobar.error button.flat:disabled label, infobar.error button.budgie-menu-launcher:disabled label, .nautilus-window .floating-bar button.flat:disabled label, .nautilus-window .floating-bar button.budgie-menu-launcher:disabled label, .nemo-window .floating-bar button.flat:disabled label, .nemo-window .floating-bar button.budgie-menu-launcher:disabled label {
+headerbar.selection-mode button:disabled, row:selected button.flat:disabled, row:selected button.budgie-menu-launcher:disabled, infobar.info button.flat:disabled, infobar.info button.budgie-menu-launcher:disabled, infobar.question button.flat:disabled, infobar.question button.budgie-menu-launcher:disabled, infobar.warning button.flat:disabled, infobar.warning button.budgie-menu-launcher:disabled, infobar.error button.flat:disabled, infobar.error button.budgie-menu-launcher:disabled, .nautilus-window .floating-bar button.flat:disabled, .nautilus-window .floating-bar button.budgie-menu-launcher:disabled, .nemo-window .floating-bar button.flat:disabled, .nemo-window .floating-bar button.budgie-menu-launcher:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.flat.image-button:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button.budgie-menu-launcher:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:disabled, headerbar.selection-mode button:disabled label, row:selected button.flat:disabled label, row:selected button.budgie-menu-launcher:disabled label, infobar.info button.flat:disabled label, infobar.info button.budgie-menu-launcher:disabled label, infobar.question button.flat:disabled label, infobar.question button.budgie-menu-launcher:disabled label, infobar.warning button.flat:disabled label, infobar.warning button.budgie-menu-launcher:disabled label, infobar.error button.flat:disabled label, infobar.error button.budgie-menu-launcher:disabled label, .nautilus-window .floating-bar button.flat:disabled label, .nautilus-window .floating-bar button.budgie-menu-launcher:disabled label, .nemo-window .floating-bar button.flat:disabled label, .nemo-window .floating-bar button.budgie-menu-launcher:disabled label, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.flat.image-button:disabled label, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button.budgie-menu-launcher:disabled label, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:disabled label, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:disabled label {
   color: rgba(255, 255, 255, 0.4);
 }
 
-row:selected button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .nautilus-window .floating-bar button:hover, .nemo-window .floating-bar button:hover {
+row:selected button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .nautilus-window .floating-bar button:hover, .nemo-window .floating-bar button:hover, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:hover, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:hover, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-headerbar.selection-mode button:active, headerbar.selection-mode button:checked, row:selected button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .nautilus-window .floating-bar button:active, .nemo-window .floating-bar button:active, headerbar.selection-mode button:hover:active, headerbar.selection-mode button:hover:checked, row:selected button:active:hover, infobar.info button:active:hover, infobar.question button:active:hover, infobar.warning button:active:hover, infobar.error button:active:hover, .nautilus-window .floating-bar button:active:hover, .nemo-window .floating-bar button:active:hover, row:selected button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .nautilus-window .floating-bar button:checked, .nemo-window .floating-bar button:checked {
+headerbar.selection-mode button:active, headerbar.selection-mode button:checked, row:selected button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .nautilus-window .floating-bar button:active, .nemo-window .floating-bar button:active, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:active, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:active, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:active, headerbar.selection-mode button:hover:active, headerbar.selection-mode button:hover:checked, row:selected button:active:hover, infobar.info button:active:hover, infobar.question button:active:hover, infobar.warning button:active:hover, infobar.error button:active:hover, .nautilus-window .floating-bar button:active:hover, .nemo-window .floating-bar button:active:hover, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:active:hover, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:active:hover, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:active:hover, row:selected button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .nautilus-window .floating-bar button:checked, .nemo-window .floating-bar button:checked, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:checked, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:checked, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:checked {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.4);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-row:selected button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .nautilus-window .floating-bar button:disabled, .nemo-window .floating-bar button:disabled {
+row:selected button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .nautilus-window .floating-bar button:disabled, .nemo-window .floating-bar button:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:disabled {
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-row:selected button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .nautilus-window .floating-bar button:disabled, .nemo-window .floating-bar button:disabled, row:selected button:disabled label, infobar.info button:disabled label, infobar.question button:disabled label, infobar.warning button:disabled label, infobar.error button:disabled label, .nautilus-window .floating-bar button:disabled label, .nemo-window .floating-bar button:disabled label {
+row:selected button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .nautilus-window .floating-bar button:disabled, .nemo-window .floating-bar button:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:disabled, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:disabled, row:selected button:disabled label, infobar.info button:disabled label, infobar.question button:disabled label, infobar.warning button:disabled label, infobar.error button:disabled label, .nautilus-window .floating-bar button:disabled label, .nemo-window .floating-bar button:disabled label, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:disabled label, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:disabled label, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:disabled label {
   color: rgba(255, 255, 255, 0.5);
 }
 
-headerbar.selection-mode button:disabled:active, headerbar.selection-mode button:disabled:checked, row:selected button:disabled:active, infobar.info button:disabled:active, infobar.question button:disabled:active, infobar.warning button:disabled:active, infobar.error button:disabled:active, .nautilus-window .floating-bar button:disabled:active, .nemo-window .floating-bar button:disabled:active, headerbar.selection-mode button:disabled:checked, headerbar.selection-mode button:disabled:active, row:selected button:disabled:checked, infobar.info button:disabled:checked, infobar.question button:disabled:checked, infobar.warning button:disabled:checked, infobar.error button:disabled:checked, .nautilus-window .floating-bar button:disabled:checked, .nemo-window .floating-bar button:disabled:checked {
+headerbar.selection-mode button:disabled:active, headerbar.selection-mode button:disabled:checked, row:selected button:disabled:active, infobar.info button:disabled:active, infobar.question button:disabled:active, infobar.warning button:disabled:active, infobar.error button:disabled:active, .nautilus-window .floating-bar button:disabled:active, .nemo-window .floating-bar button:disabled:active, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:disabled:active, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:disabled:active, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:disabled:active, headerbar.selection-mode button:disabled:checked, headerbar.selection-mode button:disabled:active, row:selected button:disabled:checked, infobar.info button:disabled:checked, infobar.question button:disabled:checked, infobar.warning button:disabled:checked, infobar.error button:disabled:checked, .nautilus-window .floating-bar button:disabled:checked, .nemo-window .floating-bar button:disabled:checked, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button:disabled:checked, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.flat:disabled:checked, .raven scrolledwindow > .frame > box.vertical > box.vertical:last-child button.budgie-menu-launcher:disabled:checked {
   color: #498dff;
   background-color: rgba(255, 255, 255, 0.5);
   border-color: rgba(255, 255, 255, 0.4);
@@ -4863,7 +4863,7 @@ popover.background.touch-selection, .csd popover.background.touch-selection {
   font-family: Monospace;
 }
 
-button.circular, button.close, headerbar button.circular-button, .nemo-window .primary-toolbar button.circular-button, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:not(.image-button), paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:not(.image-button), row button.circular-button, button.nautilus-circular-button.image-button,
+button.circular, button.close, headerbar button.circular-button, .nemo-window .primary-toolbar button.circular-button, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:not(.image-button), paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:not(.image-button), row button.circular-button, button.nautilus-circular-button.image-button, .raven button.image-button, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button,
 button.circular-button {
   padding: 0;
   margin: 0 2px;
@@ -4874,7 +4874,7 @@ button.circular-button {
   border: none;
 }
 
-button.circular:active, button.close:active, headerbar button.circular-button:active, .nemo-window .primary-toolbar button.circular-button:active, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:active:not(.image-button), paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:active:not(.image-button), row button.circular-button:active, button.nautilus-circular-button.image-button:active,
+button.circular:active, button.close:active, headerbar button.circular-button:active, .nemo-window .primary-toolbar button.circular-button:active, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:active:not(.image-button), paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:active:not(.image-button), row button.circular-button:active, button.nautilus-circular-button.image-button:active, .raven button.image-button:active, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:active, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:active, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:active, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:active, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:active,
 button.circular-button:active {
   background-image: none;
   color: #ffffff;
@@ -4884,7 +4884,7 @@ button.circular-button:active {
   border: none;
 }
 
-button.circular:checked, button.close:checked, headerbar button.circular-button:checked, .nemo-window .primary-toolbar button.circular-button:checked, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:checked:not(.image-button), paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:checked:not(.image-button), row button.circular-button:checked, button.nautilus-circular-button.image-button:checked,
+button.circular:checked, button.close:checked, headerbar button.circular-button:checked, .nemo-window .primary-toolbar button.circular-button:checked, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:checked:not(.image-button), paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:checked:not(.image-button), row button.circular-button:checked, button.nautilus-circular-button.image-button:checked, .raven button.image-button:checked, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:checked, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:checked, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:checked, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:checked, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:checked,
 button.circular-button:checked {
   background-image: none;
   color: #ffffff;
@@ -4894,7 +4894,7 @@ button.circular-button:checked {
   border: none;
 }
 
-button.circular label, button.close label, headerbar button.circular-button label, .nemo-window .primary-toolbar button.circular-button label, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:not(.image-button) label, paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:not(.image-button) label, row button.circular-button label, button.nautilus-circular-button.image-button label,
+button.circular label, button.close label, headerbar button.circular-button label, .nemo-window .primary-toolbar button.circular-button label, paned.titlebar.horizontal headerbar button.circular-button.flat.toggle.popup:not(.image-button) label, paned.titlebar.horizontal headerbar button.circular-button.toggle.popup.budgie-menu-launcher:not(.image-button) label, row button.circular-button label, button.nautilus-circular-button.image-button label, .raven button.image-button label, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button label, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button label, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button label, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button label, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button label,
 button.circular-button label {
   padding: 0;
 }
@@ -4914,7 +4914,7 @@ stackswitcher button.text-button {
   min-width: 80px;
 }
 
-.raven button.image-button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button,
+
 stackswitcher button.circular,
 stackswitcher button.close,
 stackswitcher headerbar button.circular-button,
@@ -4928,6 +4928,18 @@ paned.titlebar.horizontal headerbar stackswitcher button.circular-button.toggle.
 stackswitcher row button.circular-button,
 row stackswitcher button.circular-button,
 stackswitcher button.nautilus-circular-button.image-button,
+stackswitcher .raven button.image-button,
+.raven stackswitcher button.image-button,
+stackswitcher .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button,
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable stackswitcher button.image-button,
+stackswitcher .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button,
+.raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview stackswitcher button.image-button,
+stackswitcher .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button,
+.nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview stackswitcher button.image-button,
+stackswitcher .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button,
+.raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button stackswitcher button.image-button,
+stackswitcher .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button,
+.budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button stackswitcher button.image-button,
 stackswitcher button.text-button.circular,
 stackswitcher button.text-button.close,
 stackswitcher headerbar button.text-button.circular-button,
@@ -4940,7 +4952,19 @@ stackswitcher paned.titlebar.horizontal headerbar button.text-button.circular-bu
 paned.titlebar.horizontal headerbar stackswitcher button.text-button.circular-button.toggle.popup.budgie-menu-launcher:not(.image-button),
 stackswitcher row button.text-button.circular-button,
 row stackswitcher button.text-button.circular-button,
-stackswitcher button.text-button.nautilus-circular-button.image-button {
+stackswitcher button.text-button.nautilus-circular-button.image-button,
+stackswitcher .raven button.text-button.image-button,
+.raven stackswitcher button.text-button.image-button,
+stackswitcher .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.text-button.image-button,
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable stackswitcher button.text-button.image-button,
+stackswitcher .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.text-button.image-button,
+.raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview stackswitcher button.text-button.image-button,
+stackswitcher .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.text-button.image-button,
+.nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview stackswitcher button.text-button.image-button,
+stackswitcher .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.text-button.image-button,
+.raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button stackswitcher button.text-button.image-button,
+stackswitcher .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.text-button.image-button,
+.budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button stackswitcher button.text-button.image-button {
   min-width: 28px;
   min-height: 28px;
   border-radius: 100px;
@@ -4957,12 +4981,12 @@ decoration {
   transition: box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
   border-radius: 6px;
   border-width: 0;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 8px 15px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 8px 15px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.35);
   margin: 4px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.35);
 }
 
 .fullscreen decoration,
@@ -6846,59 +6870,68 @@ window.thunar notebook header.top tab.reorderable-page > box > label {
   min-height: 0;
 }
 
+window#ValaPanel.background {
+  border: none;
+}
+
 window#ValaPanel.background widget.-vala-panel-background > separator {
   background: none;
 }
 
-button.flat.-panel-button:hover, button.-panel-button.budgie-menu-launcher:hover,
-button#tasklist-button.toggle.flat:hover,
-button#tasklist-button.toggle.budgie-menu-launcher:hover,
-button.flat.-panel-icon-button:hover,
-button.-panel-icon-button.budgie-menu-launcher:hover {
+window#ValaPanel.background menubar.-vala-panel-background {
+  box-shadow: none;
+  border: none;
+}
+
+window#ValaPanel.background button.flat.-panel-button:hover, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:hover,
+window#ValaPanel.background button#tasklist-button.toggle.flat:hover,
+window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:hover,
+window#ValaPanel.background button.flat.-panel-icon-button:hover,
+window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:hover {
   box-shadow: inset 0 -2px rgba(73, 141, 255, 0.5);
   background: none;
 }
 
-button.flat.-panel-button:active, button.-panel-button.budgie-menu-launcher:active, button.flat.-panel-button:checked, button.-panel-button.budgie-menu-launcher:checked,
-button#tasklist-button.toggle.flat:active,
-button#tasklist-button.toggle.budgie-menu-launcher:active,
-button#tasklist-button.toggle.flat:checked,
-button#tasklist-button.toggle.budgie-menu-launcher:checked,
-button.flat.-panel-icon-button:active,
-button.-panel-icon-button.budgie-menu-launcher:active,
-button.flat.-panel-icon-button:checked,
-button.-panel-icon-button.budgie-menu-launcher:checked {
+window#ValaPanel.background button.flat.-panel-button:active, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:active, window#ValaPanel.background button.flat.-panel-button:checked, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:checked,
+window#ValaPanel.background button#tasklist-button.toggle.flat:active,
+window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:active,
+window#ValaPanel.background button#tasklist-button.toggle.flat:checked,
+window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:checked,
+window#ValaPanel.background button.flat.-panel-icon-button:active,
+window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:active,
+window#ValaPanel.background button.flat.-panel-icon-button:checked,
+window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:checked {
   box-shadow: inset 0 -2px #498dff;
   color: #ffffff;
   background: none;
 }
 
-.unpinned button.flat.-panel-icon-button, .unpinned button.-panel-icon-button.budgie-menu-launcher {
+window#ValaPanel.background .unpinned button.flat.-panel-icon-button, window#ValaPanel.background .unpinned button.-panel-icon-button.budgie-menu-launcher {
   border-radius: 0;
 }
 
-.unpinned button.flat.-panel-icon-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover {
+window#ValaPanel.background .unpinned button.flat.-panel-icon-button:hover, window#ValaPanel.background .unpinned button.-panel-icon-button.budgie-menu-launcher:hover {
   -gtk-icon-effect: highlight;
 }
 
-.unpinned button.flat.-panel-icon-button:hover, .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, .unpinned button.flat.-panel-icon-button:active, .unpinned button.-panel-icon-button.budgie-menu-launcher:active, .unpinned button.flat.-panel-icon-button:checked, .unpinned button.-panel-icon-button.budgie-menu-launcher:checked {
+window#ValaPanel.background .unpinned button.flat.-panel-icon-button:hover, window#ValaPanel.background .unpinned button.-panel-icon-button.budgie-menu-launcher:hover, window#ValaPanel.background .unpinned button.flat.-panel-icon-button:active, window#ValaPanel.background .unpinned button.-panel-icon-button.budgie-menu-launcher:active, window#ValaPanel.background .unpinned button.flat.-panel-icon-button:checked, window#ValaPanel.background .unpinned button.-panel-icon-button.budgie-menu-launcher:checked {
   box-shadow: inset 0 -2px #498dff;
   color: #ffffff;
 }
 
-.pinned button.flat.-panel-icon-button.running, .pinned button.-panel-icon-button.running.budgie-menu-launcher {
+window#ValaPanel.background .pinned button.flat.-panel-icon-button.running, window#ValaPanel.background .pinned button.-panel-icon-button.running.budgie-menu-launcher {
   border-radius: 0;
 }
 
-.pinned button.flat.-panel-icon-button.running > image, .pinned button.-panel-icon-button.running.budgie-menu-launcher > image, .pinned .budgie-panel button.-panel-icon-button.running.flat.launcher > image {
+window#ValaPanel.background .pinned button.flat.-panel-icon-button.running > image, window#ValaPanel.background .pinned button.-panel-icon-button.running.budgie-menu-launcher > image, window#ValaPanel.background .pinned .budgie-panel button.-panel-icon-button.running.flat.launcher > image {
   background-position: bottom center;
 }
 
-.pinned button.flat.-panel-icon-button.running:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover {
+window#ValaPanel.background .pinned button.flat.-panel-icon-button.running:hover, window#ValaPanel.background .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover {
   -gtk-icon-effect: highlight;
 }
 
-.pinned button.flat.-panel-icon-button.running:hover, .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, .pinned button.flat.-panel-icon-button.running:active, .pinned button.-panel-icon-button.running.budgie-menu-launcher:active, .pinned button.flat.-panel-icon-button.running:checked, .pinned button.-panel-icon-button.running.budgie-menu-launcher:checked {
+window#ValaPanel.background .pinned button.flat.-panel-icon-button.running:hover, window#ValaPanel.background .pinned button.-panel-icon-button.running.budgie-menu-launcher:hover, window#ValaPanel.background .pinned button.flat.-panel-icon-button.running:active, window#ValaPanel.background .pinned button.-panel-icon-button.running.budgie-menu-launcher:active, window#ValaPanel.background .pinned button.flat.-panel-icon-button.running:checked, window#ValaPanel.background .pinned button.-panel-icon-button.running.budgie-menu-launcher:checked {
   box-shadow: inset 0 -2px #498dff;
   color: #ffffff;
 }
@@ -8238,19 +8271,44 @@ GtkListBox .h4 {
 /******************
  * Budgie Desktop *
  ******************/
-.budgie-settings-window buttonbox.inline-toolbar button, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button), .workspace-switcher .workspace-add-button, .raven-mpris button.image-button, .drop-shadow button, window.budgie-switcher-window .drop-shadow button {
+.raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio {
+  border-radius: 0;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
+.raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:last-child {
+  border-radius: 0 0 10px 0;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
+.raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:first-child {
+  border-radius: 0 0 0 10px;
+  border-left-style: none;
+  border-bottom-style: none;
+}
+
+.raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:only-child {
+  border-radius: 0 0 10px 10px;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
+.budgie-settings-window buttonbox.inline-toolbar button, .budgie-popover:not(.budgie-menu) button.flat:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:not(.image-button), .workspace-switcher .workspace-add-button, .drop-shadow button, window.budgie-switcher-window .drop-shadow button {
   border: none;
   background-color: transparent;
   box-shadow: none;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:hover:not(.image-button), .workspace-switcher .workspace-add-button:hover, .raven-mpris button.image-button:hover, .drop-shadow button:hover {
+.budgie-settings-window buttonbox.inline-toolbar button:hover, .budgie-popover:not(.budgie-menu) button.flat:hover:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:hover:not(.image-button), .workspace-switcher .workspace-add-button:hover, .drop-shadow button:hover {
   color: #c5c5c5;
   background-color: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:checked:not(.image-button), .workspace-switcher .workspace-add-button:checked, .raven-mpris button.image-button:checked, .drop-shadow button:checked {
+.budgie-settings-window buttonbox.inline-toolbar button:checked, .budgie-popover:not(.budgie-menu) button.flat:checked:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:checked:not(.image-button), .workspace-switcher .workspace-add-button:checked, .drop-shadow button:checked {
   background-image: none;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.35);
@@ -8258,7 +8316,7 @@ GtkListBox .h4 {
   -gtk-icon-shadow: none;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:active:not(.image-button), .workspace-switcher .workspace-add-button:active, .raven-mpris button.image-button:active, .drop-shadow button:active {
+.budgie-settings-window buttonbox.inline-toolbar button:active, .budgie-popover:not(.budgie-menu) button.flat:active:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:active:not(.image-button), .workspace-switcher .workspace-add-button:active, .drop-shadow button:active {
   background-image: none;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.25);
@@ -8266,60 +8324,78 @@ GtkListBox .h4 {
   -gtk-icon-shadow: none;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:disabled:not(.image-button), .workspace-switcher .workspace-add-button:disabled, .raven-mpris button.image-button:disabled, .drop-shadow button:disabled {
+.budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:disabled:not(.image-button), .workspace-switcher .workspace-add-button:disabled, .drop-shadow button:disabled {
   background-color: transparent;
 }
 
-.budgie-settings-window buttonbox.inline-toolbar button:disabled label, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button) label, .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:disabled:not(.image-button) label, .workspace-switcher .workspace-add-button:disabled label, .raven-mpris button.image-button:disabled label, .drop-shadow button:disabled label, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:disabled:not(.image-button), .workspace-switcher .workspace-add-button:disabled, .raven-mpris button.image-button:disabled, .drop-shadow button:disabled {
+.budgie-settings-window buttonbox.inline-toolbar button:disabled label, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button) label, .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:disabled:not(.image-button) label, .workspace-switcher .workspace-add-button:disabled label, .drop-shadow button:disabled label, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-popover:not(.budgie-menu) button.flat:disabled:not(.image-button), .budgie-popover:not(.budgie-menu) button.budgie-menu-launcher:disabled:not(.image-button), .workspace-switcher .workspace-add-button:disabled, .drop-shadow button:disabled {
   color: rgba(222, 222, 222, 0.45);
 }
 
 .raven button, .raven stackswitcher.linked > button {
-  background-color: #616161;
-  color: #dedede;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(225, 219, 219, 0.8);
+  background-color: rgba(119, 119, 119, 0.6);
+  background-image: none;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
   border: none;
 }
 
 .raven button:hover, .raven stackswitcher.linked > button:hover {
-  background-color: #6e6e6e;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(221, 213, 213, 0.8);
+  background-color: rgba(119, 119, 119, 0.9);
+  background-image: none;
+  box-shadow: none;
 }
 
 .raven button:active, .raven stackswitcher.linked > button:active {
-  background-color: #bcbcbc;
+  color: #ffffff;
+  background-color: #777777;
   background-image: none;
-  color: #242424;
+  border-color: rgba(255, 255, 255, 0.12);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: none;
 }
 
 .raven button:checked, .raven stackswitcher.linked > button:checked {
-  background-color: #AFAFAF;
+  color: #ffffff;
+  background-color: #848484;
   background-image: none;
-  color: #2A2A2A;
+  border-color: rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.12);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: none;
 }
 
 .raven button:disabled, .raven stackswitcher.linked > button:disabled {
-  background-color: rgba(97, 97, 97, 0.5);
+  background-color: rgba(119, 119, 119, 0.6);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
 }
 
 .raven button:disabled label, .raven button:disabled, .raven stackswitcher.linked > button:disabled {
-  color: rgba(222, 222, 222, 0.5);
+  color: rgba(225, 219, 219, 0.35);
 }
 
 .raven button.flat, .raven button.budgie-menu-launcher, .raven .budgie-panel button.flat.launcher, .budgie-panel .raven button.flat.launcher, .raven stackswitcher.linked > button.flat, .raven stackswitcher.linked > button.budgie-menu-launcher, .raven .raven-header:not(.top) button {
-  border: none;
+  border-color: transparent;
   background-color: transparent;
-  color: white;
+  background-image: none;
   box-shadow: none;
 }
 
 .raven button.flat:hover, .raven button.budgie-menu-launcher:hover, .raven .raven-header:not(.top) button:hover {
-  color: #e6e6e6;
+  color: #c5c5c5;
   background-color: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.15);
 }
 
 .raven button.flat:checked, .raven button.budgie-menu-launcher:checked, .raven .raven-header:not(.top) button:checked {
   background-image: none;
-  color: white;
+  color: #ffffff;
   background-color: rgba(255, 255, 255, 0.35);
   text-shadow: none;
   -gtk-icon-shadow: none;
@@ -8327,7 +8403,7 @@ GtkListBox .h4 {
 
 .raven button.flat:active, .raven button.budgie-menu-launcher:active, .raven .raven-header:not(.top) button:active {
   background-image: none;
-  color: white;
+  color: #ffffff;
   background-color: rgba(255, 255, 255, 0.25);
   text-shadow: none;
   -gtk-icon-shadow: none;
@@ -8338,7 +8414,32 @@ GtkListBox .h4 {
 }
 
 .raven button.flat:disabled label, .raven button.budgie-menu-launcher:disabled label, .raven .raven-header:not(.top) button:disabled label, .raven button.flat:disabled, .raven button.budgie-menu-launcher:disabled, .raven .raven-header:not(.top) button:disabled {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(222, 222, 222, 0.45);
+}
+
+.raven button.linked, .raven stackswitcher.linked > button.linked, .raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  background-color: #333333;
+}
+
+.raven button.linked:hover, .raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:hover {
+  background-color: #404040;
+}
+
+.raven button.linked:active, .raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:active, .raven button.linked:checked, .raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:checked {
+  color: #ffffff;
+  background-color: #498dff;
+}
+
+.raven button.linked:disabled, .raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:disabled {
+  background-color: transparent;
+}
+
+.raven button.linked:disabled label, .raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:disabled label, .raven button.linked:disabled, .raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio:disabled {
+  color: rgba(222, 222, 222, 0.45);
 }
 
 .budgie-container {
@@ -8357,15 +8458,16 @@ GtkListBox .h4 {
 .budgie-settings-window list.sidebar {
   background-color: #242424;
   border-radius: 0 0 0 6px;
+  border-color: #484848;
 }
 
 .budgie-popover {
   margin: 0;
   padding: 0;
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 0, 0, 0.55);
   border-radius: 6px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
   background-color: #333333;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.55);
 }
 
 .budgie-popover .container {
@@ -8580,14 +8682,24 @@ window.budgie-popover:not(.csd) > frame.container > border {
   color: #dedede;
   font-weight: normal;
   border: none;
+  box-shadow: none;
+}
+
+.budgie-menu button:hover {
+  transition: none;
 }
 
 .budgie-menu button:disabled {
   color: rgba(222, 222, 222, 0.45);
 }
 
+.budgie-menu button:checked:hover {
+  background-image: none;
+  background-color: #639dff;
+}
+
 .budgie-menu button:checked:disabled {
-  background-color: #498dff;
+  background-color: rgba(73, 141, 255, 0.5);
 }
 
 .budgie-menu row {
@@ -8659,22 +8771,55 @@ popover.background.places-menu row {
   background-color: #2a2a2a;
   color: #dedede;
   font-weight: 500;
+  box-shadow: none;
+  background-clip: padding-box;
 }
 
 .budgie-panel.transparent {
   background-color: rgba(42, 42, 42, 0.65);
-}
-
-.top .budgie-panel.transparent {
-  background-image: none;
+  box-shadow: none;
 }
 
 .top .budgie-panel {
-  background-image: none;
+  border-bottom: 1px solid #484848;
+  background-image: linear-gradient(0deg, #2a2a2a 0%, #333333 100%);
 }
 
-.bottom .budgie-panel, .bottom .budgie-panel.transparent {
+.top .budgie-panel.transparent {
+  background-image: linear-gradient(0deg, rgba(42, 42, 42, 0.9) 0%, rgba(51, 51, 51, 0.9) 100%);
+}
+
+.bottom .budgie-panel {
+  border: solid rgba(0, 0, 0, 0.72);
+  border-width: 1px 1px 0 1px;
   border-radius: 6px 6px 0 0;
+}
+
+.bottom .budgie-panel.dock-mode {
+  border-radius: 0 0 0 0;
+  border-width: 1px 0 0 0;
+}
+
+.left .budgie-panel {
+  border: solid rgba(0, 0, 0, 0.72);
+  border-width: 1px 1px 1px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.left .budgie-panel.dock-mode {
+  border-radius: 0 0 0 0;
+  border-width: 0 1px 0 0;
+}
+
+.right .budgie-panel {
+  border: solid rgba(0, 0, 0, 0.72);
+  border-width: 1px 0 1px 1px;
+  border-radius: 6px 0 0 6px;
+}
+
+.right .budgie-panel.dock-mode {
+  border-radius: 0 0 0 0;
+  border-width: 0 0 0 1px;
 }
 
 .budgie-panel button {
@@ -8749,6 +8894,10 @@ popover.background.places-menu row {
 .budgie-panel menubar > menuitem:disabled,
 .budgie-panel .menubar > menuitem:disabled {
   color: rgba(222, 222, 222, 0.4);
+}
+
+.budgie-panel menubar.-vala-panel-appmenu-private > menuitem {
+  font-weight: normal;
 }
 
 .budgie-panel .alert {
@@ -8832,9 +8981,9 @@ popover.background.places-menu row {
   border-image: radial-gradient(circle closest-corner at calc(100% - 1px) center, #0e6bff 100%, transparent 0%) 0 3 0 0/0 3px 0 0;
 }
 
-button.flat.-panel-button, button.-panel-button.budgie-menu-launcher, .budgie-panel button.-panel-button.flat.launcher,
-button#tasklist-button.toggle.flat, button#tasklist-button.toggle.budgie-menu-launcher,
-button.flat.-panel-icon-button, button.-panel-icon-button.budgie-menu-launcher, .budgie-panel button.-panel-icon-button.flat.launcher,
+window#ValaPanel.background button.flat.-panel-button, window#ValaPanel.background button.-panel-button.budgie-menu-launcher,
+window#ValaPanel.background button#tasklist-button.toggle.flat, window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher,
+window#ValaPanel.background button.flat.-panel-icon-button, window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher,
 button.flat.launcher,
 button.launcher.budgie-menu-launcher,
 .budgie-panel button.launcher.flat {
@@ -8845,44 +8994,44 @@ button.launcher.budgie-menu-launcher,
   background-position: center center;
 }
 
-button.flat.-panel-button > image, button.-panel-button.budgie-menu-launcher > image, .budgie-panel button.-panel-button.flat.launcher > image, button#tasklist-button.toggle.flat > image, button#tasklist-button.toggle.budgie-menu-launcher > image, button.flat.-panel-icon-button > image, button.-panel-icon-button.budgie-menu-launcher > image, .budgie-panel button.-panel-icon-button.flat.launcher > image,
+window#ValaPanel.background button.flat.-panel-button > image, window#ValaPanel.background button.-panel-button.budgie-menu-launcher > image, window#ValaPanel.background button#tasklist-button.toggle.flat > image, window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher > image, window#ValaPanel.background button.flat.-panel-icon-button > image, window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher > image,
 button.flat.launcher > image,
 button.launcher.budgie-menu-launcher > image,
 .budgie-panel button.launcher.flat > image {
   opacity: 0.87;
 }
 
-button.flat.-panel-button:hover, button.-panel-button.budgie-menu-launcher:hover,
-button#tasklist-button.toggle.flat:hover, button#tasklist-button.toggle.budgie-menu-launcher:hover,
-button.flat.-panel-icon-button:hover, button.-panel-icon-button.budgie-menu-launcher:hover,
+window#ValaPanel.background button.flat.-panel-button:hover, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:hover,
+window#ValaPanel.background button#tasklist-button.toggle.flat:hover, window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:hover,
+window#ValaPanel.background button.flat.-panel-icon-button:hover, window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:hover,
 button.flat.launcher:hover,
 button.launcher.budgie-menu-launcher:hover {
   -gtk-icon-effect: highlight;
 }
 
-button.flat.-panel-button:hover > image, button.-panel-button.budgie-menu-launcher:hover > image, button#tasklist-button.toggle.flat:hover > image, button#tasklist-button.toggle.budgie-menu-launcher:hover > image, button.flat.-panel-icon-button:hover > image, button.-panel-icon-button.budgie-menu-launcher:hover > image,
+window#ValaPanel.background button.flat.-panel-button:hover > image, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:hover > image, window#ValaPanel.background button#tasklist-button.toggle.flat:hover > image, window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:hover > image, window#ValaPanel.background button.flat.-panel-icon-button:hover > image, window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:hover > image,
 button.flat.launcher:hover > image,
 button.launcher.budgie-menu-launcher:hover > image,
 .budgie-panel button.launcher.flat:hover > image {
   opacity: 1.0;
 }
 
-button.flat.-panel-button:active > image, button.-panel-button.budgie-menu-launcher:active > image, button#tasklist-button.toggle.flat:active > image, button#tasklist-button.toggle.budgie-menu-launcher:active > image, button.flat.-panel-icon-button:active > image, button.-panel-icon-button.budgie-menu-launcher:active > image,
+window#ValaPanel.background button.flat.-panel-button:active > image, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:active > image, window#ValaPanel.background button#tasklist-button.toggle.flat:active > image, window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:active > image, window#ValaPanel.background button.flat.-panel-icon-button:active > image, window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:active > image,
 button.flat.launcher:active > image,
 button.launcher.budgie-menu-launcher:active > image,
 .budgie-panel button.launcher.flat:active > image {
   opacity: 1.0;
 }
 
-button.flat.-panel-button:checked:hover, button.-panel-button.budgie-menu-launcher:checked:hover,
-button#tasklist-button.toggle.flat:checked:hover, button#tasklist-button.toggle.budgie-menu-launcher:checked:hover,
-button.flat.-panel-icon-button:checked:hover, button.-panel-icon-button.budgie-menu-launcher:checked:hover,
+window#ValaPanel.background button.flat.-panel-button:checked:hover, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:checked:hover,
+window#ValaPanel.background button#tasklist-button.toggle.flat:checked:hover, window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:checked:hover,
+window#ValaPanel.background button.flat.-panel-icon-button:checked:hover, window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:checked:hover,
 button.flat.launcher:checked:hover,
 button.launcher.budgie-menu-launcher:checked:hover {
   -gtk-icon-effect: highlight;
 }
 
-button.flat.-panel-button:checked > image, button.-panel-button.budgie-menu-launcher:checked > image, button#tasklist-button.toggle.flat:checked > image, button#tasklist-button.toggle.budgie-menu-launcher:checked > image, button.flat.-panel-icon-button:checked > image, button.-panel-icon-button.budgie-menu-launcher:checked > image,
+window#ValaPanel.background button.flat.-panel-button:checked > image, window#ValaPanel.background button.-panel-button.budgie-menu-launcher:checked > image, window#ValaPanel.background button#tasklist-button.toggle.flat:checked > image, window#ValaPanel.background button#tasklist-button.toggle.budgie-menu-launcher:checked > image, window#ValaPanel.background button.flat.-panel-icon-button:checked > image, window#ValaPanel.background button.-panel-icon-button.budgie-menu-launcher:checked > image,
 button.flat.launcher:checked > image,
 button.launcher.budgie-menu-launcher:checked > image,
 .budgie-panel button.launcher.flat:checked > image {
@@ -8989,25 +9138,30 @@ box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher, box:not(.unpi
   border-image: none;
 }
 
-frame.raven-frame > border {
-  border-style: none;
-  box-shadow: none;
+.left frame.raven-frame > border {
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.72);
+}
+
+.right frame.raven-frame > border {
+  border: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.72);
 }
 
 .top .shadow-block {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.08), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.23) 10%, rgba(0, 0, 0, 0.08) 60%, transparent);
 }
 
 .left .shadow-block {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.08), transparent);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.23) 10%, rgba(0, 0, 0, 0.08) 60%, transparent);
 }
 
 .right .shadow-block {
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.23), rgba(0, 0, 0, 0.08), transparent);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.23) 10%, rgba(0, 0, 0, 0.08) 60%, transparent);
 }
 
 .raven {
-  background-color: #2A2A2A;
+  background-color: #1f1f1f;
   color: #dedede;
 }
 
@@ -9045,8 +9199,9 @@ frame.raven-frame > border {
 }
 
 .raven .raven-header.top {
-  padding: 2px 12px;
+  padding: 2px 12px 8px;
   color: #dedede;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .raven .raven-header.top stackswitcher {
@@ -9081,6 +9236,80 @@ frame.raven-frame > border {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.raven scrolledwindow > .frame {
+  padding: 0 8px;
+  transition-duration: 0s;
+  border: none;
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical {
+  margin: 8px 0;
+  border-radius: 10px;
+  background-color: #191919;
+  transition-duration: 0s;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.raven scrolledwindow > .frame .raven-header {
+  margin-top: -16px;
+  border-radius: 10px 10px 0 0;
+}
+
+.raven scrolledwindow > .frame .raven-background {
+  margin-bottom: -16px;
+  border-radius: 0 0 10px 10px;
+  background-color: #1b1b1b;
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child {
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background {
+  background-color: rgba(0, 0, 0, 0.25);
+  margin-bottom: 0;
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background image {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  border-radius: 0 0 10px 10px;
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris label {
+  min-height: 24px;
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris image {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris image:disabled {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.raven scrolledwindow > .frame > box.vertical > box.vertical:last-child .raven-background .raven-mpris button.image-button {
+  padding: 8px;
+  border: none;
+}
+
+.raven scrolledwindow > .frame box.audio-widget stackswitcher.linked {
+  padding: 0;
+}
+
+.raven scrolledwindow > .frame box.audio-widget stackswitcher.linked > button.text-button.radio {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .raven viewport.frame .raven-header {
   margin-top: -8px;
 }
@@ -9088,14 +9317,6 @@ frame.raven-frame > border {
 .raven .expander-button {
   border-radius: 100px;
   -gtk-outline-radius: 100px;
-}
-
-.raven .raven-background {
-  border-style: solid none;
-  border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.12);
-  background-color: #242424;
-  color: #dedede;
 }
 
 .raven .raven-background.middle {
@@ -9112,16 +9333,17 @@ frame.raven-frame > border {
 
 .raven .raven-background list {
   color: #dedede;
-  background-color: #242424;
+  background-color: #1b1b1b;
 }
 
 .raven .raven-background.frame {
   border-style: solid none;
+  border-width: 1px;
   border-color: rgba(255, 255, 255, 0.12);
 }
 
 .raven .raven-background > overlay > widget > image {
-  color: alpha(#dedede,0.12);
+  color: rgba(222, 222, 222, 0.12);
 }
 
 .raven .raven-background grid > label:first-child {
@@ -9153,6 +9375,127 @@ frame.raven-frame > border {
   font-size: smaller;
 }
 
+.raven box.vertical > stack > box.vertical > .raven-header {
+  background-color: #191919;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame {
+  padding: 0;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame list {
+  background-color: #1b1b1b;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button {
+  margin-left: -8px;
+  margin-right: -2px;
+  background-color: transparent;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable > grid > *, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview > grid > *, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview > grid > *, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button > grid > *, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button > grid > *,
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable > box.vertical *,
+.raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview > box.vertical *,
+.nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview > box.vertical *,
+.raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button > box.vertical *,
+.budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button > box.vertical * {
+  color: #dedede;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable image, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview image, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button image {
+  padding-left: 8px;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button {
+  margin: 8px;
+  padding: 2px;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button image, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button image, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button image {
+  padding: 0;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:active image, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:active image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:active image, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:active image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:active image, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button:checked image, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:checked image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button:checked image, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:checked image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button:checked image {
+  color: white;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list {
+  border-radius: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable:last-child, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable:last-child, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:last-child, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview:last-child, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview:last-child, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview:last-child, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button:last-child, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button:last-child, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button:last-child, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button:last-child, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:last-child {
+  border-bottom: none;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable:selected, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable:selected, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:selected, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview:selected, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview:selected, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview:selected, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button:selected, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button:selected, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button:selected, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button:selected, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:selected {
+  background-color: rgba(222, 222, 222, 0.06);
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable label, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable label, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable label, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable label, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable label, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview label, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview label, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview label, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview label, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview label, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview label, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview label, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview label, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button label, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button label, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button label, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button label, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button label, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button label, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button label, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button label {
+  padding: 0 16px;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable button.image-button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable button.image-button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable button.image-button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable button.image-button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable button.image-button, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview button.image-button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview button.image-button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview button.image-button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview button.image-button, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button button.image-button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button button.image-button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button button.image-button, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button button.image-button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button button.image-button, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button button.image-button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button button.image-button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button button.image-button {
+  min-height: 24px;
+  min-width: 24px;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable button.image-button image, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable button.image-button image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable button.image-button image, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable button.image-button image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable button.image-button image, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview button.image-button image, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview button.image-button image, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview button.image-button image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview button.image-button image, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button button.image-button image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button button.image-button image, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button button.image-button image, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button button.image-button image, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button button.image-button image, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button button.image-button image, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button button.image-button image, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button button.image-button image {
+  padding: 0;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected {
+  background-color: rgba(73, 141, 255, 0.75);
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected > grid > *, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected > grid > *, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected > grid > *, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > grid > *, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > grid > *,
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected > box.vertical *,
+.raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected > box.vertical *,
+.nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected > box.vertical *,
+.raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > box.vertical *,
+.budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > box.vertical * {
+  color: #ffffff;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button {
+  border: none;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button:hover, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:hover, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:hover, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:hover, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button:active, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:active, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:active, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:active, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:active, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button:checked, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:checked, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:checked, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:checked, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:checked {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: none;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > row.activatable, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > .places-treeview, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .budgie-menu list > button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > button, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > row.activatable:last-child, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable:last-child, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable:last-child, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > .places-treeview:last-child, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview:last-child, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview:last-child, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .budgie-menu list > button:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > button:last-child, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button:last-child, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button:last-child, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button:last-child, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button:last-child, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button:last-child, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button:last-child {
+  border-bottom: none;
+}
+
+.raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > row.activatable:selected, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable:selected, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable:selected, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > .places-treeview:selected, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview:selected, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview:selected, .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .budgie-menu list > button:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > button:selected, .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button:selected, .budgie-menu .raven .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button:selected, .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button:selected, .budgie-menu .nemo-window .nemo-places-sidebar .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button:selected, .raven .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button:selected, .budgie-menu .raven box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button:selected {
+  background-color: rgba(73, 141, 255, 0.65);
+}
+
+.devices-list.sound-devices > row.activatable > box.horizontal label, .nemo-window .nemo-places-sidebar .devices-list.sound-devices > .places-treeview > box.horizontal label, .budgie-menu .devices-list.sound-devices > button > box.horizontal label {
+  padding-left: 8px;
+}
+
 calendar.raven-calendar {
   margin: 2px 0;
   padding: 2px;
@@ -9164,6 +9507,7 @@ calendar.raven-calendar {
 calendar.raven-calendar:selected {
   border-radius: 3px;
   background-color: #498dff;
+  color: #ffffff;
 }
 
 calendar.raven-calendar.button {
@@ -9184,124 +9528,6 @@ calendar.raven-calendar:indeterminate {
 
 calendar.raven-calendar.highlight {
   color: #dedede;
-}
-
-.raven-mpris {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-}
-
-.raven-mpris label {
-  min-height: 24px;
-}
-
-.raven-mpris button.image-button {
-  padding: 8px;
-  border: none;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame {
-  padding: 0;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame list {
-  background-color: transparent;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button {
-  margin-left: -8px;
-  margin-right: -2px;
-  background-color: transparent;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable > grid > *, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview > grid > *, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button > grid > *,
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable > box.vertical *,
-.nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview > box.vertical *,
-.budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button > box.vertical * {
-  color: #dedede;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button image {
-  padding-left: 8px;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button {
-  margin: 8px;
-  padding: 2px;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable button.image-button image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview button.image-button image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button button.image-button image {
-  padding: 0;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list {
-  border-radius: 2px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button:last-child, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:last-child {
-  border-bottom: none;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable:selected, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview:selected, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button:selected, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button:selected {
-  background-color: rgba(222, 222, 222, 0.06);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable label, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable label, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable label, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview label, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview label, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview label, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview label, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview label, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button label, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button label, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button label, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button label, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button label {
-  padding: 0 16px;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable button.image-button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable button.image-button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview button.image-button, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button button.image-button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button button.image-button, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button button.image-button {
-  min-height: 24px;
-  min-width: 24px;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > row.activatable button.image-button image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > row.activatable button.image-button image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > row.activatable button.image-button image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > .places-treeview button.image-button image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button .nemo-window .nemo-places-sidebar list > .places-treeview button.image-button image, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > .places-treeview button.image-button image, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable .budgie-menu list > button button.image-button image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable list > button button.image-button image, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview .budgie-menu list > button button.image-button image, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview list > button button.image-button image, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button list > button button.image-button image {
-  padding: 0;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected {
-  background-color: rgba(73, 141, 255, 0.75);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected > grid > *, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected > grid > *, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > grid > *,
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected > box.vertical *,
-.nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected > box.vertical *,
-.budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected > box.vertical * {
-  color: #ffffff;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button {
-  border: none;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button:hover, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:hover, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button:active, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:active, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:active, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected button.image-button:checked, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected button.image-button:checked, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected button.image-button:checked {
-  background-color: rgba(255, 255, 255, 0.35);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > row.activatable, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > .places-treeview, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .budgie-menu list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > button, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > row.activatable:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview:last-child, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview:last-child, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .budgie-menu list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > button:last-child, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button:last-child, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button:last-child, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button:last-child {
-  border-bottom: none;
-}
-
-box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > row.activatable:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > row.activatable:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > row.activatable:selected, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > .places-treeview:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > .places-treeview:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected .nemo-window .nemo-places-sidebar list > .places-treeview:selected, .nemo-window .nemo-places-sidebar .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > .places-treeview:selected, box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected .budgie-menu list > button:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > row.activatable:selected list > button:selected, .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected .budgie-menu list > button:selected, .budgie-menu .nemo-window .nemo-places-sidebar box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > .places-treeview:selected list > button:selected, .budgie-menu box.vertical > stack > box.vertical > .raven-background > viewport.frame > list > button:selected list > button:selected {
-  background-color: rgba(73, 141, 255, 0.65);
 }
 
 .budgie-notification-window, .budgie-osd-window, .budgie-switcher-window {
@@ -9449,6 +9675,39 @@ window.budgie-switcher-window flowboxchild {
 
 .budgie-run-dialog scrolledwindow {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.budgie-panel box.titlebar {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+.budgie-panel box.titlebar > widget > label {
+  color: rgba(222, 222, 222, 0.75);
+}
+
+.budgie-panel box.titlebar > button.image-button.titlebutton {
+  padding: 0 3px;
+}
+
+.budgie-panel box.titlebar.horizontal {
+  padding: 0 3px;
+}
+
+.budgie-panel box.titlebar.horizontal > widget > label:dir(ltr) {
+  padding-right: 3px;
+}
+
+.budgie-panel box.titlebar.horizontal > widget > label:dir(rtl) {
+  padding-left: 3px;
+}
+
+.budgie-panel box.titlebar.horizontal > button.image-button.titlebutton {
+  padding: 0 3px;
 }
 
 @define-color theme_fg_color #dedede;

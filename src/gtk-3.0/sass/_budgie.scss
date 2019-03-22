@@ -7,11 +7,42 @@
 // Container for both the "panel" area and the shadow. Wise to keep
 // this transparent..
 
-$raven_base_color: #242424;
-$raven_bg_color:   #2A2A2A;
-$raven_fg_color:   #dedede;
-$raven_button_bg_color: #616161;
-$raven_button_active_color: #AFAFAF;
+// Raven
+$raven_base_color: if($variant =='light', #f5f5f5, #1b1b1b);
+$raven_bg_color: if($variant =='light', #dedede, #1f1f1f);
+$raven_fg_color: $text_color;
+$raven_header_bg_color: if($variant =='light', #efefef, #191919);
+$raven_header_fg_color: $text_color;
+$raven_button_bg_color: $button_bg;
+$raven_border_color: if($variant =='light', rgba(black, 0.10), rgba(black, 0.20));
+
+$raven_radius: 10px;
+$raven_padding: 8px;
+
+%raven_middle_button {
+  border-radius: 0;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
+%raven_last_button {
+  border-radius: 0 0 $raven_radius 0;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
+%raven_first_button {
+  border-radius: 0 0 0 $raven_radius;
+  border-left-style: none;
+  border-bottom-style: none;
+}
+
+%raven_single_button {
+  border-radius: 0 0 $raven_radius $raven_radius;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+}
 
 %budgie_button {
   @include button(flat-normal);
@@ -22,60 +53,34 @@ $raven_button_active_color: #AFAFAF;
 }
 
 %raven_button {
-  background-color: $raven_button_bg_color;
-  color: $raven_fg_color;
-  border: none;
-
-  &:hover {
-    background-color: lighten($raven_button_bg_color, 5%);
-  }
-  &:active {
-    background-color: lighten($raven_button_active_color, 5%);
-    background-image: none;
-    color: $raven_base_color;
-  }
-  &:checked {
-    background-color: $raven_button_active_color;
-    background-image: none;
-    color: $raven_bg_color;
-  }
-  &:disabled {
-    label, & { color: rgba($raven_fg_color, 0.5); }
-    background-color: rgba($raven_button_bg_color, 0.5);
-  }
+  @include button(header-normal);
+  &:hover { @include button(header-hover); }
+  &:active { @include button(header-active); }
+  &:checked { @include button(header-checked); }
+  &:disabled { @include button(header-insensitive); }
 
   &.flat {
-    border: none;
-    background-color: transparent;
-    color: white;
-    box-shadow: none;
+    @include button(undecorated);
+    &:hover { @include button(flat-hover); }
+    &:checked { @include button(flat-checked); }
+    &:active { @include button(flat-active); }
+    &:disabled { @include button(flat-insensitive); }
+  }
+
+  &.linked {
+    @include button(undecorated);
+    background-color: $_menu_bg;
 
     &:hover {
-      color: darken(white, 10%);
-      background-color: rgba(white, 0.15);
-      border-color: rgba(white, 0.15);
+      background-color: if($variant =='light', darken($_menu_bg, 5%), lighten($_menu_bg, 5%));
     }
 
-    &:checked {
-      background-image: none;
-      color: white;
-      background-color: rgba(white, 0.35);
-      text-shadow: none;
-      -gtk-icon-shadow: none;
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
     }
 
-    &:active {
-      background-image: none;
-      color: white;
-      background-color: rgba(white, 0.25);
-      text-shadow: none;
-      -gtk-icon-shadow: none;
-    }
-
-    &:disabled {
-      label, & { color: rgba(white, 0.5); }
-      background-color: transparent;
-    }
+    &:disabled { @include button(flat-insensitive); }
   }
 }
 
@@ -96,24 +101,22 @@ $raven_button_active_color: #AFAFAF;
   list.sidebar {
     background-color: $base_color;
     border-radius: 0 0 0 $wm_radius;
+    border-color: if($variant =='light', $solid_borders_color, $header_border);
   }
 }
 
 .budgie-popover {
   margin: 0;
   padding: 0;
-  border-color: $borders_color;
+  border-color: if($variant=='light', $borders_color, rgba($_wm_border, 0.55));
   border-radius: $wm_radius;
+  background-color: if($transparency == 'true', rgba($bg_color, 0.95), $bg_color);
   box-shadow: 0 1px 2px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
               0 2px 3px 0 if($variant == 'light', opacify($_wm_border, 0.15), opacify($_wm_border, 0.1)),
-              0 0 0 1px $borders_color;
-
-  background-color: if($transparency == 'true', rgba($bg_color, 0.95), $bg_color);
+              0 0 0 1px if($variant=='light', $borders_color, rgba($_wm_border, 0.55));
 
   .container { padding: 2px; border: none; }
-
   border { border: none; }
-
   list { background-color: transparent; }
 
   row {
@@ -141,7 +144,6 @@ $raven_button_active_color: #AFAFAF;
 
   &.user-menu {
     .container { padding: 8px; }
-
     separator { margin: 4px 0; }
   }
 
@@ -173,14 +175,12 @@ $raven_button_active_color: #AFAFAF;
     .container { padding: 2px 8px 8px; }
 
     separator { margin: 4px 0; }
-
     flowboxchild { padding: 0; }
   }
 }
 
 // budgie specific popover widgets
 window.budgie-popover:not(.csd) {
-
   > frame.container {
     margin: 0 -1px -1px; // remove gap
 
@@ -201,7 +201,6 @@ window.budgie-popover:not(.csd) {
     .top &,
     .bottom & {
       &:dir(ltr) { border-left-width: 1px; }
-
       &:dir(rtl) { border-right-width: 1px; }
     }
 
@@ -216,7 +215,6 @@ window.budgie-popover:not(.csd) {
     .top &,
     .bottom & {
       &:dir(ltr) { border-right-width: 1px; }
-
       &:dir(rtl) { border-left-width: 1px; }
     }
 
@@ -236,9 +234,7 @@ window.budgie-popover:not(.csd) {
     @extend %budgie_button;
 
     &:hover { box-shadow: none; }
-
     &:active { background-image: none; }
-
     &:active image { margin: 1px 0 -1px; }
   }
 
@@ -263,41 +259,44 @@ window.budgie-popover:not(.csd) {
   entry.search { background-color: transparent; }
 
   entry.search {
-//    margin: 6px 6px 0 6px;
+    // margin: 6px 6px 0 6px;
     border: none;
     border-bottom: 1px solid $borders_color;
     border-radius: 0;
     box-shadow: none;
     font-size: 120%;
-//    &:focus { @include entry(focus); }
+    // &:focus { @include entry(focus); }
   }
 
   .categories {
     &:dir(ltr) { border-bottom-left-radius: $bt_radius; }
-
     &:dir(rtl) { border-bottom-right-radius: $bt_radius; }
   }
 
   button {
     @extend row.activatable;
-
     min-height: 32px;
     padding: 0 8px;
     border-radius: 0;
     color: $fg_color;
     font-weight: normal;
     border: none;
+    box-shadow: none;
 
+    &:hover { transition: none; }
     &:disabled { color: $insensitive_fg_color; }
-
     &:checked { @extend %selected_items; }
 
-    &:checked:disabled { background-color: $selected_bg_color; } // overriding
+    &:checked:hover {
+      background-image: none;
+      background-color: lighten($selected_bg_color, 5%);
+    }
+
+    &:checked:disabled { background-color: rgba($selected_bg_color, 0.5); } // overriding
   }
 
   row {
     padding: 0;
-
     &:hover { box-shadow: none; }
   }
 }
@@ -313,7 +312,6 @@ popover.background.user-menu {
   padding: 8px;
 
   .content-box { background-color: transparent; }
-
   separator { margin: 4px 0; }
 
   row {
@@ -324,18 +322,18 @@ popover.background.user-menu {
 }
 
 // Raven Trigger
-button.raven-trigger {
-  // padding: 0 4px;
-}
+// button.raven-trigger {
+//   padding: 0 4px;
+// }
 
 // Places Menu
 popover.background.places-menu {
   padding: 8px;
 
   // FIXME: untested
-  .message-bar {
-    // margin-bottom: 4px;
-  }
+  // .message-bar {
+  //   margin-bottom: 4px;
+  // }
 
   .name-button.text-button {
     // padding: 4px 8px;
@@ -349,9 +347,9 @@ popover.background.places-menu {
   }
 
   // FIXME: untested
-  .unmount-button {
-    // padding: ($medium_size - 24px) / 2;
-  }
+  // .unmount-button {
+  //   padding: ($medium_size - 24px) / 2;
+  // }
 
   .places-section-header > image {
     &:dir(ltr) { margin: 0 8px - 10px 0 8px - 3px; }
@@ -370,37 +368,61 @@ popover.background.places-menu {
     box-shadow: none;
     background-image: none;
   }
-
-  // FIXME: untested
-  .unlock-area {
-    entry {
-    }
-
-    button {
-    }
-  }
 }
 
 // Panel
 .budgie-panel {
   transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1);
-  background-color: opacify($panel_bg, 1);
+  background-color: $panel_bg;
   color: $panel_fg;
   font-weight: 500;
+  box-shadow: none;
+  background-clip: padding-box;
 
-  &.transparent { background-color: rgba(opacify($panel_bg, 1), 0.65); }
-
-  .top &.transparent {
-    background-image: if($darker=='false' and $variant=='light', linear-gradient(0deg, rgba($header_middle, 0.9) 0%, rgba($header_highlight, 0.9) 100%), none);
+  &.transparent {
+    background-color: rgba($panel_bg, 0.65);
+    box-shadow: none;
   }
 
   .top & {
-    background-image: if($darker=='false' and $variant=='light', linear-gradient(0deg, $header_middle 0%, $header_highlight 100%), none);
+    border-bottom: 1px solid if($variant == 'light', $panel_border_color, $header_border);
+    background-image: linear-gradient(0deg, $panel_bottom_color 0%, $panel_top_color 100%);
+  }
+
+  .top &.transparent {
+    background-image: linear-gradient(0deg, rgba($panel_bottom_color, 0.9) 0%, rgba($panel_top_color, 0.9) 100%);
   }
 
   .bottom & {
-    &, &.transparent {
-      border-radius: $wm_radius $wm_radius 0 0;
+    border: solid $panel_border_color;
+    border-width: 1px 1px 0 1px;
+    border-radius: $wm_radius $wm_radius 0 0;
+
+    &.dock-mode {
+      border-radius: 0 0 0 0;
+      border-width: 1px 0 0 0;
+    }
+  }
+
+  .left & {
+    border: solid $panel_border_color;
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 $wm_radius $wm_radius 0;
+
+    &.dock-mode {
+      border-radius: 0 0 0 0;
+      border-width: 0 1px 0 0;
+    }
+  }
+
+  .right & {
+    border: solid $panel_border_color;
+    border-width: 1px 0 1px 1px;
+    border-radius: $wm_radius 0 0 $wm_radius;
+
+    &.dock-mode {
+      border-radius: 0 0 0 0;
+      border-width: 0 0 0 1px;
     }
   }
 
@@ -435,7 +457,6 @@ popover.background.places-menu {
   }
 
   &.horizontal button { padding: 0 4px; }
-
   &.vertical button { padding: 4px 0; }
 
   separator { background-color: $borders_color; }
@@ -456,13 +477,14 @@ popover.background.places-menu {
       > window.background.popup > decoration,
       > window.background.popup > menu { border-radius: 0 0 $wm_radius $wm_radius; }
 
-      &:hover {
-        background-color: $selected_bg_color;
-      }
+      &:hover { background-color: $selected_bg_color; }
+      &:disabled { color: transparentize($panel_fg, 0.6); }
+    }
+  }
 
-      &:disabled {
-        color: transparentize($panel_fg, 0.6);
-      }
+  menubar.-vala-panel-appmenu-private { // appmenu plugin
+    > menuitem {
+      font-weight: normal;
     }
   }
 
@@ -470,9 +492,9 @@ popover.background.places-menu {
   .alert { color: $destructive_color; }
 
   // End Section needs to be fancy
-  .end-region {
-    // background-color: rgba(0,0,0,0.2);
-  }
+  // .end-region {
+  //   background-color: rgba(0,0,0,0.2);
+  // }
 
   // Tasklist
   #tasklist-button {
@@ -504,9 +526,9 @@ popover.background.places-menu {
       color: $fg_color;
 
       &:hover, &:active { color: rgba($fg_color, 0.8); }
-
       &:disabled { color: rgba($fg_color, 0.5); }
     }
+
     &:active { background-color: rgba($fg_color, 0.20); }
     &:checked { background-color: rgba($fg_color, 0.15); }
   }
@@ -550,9 +572,11 @@ popover.background.places-menu {
       -gtk-icon-effect: highlight;
       > image { opacity: 1.0; }
     }
+
     &:active {
       > image { opacity: 1.0; }
     }
+
     &:checked {
       &:hover { -gtk-icon-effect: highlight; }
       > image { opacity: 1.0; }
@@ -599,29 +623,44 @@ popover.background.places-menu {
 
 box:not(.unpinned):not(.pinned) > revealer > button.flat.launcher { border-image: none; } // unset before drawing indicators
 
-frame.raven-frame > border {
-  border-style: none;
-  box-shadow: none;
+// Raven borders
+.left frame.raven-frame > border {
+  border: none;
+  border-right: 1px solid $panel_border_color;
+}
+
+.right frame.raven-frame > border {
+  border: none;
+  border-left: 1px solid $panel_border_color;
 }
 
 $pos_list: ((top, bottom), (left, right), (right, left));
 
 @each $pos, $b_pos in $pos_list {
   // Panel borders
-  // .#{$pos} .budgie-panel { border-#{$b_pos}: 1px solid $borders_color; }
+  // .#{$pos} .budgie-panel {
+  //   border-#{$b_pos}: 1px solid $panel_border_color;
+  // }
 
   // Raven borders
   // .#{$pos} frame.raven-frame > border {
-  //   border-#{$b_pos}: 1px solid $borders_color;
+  //   border: none;
+  //   border-#{$b_pos}: 1px solid $panel_border_color;
   // }
 
   // Shadows
-   .#{$pos} .shadow-block { background-image: linear-gradient(to $b_pos, rgba(black, 0.23), rgba(black, 0.08), transparent); }
+   .#{$pos} .shadow-block {
+     background-image: linear-gradient(to $b_pos, rgba(black, 0.35) 0%, rgba(black, 0.23) 10%, rgba(black, 0.08) 60%, transparent);
+   }
 }
+
+// .bottom .shadow-block { background-image: none; }
+
+$raven_opacity: if($variant =='light', 0.85, 0.95);
 
 // Raven
 .raven {
-  background-color: if($transparency == 'true', rgba($raven_bg_color, 0.95), $raven_bg_color);
+  background-color: if($transparency == 'true', rgba($raven_bg_color, $raven_opacity), $raven_bg_color);
   color: $raven_fg_color;
 
   // for >=10.4
@@ -634,11 +673,10 @@ $pos_list: ((top, bottom), (left, right), (right, left));
 
   button {
     @extend %raven_button;
-    &.image-button { @extend %circle_button; }
+    &.image-button { @extend button.circular; }
   }
 
   stackswitcher { padding: 0 8px 12px 8px; }
-
   stackswitcher.linked > button { @extend %raven_button; }
 
   .raven-header {
@@ -657,14 +695,16 @@ $pos_list: ((top, bottom), (left, right), (right, left));
 
         &.image-button {
           border-radius: 100px;
-          -gtk-outline-radius: 100px; }
+          -gtk-outline-radius: 100px;
+        }
       }
     }
 
     &.top {
-      padding: 2px 12px;
-//      background-color: rgba($raven_bg_color, 0.95);
+      padding: 2px 12px $raven_padding;
+      // background-color: rgba($raven_bg_color, 0.95);
       color: $raven_fg_color;
+      border-bottom: 1px solid $borders_color;
 
       stackswitcher {
         padding: 6px 0 0 0;
@@ -693,28 +733,115 @@ $pos_list: ((top, bottom), (left, right), (right, left));
       }
     }
 
-    &.bottom { border-top: 1px solid rgba(white, 0.12); }
+    &.bottom { border-top: 1px solid $borders_color; }
   }
 
-  viewport.frame .raven-header { margin-top: -8px; }
+  scrolledwindow > .frame { // stacking raised-grid
+    // reserve L/R shadow region
+    // FIXME: Do not set any L/R margins and borders
+    padding: 0 $raven_padding;
+    transition-duration: 0s;
+    border: none;
+
+    > box.vertical > box.vertical {
+      margin: $raven_padding 0; // do not set L/R margins
+      border-radius: $raven_radius;
+      background-color: $raven_header_bg_color;
+      // draw side edges via opaque box-shadows
+      transition-duration: 0s;
+      border: 1px solid $raven_border_color;
+    }
+
+    .raven-header {
+      margin-top: -$raven_padding * 2; // unset parent margin
+      border-radius: $raven_radius $raven_radius 0 0;
+    }
+
+    .raven-background {
+      margin-bottom: -$raven_padding * 2; // unset parent margin
+      border-radius: 0 0 $raven_radius $raven_radius;
+      background-color: $raven_base_color;
+    }
+
+    > box.vertical > box.vertical:last-child {
+      // FIXME: we can't crop album-art images horizontally with any borders,
+      // paddings, and margins. And parent GtkBox does not sync to the size
+      // of album-art dynamically while transitioning images. so set specific
+      // depth-0 OSD materials for MPRIS.
+      border-radius: $raven_radius;
+      border: none;
+      background-color: if($variant =='light', rgba(black, 0.65), rgba(black, 0.35));
+      color: rgba(white, 0.65);
+
+      // .raven-header {
+      //   background-color: rgba(black, 0.65);
+      //   color: rgba(white, 0.75);
+      // }
+
+      .raven-background {
+        background-color: rgba(black, 0.25);
+        margin-bottom: 0; // unset parent margin
+
+        image { color: rgba(white, 0.15); }
+
+        // MPRIS Applet
+        .raven-mpris {
+          background-color: rgba(black, 0.35);
+          color: $selected_fg_color;
+          border-radius: 0 0 $raven_radius $raven_radius;
+
+          label { min-height: 24px; }
+
+          image {  //reset image color
+            color: rgba(white, 0.85);
+            &:disabled {
+              color: rgba(white, 0.35);
+            }
+          }
+
+          button.image-button {
+            padding: 8px;
+            border: none;
+            @extend %selected-button;
+          }
+        }
+      }
+
+      button.flat {
+        @extend %selected-button;
+      }
+    }
+
+    // audio app/device switcher
+    box.audio-widget stackswitcher.linked {
+      padding: 0; // limit child horizontal spacing
+
+      > button.text-button.radio {
+        padding-top: $raven_padding;
+        padding-bottom: $raven_padding;
+        border-top: 1px solid $borders_color;
+        @extend %raven_button.linked;
+        @extend %raven_middle_button;
+        &:first-child{ @extend %raven_first_button; }
+        &:last-child { @extend %raven_last_button; }
+        &:only-child { @extend %raven_single_button; }
+      }
+    }
+  }
+
+  viewport.frame .raven-header { margin-top: -$raven_padding; }
 
   .expander-button {
     border-radius: 100px;
     -gtk-outline-radius: 100px; }
 
   .raven-background {
-    border-style: solid none;
-    border-width: 1px;
-    border-color: rgba(white, 0.12);
-    background-color: $raven_base_color;
-    color: $raven_fg_color;
-
     &.middle { border-bottom-style: none; } // applet background between two headers
 
     checkbutton, radiobutton { // this is for a nice focus on check and radios text
       &.text-button {
         &:hover { color: darken($raven_fg_color, 15%); }
-        &:disabled { color: transparentize($raven_fg_color, 0.55); }
+        &:disabled { color: rgba($raven_fg_color, 0.45); }
       }
     }
 
@@ -723,9 +850,9 @@ $pos_list: ((top, bottom), (left, right), (right, left));
     list { color: $raven_fg_color; background-color: $raven_base_color; }
 
     // for <10.4
-    &.frame { border-style: solid none; border-color: rgba(white, 0.12); }
+    &.frame { border-style: solid none; border-width: 1px; border-color: $borders_color; }
 
-    > overlay > widget > image { color: gtkalpha($raven_fg_color, 0.12); }
+    > overlay > widget > image { color: rgba($raven_fg_color, 0.12); }
 
     // for <10.4
     grid > label:first-child { min-height: 26px; } // workaround to fix vertical-align
@@ -734,7 +861,7 @@ $pos_list: ((top, bottom), (left, right), (right, left));
     spinbutton:not(.vertical) { @extend entry.flat; }
 
     // for <10.4
-    button.combo { }
+    // button.combo { }
   }
 
   scrolledwindow.raven-background { border-bottom-style: none; }
@@ -756,6 +883,99 @@ $pos_list: ((top, bottom), (left, right), (right, left));
   }
 
   .option-subtitle { font-size: smaller; }
+
+  // notification list
+  box.vertical > stack > box.vertical {
+    > .raven-header { background-color: $raven_header_bg_color; }
+    > .raven-background > viewport.frame {
+      padding: 0; // reset padding for full-width list node
+
+      list { background-color: $raven_base_color; }
+
+      > list > row.activatable {
+        margin-left: -8px;
+        margin-right: -2px;
+        background-color: transparent;
+
+        > grid > *, // legacy
+        > box.vertical * { color: $raven_fg_color; }
+
+        image { padding-left: 8px; }
+
+        button.image-button { // 'dismiss'
+          @extend button.circular;
+          margin: 8px;
+          padding: 2px;
+          image { padding: 0; }
+          &:active, &:checked {
+            image { color: white; }
+          }
+        }
+
+        // sub-list rows grouping
+        list {
+          border-radius: 0;
+          border-top: 1px solid $borders_color;
+          border-bottom: 1px solid $borders_color;
+
+          > row.activatable {
+            border-bottom: 1px solid $borders_color;
+            &:last-child { border-bottom: none; }
+
+            &:selected {
+              background-color: rgba($raven_fg_color, 0.06);
+            }
+
+            label { padding: 0 16px; }
+
+            button.image-button { // 'close'
+              min-height: 24px;
+              min-width: 24px;
+              image { padding: 0; }
+            }
+
+           // box.horizontal > label:first-child { font-weight: 500; } // title labels
+          }
+        }
+
+        &:selected {
+          background-color: rgba($selected_bg_color, 0.75);
+         // &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
+         // &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
+
+          > grid > *,
+          > box.vertical * { color: $selected_fg_color; }
+
+          button.image-button { // 'dismiss'
+            border: none;
+
+            &:hover { background-color: rgba(white, 0.25); }
+            &:active, &:checked { background-color: rgba(white, 0.35); }
+          }
+
+          list {
+            border: 1px solid rgba(white, 0.12);
+            background: none;
+
+            > row.activatable {
+              border-bottom: 1px solid rgba(white, 0.12);
+              &:last-child { border-bottom: none; }
+
+              &:selected {
+                background-color: rgba($selected_bg_color, 0.65);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.devices-list.sound-devices {
+  > row.activatable > box.horizontal {
+    label { padding-left: 8px; }
+  }
 }
 
 // Calendar
@@ -769,117 +989,19 @@ calendar.raven-calendar {
   &:selected {
     border-radius: 3px;
     background-color: $selected_bg_color;
+    color: $selected_fg_color;
   }
 
   &.button {
     @extend %undecorated_button;
-
     color: transparentize($raven_fg_color, 0.55);
 
     &:hover { color: $raven_fg_color; }
-
     &:disabled { color: transparentize($raven_fg_color, 0.75); }
   }
 
   &:indeterminate { color: gtkalpha($raven_fg_color, 0.35); }
   &.highlight { color: $raven_fg_color; }
-}
-
-// MPRIS Applet
-.raven-mpris {
-  background-color: rgba(black, 0.5);
-  color: $selected_fg_color;
-
-  label { min-height: 24px; }
-
-  button.image-button {
-    padding: 8px;
-    border: none;
-    @extend %budgie_button;
-  }
-}
-
-// notification list
-box.vertical > stack > box.vertical {
-
-  > .raven-background > viewport.frame {
-    padding: 0; // reset padding for full-width list node
-
-    list { background-color: transparent; }
-
-    > list > row.activatable {
-      margin-left: -8px;
-      margin-right: -2px;
-      background-color: transparent;
-
-      > grid > *, // legacy
-      > box.vertical * { color: $raven_fg_color; }
-
-      image { padding-left: 8px; }
-
-      button.image-button { // 'dismiss'
-        @extend %circle_button;
-        margin: 8px;
-        padding: 2px;
-        image { padding: 0; }
-      }
-
-      // sub-list rows grouping
-      list {
-        border-radius: 2px;
-        border-top: 1px solid $borders_color;
-        border-bottom: 1px solid $borders_color;
-
-        > row.activatable {
-          border-bottom: 1px solid $borders_color;
-          &:last-child { border-bottom: none; }
-
-          &:selected {
-            background-color: rgba($raven_fg_color, 0.06);
-          }
-
-          label { padding: 0 16px; }
-
-          button.image-button { // 'close'
-            min-height: 24px;
-            min-width: 24px;
-            image { padding: 0; }
-          }
-
-//          box.horizontal > label:first-child { font-weight: 500; } // title labels
-        }
-      }
-
-      &:selected {
-        background-color: rgba($selected_bg_color, 0.75);
-//        &:dir(ltr) { box-shadow: inset 2px 0 $selected_bg_color; }
-//        &:dir(rtl) { box-shadow: inset -2px 0 $selected_bg_color; }
-
-        > grid > *,
-        > box.vertical * { color: $selected_fg_color; }
-
-        button.image-button { // 'dismiss'
-          border: none;
-
-          &:hover { background-color: rgba(white, 0.25); }
-          &:active, &:checked { background-color: rgba(white, 0.35); }
-        }
-
-        list {
-          border: 1px solid rgba(white, 0.12);
-
-          > row.activatable {
-            border-bottom: 1px solid rgba(white, 0.12);
-            &:last-child { border-bottom: none; }
-
-            &:selected {
-              background-color: rgba($selected_bg_color, 0.65);
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 // Notifications
@@ -941,14 +1063,6 @@ window.budgie-switcher-window {
     -gtk-outline-radius: $wm_radius;
 //    background-color: transparent;
     background-image: none;
-
-//    &:hover,
-//    &:active { }
-//    &:selected { // use the same values with Gnome-Shell
-//      &:disabled {
-//        &, label { }
-//      }
-//    }
   }
 }
 
@@ -1004,7 +1118,7 @@ window.budgie-switcher-window {
       @include button(flat-hover);
       border-color: $borders_color;
       transition: $button_transition;
-     }
+    }
 
     &:active, &:checked {
       @include button(flat-active);
@@ -1038,4 +1152,29 @@ window.budgie-switcher-window {
   list .dim-label { opacity: 1; }
 
   scrolledwindow { border-top: 1px solid $borders_color; }
+}
+
+// pixel-saver(?) applet
+.budgie-panel box.titlebar {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  border: none;
+
+  > widget > label { color: rgba($panel_fg, 0.75); } // titles
+
+  > button.image-button.titlebutton { padding: 0 3px; }
+
+  &.horizontal { // spacing
+    padding: 0 3px;
+
+    > widget > label {
+      &:dir(ltr) { padding-right: 3px; }
+      &:dir(rtl) { padding-left: 3px; }
+    }
+
+    > button.image-button.titlebutton { padding: 0 3px; }
+  }
 }
