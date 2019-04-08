@@ -1804,7 +1804,8 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
 // Pathbars
 //
 .path-bar button {
-    min-width: 12px;
+  min-width: 12px;
+
   &.text-button, &.image-button, & {
     padding-left: 6px;
     padding-right: 6px;
@@ -3999,7 +4000,7 @@ headerbar,
       border-width: 0;
       box-shadow: none;
 
-      &:backdrop { opacity: 1; }
+      &:backdrop { opacity: if($variant == 'light', 1, 0.25); }
     }
 
     // Load png assets for each button, Fix the Chrome window restore button bug

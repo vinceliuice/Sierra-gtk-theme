@@ -350,8 +350,9 @@ $disk_space_free: darken($bg_color, 3%);
       &:checked { @include button(header-checked); }
       &:disabled { color: transparentize($header_fg, 0.4); }
       &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
+
       &, &:hover, &:active, &:checked, &:disabled {
-        @extend %linked;
+        @extend %linked_header;
         @if $compact == 'true' { border-right: 1px solid $header_button_border; }
       }
     }
@@ -1793,6 +1794,17 @@ window#ValaPanel.background {
 
   > button { // button
     min-width: 22px;
+  }
+
+  > box.linked.raised.horizontal > button.image-button {
+    &, &:hover, &:active, &:checked, &:disabled {
+      @extend %linked_header;
+    }
+
+    &:last-child {
+      border-radius: 0 $bt_radius $bt_radius 0;
+      border-left: none;
+    }
   }
 }
 
