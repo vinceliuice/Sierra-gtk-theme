@@ -53,7 +53,8 @@ $primary_color: if($variant == 'light', #0046DB, #0046DB);
 $alt_primary_color: if($variant == 'light', #0e6bff, #0062FF);
 $accent_color: if($variant == 'light', #0e6bff, #0062FF);
 
-$panel_bg_color: if($trans == 'true', rgba($base_color, 0.65), $base_color);
+$panel_bg: if($variant == 'light', #f5f5f5, #2a2a2a);
+$panel_bg_color: if($trans == 'true', rgba($panel_bg, 0.65), $panel_bg);
 $panel_fg_color: if($panel == 'dark', #dedede, #242424);
 $menu_bg_color: if($trans == 'true', rgba($base_color, 0.95), $base_color);
 

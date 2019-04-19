@@ -728,19 +728,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-sub-menu {
+  margin: 0 4px;
   background-color: rgba(191, 191, 191, 0.35);
   border-radius: 0 0 5px 5px;
   border: none;
   box-shadow: none;
 }
 
-.popup-menu .popup-menu-content {
-  padding: 6px 0;
-  margin: 0 4px;
+.popup-menu .popup-sub-menu .popup-menu-item {
+  margin: 0 0;
+  border-radius: 0 0 0 0;
+}
+
+.popup-menu .popup-sub-menu .popup-menu-item:not(:first-child):last-child {
+  border-radius: 0 0 5px 5px;
 }
 
 .popup-menu .popup-menu-item {
   spacing: 8px;
+  margin: 0 4px;
   transition-duration: 100ms;
   border-radius: 5px;
 }
@@ -830,6 +836,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-base: 0;
   -arrow-rise: 0;
   -arrow-box-shadow: none;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.popup-menu-boxpointer .popup-menu-content,
+.candidate-popup-boxpointer .popup-menu-content {
   margin: 2px 6px 6px;
   background-color: #ffffff;
   border-radius: 5px;
@@ -1078,7 +1092,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* TOP BAR */
 #panel {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   /* transition from solid to transparent */
   transition-duration: 250ms;
   font-weight: bold;
@@ -1087,7 +1101,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel:overview, #panel.unlock-screen, #panel.login-screen, #panel.lock-screen {
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(245, 245, 245, 0.35);
 }
 
 #panel #panelLeft, #panel #panelCenter {
@@ -1096,7 +1110,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-corner {
   -panel-corner-radius: 0;
-  -panel-corner-background-color: #ffffff;
+  -panel-corner-background-color: #f5f5f5;
   -panel-corner-border-width: 2px;
   -panel-corner-border-color: transparent;
 }
@@ -1211,7 +1225,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.solid {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   /* transition from transparent to solid */
   transition-duration: 250ms;
   background-gradient-direction: none;
@@ -1223,7 +1237,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.solid .panel-corner {
-  -panel-corner-background-color: #ffffff;
+  -panel-corner-background-color: #f5f5f5;
 }
 
 #panel.solid .panel-button {
@@ -1691,29 +1705,40 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .window-close {
   transition-duration: 0ms;
-  height: 32px;
-  width: 32px;
-  -shell-close-overlap: 16px;
-  -st-background-image-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+  height: 26px;
+  width: 26px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-image: none;
+  color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  -shell-close-overlap: 12px;
   background-image: url("assets/window-close.svg");
   background-size: 32px;
 }
 
 .window-close:hover {
-  -st-background-image-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
-  background-image: url("assets/window-close.svg");
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-image: none;
+  color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  background-image: url("assets/window-close-hover.svg");
 }
 
 .window-close:active {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-image: none;
+  color: transparent;
+  background-color: transparent;
+  box-shadow: none;
   background-image: url("assets/window-close-active.svg");
-}
-
-.window-close:rtl {
-  -st-background-image-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
-}
-
-.window-close:rtl:hover {
-  -st-background-image-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
 }
 
 /* NETWORK DIALOGS */
@@ -2124,22 +2149,34 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .page-indicator .page-indicator-icon {
   width: 12px;
   height: 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
   border-radius: 12px;
   background-image: none;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
 .page-indicator:hover .page-indicator-icon {
+  margin: 0;
+  padding: 0;
+  border: none;
   background-image: none;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
 .page-indicator:active .page-indicator-icon {
+  margin: 0;
+  padding: 0;
+  border: none;
   background-image: none;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
 .page-indicator:checked .page-indicator-icon {
+  margin: 0;
+  padding: 0;
+  border: none;
   background-image: none;
   background-color: rgba(255, 255, 255, 0.85);
   transition-duration: 0ms;

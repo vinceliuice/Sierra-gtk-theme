@@ -36,7 +36,7 @@ $wm_radius: 6px;
 //
 
 .background {
-//  border-radius: 0 0 $wm_radius $wm_radius;
+  // border-radius: 0 0 $wm_radius $wm_radius;
   color: $fg_color;
   // without this headerbar transparency doesn't seem to work
   background-color: if($transparency == 'true', rgba($bg_color, 1), $bg_color);
@@ -702,9 +702,28 @@ toolbar.inline-toolbar toolbutton {
         + combobox > box > button.combo { border-#{$_border}-color: $e_color; }
       }
     }
+
     > button:active + entry,
     > button:checked + entry { border-#{$_border}-color: $entry_highlight; }
   }
+
+  @if $entry_rules=='header' {
+    @each $e_type, $e_color in (':focus', $entry_highlight),
+                               (':drop(active)', $drop_target_color),
+                               ('.warning:focus', $warning_color),
+                               ('.error:focus', $error_color) {
+
+      > entry#{$e_type}:not(:only-child) {
+        @if $variant == 'dark' { box-shadow: inset 0 0 0 2px $entry_highlight; }
+        @if $variant == 'light' and $compact == 'false' {
+          box-shadow: $shadow_3, inset 0 0 0 1px $entry_highlight;
+          border-color: $entry_highlight;
+        }
+        @if $variant == 'light' and $compact == 'true' { box-shadow: $shadow_3, inset 0 0 0 2px $entry_highlight; }
+      }
+    }
+  }
+
   @if $button_rules=='true' {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
 
@@ -754,6 +773,13 @@ toolbar.inline-toolbar toolbutton {
 .linked:not(.vertical) {
   &:not(.path-bar) { @include linking_rules(); }
   &.path-bar { @include pathbar_linking_rules(); }
+}
+
+headerbar,
+headerbar.titlebar {
+  .linked:not(.vertical):not(.path-bar) {
+    @include linking_rules($entry_rules:'header', $button_rules:'true', $e_border: $header_entry_border, $b_border: transparent);
+  }
 }
 
 .linked.vertical { @include linking_rules($vert:'true'); }
@@ -1250,7 +1276,7 @@ headerbar,
   .csd &.default-decoration,             // needed under wayland, since all gtk3 windows are csd windows
   &.default-decoration:backdrop,
   .csd &.default-decoration:backdrop {
-//    box-shadow: none;
+    // box-shadow: none;
     border: none;
   }
 
@@ -1426,7 +1452,7 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
     @include entry(header-focus);
     background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
 
-    image { color: $selected_bg_color; }
+    // image { color: $selected_bg_color; }
   }
 
   &:disabled { @include entry(header-insensitive); }
@@ -1582,13 +1608,15 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
   // Reset entrys
   .linked:not(.vertical):not(.path-bar) > entry {
     &, &:disabled {
-      border-radius: $bt_radius;
-      margin-right: 4px;
-      margin-left: 3px;
-      @if $variant == 'light' and $compact == 'false' { border: 1px solid $borders_color; }
+      margin-right: 0;
+      margin-left: 0;
     }
 
-    &:focus { @if $variant == 'light' and $compact == 'false' { border: 1px solid $entry_highlight; } }
+    &, &:hover, &:active, &:checked, &:disabled {
+      @extend %linked_header;
+    }
+
+    &:focus { @if $variant == 'light' and $compact == 'false' { border-color: $entry_highlight; } }
   }
 
   // use linking rules for entries only
@@ -1729,34 +1757,20 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
         border-right-style: none;
 
         &:focus { box-shadow: none; }
-//        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
+        // @if $variant=='light' and $darker=='false' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
       }
       &:dir(rtl) {
         border-left-style: none;
 
         &:focus { box-shadow: none; }
-//        @if $variant=='light' and $darker=='false' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
+        // @if $variant=='light' and $darker=='false' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
       }
     }
-//    > .linked > button.combo {
-//      &:dir(ltr) {
-//        &, &:hover, &:active, &:checked, &:disabled {
-//          border-top-left-radius: $bt_radius;
-//          border-bottom-left-radius: $bt_radius;
-//        }
-//      }
-//      &:dir(rtl) {
-//        &, &:hover, &:active, &:checked, &:disabled {
-//          border-top-right-radius: $bt_radius;
-//          border-bottom-right-radius: $bt_radius;
-//        }
-//      }
-//    }
   }
 
   // Headerbar Switches
   switch {
-  //  @extend %switch;
+    // @extend %switch;
     &:backdrop { opacity: 0.75; }
   }
 
