@@ -993,7 +993,7 @@ combobox {
   button.combo {
     min-width: 0;       // otherwise the arrow placement is unsymmetric
     min-height: 20px;
-//    margin: 0;
+    // margin: 0;
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -1020,6 +1020,9 @@ combobox {
   }
 
   &:drop(active) button.combo { @extend button:drop(active); }
+
+  decoration,
+  button.combo:checked { transition: none; } // workaround for menuitem selection
 
   .linked:not(.vertical) > & > box > button.combo {
     // the combobox is a composite widget so the way we do button linking doesn't
@@ -2137,14 +2140,14 @@ menu,
     color: $fg_color;
 
     &.top {
-      margin: -8px 0 0 0;
+      margin: -6px 0 0 0;
       border-radius: $wm_radius $wm_radius 0 0;
       border-bottom: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
-      margin: 0 0 -18px 0;
+      margin: 12px 0 -16px 0;
       border-radius: 0 0 $wm_radius $wm_radius;
       border-top: 1px solid $borders_color;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');

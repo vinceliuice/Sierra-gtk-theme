@@ -77,10 +77,30 @@ terminal-window,
       }
     }
 
-//    &.width-maximized {
-//      border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
-//      background-color: rgba($header_fg, 0.06);
-//    }
+    .linked.nautilus-path-bar { // for ≥ 3.31.90
+      button.text-button,
+      button.image-button.text-button {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &:not(:only-child):last-child {
+          @include button(header-checked);
+          background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+          transition: $button_transition;
+          transition-duration: 300ms;
+          &:hover { background-image: none; }
+
+          @if $variant == 'light' {
+            box-shadow: -1px 0 mix(black, $header_button_checked_bg, 10%);
+          }
+        }
+      }
+    }
+
+    // &.width-maximized {
+    //   border: 1px solid if($titlebar == 'light', rgba(black, 0.12), rgba(white, 0.12));
+    //   background-color: rgba($header_fg, 0.06);
+    // }
 
     // workaround for 3.30.1
     &.background.frame {

@@ -1341,6 +1341,11 @@ combobox arrow {
   box-shadow: none;
 }
 
+combobox decoration,
+combobox button.combo:checked {
+  transition: none;
+}
+
 .linked:not(.vertical) > combobox > box > button.combo arrow {
   border-radius: 0;
 }
@@ -2667,7 +2672,7 @@ menu > arrow,
 .context-menu > arrow.top, popover.touch-selection > arrow.top, .csd popover.touch-selection > arrow.top,
 menu > arrow.top,
 .menu > arrow.top {
-  margin: -8px 0 0 0;
+  margin: -6px 0 0 0;
   border-radius: 6px 6px 0 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
@@ -2676,7 +2681,7 @@ menu > arrow.top,
 .context-menu > arrow.bottom, popover.touch-selection > arrow.bottom, .csd popover.touch-selection > arrow.bottom,
 menu > arrow.bottom,
 .menu > arrow.bottom {
-  margin: 0 0 -18px 0;
+  margin: 12px 0 -16px 0;
   border-radius: 0 0 6px 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -5387,6 +5392,32 @@ terminal-window notebook > header.top button,
 
 .nautilus-window headerbar .path-bar-box .path-bar button.flat.image-button.text-button.toggle:checked, .nautilus-window headerbar .path-bar-box .path-bar button.image-button.text-button.toggle.budgie-menu-launcher:checked {
   border-radius: 5px 5px 5px 5px;
+}
+
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.text-button,
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.text-button:not(:only-child):last-child,
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button:not(:only-child):last-child {
+  color: #ffffff;
+  border: none;
+  background-color: #686868;
+  background-image: none;
+  text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  -gtk-icon-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
+  background-clip: border-box;
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 300ms;
+  box-shadow: -1px 0 #5e5e5e;
+}
+
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.text-button:not(:only-child):last-child:hover,
+.nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button:not(:only-child):last-child:hover {
+  background-image: none;
 }
 
 .nautilus-window headerbar .path-bar-box.background.frame {
