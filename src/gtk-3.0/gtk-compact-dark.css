@@ -6171,20 +6171,20 @@ stack.background {
   background: none;
 }
 
-.background.csd scrolledwindow.view {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow.view {
   background-color: #242424;
   border-bottom-left-radius: 7px;
 }
 
-.background.csd scrolledwindow.view > viewport.frame > stack {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack {
   background-color: transparent;
 }
 
-.background.csd scrolledwindow.view > viewport.frame > stack > list {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list {
   background-color: transparent;
 }
 
-.background.csd scrolledwindow.view > viewport.frame > stack > list > row.activatable:not(:hover):not(:active):not(:selected), .background.csd .nemo-window .nemo-places-sidebar scrolledwindow.view > viewport.frame > stack > list > .places-treeview:not(:hover):not(:active):not(:selected), .nemo-window .nemo-places-sidebar .background.csd scrolledwindow.view > viewport.frame > stack > list > .places-treeview:not(:hover):not(:active):not(:selected), .background.csd .budgie-menu scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected), .budgie-menu .background.csd scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected) {
+window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list > row.activatable:not(:hover):not(:active):not(:selected), .nemo-window .nemo-places-sidebar window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list > .places-treeview:not(:hover):not(:active):not(:selected), .budgie-menu window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
 }
 

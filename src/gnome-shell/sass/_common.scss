@@ -2185,7 +2185,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
   }
   .login-dialog-user-list-item {
     border-radius: $bt_radius;
-    padding: 4px 4px 0;
+    padding: 6px;
     color: $inverse_secondary_fg_color;
     &:ltr { padding-right: 1em; }
     &:rtl { padding-left: 1em; }
@@ -2193,7 +2193,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     &:active { background-color: $inverse_track_color; color: $inverse_fg_color; }
     .login-dialog-timed-login-indicator {
       height: 2px;
-      margin: 2px 0 0 0;
+      margin: 6px 0 0 0;
       background-color: $inverse_fg_color;
     }
     &:focus .login-dialog-timed-login-indicator { background-color: $inverse_fg_color; }

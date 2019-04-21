@@ -33,15 +33,6 @@ usage() {
   printf "  %-25s%s\n" "-na, --noapple VARIANT" "Specify gnome-shell to not display apple logo (Default: Display apple logo)"
   printf "  %-25s%s\n" "-g,  --gdm" "Install GDM theme"
   printf "  %-25s%s\n" "-h,  --help" "Show this help"
-  printf "\n%s\n" "INSTALLATION EXAMPLES:"
-  printf "%s\n" "Install all theme variants into ~/.themes"
-  printf "  %s\n" "$0 --dest ~/.themes"
-  printf "%s\n" "Install all theme variants into ~/.themes including GDM theme"
-  printf "  %s\n" "$0 --dest ~/.themes --gdm"
-  printf "%s\n" "Install standard theme variant only"
-  printf "  %s\n" "$0 --color standard --flat standard"
-  printf "%s\n" "Install specific theme variants with different name into ~/.themes"
-  printf "  %s\n" "$0 --dest ~/.themes --name MyTheme --color light dark --flat compact"
 }
 
 install() {
