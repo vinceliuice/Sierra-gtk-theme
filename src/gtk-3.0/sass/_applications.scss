@@ -961,43 +961,68 @@ dialog.csd > headerbar.titlebar { > switch { margin: 8px 0; } }
 //
 //  Gnome Control Center
 //
-window.background.csd > stack {
-  border-radius: 0 0 $wm_radius $wm_radius;
-}
+window.background.csd {
+  > headerbar.titlebar > box.horizontal > separator.sidebar, // > 3.22
+  > headerbar.titlebar > hdyleaflet > separator.sidebar {
+    border-right: none;
+    background: none;
+    min-width: 0;
+    // box-shadow: inset 0 -1px $header_border;
+  }
 
-stack.background { background: none; }
+  > stack {
+    border-radius: 0 0 $wm_radius $wm_radius;
+  }
 
-// users section
-stack > box.vertical > widget > overlay grid.horizontal > stack {
-  > button.toggle { }
-}
+  > box:not(.titlebar).horizontal > separator.vertical {
+    background-color: if($variant=='light', $borders_color, $header_border);
+  }
 
-// > 3.25.90
-window.background.csd > box.horizontal > box.vertical > scrolledwindow.view {
-  background-color: $base_color;
-  border-bottom-left-radius: $wm_radius + 1px;
+  > box.horizontal > stack.background {
+    background: none;
 
-  > viewport.frame > stack {
-    background-color: transparent;
+    > widget {
+      > box.horizontal > box.horizontal > box.vertical {
+        > button { // wallpaper set button
+          &:active {
+            color: $fg_color;
+            background-image: none;
+            background-color: if($variant=='light', darken($button_bg, 15%), lighten($button_bg, 10%));
+            border-color: $borders_color;
+          }
+        }
+      }
+    }
+  }
 
-    > list { // left-pane
+  // > 3.25.90
+  > box.horizontal > box.vertical > scrolledwindow.view {
+    background-color: $base_color;
+    border-bottom-left-radius: $wm_radius + 1px;
+
+    > viewport.frame > stack {
       background-color: transparent;
 
-      > row.activatable:not(:hover):not(:active):not(:selected) {
+      > list { // left-pane
         background-color: transparent;
+
+        > row.activatable:not(:hover):not(:active):not(:selected) {
+          background-color: transparent;
+        }
       }
     }
   }
 }
 
-box.horizontal.titlebar > headerbar > stack > box.vertical {
-  > .title { margin: 0; }
-  > .subtitle { margin: -3px 0; }
+box.horizontal > separator.sidebar,
+hdyleaflet > separator.sidebar { // reset
+  background: none;
+  min-width: 0;
+  border-right-color: if($variant=='light', $borders_color, $header_border);
 }
 
-dialog.background.csd {
+dialog.background.csd { // wallpaper set dialog
   > headerbar.titlebar {
-
     > label:not(.title):not(.subtitle) {
       font-weight: 700;
     }
