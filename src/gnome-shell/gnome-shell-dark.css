@@ -162,7 +162,7 @@ StEntry {
 
 StEntry:focus {
   border: 1px solid #296dff;
-  box-shadow: 0 0 0 2px #296dff;
+  box-shadow: 0 0 0 1px #296dff;
 }
 
 StEntry:insensitive {
@@ -356,7 +356,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.9);
   background-color: #242424;
   border: none;
-  box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
 }
 
 .modal-dialog .modal-dialog-content-box {
@@ -827,8 +827,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 16px;
 }
 
-.popup-menu-boxpointer,
 .candidate-popup-boxpointer {
+  -arrow-border-radius: 0;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 0;
+  -arrow-rise: 0;
+  -arrow-box-shadow: none;
+  margin: 2px 6px 6px;
+  background-color: rgba(36, 36, 36, 0.95);
+  border-radius: 5px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
+}
+
+.popup-menu-boxpointer {
   -arrow-border-radius: 0;
   -arrow-background-color: transparent;
   -arrow-border-width: 0;
@@ -842,8 +855,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: none;
 }
 
-.popup-menu-boxpointer .popup-menu-content,
-.candidate-popup-boxpointer .popup-menu-content {
+.popup-menu-boxpointer .popup-menu-content {
   margin: 2px 6px 6px;
   background-color: rgba(36, 36, 36, 0.95);
   border-radius: 5px;
@@ -1067,7 +1079,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.9);
   background-color: #242424;
   border: none;
-  box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   border-radius: 8px;
   padding: 12px;
 }
@@ -2637,7 +2649,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .login-dialog StEntry:focus {
   border: 1px solid #296dff;
-  box-shadow: 0 0 0 2px #296dff;
+  box-shadow: 0 0 0 1px #296dff;
 }
 
 .login-dialog StEntry:insensitive {
@@ -3343,7 +3355,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .search-entry:focus {
   border: 1px solid #296dff;
-  box-shadow: 0 0 0 2px #296dff;
+  box-shadow: 0 0 0 1px #296dff;
   color: rgba(255, 255, 255, 0.9);
 }
 

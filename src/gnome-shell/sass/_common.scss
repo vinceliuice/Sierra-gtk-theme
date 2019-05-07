@@ -247,7 +247,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
   color: $fg_color;
   background-color: $base_color;
   border: none;
-  box-shadow: $shadow_4;
+  box-shadow: $shadow_2;
   .modal-dialog-content-box {
     padding: 24px;
   }
@@ -664,8 +664,21 @@ $slider_color: if($variant == 'light', $accent_color, white);
     height: 16px;
   }
 
-  .popup-menu-boxpointer,
   .candidate-popup-boxpointer {
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 0;
+    -arrow-rise: 0;
+    -arrow-box-shadow: none; //dreaming. bug #689995
+    margin: 2px 6px 6px;
+    background-color: $menu_bg_color;
+    border-radius: $material_radius;
+    box-shadow: $shadow_2;
+  }
+
+  .popup-menu-boxpointer {
     -arrow-border-radius: 0;
     -arrow-background-color: transparent;
     -arrow-border-width: 0;
@@ -887,7 +900,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
   color: $fg_color;
   background-color: $base_color;
   border: none;
-  box-shadow: $shadow_4;
+  box-shadow: $shadow_2;
   border-radius: $bt_radius;
   padding: 12px;
 }
