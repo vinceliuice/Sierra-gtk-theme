@@ -12,21 +12,27 @@ terminal-window notebook {
 // GNOME Terminal, MATE Terminal
 //
 
-terminal-window,
 .mate-terminal {
   notebook {
     > header.top {
-
       tabs > tab { border-top: 1px solid transparent; }
-
-      button {
-        padding: 0;
-        min-width: 24px;
-        min-height: 24px;
-      }
     }
   }
 }
+
+terminal-window {
+  > box.vertical > notebook.terminal-notebook {
+    > terminal-screen-container {
+      > box.horizontal > vte-terminal.terminal-screen {
+        padding: 0;
+        border-radius: 0 0 $wm_radius $wm_radius;
+      }
+    }
+  }
+
+  &.background.csd.maximized { border-radius: 0 0 $wm_radius $wm_radius; } // Fixed gnome 3.32 issue: Unable to restore window size after maximization
+}
+
 
 //
 // Nautilus
@@ -285,6 +291,8 @@ $disk_space_free: darken($bg_color, 3%);
 
     .places-treeview {
       @extend row.activatable;
+      -NemoPlacesTreeView-disk-full-bg-color: $solid_borders_color;
+      -NemoPlacesTreeView-disk-full-fg-color: lighten($progress_color, 5%);
     }
   }
 

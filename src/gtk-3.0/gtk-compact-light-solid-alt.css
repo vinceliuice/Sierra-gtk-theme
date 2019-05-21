@@ -5310,16 +5310,17 @@ terminal-window notebook {
   > header.top > tabs > tab:checked { box-shadow: inset 0 -1px $borders_color; }
 }
 */
-terminal-window notebook > header.top tabs > tab,
 .mate-terminal notebook > header.top tabs > tab {
   border-top: 1px solid transparent;
 }
 
-terminal-window notebook > header.top button,
-.mate-terminal notebook > header.top button {
+terminal-window > box.vertical > notebook.terminal-notebook > terminal-screen-container > box.horizontal > vte-terminal.terminal-screen {
   padding: 0;
-  min-width: 24px;
-  min-height: 24px;
+  border-radius: 0 0 6px 6px;
+}
+
+terminal-window.background.csd.maximized {
+  border-radius: 0 0 6px 6px;
 }
 
 .nautilus-window headerbar .path-bar-box .path-bar button.flat.text-button.toggle, .nautilus-window headerbar .path-bar-box .path-bar button.text-button.toggle.budgie-menu-launcher,
@@ -5592,6 +5593,11 @@ popover.background label.nautilus-canvas-item.separator, headerbar .nautilus-can
 
 .nemo-window .nemo-places-sidebar.frame {
   border-width: 0;
+}
+
+.nemo-window .nemo-places-sidebar .places-treeview {
+  -NemoPlacesTreeView-disk-full-bg-color: gainsboro;
+  -NemoPlacesTreeView-disk-full-fg-color: #004ef5;
 }
 
 .nemo-window .sidebar scrolledwindow.frame {
