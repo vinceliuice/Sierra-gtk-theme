@@ -41,12 +41,14 @@ Dark Theme
 
 ### Distributions
 
-openSUSE [package](https://build.opensuse.org/package/show/home:jubalh/sierra-gtk-theme):
+openSUSE [package](https://build.opensuse.org/package/show/X11:common:Factory/sierra-gtk-theme):
+
 ```
-sudo zypper ar obs://home:jubalh homejubalh
+sudo zypper ar obs://X11:common:Factory/sierra-gtk-theme x11
 sudo zypper ref
 sudo zypper in sierra-gtk-theme
 ```
+
 Ubuntu [PPA](https://launchpad.net/~dyatlov-igor/+archive/ubuntu/sierra-theme) (maintained by [@igor-dyatlov](https://github.com/igor-dyatlov)):
 ```
 sudo add-apt-repository ppa:dyatlov-igor/sierra-theme
