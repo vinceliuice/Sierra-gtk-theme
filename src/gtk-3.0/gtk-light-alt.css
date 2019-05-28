@@ -6290,11 +6290,12 @@ window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical
   background: none;
 }
 
-stack > grid.vertical > scrolledwindow.frame {
+stack > grid.vertical > scrolledwindow {
   border: none;
+  border-radius: 0 0 6px 6px;
 }
 
-stack > grid.vertical > scrolledwindow.frame > viewport.frame list {
+stack > grid.vertical > scrolledwindow > viewport.frame list {
   border-radius: 0 0 6px 6px;
 }
 
@@ -6695,50 +6696,60 @@ window.background.csd evview.view.content-view {
   border-radius: 0 0 6px 6px;
 }
 
-dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame {
+dialog.background.csd > box.vertical.dialog-vbox > grid.horizontal > scrolledwindow.frame {
   border: none;
 }
 
-dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame > viewport.frame {
+dialog.background.csd > box.vertical.dialog-vbox > grid.horizontal > scrolledwindow.frame > viewport.frame {
   border: none;
 }
 
-dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame > viewport.frame list:first-child {
+dialog.background.csd > box.vertical.dialog-vbox > grid.horizontal > scrolledwindow.frame > viewport.frame list:first-child {
   border-radius: 0 0 0 6px;
 }
 
-dialog.background.csd box.dialog-vbox grid.horizontal > scrolledwindow.frame > viewport.frame list:last-child {
+dialog.background.csd > box.vertical.dialog-vbox > grid.horizontal > scrolledwindow.frame > viewport.frame list:last-child {
   border-radius: 0 0 6px 0;
 }
 
-dialog.background.csd box.dialog-vbox grid.horizontal stack scrolledwindow.frame {
+dialog.background.csd > box.vertical.dialog-vbox > grid.horizontal > stack > scrolledwindow.frame {
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-dialog.background.csd box.dialog-vbox > stack > scrolledwindow {
+dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow,
+dialog.background.csd > box.vertical.dialog-vbox > stack > stack > scrolledwindow {
   border-radius: 0 0 6px 6px;
   background-color: #ffffff;
 }
 
-dialog.background.csd box.dialog-vbox > stack > scrolledwindow iconview.view:not(:hover):not(:selected):not(:active) {
+dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow iconview.view:not(:hover):not(:selected):not(:active),
+dialog.background.csd > box.vertical.dialog-vbox > stack > stack > scrolledwindow iconview.view:not(:hover):not(:selected):not(:active) {
   background-color: transparent;
 }
 
-dialog.background.csd box.dialog-vbox notebook > stack {
+dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow > viewport.frame > list {
   border-radius: 0 0 6px 6px;
 }
 
-dialog.background.csd stack entry {
-  margin: 2px;
+dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow > viewport.frame > list row.activatable:not(:hover):not(:selected):not(:active), dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow > viewport.frame > list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected):not(:active), .nemo-window .nemo-places-sidebar dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow > viewport.frame > list .places-treeview:not(:hover):not(:selected):not(:active), dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow > viewport.frame > list .budgie-menu button:not(:hover):not(:selected):not(:active), .budgie-menu dialog.background.csd > box.vertical.dialog-vbox > stack > scrolledwindow > viewport.frame > list button:not(:hover):not(:selected):not(:active) {
+  background-color: transparent;
 }
 
-dialog.background.csd stack spinbutton entry,
-dialog.background.csd stack .linked entry {
-  margin: 0;
+dialog.background.csd > box.vertical.dialog-vbox > stack > box.vertical > stack.view > scrolledwindow > treeview.view:not(:hover):not(:selected):not(:active) {
+  background-color: transparent;
 }
 
-dialog.background.csd entry.search {
-  margin: 2px;
+dialog.background.csd > box.vertical.dialog-vbox > stack toolbar.toolbar, dialog.background.csd > box.vertical.dialog-vbox > stack .toolbar.inline-toolbar {
+  border-radius: 0 0 6px 6px;
+  border-width: 1px 0 0 0;
+}
+
+dialog.background.csd > box.vertical.dialog-vbox > notebook > stack {
+  border-radius: 0 0 6px 6px;
+}
+
+dialog.background.csd > box.vertical.dialog-vbox separator.vertical {
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 MsdOsdWindow.background.osd {
