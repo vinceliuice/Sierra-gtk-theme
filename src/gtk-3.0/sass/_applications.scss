@@ -2186,6 +2186,16 @@ window.background.csd {
             border-radius: 0 0 $wm_radius 0;
           }
         }
+
+        > scrolledwindow {
+          treeview.view:not(:hover):not(:selected) {
+            border-radius: 0 0 $wm_radius 0;
+          }
+        }
+      }
+
+      > separator {
+        background: none;
       }
 
       > revealer > stack {
@@ -2229,13 +2239,17 @@ window.background.csd {
       }
     }
 
-    > box.vertical > box.horizontal { // Pamac 8.0.1-1
+    > box.vertical > box.horizontal { // Pamac > 8.0
+      > revealer > stack,
       > revealer > stack > stack {
         > scrolledwindow {
+          background-color: $base_color;
+          border-bottom-left-radius: $wm_radius;
+
           > viewport.frame {
             list {
               background-color: transparent;
-              border-right: none;
+              border-right: 1px solid if($variant=='light', $borders_color, $borders_color);
               border-bottom-left-radius: $wm_radius;
 
               row.activatable:not(:hover):not(:selected) {
@@ -2250,13 +2264,22 @@ window.background.csd {
         }
       }
 
+      > separator {
+        background: none;
+      }
+
       > box.vertical > stack {
         > scrolledwindow {
           > viewport.frame {
             list {
+              background-color: transparent;
+              // border-right: 1px solid if($variant=='light', $borders_color, $header_border);
+              border-bottom-right-radius: $wm_radius;
+
               row.activatable:not(:hover):not(:selected) {
                 background-color: transparent;
                 background-image: none;
+                border-bottom-right-radius: $wm_radius;
               }
             }
           }

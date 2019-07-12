@@ -1450,9 +1450,18 @@ toolbar:not(.inline-toolbar) .linked > entry,
 
 searchbar {
   background-color: #333333;
+  padding: 0;
+  margin: 0;
   border: none;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
-  padding: 3px 3px 4px 3px;
+}
+
+searchbar > revealer > box {
+  padding: 6px;
+  margin: -6px;
+  border-style: solid;
+  border-color: #4d4c4c;
+  background-color: #333333;
+  border-width: 0 0 1px;
 }
 
 searchbar button.flat, searchbar button.budgie-menu-launcher, searchbar .budgie-panel button.flat.launcher, .budgie-panel searchbar button.flat.launcher {
@@ -7362,6 +7371,14 @@ window.background.csd > box.vertical > stack > box.horizontal > box.vertical > s
   border-radius: 0 0 6px 0;
 }
 
+window.background.csd > box.vertical > stack > box.horizontal > box.vertical > stack > scrolledwindow treeview.view:not(:hover):not(:selected) {
+  border-radius: 0 0 6px 0;
+}
+
+window.background.csd > box.vertical > stack > box.horizontal > separator {
+  background: none;
+}
+
 window.background.csd > box.vertical > stack > box.horizontal > revealer > stack > list {
   background-color: transparent;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
@@ -7394,25 +7411,52 @@ window.background.csd > box.vertical > stack > box.horizontal > revealer > stack
   color: rgba(222, 222, 222, 0.45);
 }
 
-window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list {
-  background-color: transparent;
-  border-right: none;
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow,
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow {
+  background-color: #242424;
   border-bottom-left-radius: 6px;
 }
 
-window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list row.activatable:not(:hover):not(:selected), window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected), .nemo-window .nemo-places-sidebar window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .places-treeview:not(:hover):not(:selected), window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .budgie-menu button:not(:hover):not(:selected), .budgie-menu window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list button:not(:hover):not(:selected) {
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list,
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list {
+  background-color: transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom-left-radius: 6px;
+}
+
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list row.activatable:not(:hover):not(:selected), window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected), .nemo-window .nemo-places-sidebar window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list .places-treeview:not(:hover):not(:selected), window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list .budgie-menu button:not(:hover):not(:selected), .budgie-menu window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list button:not(:hover):not(:selected),
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list row.activatable:not(:hover):not(:selected),
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected),
+.nemo-window .nemo-places-sidebar window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .places-treeview:not(:hover):not(:selected),
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .budgie-menu button:not(:hover):not(:selected),
+.budgie-menu window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list button:not(:hover):not(:selected) {
   background-color: transparent;
   background-image: none;
   border-bottom-left-radius: 6px;
 }
 
-window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list row.activatable:not(:hover):not(:selected) label:disabled, window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected) label:disabled, .nemo-window .nemo-places-sidebar window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .places-treeview:not(:hover):not(:selected) label:disabled, window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .budgie-menu button:not(:hover):not(:selected) label:disabled, .budgie-menu window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list button:not(:hover):not(:selected) label:disabled {
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list row.activatable:not(:hover):not(:selected) label:disabled, window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected) label:disabled, .nemo-window .nemo-places-sidebar window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list .places-treeview:not(:hover):not(:selected) label:disabled, window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list .budgie-menu button:not(:hover):not(:selected) label:disabled, .budgie-menu window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > scrolledwindow > viewport.frame list button:not(:hover):not(:selected) label:disabled,
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list row.activatable:not(:hover):not(:selected) label:disabled,
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected) label:disabled,
+.nemo-window .nemo-places-sidebar window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .places-treeview:not(:hover):not(:selected) label:disabled,
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list .budgie-menu button:not(:hover):not(:selected) label:disabled,
+.budgie-menu window.background.csd > box.vertical > stack > box.vertical > box.horizontal > revealer > stack > stack > scrolledwindow > viewport.frame list button:not(:hover):not(:selected) label:disabled {
   color: rgba(222, 222, 222, 0.45);
+}
+
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > separator {
+  background: none;
+}
+
+window.background.csd > box.vertical > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame list {
+  background-color: transparent;
+  border-bottom-right-radius: 6px;
 }
 
 window.background.csd > box.vertical > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame list row.activatable:not(:hover):not(:selected), window.background.csd > box.vertical > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame list .nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected), .nemo-window .nemo-places-sidebar window.background.csd > box.vertical > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame list .places-treeview:not(:hover):not(:selected), window.background.csd > box.vertical > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame list .budgie-menu button:not(:hover):not(:selected), .budgie-menu window.background.csd > box.vertical > stack > box.vertical > box.horizontal > box.vertical > stack > scrolledwindow > viewport.frame list button:not(:hover):not(:selected) {
   background-color: transparent;
   background-image: none;
+  border-bottom-right-radius: 6px;
 }
 
 window > box.vertical > box.horizontal > toolbar, window > box.vertical > box.horizontal > .inline-toolbar {
