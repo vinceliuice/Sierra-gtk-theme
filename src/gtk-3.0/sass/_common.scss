@@ -2194,9 +2194,9 @@ popover.background {
   box-shadow: 0 3px 6px 0 if($variant=='light', transparentize(black, 0.85), transparentize(black, 0.85));
 
   .csd &, & {
-      border-radius: $wm_radius;
-      border: 1px solid if($variant=='light', darken($borders_color, 5%), lighten($borders_color, 5%));
-    }
+    border-radius: $wm_radius;
+    border: 1px solid if($variant=='light', darken($borders_color, 15%), lighten($borders_color, 10%));
+  }
 
   button { @extend %outline_dashed; }
 
@@ -2303,7 +2303,7 @@ notebook {
         padding: 0;
         border: none;
         box-shadow: none;
-        margin: 2px;
+        // margin: 2px;
       }
 
   @each $_pos, $_bpos in (top, bottom), (bottom, top), (right, left), (left, right) {
@@ -2408,6 +2408,7 @@ notebook {
           color: rgba(red, 0.5);
           background-color: rgba($fg_color, 0.1);
         }
+
         &:active, &:active:hover {
           @extend %undecorated_button;
           color: rgba(darken(red, 10%), 0.5);
