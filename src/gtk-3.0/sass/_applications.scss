@@ -1918,6 +1918,7 @@ window#GearyMainWindow.background.csd {
     scrolledwindow.geary-conversation-scroller {
       viewport.frame {
         list.conversation-listbox {
+          background: none;
           border-bottom-right-radius: $wm_radius;
         }
       }

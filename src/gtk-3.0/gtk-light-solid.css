@@ -7135,6 +7135,7 @@ window#GearyMainWindow.background.csd stack#conversation_viewer {
 }
 
 window#GearyMainWindow.background.csd stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox {
+  background: none;
   border-bottom-right-radius: 6px;
 }
 
