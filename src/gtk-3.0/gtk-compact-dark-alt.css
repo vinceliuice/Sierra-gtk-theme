@@ -6182,6 +6182,50 @@ button.documents-favorite:active:hover {
   transition: opacity 0.2s ease-out;
 }
 
+row#Focus,
+row#ClickMethod,
+row#StaticWorkspaceTweak,
+row#dynamic-workspaces,
+row#PrimaryWorkspaceTweak,
+row#workspaces-only-on-primary {
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+row#Focus row:not(:last-child),
+row#ClickMethod row:not(:last-child),
+row#StaticWorkspaceTweak row:not(:last-child),
+row#dynamic-workspaces row:not(:last-child),
+row#PrimaryWorkspaceTweak row:not(:last-child),
+row#workspaces-only-on-primary row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+row#Focus.tweak > list,
+row#ClickMethod.tweak > list,
+row#StaticWorkspaceTweak.tweak > list,
+row#dynamic-workspaces.tweak > list,
+row#PrimaryWorkspaceTweak.tweak > list,
+row#workspaces-only-on-primary.tweak > list {
+  margin-top: -3px;
+}
+
+row#Focus,
+row#ClickMethod,
+row#PrimaryWorkspaceTweak,
+row#workspaces-only-on-primary {
+  margin-top: 4px;
+}
+
+row#AutostartTitle.tweak {
+  padding: 3px;
+  background-color: #242424;
+}
+
+list#AutostartListBoxTweakGroup.tweak-group-startup {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .tweak-categories,
 .tweak-category:not(:selected):not(:hover) {
   background-image: linear-gradient(to bottom, #242424, #242424);
@@ -6189,6 +6233,12 @@ button.documents-favorite:active:hover {
 
 .tweak-categories {
   border-radius: 0 0 0 6px;
+}
+
+.tweak-categories > separator {
+  min-width: 0;
+  min-height: 0;
+  background: none;
 }
 
 .tweak-titlebar-right > switch,

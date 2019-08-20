@@ -975,16 +975,56 @@ button.documents-favorite:active:hover {
 }
 
 //
-// Gnome Tweak Tool
+// Gnome Tweak Tool ( Gnome tweaks )
 //
+row#Focus,
+row#ClickMethod,
+row#StaticWorkspaceTweak, // for 3.26.0
+row#dynamic-workspaces,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary {
+  padding: 0;
+  border: 1px solid $borders_color;
+
+  row:not(:last-child) { border-bottom: 1px solid $borders_color; }
+
+  &.tweak > list {
+    margin-top: -3px;
+  }
+}
+
+// Add more spaces between title and list
+row#Focus,
+row#ClickMethod,
+row#PrimaryWorkspaceTweak, // for 3.26.0
+row#workspaces-only-on-primary { margin-top: 4px; }
+
+row#AutostartTitle.tweak {
+  padding: 3px;
+  background-color: $base_color;
+}
+
+list#AutostartListBoxTweakGroup {
+  &.tweak-group-startup {
+    border: 1px solid $borders_color;
+  }
+}
 
 .tweak-categories,
 .tweak-category:not(:selected):not(:hover) {
-    background-image: _solid($base_color);
+  background-image: _solid($base_color);
 }
 
 // sidebar on gnome tweak
-.tweak-categories { border-radius: 0 0 0 $wm_radius; }
+.tweak-categories {
+  border-radius: 0 0 0 $wm_radius;
+
+  > separator {
+    min-width: 0;
+    min-height: 0;
+    background: none;
+  }
+}
 
 .tweak-titlebar-right,
 dialog.csd > headerbar.titlebar { > switch { margin: 8px 0; } }
