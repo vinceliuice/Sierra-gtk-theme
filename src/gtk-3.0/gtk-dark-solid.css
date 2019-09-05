@@ -1637,7 +1637,7 @@ headerbar.default-decoration,
 }
 
 .titlebar, .titlebar headerbar {
-  box-shadow: inset 0 1px transparent;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .tiled .titlebar,
@@ -2546,7 +2546,7 @@ menu,
   padding: 6px 0;
   border-radius: 6px;
   background-color: #333333;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.65);
 }
 
 .csd .context-menu, .csd popover.touch-selection, .csd popover.background.touch-selection, .csd
@@ -2587,7 +2587,7 @@ menu menuitem:hover,
   transition: none;
   color: #ffffff;
   background-color: #498dff;
-  box-shadow: inset 0 -1px #166dff;
+  box-shadow: inset 0 1px #68a0ff;
   text-shadow: 0 -1px rgba(255, 255, 255, 0.04), -1px 0px rgba(32, 32, 32, 0.05), 1px 0px rgba(32, 32, 32, 0.05), 0px 1px rgba(32, 32, 32, 0.3), 0px 2px rgba(32, 32, 32, 0.05);
 }
 
@@ -5027,18 +5027,18 @@ decoration {
   transition: box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
   border-radius: 6px;
   border-width: 0;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3), 0 8px 15px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.75), 0 8px 15px 0 rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(0, 0, 0, 0.65);
   margin: 4px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(0, 0, 0, 0.65);
 }
 
 .fullscreen decoration,
 .tiled decoration {
   border-radius: 0;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(0, 0, 0, 0.65);
 }
 
 .popup decoration {
@@ -5048,7 +5048,7 @@ decoration:backdrop {
 .ssd decoration {
   margin: -5px;
   border-radius: 6px 6px 0 0;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .ssd decoration.maximized {
@@ -5057,7 +5057,7 @@ decoration:backdrop {
 
 .csd.popup decoration {
   border-radius: 6px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 5px 5px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.65);
 }
 
 tooltip.csd decoration {
@@ -9102,7 +9102,7 @@ filechooser placessidebar.sidebar scrollbar trough, .nautilus-window placessideb
   border-color: rgba(0, 0, 0, 0.55);
   border-radius: 6px;
   background-color: #333333;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.75), 0 2px 3px 0 rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(0, 0, 0, 0.55);
 }
 
 .budgie-popover .container {
@@ -10214,7 +10214,7 @@ window.budgie-switcher-window flowboxchild {
   margin: 5px 9px;
   padding: 8px;
   border-radius: 6px;
-  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 5px 0 transparent, 0 8px 15px 0 transparent, 0 3px 3px 0 rgba(0, 0, 0, 0.75);
   background-color: #242424;
   background-image: none;
 }
@@ -10299,7 +10299,7 @@ window.budgie-switcher-window flowboxchild {
 .budgie-run-dialog entry.search {
   font-size: 120%;
   padding: 6px 12px;
-  box-shadow: inset 0 1px transparent;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: transparent;
 }
 
