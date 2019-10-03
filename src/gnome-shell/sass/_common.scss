@@ -157,6 +157,8 @@ $slider_color: if($variant == 'light', $accent_color, white);
   -slider-active-border-color: transparent; //active trough border
   -slider-border-width: 0;
   -slider-handle-radius: 7px;
+  -slider-handle-border-width: 0;
+  -slider-handle-border-color: $border_color;
 
   // barlevels are for >= 3.29.90
   -barlevel-height: 2px;
@@ -275,6 +277,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
 }
 
+  .show-processes-dialog-subject,
   .mount-dialog-subject,
   .end-session-dialog-subject { //this should be a generic header class
     @include font(title);
@@ -544,9 +547,54 @@ $slider_color: if($variant == 'light', $accent_color, white);
   spacing: 30px;
 }
 
+.access-dialog-main-layout {
+  padding: 12px 20px 0;
+  spacing: 12px;
+}
+
+.access-dialog-content {
+  max-width: 28em;
+  spacing: 20px;
+}
+
+.access-dialog-icon {
+  min-width: 48px;
+  icon-size: 48px;
+}
+
+.access-dialog-title {
+  font-weight: bold;
+}
+
+.access-dialog-subtitle {
+  color: $secondary_fg_color;
+  font-weight: bold;
+}
+
 /* Geolocation Dialog */
 .geolocation-dialog {
   spacing: 30px;
+}
+
+.geolocation-dialog-main-layout {
+  spacing: 12px;
+}
+
+.geolocation-dialog-content {
+  spacing: 20px;
+}
+
+.geolocation-dialog-icon {
+  icon-size: 48px;
+}
+
+.geolocation-dialog-title {
+  font-weight: bold;
+}
+
+.geolocation-dialog-reason {
+  color: $secondary_fg_color;
+  font-weight: bold;
 }
 
 /* Extension Dialog */
@@ -576,6 +624,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
 .popup-menu {
   min-width: 12em;
+  color: $fg_color;
   background-color: transparent;
 
   .popup-menu-arrow { width: 16px; height: 16px; } //defined globally in the TOP BAR
@@ -611,6 +660,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
   .popup-menu-item {
     spacing: 8px;
     margin: 0 4px;
+    color: $fg_color;
     transition-duration: $shorter_duration;
     border-radius: $material_radius;
 
@@ -1305,6 +1355,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
         .message {
           min-height: $menuitem_size * 2;
           background-color: transparent;
+          border: none;
           &:hover,&:focus { background-color: $divider_color; }
           &:active { background-color: $track_color; }
           border-radius: $bt_radius;
@@ -1663,9 +1714,11 @@ $slider_color: if($variant == 'light', $accent_color, white);
   .app-view-controls { //favorties | all toggle container
     width: 320px;
     padding-bottom: 32px;
+    margin: 0;
   }
   .app-view-control { //favorties | all toggle button
     padding: 0 16px;
+    margin: 0;
     font-weight: bold;
     color: $inverse_secondary_fg_color;
     background-color: rgba($inverse_fg_color, 0.15);
