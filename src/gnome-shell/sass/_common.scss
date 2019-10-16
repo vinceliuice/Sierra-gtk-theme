@@ -637,7 +637,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 
     .popup-menu-item {
       margin: 0 0;
-      border-radius: 0 0 0 0;
+      border-radius: $material_radius;
 
       &:not(:first-child):last-child {
         border-radius: 0 0 $material_radius $material_radius;
@@ -2380,7 +2380,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
 }
 
 #lockDialogGroup {
-  background: #555555 url("assets/noise-texture.svg");
+  background: #333333 url("assets/noise-texture.svg");
   background-size: cover;
 }
 
