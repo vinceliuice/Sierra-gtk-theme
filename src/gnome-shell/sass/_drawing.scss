@@ -96,6 +96,8 @@
 //
 
   @if $t == normal {
+    color: $fg_color;
+    caret-color: $fg_color;
     background-color: if($variant == 'light', darken($base_color, 2%), darken($base_color, 1%));
     border-radius: $material_radius;
     border: 1px solid $border_color;

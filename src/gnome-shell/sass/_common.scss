@@ -1604,6 +1604,7 @@ $slider_color: if($variant == 'light', $accent_color, white);
     padding: 0 8px;
     border: none;
     color: $inverse_hint_fg_color;
+    caret-color: $inverse_fg_color;
     selection-background-color: $inverse_track_color;
     selected-color: $inverse_fg_color;
     @include search_entry(normal, $fc:$inverse_track_color);
