@@ -448,8 +448,8 @@ button separator {
 }
 
 .linked:not(.vertical) > button,
-.linked.vertical > button, combobox, headerbar .linked:not(.vertical) > button, headerbar .linked.raised:not(.vertical):not(.path-bar) > button.image-button, popover button,
-popover.background button, .nemo-window .primary-toolbar .linked.raised > button, headerbar.titlebar .linked.raised > button.toggle, button.flat, button.budgie-menu-launcher, .budgie-panel button.flat.launcher, button.osd, button.sidebar-button, button.circular-button {
+.linked.vertical > button, combobox, headerbar .linked:not(.vertical) > button, headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle), popover button,
+popover.background button, .nemo-window .primary-toolbar .linked.raised > button, button.flat, button.budgie-menu-launcher, .budgie-panel button.flat.launcher, button.osd, button.sidebar-button, button.circular-button {
   outline-color: alpha(currentColor,0.3);
   outline-style: dashed;
   outline-offset: -3px;
@@ -1052,7 +1052,7 @@ headerbar .linked:not(.vertical).path-bar > button,
 headerbar .linked:not(.vertical).path-bar > button:hover,
 headerbar .linked:not(.vertical).path-bar > button:active,
 headerbar .linked:not(.vertical).path-bar > button:checked,
-headerbar .linked:not(.vertical).path-bar > button:disabled, headerbar.titlebar .linked.raised > button.toggle, headerbar.titlebar .linked.raised > button.toggle:hover, headerbar.titlebar .linked.raised > button.toggle:active, headerbar.titlebar .linked.raised > button.toggle:checked, headerbar.titlebar .linked.raised > button.toggle:disabled, .linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl) {
+headerbar .linked:not(.vertical).path-bar > button:disabled, .linked:not(.vertical) > combobox > box > button.combo:dir(ltr), .linked:not(.vertical) > combobox > box > button.combo:dir(rtl) {
   border-radius: 0;
   border-right-style: none;
 }
@@ -1062,7 +1062,7 @@ headerbar .linked:not(.vertical).path-bar > button:first-child,
 headerbar .linked:not(.vertical).path-bar > button:first-child:hover,
 headerbar .linked:not(.vertical).path-bar > button:first-child:active,
 headerbar .linked:not(.vertical).path-bar > button:first-child:checked,
-headerbar .linked:not(.vertical).path-bar > button:first-child:disabled, headerbar.titlebar .linked.raised > button.toggle:first-child {
+headerbar .linked:not(.vertical).path-bar > button:first-child:disabled {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -1072,7 +1072,7 @@ headerbar .linked:not(.vertical).path-bar > button:last-child,
 headerbar .linked:not(.vertical).path-bar > button:last-child:hover,
 headerbar .linked:not(.vertical).path-bar > button:last-child:active,
 headerbar .linked:not(.vertical).path-bar > button:last-child:checked,
-headerbar .linked:not(.vertical).path-bar > button:last-child:disabled, headerbar.titlebar .linked.raised > button.toggle:last-child {
+headerbar .linked:not(.vertical).path-bar > button:last-child:disabled {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-right-style: solid;
@@ -1083,7 +1083,7 @@ headerbar .linked:not(.vertical).path-bar > button:only-child,
 headerbar .linked:not(.vertical).path-bar > button:only-child:hover,
 headerbar .linked:not(.vertical).path-bar > button:only-child:active,
 headerbar .linked:not(.vertical).path-bar > button:only-child:checked,
-headerbar .linked:not(.vertical).path-bar > button:only-child:disabled, headerbar.titlebar .linked.raised > button.toggle:only-child {
+headerbar .linked:not(.vertical).path-bar > button:only-child:disabled {
   border-radius: 5px;
   border-style: solid;
 }
@@ -1765,24 +1765,24 @@ window.csd > .titlebar:not(headerbar):backdrop {
   opacity: 0.6;
 }
 
-headerbar .linked:not(.vertical) > button, headerbar .linked:not(.vertical) > button:hover, headerbar .linked:not(.vertical) > button:active, headerbar .linked:not(.vertical) > button:checked, headerbar .linked:not(.vertical) > button:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry, headerbar .linked:not(.vertical):not(.path-bar) > entry:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:disabled, .nemo-window .primary-toolbar .linked.raised > button, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:active, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:checked, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:disabled, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:hover, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:active, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:checked, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:disabled {
+headerbar .linked:not(.vertical) > button, headerbar .linked:not(.vertical) > button:hover, headerbar .linked:not(.vertical) > button:active, headerbar .linked:not(.vertical) > button:checked, headerbar .linked:not(.vertical) > button:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry, headerbar .linked:not(.vertical):not(.path-bar) > entry:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:disabled, .nemo-window .primary-toolbar .linked.raised > button, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:hover, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:active, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:checked, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:disabled, .geary-titlebar-right > box.linked.raised.horizontal > button, .geary-titlebar-right > box.linked.raised.horizontal > button:hover, .geary-titlebar-right > box.linked.raised.horizontal > button:active, .geary-titlebar-right > box.linked.raised.horizontal > button:checked, .geary-titlebar-right > box.linked.raised.horizontal > button:disabled, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:hover, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:active, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:checked, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:disabled, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:hover, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:active, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:checked, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:disabled {
   border-radius: 0;
   border-left-style: none;
   border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-headerbar .linked:not(.vertical) > button:first-child, headerbar .linked:not(.vertical) > button:first-child:hover, headerbar .linked:not(.vertical) > button:first-child:active, headerbar .linked:not(.vertical) > button:first-child:checked, headerbar .linked:not(.vertical) > button:first-child:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:disabled, .nemo-window .primary-toolbar .linked.raised > button:first-child, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:first-child, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:first-child {
+headerbar .linked:not(.vertical) > button:first-child, headerbar .linked:not(.vertical) > button:first-child:hover, headerbar .linked:not(.vertical) > button:first-child:active, headerbar .linked:not(.vertical) > button:first-child:checked, headerbar .linked:not(.vertical) > button:first-child:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:first-child:disabled, .nemo-window .primary-toolbar .linked.raised > button:first-child, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:first-child, .geary-titlebar-right > box.linked.raised.horizontal > button:first-child, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:first-child:hover, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:first-child:active, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:first-child:checked, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:first-child:disabled, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:first-child {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-left-style: solid;
 }
 
-headerbar .linked:not(.vertical) > button:last-child, headerbar .linked:not(.vertical) > button:last-child:hover, headerbar .linked:not(.vertical) > button:last-child:active, headerbar .linked:not(.vertical) > button:last-child:checked, headerbar .linked:not(.vertical) > button:last-child:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:disabled, .nemo-window .primary-toolbar .linked.raised > button:last-child, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:last-child, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:last-child {
+headerbar .linked:not(.vertical) > button:last-child, headerbar .linked:not(.vertical) > button:last-child:hover, headerbar .linked:not(.vertical) > button:last-child:active, headerbar .linked:not(.vertical) > button:last-child:checked, headerbar .linked:not(.vertical) > button:last-child:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:last-child:disabled, .nemo-window .primary-toolbar .linked.raised > button:last-child, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:last-child, .geary-titlebar-right > box.linked.raised.horizontal > button:last-child, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:last-child:hover, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:last-child:active, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:last-child:checked, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:last-child:disabled, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:last-child {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-headerbar .linked:not(.vertical) > button:only-child, headerbar .linked:not(.vertical) > button:only-child:hover, headerbar .linked:not(.vertical) > button:only-child:active, headerbar .linked:not(.vertical) > button:only-child:checked, headerbar .linked:not(.vertical) > button:only-child:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:disabled, .nemo-window .primary-toolbar .linked.raised > button:only-child, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:only-child, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:only-child {
+headerbar .linked:not(.vertical) > button:only-child, headerbar .linked:not(.vertical) > button:only-child:hover, headerbar .linked:not(.vertical) > button:only-child:active, headerbar .linked:not(.vertical) > button:only-child:checked, headerbar .linked:not(.vertical) > button:only-child:disabled, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:hover, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:active, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:checked, headerbar .linked:not(.vertical):not(.path-bar) > entry:only-child:disabled, .nemo-window .primary-toolbar .linked.raised > button:only-child, .nemo-window .primary-toolbar widget.raised.linked:not(.vertical):not(.path-bar) > button:only-child, .geary-titlebar-right > box.linked.raised.horizontal > button:only-child, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:only-child:hover, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:only-child:active, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:only-child:checked, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:only-child:disabled, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:only-child {
   border-radius: 5px;
   border-style: solid;
 }
@@ -1968,7 +1968,7 @@ headerbar .linked:not(.vertical) > button, headerbar .linked:not(.vertical) > bu
   border: none;
 }
 
-headerbar .linked.raised:not(.vertical):not(.path-bar) > button.image-button, headerbar .linked.raised:not(.vertical):not(.path-bar) > button.image-button:hover, headerbar .linked.raised:not(.vertical):not(.path-bar) > button.image-button:active, headerbar .linked.raised:not(.vertical):not(.path-bar) > button.image-button:checked, headerbar .linked.raised:not(.vertical):not(.path-bar) > button.image-button:disabled {
+headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle), headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle):hover, headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle):active, headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle):checked, headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle):disabled {
   border-radius: 5px;
   margin-right: 1px;
   border-right: none;
@@ -7153,7 +7153,7 @@ window#ValaPanel.background .pinned button.flat.-panel-icon-button.running:hover
   min-width: 22px;
 }
 
-.geary-titlebar-right > box.linked.raised.horizontal > button.image-button:last-child {
+.geary-titlebar-right > box.linked.raised.horizontal > button:last-child, .geary-titlebar-right > box.linked.raised.horizontal > button.image-button:last-child, .geary-titlebar-right > box.linked.raised.horizontal > button.popup.toggle:last-child {
   border-radius: 0 5px 5px 0;
   border-left: none;
 }
@@ -7893,59 +7893,6 @@ headerbar.titlebar > button.flat.image-button.toggle:backdrop, headerbar.titleba
 
 headerbar.titlebar > button.flat.image-button.toggle + button.flat.image-button.toggle, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.flat.image-button.toggle, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher + button.flat.image-button.toggle, headerbar.titlebar > button.flat.image-button.toggle + button.image-button.toggle.budgie-menu-launcher, headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.flat.launcher + button.image-button.toggle.budgie-menu-launcher, .budgie-panel headerbar.titlebar > button.flat.image-button.toggle + button.image-button.toggle.flat.launcher, .budgie-panel headerbar.titlebar > button.image-button.toggle.budgie-menu-launcher + button.image-button.toggle.flat.launcher {
   margin-right: -5px;
-}
-
-headerbar.titlebar .linked.raised > button.toggle {
-  color: rgba(225, 219, 219, 0.8);
-  border: none;
-  background-color: rgba(119, 119, 119, 0.6);
-  background-image: none;
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.01);
-}
-
-headerbar.titlebar .linked.raised > button.toggle:hover {
-  color: rgba(225, 219, 219, 0.8);
-  border: none;
-  background-color: rgba(119, 119, 119, 0.9);
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
-}
-
-headerbar.titlebar .linked.raised > button.toggle:active {
-  color: #ffffff;
-  border: none;
-  background-color: #777777;
-  background-image: none;
-  text-shadow: none;
-  -gtk-icon-shadow: none;
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
-}
-
-headerbar.titlebar .linked.raised > button.toggle:checked {
-  color: #ffffff;
-  border: none;
-  background-color: #848383;
-  background-image: none;
-  text-shadow: none;
-  -gtk-icon-shadow: none;
-  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.12), 0px 1px 2px 0px rgba(16, 16, 16, 0.06);
-}
-
-headerbar.titlebar .linked.raised > button.toggle:disabled {
-  color: rgba(225, 219, 219, 0.4);
-}
-
-headerbar.titlebar .linked.raised > button.toggle:backdrop {
-  opacity: 0.7;
-  background-image: none;
-  box-shadow: none;
-}
-
-headerbar.titlebar .linked.raised > button.toggle, headerbar.titlebar .linked.raised > button.toggle:hover, headerbar.titlebar .linked.raised > button.toggle:active, headerbar.titlebar .linked.raised > button.toggle:checked, headerbar.titlebar .linked.raised > button.toggle:disabled {
-  border-left: 1px solid transparent;
-}
-
-headerbar.titlebar .linked.raised > button + button {
-  border-left-style: solid;
 }
 
 headerbar.titlebar > grid.linked.horizontal.format-bar {

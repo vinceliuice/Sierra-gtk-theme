@@ -1606,7 +1606,7 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
     }
   }
 
-  .linked.raised:not(.vertical):not(.path-bar) > button.image-button {
+  .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle) {
     @extend %outline_dashed;
 
     &, &:hover, &:active, &:checked, &:disabled {
