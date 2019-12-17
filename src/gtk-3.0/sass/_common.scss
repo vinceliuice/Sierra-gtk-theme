@@ -3990,7 +3990,6 @@ decoration {
 //
 headerbar,
 .titlebar {
-
   button.titlebutton {
     &.appmenu {
       transition: background-color 0.1s $ease-out-quad,
@@ -4039,7 +4038,7 @@ headerbar,
 
     // Load png assets for each button, Fix the Chrome window restore button bug
     @each $k in ('close', 'maximize', 'minimize', 'restore') {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':backdrop:hover','-backdrop-hover'), (':hover','-hover'), (':active','-active') {
 
         &.#{$k}#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-#{$k}#{$m}#{$alt_suffix}.png'),
                                                      url('assets/titlebutton-#{$k}#{$m}#{$alt_suffix}@2.png')); }
@@ -4050,7 +4049,7 @@ headerbar,
   .fullscreen &,
   .maximized & {
     button.titlebutton {
-      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':backdrop:hover','-backdrop-hover'), (':hover','-hover'), (':active','-active') {
       &.maximize#{$l} { background-image: -gtk-scaled(url('assets/titlebutton-restore#{$m}#{$alt_suffix}.png'),
                                                       url('assets/titlebutton-restore#{$m}#{$alt_suffix}@2.png')); }
       }
@@ -4083,7 +4082,7 @@ popover.emoji-picker {
     box-shadow: none;
     border-width: 0 0 1px 0;
     padding: 4px 12px;
-//    margin: 2px 0 0 0;
+    // margin: 2px 0 0 0;
   }
 
   scrolledwindow { border-bottom: 1px solid $borders_color; }
@@ -4097,8 +4096,8 @@ button.emoji-section {
   border: none;
   outline-offset: -2px;
   box-shadow: none;
-//  &:first-child { border-radius: 0 0 0 $wm_radius; }
-//  &:last-child { border-radius: 0 0 $wm_radius 0; }
+  // &:first-child { border-radius: 0 0 0 $wm_radius; }
+  // &:last-child { border-radius: 0 0 $wm_radius 0; }
 }
 
 .emoji {

@@ -66,35 +66,43 @@ radio-mixed-insensitive-dark
 
 titlebutton-close
 titlebutton-close-backdrop
+titlebutton-close-backdrop-hover
 titlebutton-close-hover
 titlebutton-close-active
 titlebutton-maximize
 titlebutton-maximize-backdrop
+titlebutton-maximize-backdrop-hover
 titlebutton-maximize-hover
 titlebutton-maximize-active
 titlebutton-minimize
 titlebutton-minimize-backdrop
+titlebutton-minimize-backdrop-hover
 titlebutton-minimize-hover
 titlebutton-minimize-active
 titlebutton-restore
 titlebutton-restore-backdrop
+titlebutton-restore-backdrop-hover
 titlebutton-restore-hover
 titlebutton-restore-active
 
 titlebutton-close-alt
 titlebutton-close-backdrop-alt
+titlebutton-close-backdrop-hover-alt
 titlebutton-close-hover-alt
 titlebutton-close-active-alt
 titlebutton-maximize-alt
 titlebutton-maximize-backdrop-alt
+titlebutton-maximize-backdrop-hover-alt
 titlebutton-maximize-hover-alt
 titlebutton-maximize-active-alt
 titlebutton-minimize-alt
 titlebutton-minimize-backdrop-alt
+titlebutton-minimize-backdrop-hover-alt
 titlebutton-minimize-hover-alt
 titlebutton-minimize-active-alt
 titlebutton-restore-alt
 titlebutton-restore-backdrop-alt
+titlebutton-restore-backdrop-hover-alt
 titlebutton-restore-hover-alt
 titlebutton-restore-active-alt
 
