@@ -1602,7 +1602,7 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
     }
   }
 
-  .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle) {
+  .linked.raised:not(.vertical):not(.path-bar) > button.image-button {
     @extend %outline_dashed;
 
     &, &:hover, &:active, &:checked, &:disabled {
@@ -1678,7 +1678,6 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
   }
 
   .linked:not(.vertical).path-bar {
-
     // fixed ugly border color
     > button {
       &:active { @if $variant=='light' and $compact == 'false' { box-shadow: 1px 0 $header_button_active_bg; } }
@@ -1687,7 +1686,6 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
   }
 
   .linked:not(.vertical):not(.path-bar).stack-switcher {
-
     // fixed ugly border color
     > button:not(:last-child) {
       &:active { @if $variant=='light' and $compact == 'false' { box-shadow: 1px 0 $header_button_active_bg; } }
