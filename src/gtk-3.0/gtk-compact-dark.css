@@ -33,6 +33,23 @@
   -gtk-outline-radius: 5px;
 }
 
+headerbar .linked:not(.vertical) > button, headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle), headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button,
+headerbar .linked:not(.vertical).path-bar > button, .nemo-window .primary-toolbar .linked.raised > button {
+  outline-color: alpha(currentColor,0.3);
+  outline-style: dashed;
+  outline-offset: -3px;
+  outline-width: 1px;
+  -gtk-outline-radius: 5px;
+}
+
+headerbar button, .nemo-window .primary-toolbar button, paned.titlebar.horizontal headerbar button.flat.toggle.popup:not(.image-button), paned.titlebar.horizontal headerbar button.toggle.popup.budgie-menu-launcher:not(.image-button) {
+  outline-color: #8eb9ff;
+  outline-style: solid;
+  outline-offset: -1px;
+  outline-width: 3px;
+  -gtk-outline-radius: 6px;
+}
+
 .background {
   color: #dedede;
   background-color: #333333;
@@ -424,14 +441,6 @@ treeview entry.flat:focus, treeview .raven .raven-background spinbutton:focus:no
 }
 
 button {
-  outline-color: #8eb9ff;
-  outline-style: solid;
-  outline-offset: -1px;
-  outline-width: 3px;
-  -gtk-outline-radius: 6px;
-}
-
-button {
   min-height: 26px;
   min-width: 16px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -445,15 +454,6 @@ button {
 
 button separator {
   margin: 4px 1px;
-}
-
-.linked:not(.vertical) > button,
-.linked.vertical > button, combobox, headerbar .linked:not(.vertical) > button, headerbar .linked.raised:not(.vertical):not(.path-bar) > button:not(.popup.toggle), popover button,
-popover.background button, .nemo-window .primary-toolbar .linked.raised > button, button.flat, button.budgie-menu-launcher, .budgie-panel button.flat.launcher, button.osd, button.sidebar-button, button.circular-button {
-  outline-color: alpha(currentColor,0.3);
-  outline-style: dashed;
-  outline-offset: -3px;
-  outline-width: 1px;
 }
 
 button.flat, button.budgie-menu-launcher, .budgie-panel button.flat.launcher {
@@ -1089,8 +1089,7 @@ headerbar .linked:not(.vertical).path-bar > button:only-child:disabled {
 }
 
 .linked.vertical > entry,
-.linked.vertical > entry:focus,
-.linked.vertical > button,
+.linked.vertical > entry:focus, .linked.vertical > button,
 .linked.vertical > button:hover,
 .linked.vertical > button:active,
 .linked.vertical > button:checked, spinbutton.vertical button, spinbutton.vertical entry, .linked.vertical > combobox > box > button.combo {
@@ -3090,14 +3089,12 @@ row switch:dir(rtl):not(:indeterminate), row switch:not(:indeterminate) slider:d
 row switch:not(:indeterminate) {
   min-width: 40px;
   min-height: 24px;
-  margin: 0;
   background-size: 40px 24px;
   transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-image: -gtk-scaled(url("assets/switch.png"), url("assets/switch@2.png"));
 }
 
 row switch:not(:indeterminate) slider:not(:indeterminate) {
-  margin: 0;
   background-size: 40px 24px;
 }
 
@@ -3126,7 +3123,6 @@ row switch:not(:indeterminate):disabled, row switch:not(:indeterminate):disabled
 .raven .raven-background switch:not(:indeterminate) {
   min-width: 50px;
   min-height: 20px;
-  margin: 6px 2px;
   background-size: 50px 20px;
   transition: all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   background-image: -gtk-scaled(url("assets/toggle-off.svg"));
@@ -3153,7 +3149,6 @@ row switch:not(:indeterminate):disabled, row switch:not(:indeterminate):disabled
 
 switch {
   transition: all 0.3s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
-  margin: 6px 0;
   border-radius: 50px;
   background-color: rgba(222, 222, 222, 0.3);
   background-clip: padding-box;

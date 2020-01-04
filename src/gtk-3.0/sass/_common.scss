@@ -31,6 +31,22 @@ $wm_radius: 6px;
   -gtk-outline-radius: $bt_radius;
 }
 
+%outline_dashed {
+  outline-color: gtkalpha(currentColor, 0.3);
+  outline-style: dashed;
+  outline-offset: -3px;
+  outline-width: 1px;
+  -gtk-outline-radius: $bt_radius;
+}
+
+%outline_solid {
+  outline-color: $entry_highlight;
+  outline-style: solid;
+  outline-offset: -1px;
+  outline-width: 3px;
+  -gtk-outline-radius: $bt_radius + 1px;
+}
+
 //
 // Base States
 //
@@ -382,14 +398,6 @@ $_dot_color: $selected_bg_color;
   }
 }
 
-@at-root %outline_solid, button {
-  outline-color: $entry_highlight;
-  outline-style: solid;
-  outline-offset: -1px;
-  outline-width: 3px;
-  -gtk-outline-radius: $bt_radius + 1px;
-}
-
 button {
   min-height: if($variant =='light', 24px, 26px);
   min-width: 16px;
@@ -400,14 +408,6 @@ button {
   @include button(normal);
 
   separator { margin: 4px 1px; }
-
-  @at-root %outline_dashed,
-  &.flat, &.osd, &.sidebar-button, &.circular-button {
-    outline-color: gtkalpha(currentColor, 0.3);
-    outline-style: dashed;
-    outline-offset: -3px;
-    outline-width: 1px;
-  }
 
   &.flat {
     @include button(flat-normal);
@@ -629,7 +629,7 @@ button {
   //inline-toolbar buttons
   .inline-toolbar &, .inline-toolbar &:backdrop {
     border-radius: $bt_radius;
-//    border: none;
+    // border: none;
     @extend %linked;
   }
 
@@ -642,10 +642,6 @@ button {
   .linked.vertical > &:hover,
   .linked.vertical > &:active,
   .linked.vertical > &:checked { @extend %linked_vertical; }
-
-  // reset some linked buttons outline style
-  .linked:not(.vertical) > &,
-  .linked.vertical > & { @extend %outline_dashed; }
 }
 
 // all the following is for the +|- buttons on inline toolbars, that way
@@ -989,7 +985,6 @@ spinbutton {
 // Comboboxes
 //
 combobox {
-  @extend %outline_dashed;
   button.combo {
     min-width: 0;       // otherwise the arrow placement is unsymmetric
     min-height: 20px;
@@ -1504,6 +1499,7 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
 // Headerbar Buttons
 %headerbar_buttons {
   @include button(header-normal);
+  @extend %outline_solid;
 
   &.circular-button { @extend button.circular; }
 
@@ -1665,6 +1661,7 @@ window.background > box.vertical > headerbar:not(.titlebar) { // reset headerbar
   .linked:not(.vertical):not(.path-bar).stack-switcher,
   .linked:not(.vertical).path-bar {
     > button {
+      @extend %outline_dashed;
       @include button(header-normal);
       &:hover { @include button(header-hover); }
       &:active { @include button(header-active); }
@@ -2200,8 +2197,6 @@ popover.background {
     border: 1px solid if($variant=='light', darken($borders_color, 15%), lighten($borders_color, 10%));
   }
 
-  button { @extend %outline_dashed; }
-
   separator,
   & separator,
   .csd & separator {
@@ -2243,7 +2238,7 @@ cursor-handle {
 //
 notebook {
   padding: 0;
-//  margin-top: -1px;
+  // margin-top: -1px;
 
   &.frame {
     border: 1px solid $solid_borders_color;
@@ -2546,13 +2541,13 @@ scrollbar {
       @extend %reset_switch;
       min-width: 40px;
       min-height: 24px;
-      margin: 0;
+      // margin: 0;
       background-size: 40px 24px;
       transition: all 350ms $ease-out-quad;
 
       slider:not(:indeterminate) {
         @extend %reset_switch;
-        margin: 0;
+        // margin: 0;
         background-size: 40px 24px;
       }
 
@@ -2601,7 +2596,7 @@ scrollbar {
       @extend %reset_switch;
       min-width: 50px;
       min-height: 20px;
-      margin: 6px 2px;
+      // margin: 6px 2px;
       background-size: 50px 20px;
       transition: all 350ms $ease-out-quad;
 
@@ -2632,7 +2627,7 @@ scrollbar {
 %switch,
 switch {
   transition: $transition_1;
-  margin: 6px 0;
+  // margin: 6px 0;
   border-radius: 50px;
   background-color: rgba($fg_color, 0.3);
   background-clip: padding-box;
