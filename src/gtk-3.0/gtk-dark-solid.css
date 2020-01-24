@@ -7082,6 +7082,93 @@ window.thunar toolbar#location-toolbar, window.thunar #location-toolbar.inline-t
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+window.thunar toolbar#location-toolbar button.flat, window.thunar #location-toolbar.inline-toolbar button.flat, window.thunar toolbar#location-toolbar button.budgie-menu-launcher, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(225, 219, 219, 0.8);
+  background-color: rgba(119, 119, 119, 0.6);
+  background-image: none;
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+  border: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+window.thunar toolbar#location-toolbar button.flat:backdrop, window.thunar #location-toolbar.inline-toolbar button.flat:backdrop, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:backdrop, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:backdrop {
+  opacity: 0.7;
+  background-image: none;
+  box-shadow: none;
+}
+
+window.thunar toolbar#location-toolbar button.flat:hover, window.thunar #location-toolbar.inline-toolbar button.flat:hover, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:hover, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(221, 213, 213, 0.8);
+  background-color: rgba(119, 119, 119, 0.9);
+  background-image: none;
+  box-shadow: none;
+}
+
+window.thunar toolbar#location-toolbar button.flat:checked, window.thunar #location-toolbar.inline-toolbar button.flat:checked, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:checked, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:checked {
+  color: #ffffff;
+  background-color: #848383;
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.12);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: none;
+  background-clip: padding-box;
+}
+
+window.thunar toolbar#location-toolbar button.flat:active, window.thunar #location-toolbar.inline-toolbar button.flat:active, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:active, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:active {
+  color: #ffffff;
+  background-color: #777777;
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.12);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  box-shadow: none;
+  background-clip: padding-box;
+}
+
+window.thunar toolbar#location-toolbar button.flat:disabled, window.thunar #location-toolbar.inline-toolbar button.flat:disabled, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:disabled, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:disabled {
+  background-color: rgba(119, 119, 119, 0.6);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+}
+
+window.thunar toolbar#location-toolbar button.flat:disabled label, window.thunar #location-toolbar.inline-toolbar button.flat:disabled label, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:disabled label, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:disabled label, window.thunar toolbar#location-toolbar button.flat:disabled, window.thunar #location-toolbar.inline-toolbar button.flat:disabled, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:disabled, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:disabled {
+  color: rgba(225, 219, 219, 0.35);
+}
+
+window.thunar toolbar#location-toolbar button.flat:disabled:active, window.thunar #location-toolbar.inline-toolbar button.flat:disabled:active, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:disabled:active, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:disabled:active, window.thunar toolbar#location-toolbar button.flat:disabled:checked, window.thunar #location-toolbar.inline-toolbar button.flat:disabled:checked, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:disabled:checked, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:disabled:checked {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(119, 119, 119, 0.65);
+  box-shadow: 0px 1px 1px 0px rgba(16, 16, 16, 0.04), 0px 1px 2px 0px rgba(16, 16, 16, 0.01);
+}
+
+window.thunar toolbar#location-toolbar button.flat, window.thunar #location-toolbar.inline-toolbar button.flat, window.thunar toolbar#location-toolbar button.budgie-menu-launcher, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher, window.thunar toolbar#location-toolbar button.flat:hover, window.thunar #location-toolbar.inline-toolbar button.flat:hover, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:hover, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:hover, window.thunar toolbar#location-toolbar button.flat:active, window.thunar #location-toolbar.inline-toolbar button.flat:active, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:active, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:active, window.thunar toolbar#location-toolbar button.flat:checked, window.thunar #location-toolbar.inline-toolbar button.flat:checked, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:checked, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:checked, window.thunar toolbar#location-toolbar button.flat:disabled, window.thunar #location-toolbar.inline-toolbar button.flat:disabled, window.thunar toolbar#location-toolbar button.budgie-menu-launcher:disabled, window.thunar #location-toolbar.inline-toolbar button.budgie-menu-launcher:disabled {
+  border: none;
+}
+
+window.thunar toolbar#location-toolbar > toolbutton#open-parent > button.image-button.flat:not(.toggle), window.thunar #location-toolbar.inline-toolbar > toolbutton#open-parent > button.image-button.flat:not(.toggle), window.thunar toolbar#location-toolbar > toolbutton#open-parent > button.image-button.budgie-menu-launcher:not(.toggle), window.thunar #location-toolbar.inline-toolbar > toolbutton#open-parent > button.image-button.budgie-menu-launcher:not(.toggle), window.thunar .budgie-panel toolbar#location-toolbar > toolbutton#open-parent > button.image-button.flat.launcher:not(.toggle), window.thunar .budgie-panel #location-toolbar.inline-toolbar > toolbutton#open-parent > button.image-button.flat.launcher:not(.toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  margin-left: 6px;
+}
+
+window.thunar toolbar#location-toolbar > toolbutton#open-home > button.image-button.flat:not(.toggle), window.thunar #location-toolbar.inline-toolbar > toolbutton#open-home > button.image-button.flat:not(.toggle), window.thunar toolbar#location-toolbar > toolbutton#open-home > button.image-button.budgie-menu-launcher:not(.toggle), window.thunar #location-toolbar.inline-toolbar > toolbutton#open-home > button.image-button.budgie-menu-launcher:not(.toggle), window.thunar .budgie-panel toolbar#location-toolbar > toolbutton#open-home > button.image-button.flat.launcher:not(.toggle), window.thunar .budgie-panel #location-toolbar.inline-toolbar > toolbutton#open-home > button.image-button.flat.launcher:not(.toggle) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-right: 6px;
+  margin-left: 1px;
+}
+
+window.thunar toolbar#location-toolbar > toolitem#forward > button.flat.toggle, window.thunar #location-toolbar.inline-toolbar > toolitem#forward > button.flat.toggle, window.thunar toolbar#location-toolbar > toolitem#forward > button.toggle.budgie-menu-launcher, window.thunar #location-toolbar.inline-toolbar > toolitem#forward > button.toggle.budgie-menu-launcher, window.thunar .budgie-panel toolbar#location-toolbar > toolitem#forward > button.toggle.flat.launcher, window.thunar .budgie-panel #location-toolbar.inline-toolbar > toolitem#forward > button.toggle.flat.launcher {
+  margin-left: 1px;
+}
+
 window.thunar toolbar#location-toolbar entry, window.thunar #location-toolbar.inline-toolbar entry {
   min-height: 22px;
 }

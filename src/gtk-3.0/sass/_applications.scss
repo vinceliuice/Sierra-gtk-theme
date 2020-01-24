@@ -1851,6 +1851,72 @@ window.thunar {
   toolbar#location-toolbar {
     border-bottom: 1px solid $borders_color;
 
+    button.flat {
+      border: 1px solid $borders_color;
+      @include button(header-normal);
+      margin-left: 0;
+      margin-right: 0;
+
+      &:backdrop { opacity: 0.7; background-image: none; @if $compact == 'false' { box-shadow: none; } }
+
+      &:hover {
+        @include button(header-hover);
+      }
+
+      &:checked {
+        @include button(header-checked);
+        background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+        @if $variant=='light' and $compact == 'true' { box-shadow: none; }
+      }
+
+      &:active {
+        @include button(header-active);
+        background-clip: if($darker=='false' and $variant=='light', border-box, padding-box);
+        @if $variant=='light' and $compact == 'true' { box-shadow: none; }
+      }
+
+      &:disabled { @include button(header-insensitive); }
+
+      &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
+
+      &, &:hover, &:active, &:checked, &:disabled {
+        @if $variant=='dark' or $compact == 'true' {
+          border: none;
+        }
+      }
+
+      @if $variant == 'light' and $compact == 'false' {
+        &:not(:first-child) {
+          &:active { box-shadow: -1px 0 mix(black, $header_button_active_bg, 15%); }
+          &:checked { box-shadow: -1px 0 mix(black, $header_button_checked_bg, 15%); }
+        }
+      }
+    }
+
+    > toolbutton#open-parent > button.image-button.flat:not(.toggle) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      margin-left: 6px;
+    }
+
+    > toolbutton#open-home > button.image-button.flat:not(.toggle) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-right: 6px;
+
+      @if $variant=='dark' or $compact == 'true' {
+        margin-left: 1px;
+      }
+    }
+
+    // > toolitem#back > button.flat.toggle,
+    > toolitem#forward > button.flat.toggle {
+      @if $variant=='dark' or $compact == 'true' {
+        margin-left: 1px;
+      }
+    }
+
     // FIXME: need to unset for weird allocation height
     entry { min-height: if($variant == 'light', 20px, 22px); }
   }
