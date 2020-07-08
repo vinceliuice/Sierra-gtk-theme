@@ -41,6 +41,12 @@ Dark Theme
 
 ### Distributions
 
+FreeBSD
+
+```
+# pkg install sierra-gtk-themes
+```
+
 openSUSE [package](https://build.opensuse.org/package/show/X11:common:Factory/sierra-gtk-theme):
 
 ```
@@ -56,6 +62,7 @@ sudo apt update
 sudo apt install sierra-gtk-theme       # point releases
 sudo apt install sierra-gtk-theme-git   # git master branch
 ```
+
 
 ### From source
 
